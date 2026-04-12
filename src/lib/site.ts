@@ -5,9 +5,9 @@ export const siteConfig = {
   description:
     "Personal site of Varun Patel. Building software at the intersection of craft and intelligence.",
   links: {
-    github: "https://github.com/varunpatel",
-    linkedin: "https://linkedin.com/in/varunpatel",
+    github: "https://github.com/varunpatel4121",
+    linkedin: "https://linkedin.com/in/varun-p",
     twitter: "https://x.com/varunpatel",
-    email: "mailto:hello@varunpatel.me",
+    email: "mailto:varun4@wharton.upenn.edu",
   },
 } as const;

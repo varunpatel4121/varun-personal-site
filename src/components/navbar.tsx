@@ -13,7 +13,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border-subtle bg-background/80 backdrop-blur-xl">
-      <nav className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+      <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
           className="font-medium tracking-tight text-foreground transition-opacity hover:opacity-70"

@@ -50,12 +50,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col">
         <Navbar />
-        <main className="flex-1">
-          <div className="mx-auto max-w-3xl px-6">{children}</div>
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

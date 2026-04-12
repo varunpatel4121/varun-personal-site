@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <>
+    <div className="mx-auto max-w-3xl px-6">
       <PageHeader
         title="Projects"
         description="A selection of things I've built, shipped, and explored. Some are production systems, some are experiments, all are things I learned from."
@@ -22,6 +22,6 @@ export default function ProjectsPage() {
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

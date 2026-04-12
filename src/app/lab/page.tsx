@@ -36,7 +36,7 @@ const statusStyles = {
 
 export default function LabPage() {
   return (
-    <>
+    <div className="mx-auto max-w-3xl px-6">
       <PageHeader
         title="Lab"
         description="Experiments, prototypes, and works-in-progress. This is where ideas get tested before they become products."
@@ -69,6 +69,6 @@ export default function LabPage() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

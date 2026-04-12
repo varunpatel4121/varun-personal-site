@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="mx-auto max-w-3xl px-6">
       <PageHeader
         title="About"
         description="A brief introduction to who I am and what I care about."
@@ -85,6 +85,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
