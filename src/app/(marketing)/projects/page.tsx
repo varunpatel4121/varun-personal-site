@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/page-header";
-import { ProjectCard } from "@/components/project-card";
+import { PageHeader } from "@/components/ui/page-header";
+import { ProjectCard } from "@/components/marketing/project-card";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {

@@ -1,9 +1,9 @@
-import { Hero } from "@/components/home/hero";
-import { AnimateIn } from "@/components/home/animate-in";
-import { SectionHeading } from "@/components/home/section-heading";
-import { FocusCard } from "@/components/home/focus-card";
-import { DirectionCard } from "@/components/home/direction-card";
-import { ContactCTA } from "@/components/home/contact-cta";
+import { Hero } from "@/components/marketing/home/hero";
+import { AnimateIn } from "@/components/marketing/home/animate-in";
+import { SectionHeading } from "@/components/marketing/home/section-heading";
+import { FocusCard } from "@/components/marketing/home/focus-card";
+import { DirectionCard } from "@/components/marketing/home/direction-card";
+import { ContactCTA } from "@/components/marketing/home/contact-cta";
 import { getFeaturedProjects } from "@/data/projects";
 
 export default function Home() {
