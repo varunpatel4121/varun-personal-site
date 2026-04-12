@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { AmbientBackground } from "@/components/ambient-background";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col">
+        <AmbientBackground />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
