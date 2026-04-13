@@ -1,5 +1,12 @@
 import type { Project, Chat, Message } from "@/lib/supabase/types";
 
+export interface PersonaDefinition {
+  id: string;
+  name: string;
+  description: string;
+  systemPrompt: string;
+}
+
 export type PersonaProject = Project & { app: "persona" };
 
 export type PersonaChat = Chat;

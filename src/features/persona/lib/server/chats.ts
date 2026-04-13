@@ -43,6 +43,7 @@ export async function createChat(
   projectId: string,
   userId: string,
   title?: string,
+  metadata: Record<string, unknown> = {},
 ): Promise<Chat> {
   const { data, error } = await supabase
     .from("chats")
@@ -50,6 +51,7 @@ export async function createChat(
       project_id: projectId,
       user_id: userId,
       title: title ?? null,
+      metadata,
     })
     .select()
     .single();

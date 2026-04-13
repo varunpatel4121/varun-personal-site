@@ -1,6 +1,5 @@
 import type { PersonaMessage } from "../../types";
-
-const DEFAULT_SYSTEM_INSTRUCTIONS = `You are a thoughtful, knowledgeable assistant. Be clear, concise, and helpful. When you're unsure about something, say so rather than guessing. Use markdown formatting when it helps readability.`;
+import { getDefaultPersona } from "../personas";
 
 export interface PromptContext {
   systemInstructions?: string;
@@ -17,8 +16,9 @@ type InputMessage = {
 export function buildPromptInput(ctx: PromptContext): InputMessage[] {
   const messages: InputMessage[] = [];
 
-  // Layer 1: System instructions
-  let systemBlock = ctx.systemInstructions ?? DEFAULT_SYSTEM_INSTRUCTIONS;
+  // Layer 1: System instructions (resolved from persona, with a safe fallback)
+  let systemBlock =
+    ctx.systemInstructions ?? getDefaultPersona().systemPrompt;
 
   // Layer 2: Retrieved context (RAG slot — empty in V1)
   if (ctx.retrievedContext && ctx.retrievedContext.length > 0) {

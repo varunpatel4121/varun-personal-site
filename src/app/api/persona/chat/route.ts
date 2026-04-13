@@ -3,6 +3,9 @@ import { createChat, appendMessage } from "@/features/persona/lib/server/chats";
 import { getOrCreateDefaultProject } from "@/features/persona/lib/server/project";
 import { buildPromptInput } from "@/features/persona/lib/openai/prompt";
 import { createStreamingResponse, encodeSSE } from "@/features/persona/lib/openai/stream";
+import { resolvePersonaForChat } from "@/features/persona/lib/personas/resolve-persona";
+import { DEFAULT_PERSONA_ID } from "@/features/persona/lib/personas";
+import type { Chat } from "@/lib/supabase/types";
 
 export async function POST(request: Request) {
   try {
@@ -30,13 +33,27 @@ export async function POST(request: Request) {
     // Resolve or create the chat
     let chatId = existingChatId;
     let isNewChat = false;
+    let chatRow: Chat | null = null;
 
     if (!chatId) {
       const title = message.slice(0, 100) + (message.length > 100 ? "…" : "");
-      const chat = await createChat(supabase, project.id, user.id, title);
+      const chat = await createChat(supabase, project.id, user.id, title, {
+        persona_id: DEFAULT_PERSONA_ID,
+      });
       chatId = chat.id;
+      chatRow = chat;
       isNewChat = true;
+    } else {
+      const { data } = await supabase
+        .from("chats")
+        .select("*")
+        .eq("id", chatId)
+        .single();
+      chatRow = data as Chat | null;
     }
+
+    // Resolve persona from chat metadata (falls back to default)
+    const persona = resolvePersonaForChat(chatRow?.metadata);
 
     // Persist user message
     await appendMessage(supabase, chatId, "user", message);
@@ -48,10 +65,11 @@ export async function POST(request: Request) {
       .eq("chat_id", chatId)
       .order("created_at", { ascending: true });
 
-    const priorMessages = (history ?? []).slice(0, -1); // exclude the just-inserted user message
+    const priorMessages = (history ?? []).slice(0, -1);
 
-    // Assemble prompt layers
+    // Assemble prompt layers with the resolved persona's system prompt
     const promptInput = buildPromptInput({
+      systemInstructions: persona.systemPrompt,
       conversationHistory: priorMessages,
       userMessage: message,
       retrievedContext: [], // RAG slot — empty in V1
