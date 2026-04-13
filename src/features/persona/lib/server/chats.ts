@@ -1,15 +1,20 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, Chat, Message } from "@/lib/supabase/types";
+import { log } from "@/lib/logger";
 
 export async function listChats(
   supabase: SupabaseClient<Database>,
   projectId: string,
 ): Promise<Chat[]> {
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("chats")
     .select("*")
     .eq("project_id", projectId)
     .order("updated_at", { ascending: false });
+
+  if (error) {
+    log.error({ event: "persona.chats.list_failed", projectId, errorMessage: error.message });
+  }
 
   return (data as Chat[] | null) ?? [];
 }
@@ -56,7 +61,23 @@ export async function createChat(
     .select()
     .single();
 
-  if (error) throw new Error(`Failed to create chat: ${error.message}`);
+  if (error) {
+    log.error({
+      event: "persona.chat.create_failed",
+      projectId,
+      userId,
+      errorMessage: error.message,
+    });
+    throw new Error(`Failed to create chat: ${error.message}`);
+  }
+
+  log.info({
+    event: "persona.chat.created",
+    chatId: (data as Chat).id,
+    projectId,
+    personaId: metadata.persona_id,
+  });
+
   return data as Chat;
 }
 
@@ -73,7 +94,16 @@ export async function appendMessage(
     .select()
     .single();
 
-  if (error) throw new Error(`Failed to append message: ${error.message}`);
+  if (error) {
+    log.error({
+      event: "persona.message.append_failed",
+      chatId,
+      role,
+      errorMessage: error.message,
+    });
+    throw new Error(`Failed to append message: ${error.message}`);
+  }
+
   return data as Message;
 }
 
@@ -90,5 +120,10 @@ export async function deleteChat(
   chatId: string,
 ) {
   const { error } = await supabase.from("chats").delete().eq("id", chatId);
-  if (error) throw new Error(`Failed to delete chat: ${error.message}`);
+  if (error) {
+    log.error({ event: "persona.chat.delete_failed", chatId, errorMessage: error.message });
+    throw new Error(`Failed to delete chat: ${error.message}`);
+  }
+
+  log.info({ event: "persona.chat.deleted", chatId });
 }

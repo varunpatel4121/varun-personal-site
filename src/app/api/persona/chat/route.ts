@@ -5,9 +5,13 @@ import { buildPromptInput } from "@/features/persona/lib/openai/prompt";
 import { createStreamingResponse, encodeSSE } from "@/features/persona/lib/openai/stream";
 import { resolvePersonaForChat } from "@/features/persona/lib/personas/resolve-persona";
 import { DEFAULT_PERSONA_ID } from "@/features/persona/lib/personas";
+import { log, createRequestId } from "@/lib/logger";
 import type { Chat } from "@/lib/supabase/types";
 
 export async function POST(request: Request) {
+  const requestId = createRequestId();
+  const startTime = Date.now();
+
   try {
     const supabase = await createClient();
     const {
@@ -15,6 +19,7 @@ export async function POST(request: Request) {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      log.warn({ event: "persona.chat.unauthorized", requestId });
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -25,12 +30,12 @@ export async function POST(request: Request) {
     };
 
     if (!message?.trim()) {
+      log.warn({ event: "persona.chat.empty_message", requestId, userId: user.id });
       return Response.json({ error: "Message is required" }, { status: 400 });
     }
 
     const project = await getOrCreateDefaultProject(supabase, user.id);
 
-    // Resolve or create the chat
     let chatId = existingChatId;
     let isNewChat = false;
     let chatRow: Chat | null = null;
@@ -52,13 +57,10 @@ export async function POST(request: Request) {
       chatRow = data as Chat | null;
     }
 
-    // Resolve persona from chat metadata (falls back to default)
     const persona = resolvePersonaForChat(chatRow?.metadata);
 
-    // Persist user message
     await appendMessage(supabase, chatId, "user", message);
 
-    // Load conversation history
     const { data: history } = await supabase
       .from("messages")
       .select("*")
@@ -67,35 +69,40 @@ export async function POST(request: Request) {
 
     const priorMessages = (history ?? []).slice(0, -1);
 
-    // Assemble prompt layers with the resolved persona's system prompt
+    log.info({
+      event: "persona.chat.request",
+      requestId,
+      userId: user.id,
+      projectId: project.id,
+      chatId,
+      isNewChat,
+      personaId: persona.id,
+      historyCount: priorMessages.length,
+      userMessageChars: message.length,
+    });
+
     const promptInput = buildPromptInput({
       systemInstructions: persona.systemPrompt,
       conversationHistory: priorMessages,
       userMessage: message,
-      retrievedContext: [], // RAG slot — empty in V1
+      retrievedContext: [],
     });
 
-    // Stream from OpenAI
+    // SSE streaming response
     const stream = new ReadableStream({
       async start(controller) {
+        const streamStart = Date.now();
         try {
-          // Send chatId first so client knows which thread to track
-          controller.enqueue(
-            encodeSSE("meta", { chatId, isNewChat }),
-          );
+          controller.enqueue(encodeSSE("meta", { chatId, isNewChat }));
 
-          const response = await createStreamingResponse({
-            messages: promptInput,
-          });
+          const response = await createStreamingResponse({ messages: promptInput });
 
           let fullContent = "";
 
           for await (const event of response) {
             if (event.type === "response.output_text.delta") {
               fullContent += event.delta;
-              controller.enqueue(
-                encodeSSE("delta", { content: event.delta }),
-              );
+              controller.enqueue(encodeSSE("delta", { content: event.delta }));
             }
 
             if (event.type === "response.completed") {
@@ -105,14 +112,34 @@ export async function POST(request: Request) {
                 usage: resp.usage,
               });
 
-              controller.enqueue(
-                encodeSSE("done", { responseId: resp.id }),
-              );
+              const usage = resp.usage as Record<string, unknown> | undefined;
+              log.info({
+                event: "persona.chat.completed",
+                requestId,
+                chatId,
+                personaId: persona.id,
+                responseId: resp.id,
+                durationMs: Date.now() - streamStart,
+                inputTokens: usage?.input_tokens,
+                outputTokens: usage?.output_tokens,
+                totalTokens: usage?.total_tokens,
+                outputChars: fullContent.length,
+              });
+
+              controller.enqueue(encodeSSE("done", { responseId: resp.id }));
             }
           }
         } catch (err) {
-          const errorMessage =
-            err instanceof Error ? err.message : "Stream failed";
+          const errorMessage = err instanceof Error ? err.message : "Stream failed";
+          log.error({
+            event: "persona.chat.stream_error",
+            requestId,
+            chatId,
+            stage: "openai",
+            errorName: err instanceof Error ? err.name : "Unknown",
+            errorMessage,
+            durationMs: Date.now() - streamStart,
+          });
           controller.enqueue(encodeSSE("error", { error: errorMessage }));
         } finally {
           controller.close();
@@ -128,7 +155,14 @@ export async function POST(request: Request) {
       },
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Internal error";
-    return Response.json({ error: message }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : "Internal error";
+    log.error({
+      event: "persona.chat.fatal",
+      requestId,
+      errorName: err instanceof Error ? err.name : "Unknown",
+      errorMessage,
+      durationMs: Date.now() - startTime,
+    });
+    return Response.json({ error: errorMessage }, { status: 500 });
   }
 }

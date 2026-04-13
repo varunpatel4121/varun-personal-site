@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database, Project } from "@/lib/supabase/types";
+import { log } from "@/lib/logger";
 
 /**
  * The signup trigger normally creates the profile row, but it can be missing
@@ -17,6 +18,7 @@ async function ensureProfile(
     .single();
 
   if (!data) {
+    log.info({ event: "persona.profile.backfill", userId });
     await supabase.from("profiles").insert({ id: userId });
   }
 }
@@ -37,6 +39,8 @@ export async function getOrCreateDefaultProject(
 
   if (existing) return existing as Project;
 
+  log.info({ event: "persona.project.create", userId });
+
   const { data: created, error } = await supabase
     .from("projects")
     .insert({
@@ -49,6 +53,14 @@ export async function getOrCreateDefaultProject(
     .select()
     .single();
 
-  if (error) throw new Error(`Failed to create default project: ${error.message}`);
+  if (error) {
+    log.error({
+      event: "persona.project.create_failed",
+      userId,
+      errorMessage: error.message,
+    });
+    throw new Error(`Failed to create default project: ${error.message}`);
+  }
+
   return created as Project;
 }

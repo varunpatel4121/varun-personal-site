@@ -1,4 +1,5 @@
 import { getOpenAIClient } from "./client";
+import { log } from "@/lib/logger";
 
 type InputMessage = {
   role: "system" | "user" | "assistant";
@@ -14,6 +15,13 @@ export interface StreamOptions {
 export async function createStreamingResponse(opts: StreamOptions) {
   const client = getOpenAIClient();
   const model = opts.model ?? process.env.PERSONA_CHAT_MODEL ?? "gpt-5.4";
+
+  log.debug({
+    event: "openai.request",
+    model,
+    messageCount: opts.messages.length,
+    hasPreviousResponse: !!opts.previousResponseId,
+  });
 
   const response = await client.responses.create({
     model,
