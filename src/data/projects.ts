@@ -33,6 +33,7 @@ export const projects: Project[] = [
     description:
       "Conversational AI with configurable personality layers and memory. Exploring what it means to build products that feel genuinely intelligent.",
     tags: ["AI/ML", "LLMs", "Product"],
+    href: "/apps/persona",
     featured: false,
   },
 ];

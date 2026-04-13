@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/ui/page-header";
 
 export const metadata: Metadata = {
@@ -9,16 +10,17 @@ export const metadata: Metadata = {
 
 const experiments = [
   {
-    title: "RAG Playground",
-    description:
-      "Upload a document and ask questions against it. Exploring chunking strategies, embedding models, and retrieval quality.",
-    status: "coming soon" as const,
-  },
-  {
     title: "Persona Engine",
     description:
       "Chat with configurable AI personalities. Testing memory, tone calibration, and conversational coherence.",
-    status: "coming soon" as const,
+    status: "work in progress" as const,
+    href: "/apps/persona",
+  },
+  {
+    title: "RAG Playground",
+    description:
+      "Upload a document and ask questions against it. Exploring chunking strategies, embedding models, and retrieval quality.",
+    status: "work in progress" as const,
   },
   {
     title: "Prompt Observatory",
@@ -28,11 +30,11 @@ const experiments = [
   },
 ];
 
-const statusStyles = {
-  "coming soon": "bg-surface text-muted",
+const statusStyles: Record<string, string> = {
+  "work in progress": "bg-amber-950 text-amber-400",
   idea: "bg-surface text-subtle",
   live: "bg-emerald-950 text-emerald-400",
-} as const;
+};
 
 export default function LabPage() {
   return (
@@ -43,24 +45,44 @@ export default function LabPage() {
       />
 
       <div className="animate-in-delayed space-y-4 pb-20">
-        {experiments.map((exp) => (
-          <div
-            key={exp.title}
-            className="rounded-lg border border-border-subtle p-5 transition-colors hover:border-border"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="font-medium tracking-tight">{exp.title}</h3>
-              <span
-                className={`shrink-0 rounded-full px-2.5 py-0.5 font-mono text-xs ${statusStyles[exp.status]}`}
+        {experiments.map((exp) => {
+          const inner = (
+            <>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="font-medium tracking-tight">{exp.title}</h3>
+                <span
+                  className={`shrink-0 rounded-full px-2.5 py-0.5 font-mono text-xs ${statusStyles[exp.status] ?? "bg-surface text-muted"}`}
+                >
+                  {exp.status}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {exp.description}
+              </p>
+            </>
+          );
+
+          if (exp.href) {
+            return (
+              <Link
+                key={exp.title}
+                href={exp.href}
+                className="block rounded-lg border border-border-subtle p-5 transition-colors hover:border-border hover:bg-surface/50"
               >
-                {exp.status}
-              </span>
+                {inner}
+              </Link>
+            );
+          }
+
+          return (
+            <div
+              key={exp.title}
+              className="rounded-lg border border-border-subtle p-5 transition-colors hover:border-border"
+            >
+              {inner}
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {exp.description}
-            </p>
-          </div>
-        ))}
+          );
+        })}
 
         <div className="!mt-12 rounded-lg border border-dashed border-border p-8 text-center">
           <p className="text-sm text-subtle">
