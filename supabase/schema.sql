@@ -20,6 +20,10 @@ create policy "Users can read own profile"
   on public.profiles for select
   using (auth.uid() = id);
 
+create policy "Users can insert own profile"
+  on public.profiles for insert
+  with check (auth.uid() = id);
+
 create policy "Users can update own profile"
   on public.profiles for update
   using (auth.uid() = id);
@@ -111,6 +115,7 @@ create table public.chats (
   project_id uuid not null references public.projects(id) on delete cascade,
   user_id uuid not null references public.profiles(id) on delete cascade,
   title text,
+  metadata jsonb not null default '{}',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -197,6 +202,7 @@ create trigger set_chats_updated_at
 create index idx_projects_user_app on public.projects (user_id, app);
 create index idx_documents_project on public.documents (project_id);
 create index idx_chats_project on public.chats (project_id);
+create index idx_chats_user_project_updated on public.chats (user_id, project_id, updated_at desc);
 create index idx_messages_chat on public.messages (chat_id);
 
 -- ============================================================

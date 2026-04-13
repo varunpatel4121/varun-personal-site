@@ -4,7 +4,7 @@ export const personaConfig = {
     "Conversational AI with configurable personality layers and memory.",
   version: "0.1.0",
   features: {
-    chat: false,
+    chat: true,
     personaBuilder: false,
     memorySystem: false,
   },
