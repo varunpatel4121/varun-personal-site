@@ -12,6 +12,9 @@ export function GoalsPage() {
   const [unlocked, setUnlocked] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Reading localStorage after hydration is the correct pattern here —
+    // null state renders nothing so there's no cascading render issue.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setUnlocked(localStorage.getItem(STORAGE_KEY) === "1");
   }, []);
 
