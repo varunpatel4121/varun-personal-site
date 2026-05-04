@@ -268,7 +268,7 @@ function SummerTab() {
         {GOAL_CARDS.map((card) => (
           <div
             key={card.title}
-            className="rounded-xl border border-border-subtle bg-surface/30 p-5 transition-colors hover:border-border"
+            className="rounded-xl border border-border-subtle bg-surface p-5 transition-colors hover:border-border hover:bg-surface-elevated"
           >
             <div className="mb-4 flex items-start gap-3">
               <span className="mt-0.5 text-xl leading-none">{card.emoji}</span>
@@ -293,7 +293,7 @@ function SummerTab() {
       </div>
 
       {/* Startup card — full width */}
-      <div className="rounded-xl border border-border-subtle bg-surface/30 p-6 transition-colors hover:border-border">
+      <div className="rounded-xl border border-border-subtle bg-surface p-6 transition-colors hover:border-border hover:bg-surface-elevated">
         <div className="mb-5 flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-base leading-none">
             🚀
@@ -474,7 +474,7 @@ function OdysseyTab() {
         {PATHS.map((path) => (
           <div
             key={path.index}
-            className="group relative overflow-hidden rounded-xl border border-border-subtle bg-surface/30 p-6 transition-colors hover:bg-surface/50"
+            className="group relative overflow-hidden rounded-xl border border-border-subtle bg-surface p-6 transition-colors hover:bg-surface-elevated"
             style={{ borderLeftWidth: "3px", borderLeftColor: path.accent }}
           >
             {/* Faint background index number */}
@@ -572,7 +572,7 @@ function OdysseyTab() {
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <div
-            className="rounded-xl border border-border-subtle bg-surface/30 p-5"
+            className="rounded-xl border border-border-subtle bg-surface p-5"
             style={{ borderLeftWidth: "3px", borderLeftColor: "rgba(248,113,113,0.45)" }}
           >
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.15em] text-red-400/70">
@@ -595,7 +595,7 @@ function OdysseyTab() {
           </div>
 
           <div
-            className="rounded-xl border border-border-subtle bg-surface/30 p-5"
+            className="rounded-xl border border-border-subtle bg-surface p-5"
             style={{ borderLeftWidth: "3px", borderLeftColor: "rgba(52,211,153,0.45)" }}
           >
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.15em] text-emerald-400/70">

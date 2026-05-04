@@ -42,7 +42,7 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
       <Link
         href={project.href}
-        className="group block rounded-lg border border-border-subtle p-5 transition-colors hover:border-border hover:bg-surface/50"
+        className="group block rounded-lg border border-border-subtle bg-surface p-5 transition-colors hover:border-border hover:bg-surface-elevated"
       >
         {content}
       </Link>
@@ -50,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
   }
 
   return (
-    <div className="group rounded-lg border border-border-subtle p-5 transition-colors hover:border-border">
+    <div className="group rounded-lg border border-border-subtle bg-surface p-5 transition-colors hover:border-border hover:bg-surface-elevated">
       {content}
     </div>
   );
