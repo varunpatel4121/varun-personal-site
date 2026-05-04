@@ -1,6 +1,8 @@
 import { AppShell } from "@/components/platform/app-shell";
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 export default async function PlatformLayout({
   children,
 }: Readonly<{
