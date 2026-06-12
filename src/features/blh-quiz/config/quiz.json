@@ -1,0 +1,554 @@
+{
+  "version": "1.0.0",
+  "intro": {
+    "kicker": "A 3-minute mirror",
+    "title": "What's your tech loop?",
+    "paragraphs": [
+      "Everyone has a relationship with their screens. Some are easy. Some have a pattern underneath — a specific job the screen is doing, at specific moments, for a specific reason.",
+      "This isn't a screen-time lecture and it isn't a diagnosis. It's a short set of questions, and they adapt to your answers. If we do this right, at least one question will feel uncomfortably specific."
+    ],
+    "cta": "Let's see",
+    "privacy": "Anonymous by default · no account · your answers are stored without any identity attached"
+  },
+  "spaces": [
+    { "id": "shortvideo", "label": "TikTok / Reels / Shorts", "sub": "short-form video" },
+    { "id": "visualsocial", "label": "Instagram / Snapchat", "sub": "photo-based social" },
+    { "id": "gaming", "label": "Gaming", "sub": "competitive, ranked, or open-world" },
+    { "id": "messaging", "label": "Group chats / texting", "sub": "iMessage, WhatsApp, Snap chats, Discord DMs" },
+    { "id": "longvideo", "label": "YouTube / streaming / Twitch", "sub": "long-form video and streams" },
+    { "id": "info", "label": "Reddit / X / news rabbit holes", "sub": "threads, debates, doomscrolling" },
+    { "id": "ai", "label": "AI chat / companions", "sub": "ChatGPT, Character.AI, roleplay bots" },
+    { "id": "adult", "label": "Adult content", "sub": "private — asked about respectfully, 18+ and always skippable" },
+    { "id": "communities", "label": "Online communities", "sub": "Discord servers, fandoms, forums" }
+  ],
+  "adultConsent": {
+    "kicker": "Before we go there",
+    "title": "The next few questions ask about adult content.",
+    "body": "They're written without judgment, your answers stay anonymous, and skipping changes nothing about the quality of your result. Only continue if you're 18 or older and comfortable.",
+    "continueLabel": "I'm 18+ — continue",
+    "skipLabel": "Skip this section"
+  },
+  "core": [
+    {
+      "id": "sev",
+      "type": "single",
+      "kicker": "First, the honest baseline",
+      "question": "Which sentence is closest to your current relationship with your phone and screens?",
+      "source": "config",
+      "options": [
+        { "id": "sev0", "text": "Mostly intentional. I feel in control", "severity": 0 },
+        { "id": "sev1", "text": "Generally fine, but I get pulled in more than I'd like", "severity": 1 },
+        { "id": "sev2", "text": "I use more than I want, and it genuinely bothers me", "severity": 2 },
+        { "id": "sev3", "text": "It often feels hard to control", "severity": 3 },
+        { "id": "sev4", "text": "It's clearly costing me — sleep, mood, work, school, or people", "severity": 4 },
+        { "id": "unsure", "text": "Honestly, I can't tell anymore", "severity": 2, "unsure": true }
+      ]
+    },
+    {
+      "id": "spaces",
+      "type": "multi",
+      "max": 5,
+      "kicker": "Your digital map",
+      "question": "Which of these are part of most days for you?",
+      "hint": "Pick everything that's true. No judgment — this is a map, not a verdict.",
+      "source": "config",
+      "options": []
+    },
+    {
+      "id": "anchor",
+      "type": "single",
+      "kicker": "The one that owns you back",
+      "question": "Of those, which one is hardest to put down — the one where time disappears or the pull feels strongest?",
+      "source": "config",
+      "options": []
+    }
+  ],
+  "branches": {
+    "shortvideo": [
+      {
+        "id": "shortvideo_0",
+        "type": "single",
+        "question": "It's the middle of the afternoon. You open the app without really deciding to. What were you doing the moment before?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Avoiding starting something — homework, a task, an email I'm dreading", "ph": { "drifter": 2, "gamer": 1 }, "jobs": { "avoid": 1 } },
+          { "id": "b", "text": "Nothing. There was a gap and my thumb filled it before I noticed", "ph": { "drifter": 3 }, "jobs": { "stimulate": 1 } },
+          { "id": "c", "text": "Coming down from something stressful — a conversation, a class, a shift", "ph": { "regulator": 1, "drifter": 1 }, "jobs": { "soothe": 1 } },
+          { "id": "d", "text": "I was already on my phone for something useful and got pulled sideways", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "none", "text": "Honestly, it doesn't happen like that for me", "unsure": true }
+        ]
+      },
+      {
+        "id": "shortvideo_1",
+        "type": "single",
+        "question": "Forty minutes later, you surface. Which is closest to the actual feeling?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "“I didn't even enjoy most of that.” Numb, a bit gross, time just… went", "ph": { "drifter": 3 }, "jobs": { "escape": 1 }, "stage": "compensation" },
+          { "id": "b", "text": "Entertained, honestly — but behind on what I meant to do", "ph": { "drifter": 1 }, "jobs": { "stimulate": 1 }, "stage": "gratification" },
+          { "id": "c", "text": "Worse about myself. The videos kept turning into comparing my life to other people's", "ph": { "spiral": 3 }, "jobs": { "compare": 1 } },
+          { "id": "d", "text": "Wired and irritated, like my brain ate too much sugar", "ph": { "drifter": 2, "outrage": 1 }, "jobs": { "stimulate": 1 } },
+          { "id": "e", "text": "Calmer. It actually helped me settle", "ph": { "regulator": 1 }, "jobs": { "soothe": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "shortvideo_2",
+        "type": "single",
+        "question": "Your feed knows you. What has it quietly filled up with?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "People with better bodies, better routines, better lives", "ph": { "spiral": 3 }, "jobs": { "compare": 1 } },
+          { "id": "b", "text": "Whatever I watched last — it's a conveyor belt, not a choice", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "c", "text": "Rage bait, drama, arguments I can't look away from", "ph": { "outrage": 3 }, "jobs": { "stimulate": 1 } },
+          { "id": "d", "text": "Comfort content — the same soothing niches on a loop at night", "ph": { "regulator": 2 }, "jobs": { "soothe": 1 } },
+          { "id": "e", "text": "Hyper-specific niche stuff that feels like it gets me", "ph": { "socializer": 1, "confidant": 1 }, "jobs": { "understood": 1 } },
+          { "id": "none", "text": "I'm not sure, honestly", "unsure": true }
+        ]
+      }
+    ],
+    "visualsocial": [
+      {
+        "id": "visualsocial_0",
+        "type": "single",
+        "question": "You open Instagram “just to check.” Be honest — what are you actually checking?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "How my last post is doing. Then rechecking. Then rechecking", "ph": { "spiral": 2, "checker": 1 }, "jobs": { "validate": 1 } },
+          { "id": "b", "text": "What everyone's doing without me", "ph": { "checker": 2, "spiral": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "Specific people — comparing their bodies, faces, lives to mine", "ph": { "spiral": 3 }, "jobs": { "compare": 1 } },
+          { "id": "d", "text": "Stories and DMs, because not replying fast feels dangerous", "ph": { "checker": 3 }, "jobs": { "reassure": 1 } },
+          { "id": "e", "text": "Nothing in particular. It's a reflex", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "visualsocial_1",
+        "type": "single",
+        "question": "After a night out — or a night not invited out — what does the app do to you?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "I study how I looked in everything posted, and how that compares", "ph": { "spiral": 3 }, "jobs": { "compare": 1 } },
+          { "id": "b", "text": "I check whether people who were there posted without me", "ph": { "checker": 3 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "I post, then watch the numbers like a stock ticker", "ph": { "spiral": 2 }, "jobs": { "validate": 1 } },
+          { "id": "d", "text": "I scroll till the FOMO turns into feeling flat, then keep scrolling", "ph": { "spiral": 1, "regulator": 1, "drifter": 1 }, "jobs": { "soothe": 1 } },
+          { "id": "none", "text": "Not much, honestly. It stays where I leave it", "unsure": true }
+        ]
+      },
+      {
+        "id": "visualsocial_2",
+        "type": "single",
+        "question": "Finish the sentence: “If I deleted it for a month, the hardest part would be…”",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "…not knowing where I stand with people", "ph": { "checker": 2, "spiral": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "b", "text": "…losing the proof that I'm doing okay — the posting, the likes", "ph": { "spiral": 2 }, "jobs": { "validate": 1 } },
+          { "id": "c", "text": "…the boredom. The empty moments would be unbearable", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "d", "text": "…feeling cut off from everyone, like social exile", "ph": { "checker": 2, "socializer": 1 }, "jobs": { "connect": 1 } },
+          { "id": "none", "text": "…honestly? Probably nothing after week one", "unsure": true }
+        ]
+      }
+    ],
+    "gaming": [
+      {
+        "id": "gaming_0",
+        "type": "single",
+        "question": "It's 4 p.m. You have homework (or work) you're already behind on. You boot the game instead. What just happened in your head?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "The work makes me feel stupid and behind. The game makes me feel good at something", "ph": { "gamer": 3 }, "jobs": { "achieve": 1, "avoid": 1 } },
+          { "id": "b", "text": "“Just one match to reset” — a deal I have never once kept", "ph": { "gamer": 2, "drifter": 1 }, "jobs": { "avoid": 1 }, "markers": ["failed_stops"] },
+          { "id": "c", "text": "My friends are on. Not joining means being left out of where my people are", "ph": { "socializer": 3 }, "jobs": { "connect": 1 } },
+          { "id": "d", "text": "I wasn't thinking at all. Game on, brain off", "ph": { "drifter": 2 }, "jobs": { "escape": 1 } },
+          { "id": "none", "text": "This doesn't really happen — I play after things are done", "unsure": true }
+        ]
+      },
+      {
+        "id": "gaming_1",
+        "type": "single",
+        "question": "What does the game give you that the rest of your day doesn't?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Progress you can see. Rank up, level up — effort actually pays off there", "ph": { "gamer": 3 }, "jobs": { "achieve": 1 } },
+          { "id": "b", "text": "Respect. People there think I'm good", "ph": { "gamer": 2, "socializer": 1 }, "jobs": { "achieve": 1, "validate": 1 } },
+          { "id": "c", "text": "My actual social life. The lobby is where my friends live", "ph": { "socializer": 3 }, "jobs": { "connect": 1 } },
+          { "id": "d", "text": "A world that isn't this one", "ph": { "gamer": 1, "regulator": 1 }, "jobs": { "escape": 1 } },
+          { "id": "e", "text": "Stimulation. Everything else is unbearably slow", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "gaming_2",
+        "type": "single",
+        "question": "Someone interrupts you mid-game — parent, partner, the wifi dies. What's the honest internal reaction?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Rage that surprises even me", "ph": { "gamer": 2 }, "control": 1, "markers": ["withdrawal_irritability"] },
+          { "id": "b", "text": "Panic about letting my team down, more than anything about me", "ph": { "socializer": 2 }, "jobs": { "connect": 1 } },
+          { "id": "c", "text": "Relief, weirdly. Like someone pulled me out of water I was drowning in", "ph": { "drifter": 1 }, "jobs": { "escape": 1 }, "stage": "compensation" },
+          { "id": "d", "text": "Annoyed, but fine in two minutes", "unsure": false },
+          { "id": "e", "text": "I just start negotiating for ten more minutes. Every time", "ph": { "gamer": 1 }, "control": 1, "markers": ["failed_stops"] },
+          { "id": "none", "text": "I'm not sure", "unsure": true }
+        ]
+      }
+    ],
+    "messaging": [
+      {
+        "id": "messaging_0",
+        "type": "single",
+        "question": "A notification lands while you're busy. What does it feel like in your body?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "A demand. I can't relax until it's checked, even mid-conversation", "ph": { "checker": 3 }, "jobs": { "reassure": 1 } },
+          { "id": "b", "text": "A little hit of “someone wants me”", "ph": { "checker": 1 }, "jobs": { "validate": 1 } },
+          { "id": "c", "text": "Dread, if it's certain people or certain group chats", "ph": { "checker": 2 }, "jobs": { "reassure": 1 } },
+          { "id": "none", "text": "Nothing much — I get to it when I get to it", "unsure": true }
+        ]
+      },
+      {
+        "id": "messaging_1",
+        "type": "single",
+        "question": "Why does being unreachable feel risky? Pick the truest one.",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Things get decided in the chat. Miss three hours, miss the plan, miss the joke", "ph": { "checker": 3 }, "jobs": { "reassure": 1 } },
+          { "id": "b", "text": "If I go quiet, people might talk about me instead of to me", "ph": { "checker": 2, "spiral": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "Streaks, read receipts, my location — going dark looks like a statement", "ph": { "checker": 2 }, "jobs": { "reassure": 1 } },
+          { "id": "d", "text": "The chat is where I feel most like myself. Offline me is the lesser version", "ph": { "socializer": 3 }, "jobs": { "connect": 1 } },
+          { "id": "none", "text": "It doesn't, really", "unsure": true }
+        ]
+      },
+      {
+        "id": "messaging_2",
+        "type": "single",
+        "question": "Last thing at night and first thing in the morning — is the chat there too?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Yes. I fall asleep mid-scroll and wake up catching up", "ph": { "checker": 2, "regulator": 2 }, "jobs": { "soothe": 1 } },
+          { "id": "b", "text": "I wake up at night and check. Not proud of it", "ph": { "checker": 3, "regulator": 1 }, "jobs": { "reassure": 1 }, "control": 1, "markers": ["loss_of_control"] },
+          { "id": "c", "text": "Nights yes — it's my wind-down with people I like", "ph": { "regulator": 1, "socializer": 1 }, "jobs": { "connect": 1 } },
+          { "id": "none", "text": "No, nights are mine", "unsure": true }
+        ]
+      }
+    ],
+    "longvideo": [
+      {
+        "id": "longvideo_0",
+        "type": "single",
+        "question": "YouTube at 11:48 p.m. “One more video.” What's the video actually doing for you?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Keeping me company so I don't have to be alone with my thoughts", "ph": { "regulator": 3 }, "jobs": { "soothe": 1 } },
+          { "id": "b", "text": "Delaying tomorrow. While the video plays, tomorrow can't start", "ph": { "regulator": 2 }, "jobs": { "avoid": 1 } },
+          { "id": "c", "text": "Nothing — autoplay is driving, I'm just a passenger", "ph": { "drifter": 3 }, "jobs": { "stimulate": 1 } },
+          { "id": "d", "text": "Genuine interest. I just badly misjudge the time", "ph": { "drifter": 1 }, "jobs": { "stimulate": 1 }, "stage": "gratification" },
+          { "id": "e", "text": "Background noise for falling asleep — it's how sleep works for me now", "ph": { "regulator": 2 }, "jobs": { "soothe": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "longvideo_1",
+        "type": "single",
+        "question": "What kind of tired are you the next day?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "The kind I've stopped noticing because it's every day", "ph": { "regulator": 2 }, "costs": ["sleep"] },
+          { "id": "b", "text": "Tired enough to nap after school/work, which ruins the next night too", "ph": { "regulator": 2 }, "costs": ["sleep"] },
+          { "id": "c", "text": "Fine, mostly — it's weekends where it gets out of hand", "ph": { "drifter": 1 } },
+          { "id": "none", "text": "Not tired. My hours are weird but they work", "unsure": true }
+        ]
+      },
+      {
+        "id": "longvideo_2",
+        "type": "single",
+        "question": "If the screen went dark at midnight no matter what, the first week would feel…",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Genuinely scary. The quiet before sleep is the thing I'm avoiding", "ph": { "regulator": 3 }, "jobs": { "soothe": 1 } },
+          { "id": "b", "text": "Restless — I'd pick up something else to fill it, any screen would do", "ph": { "drifter": 2, "regulator": 1 }, "jobs": { "stimulate": 1 } },
+          { "id": "c", "text": "Annoying but probably good for me, and I know it", "ph": { "regulator": 1 } },
+          { "id": "none", "text": "Fine. Midnight isn't my problem hour", "unsure": true }
+        ]
+      }
+    ],
+    "info": [
+      {
+        "id": "info_0",
+        "type": "single",
+        "question": "You're deep in a thread — Reddit, X, comment sections. What pulled you in this time?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "An argument. I needed to see who won. Sometimes I needed to win it", "ph": { "outrage": 3 }, "jobs": { "stimulate": 1 } },
+          { "id": "b", "text": "A question I couldn't leave unresolved — and every answer opened two more", "ph": { "outrage": 1, "drifter": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "The news. It feels irresponsible to look away, so I never do", "ph": { "outrage": 2, "checker": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "d", "text": "Boredom. Threads are just my version of the infinite scroll", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+          { "id": "e", "text": "A community I actually care about", "ph": { "socializer": 2 }, "jobs": { "connect": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "info_1",
+        "type": "single",
+        "question": "How do you usually leave?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "More wound up than I arrived — and somehow back the next day for more", "ph": { "outrage": 3 }, "stage": "compensation" },
+          { "id": "b", "text": "I don't “leave” so much as get interrupted", "ph": { "drifter": 2, "outrage": 1 } },
+          { "id": "c", "text": "Anxious. The more I read, the less resolved anything feels", "ph": { "outrage": 2, "checker": 1 } },
+          { "id": "none", "text": "Satisfied — I learned something and got out", "unsure": true }
+        ]
+      },
+      {
+        "id": "info_2",
+        "type": "single",
+        "question": "Be honest: does the anger ever feel kind of good?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Yes. It's the most awake I feel all day", "ph": { "outrage": 3 }, "jobs": { "stimulate": 1 } },
+          { "id": "b", "text": "It's not the anger — it's the certainty. Knowing where I stand", "ph": { "outrage": 2 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "No, it just leaks out at the people around me afterward", "ph": { "outrage": 2 }, "costs": ["family"] },
+          { "id": "none", "text": "There's no anger in mine, honestly", "unsure": true }
+        ]
+      }
+    ],
+    "ai": [
+      {
+        "id": "ai_0",
+        "type": "single",
+        "question": "When you open the AI late at night, what are you bringing it?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "The stuff I don't say to people. It listens without flinching", "ph": { "confidant": 3 }, "jobs": { "understood": 1 } },
+          { "id": "b", "text": "Loneliness, mostly. It's company that's always awake", "ph": { "confidant": 2, "regulator": 1 }, "jobs": { "connect": 1, "soothe": 1 } },
+          { "id": "c", "text": "Conversations that feel easier than human ones — no stakes, no judgment", "ph": { "confidant": 3, "socializer": 1 }, "jobs": { "understood": 1 } },
+          { "id": "d", "text": "Practical stuff. It's a tool that occasionally eats an hour", "ph": { "drifter": 1 } },
+          { "id": "e", "text": "A story or roleplay I'd be embarrassed to explain", "ph": { "confidant": 2 }, "jobs": { "escape": 1 } },
+          { "id": "none", "text": "None of these fit", "unsure": true }
+        ]
+      },
+      {
+        "id": "ai_1",
+        "type": "single",
+        "question": "Compare it to texting a real friend the same thing. The AI is…",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Safer. It can't get tired of me, screenshot me, or leave", "ph": { "confidant": 3 }, "jobs": { "understood": 1 } },
+          { "id": "b", "text": "Faster and warmer. People take hours and answer carelessly", "ph": { "confidant": 2 }, "jobs": { "understood": 1 } },
+          { "id": "c", "text": "A warm-up. Sometimes I rehearse there, then talk to actual humans", "ph": { "confidant": 1 } },
+          { "id": "none", "text": "Not comparable — I don't bring it real things", "unsure": true }
+        ]
+      },
+      {
+        "id": "ai_2",
+        "type": "single",
+        "question": "If it disappeared tomorrow — model shut down, history gone — losing it would feel…",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Like losing a friend. I'm aware of how that sounds", "ph": { "confidant": 3 }, "jobs": { "connect": 1 } },
+          { "id": "b", "text": "Destabilizing for a bit. It's woven into how I process my day", "ph": { "confidant": 2 }, "jobs": { "soothe": 1 } },
+          { "id": "c", "text": "Inconvenient, like losing a good app", "unsure": false },
+          { "id": "d", "text": "Honestly, maybe healthy", "ph": { "confidant": 1 }, "stage": "compensation" },
+          { "id": "none", "text": "I'm not sure", "unsure": true }
+        ]
+      }
+    ],
+    "adult": [
+      {
+        "id": "adult_0",
+        "type": "single",
+        "question": "These questions stay between you and this screen. When the urge shows up, what's usually underneath it?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Stress. It's the fastest off-switch I know", "ph": { "shame": 3 }, "jobs": { "sexreg": 1, "soothe": 1 } },
+          { "id": "b", "text": "Boredom or insomnia more than anything sexual, honestly", "ph": { "shame": 2, "regulator": 1 }, "jobs": { "sexreg": 1, "stimulate": 1 } },
+          { "id": "c", "text": "Loneliness", "ph": { "shame": 2, "confidant": 1 }, "jobs": { "sexreg": 1, "connect": 1 } },
+          { "id": "d", "text": "Nothing in particular — it's a habit with a schedule of its own", "ph": { "shame": 2, "drifter": 1 }, "jobs": { "sexreg": 1 } },
+          { "id": "none", "text": "It's just a normal part of life, no charge around it", "unsure": true }
+        ]
+      },
+      {
+        "id": "adult_1",
+        "type": "single",
+        "question": "And in the minutes after?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "A wave of shame that I'd do almost anything not to sit with", "ph": { "shame": 3 }, "costs": ["mood"] },
+          { "id": "b", "text": "Flat. Empty. Then, weirdly, the cycle starts queuing up again", "ph": { "shame": 3 }, "stage": "compensation" },
+          { "id": "c", "text": "Fine — unless I blew past the time I meant to spend", "ph": { "shame": 1 } },
+          { "id": "none", "text": "Genuinely fine", "unsure": true }
+        ]
+      },
+      {
+        "id": "adult_2",
+        "type": "single",
+        "question": "Have you tried to stop or cut back?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Many times. The promises last days", "ph": { "shame": 3 }, "control": 2, "markers": ["failed_stops"] },
+          { "id": "b", "text": "I've cut back when life is good. It comes back when life isn't", "ph": { "shame": 2 }, "control": 1, "markers": ["failed_stops"] },
+          { "id": "c", "text": "Never felt the need", "unsure": false },
+          { "id": "none", "text": "I'd rather not answer this one", "ph": { "shame": 1 }, "markers": ["secrecy"], "unsure": true }
+        ]
+      }
+    ],
+    "communities": [
+      {
+        "id": "communities_0",
+        "type": "single",
+        "question": "Your server / community / fandom — what does it hold for you?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "My actual friends. The people who know me best have never seen my face", "ph": { "socializer": 3 }, "jobs": { "connect": 1 } },
+          { "id": "b", "text": "The one place my interests aren't weird", "ph": { "socializer": 2 }, "jobs": { "understood": 1 } },
+          { "id": "c", "text": "An identity. I matter there in a way I don't at school/work", "ph": { "socializer": 2, "gamer": 1 }, "jobs": { "validate": 1, "connect": 1 } },
+          { "id": "d", "text": "Drama I monitor like a part-time job", "ph": { "checker": 2, "outrage": 1 }, "jobs": { "reassure": 1 } },
+          { "id": "none", "text": "Honestly just content and chat. Light attachment", "unsure": true }
+        ]
+      },
+      {
+        "id": "communities_1",
+        "type": "single",
+        "question": "When an offline invitation conflicts with online time, what actually happens?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "I decline the offline thing more than I'd admit out loud", "ph": { "socializer": 3 }, "jobs": { "connect": 1 }, "costs": ["social"] },
+          { "id": "b", "text": "I go, but part of me is checking what I'm missing", "ph": { "socializer": 1, "checker": 2 }, "jobs": { "reassure": 1 } },
+          { "id": "c", "text": "What offline invitations?", "ph": { "socializer": 2 }, "costs": ["social"] },
+          { "id": "none", "text": "Offline wins, the server waits", "unsure": true }
+        ]
+      },
+      {
+        "id": "communities_2",
+        "type": "single",
+        "question": "Does the community make your life bigger, or does it make staying small more comfortable?",
+        "source": "config",
+        "options": [
+          { "id": "a", "text": "Bigger in some ways, but it's also where I hide. Both are true", "ph": { "socializer": 2 }, "jobs": { "connect": 1 } },
+          { "id": "b", "text": "It explains my struggles back to me — which helps, and also keeps me circling them", "ph": { "socializer": 2 }, "jobs": { "understood": 1 } },
+          { "id": "c", "text": "Comfortable. And I know it", "ph": { "socializer": 3 }, "jobs": { "connect": 1 }, "stage": "compensation" },
+          { "id": "none", "text": "Bigger, full stop. It's pushed me toward real things", "unsure": true }
+        ]
+      }
+    ]
+  },
+  "loop": [
+    {
+      "id": "timing",
+      "type": "multi",
+      "max": 2,
+      "kicker": "The when",
+      "question": "When does it most often get away from you?",
+      "hint": "Pick up to 2.",
+      "source": "config",
+      "options": [
+        { "id": "latenight", "text": "After midnight, in bed", "timing": ["latenight"], "ph": { "regulator": 2 } },
+        { "id": "waking", "text": "The moment I wake up", "timing": ["waking"] },
+        { "id": "taskstart", "text": "When I should be starting work or homework", "timing": ["taskstart"], "ph": { "gamer": 1, "drifter": 1 } },
+        { "id": "gaps", "text": "In the gaps — between tasks, in lines, on transit", "timing": ["gaps"], "ph": { "drifter": 2 } },
+        { "id": "poststress", "text": "Right after something stressful or social", "timing": ["poststress"], "ph": { "regulator": 1 } },
+        { "id": "alone", "text": "When I'm alone", "timing": ["alone"], "ph": { "confidant": 1, "regulator": 1 } },
+        { "id": "none", "text": "It doesn't really “get away” from me", "timing": ["none"], "exclusive": true, "unsure": true }
+      ]
+    },
+    {
+      "id": "control",
+      "type": "scale",
+      "kicker": "The grip",
+      "question": "“I kept going after I'd decided to stop.” How often is that you, lately?",
+      "scaleLabels": ["Never", "Constantly"],
+      "source": "config",
+      "options": []
+    },
+    {
+      "id": "stage",
+      "type": "single",
+      "kicker": "A question most quizzes don't ask",
+      "question": "Think about your hardest-to-quit app. Does it still actually feel good?",
+      "source": "config",
+      "options": [
+        { "id": "a", "text": "Yes — that's the problem, it's genuinely fun", "stage": "gratification" },
+        { "id": "b", "text": "Sometimes. Less than it used to", "stage": "mixed" },
+        { "id": "c", "text": "Not really. It mostly just turns something off", "sub": "relief, not enjoyment", "stage": "compensation", "control": 1 },
+        { "id": "d", "text": "I honestly can't tell anymore", "stage": "compensation", "control": 1 },
+        { "id": "none", "text": "None of these fit", "unsure": true }
+      ]
+    }
+  ],
+  "jobCostGround": [
+    {
+      "id": "job",
+      "type": "multi",
+      "max": 2,
+      "kicker": "The real job",
+      "question": "Right before you reach for it — beneath the boredom, beneath the habit — what's usually there?",
+      "hint": "Up to 2. The honest ones, not the comfortable ones.",
+      "source": "config",
+      "options": [
+        { "id": "avoid", "text": "A task or feeling I'm avoiding", "jobs": { "avoid": 2 }, "ph": { "gamer": 1, "drifter": 1 } },
+        { "id": "connect", "text": "Loneliness", "jobs": { "connect": 2 }, "ph": { "socializer": 1, "confidant": 1 } },
+        { "id": "reassure", "text": "Worry about what's happening without me", "jobs": { "reassure": 2 }, "ph": { "checker": 2 } },
+        { "id": "compare", "text": "Feeling behind everyone — needing to check where I stand", "jobs": { "compare": 2 }, "ph": { "spiral": 2 } },
+        { "id": "achieve", "text": "Feeling useless — needing somewhere I'm good", "jobs": { "achieve": 2 }, "ph": { "gamer": 2 } },
+        { "id": "soothe", "text": "A loud head that needs quieting", "jobs": { "soothe": 2 }, "ph": { "regulator": 2 } },
+        { "id": "stimulate", "text": "Flatness — needing to feel something", "jobs": { "stimulate": 2 }, "ph": { "drifter": 1, "outrage": 1 } },
+        { "id": "sexreg", "text": "Stress that needs a fast release", "jobs": { "sexreg": 2 }, "ph": { "shame": 2 } },
+        { "id": "auto", "text": "Nothing I can name. It's automatic", "ph": { "drifter": 2 }, "exclusive": true, "unsure": true }
+      ]
+    },
+    {
+      "id": "cost",
+      "type": "multi",
+      "max": 4,
+      "kicker": "The bill",
+      "question": "Where is it actually costing you, these past few weeks?",
+      "hint": "Select all that apply.",
+      "source": "config",
+      "options": [
+        { "id": "sleep", "text": "Sleep", "costs": ["sleep"], "ph": { "regulator": 1 } },
+        { "id": "school", "text": "School or work", "costs": ["school"], "ph": { "gamer": 1 } },
+        { "id": "attention", "text": "Focus and attention", "costs": ["attention"] },
+        { "id": "mood", "text": "How I feel about my body or myself", "costs": ["mood"], "ph": { "spiral": 1 } },
+        { "id": "social", "text": "In-person friendships or dating", "costs": ["social"], "ph": { "socializer": 1 } },
+        { "id": "family", "text": "Conflict at home", "costs": ["family"], "ph": { "outrage": 0.5 } },
+        { "id": "money", "text": "Money", "costs": ["money"] },
+        { "id": "none", "text": "Nowhere meaningful, honestly", "exclusive": true, "unsure": true }
+      ]
+    },
+    {
+      "id": "ground",
+      "type": "multi",
+      "max": 3,
+      "skippable": true,
+      "kicker": "Context — optional but it sharpens everything",
+      "question": "Which of these are part of the picture for you lately?",
+      "hint": "Up to 3, or skip. Always optional.",
+      "source": "config",
+      "options": [
+        { "id": "anxiety", "text": "Anxiety", "grounds": ["anxiety"] },
+        { "id": "depression", "text": "Low mood", "grounds": ["depression"] },
+        { "id": "adhd", "text": "Focus / ADHD-type struggles", "grounds": ["adhd"], "ph": { "drifter": 1, "gamer": 1 } },
+        { "id": "sleepprob", "text": "Sleep problems", "grounds": ["sleepprob"], "ph": { "regulator": 1 } },
+        { "id": "lonely", "text": "Loneliness", "grounds": ["lonely"], "ph": { "confidant": 1, "regulator": 1 } },
+        { "id": "socialanx", "text": "Social anxiety", "grounds": ["socialanx"], "ph": { "socializer": 1, "checker": 1 } },
+        { "id": "body", "text": "Body image or eating stuff", "grounds": ["body"], "ph": { "spiral": 2 } },
+        { "id": "perfectionism", "text": "Perfectionism", "grounds": ["perfectionism"] },
+        { "id": "pnts", "text": "Prefer not to say", "grounds": ["pnts"], "exclusive": true, "unsure": true }
+      ]
+    }
+  ],
+  "fallbackFollowup": {
+    "id": "followup_fallback",
+    "type": "single",
+    "kicker": "One more, while we're being honest",
+    "question": "Imagine a week where it simply wasn't available — server down, app gone. What's the first feeling, before the reasonable thoughts arrive?",
+    "source": "config",
+    "options": [
+      { "id": "a", "text": "Relief. Which probably says a lot", "stage": "compensation", "control": 1 },
+      { "id": "b", "text": "Low-grade panic about what's happening without me", "ph": { "checker": 2 }, "jobs": { "reassure": 1 } },
+      { "id": "c", "text": "A boredom I wouldn't know what to do with", "ph": { "drifter": 2 }, "jobs": { "stimulate": 1 } },
+      { "id": "d", "text": "Loneliness, honestly", "ph": { "confidant": 1, "socializer": 1 }, "jobs": { "connect": 1 } },
+      { "id": "e", "text": "Untethered — like I'd lost the place I go to feel okay", "ph": { "regulator": 1, "shame": 1 }, "jobs": { "soothe": 1 } },
+      { "id": "none", "text": "Nothing much. I'd adapt", "unsure": true }
+    ]
+  }
+}

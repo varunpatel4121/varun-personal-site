@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const experiments = [
   {
+    title: "Tech Loop Quiz",
+    description:
+      "10-minute reflection on how you use your devices — and what that use is doing for you. Built for Blue Light Health. No account, fully anonymous.",
+    status: "live" as const,
+    href: "/quiz",
+  },
+  {
     title: "Persona Engine",
     description:
       "Chat with configurable AI personalities. Testing memory, tone calibration, and conversational coherence.",

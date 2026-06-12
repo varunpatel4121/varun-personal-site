@@ -1,0 +1,56 @@
+/* Quiz-specific Tailwind theme tokens. Imported by src/app/quiz/layout.tsx.
+   All names are non-conflicting with the site's global theme.
+   accent/accent2 are renamed to blh-accent/blh-accent2 to avoid collision. */
+
+@theme {
+  --color-bg0: #0a1120;
+  --color-bg1: #0f1b30;
+  --color-card: #141f33;
+  --color-card2: #182640;
+  --color-line: rgba(125, 211, 252, 0.14);
+  --color-line2: rgba(125, 211, 252, 0.3);
+  --color-ink: #e9eff8;
+  --color-dim: #9fb0c7;
+  --color-faint: #64748b;
+  --color-blh-accent: #5eead4;
+  --color-blh-accent2: #7dd3fc;
+  --color-warn: #fbbf24;
+  --color-rose: #fda4af;
+
+  --animate-screen-in: screen-in 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  --animate-pulse-soft: pulse-soft 1.6s ease-in-out infinite;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.blh-quiz-shell {
+  background: radial-gradient(
+    1200px 800px at 70% -10%,
+    #16294a 0%,
+    #0f1b30 45%,
+    #0a1120 100%
+  );
+  background-attachment: fixed;
+  min-height: 100dvh;
+  color: #e9eff8;
+  -webkit-font-smoothing: antialiased;
+}
