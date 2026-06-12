@@ -46,19 +46,21 @@ export function MirrorScreen({
   return (
     <div className="animate-screen-in">
       <Kicker>Checking my read</Kicker>
-      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-ink">
+      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-white">
         Before we finish — let me say back what I think I&apos;m seeing.
       </h2>
 
-      <div className="relative mt-6 overflow-hidden rounded-2xl border border-blh-accent/20 bg-blh-accent/6 px-5 py-5 text-[15.5px] leading-[1.7] text-ink">
-        <div className="absolute left-0 top-0 h-full w-[3px] rounded-l-2xl bg-gradient-to-b from-blh-accent2 to-blh-accent" />
+      <div
+        style={{ borderLeftColor: "#5eead4", backgroundColor: "rgba(94,234,212,0.07)" }}
+        className="relative mt-6 overflow-hidden rounded-r-2xl border-l-[3px] border-white/10 px-5 py-5 text-[15.5px] leading-[1.7] text-white/90"
+      >
         {text || (
-          <span className="animate-pulse-soft text-dim">Reading…</span>
+          <span className="animate-pulse-soft text-white/40">Reading…</span>
         )}
       </div>
 
       <div
-        className={`mt-6 flex flex-col gap-2.5 transition-opacity duration-400 ${
+        className={`mt-6 flex flex-col gap-2.5 transition-opacity duration-300 ${
           settled ? "opacity-100" : "pointer-events-none opacity-20"
         }`}
       >

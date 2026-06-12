@@ -4,11 +4,20 @@ import { useState } from "react";
 import type { QuizQuestion } from "../engine/types";
 import { quizConfig } from "./useQuiz";
 
+const TEAL = "#5eead4";
+const SKY = "#7dd3fc";
+const TEAL_BG = "rgba(94,234,212,0.12)";
+const TEAL_BORDER = "rgba(94,234,212,0.35)";
+const TEAL_GLOW = "0 0 0 1.5px #5eead4";
+
 /* ── Shared atoms ─────────────────────────────────────────────────────── */
 
 export function Kicker({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blh-accent/20 bg-blh-accent/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-blh-accent">
+    <div
+      style={{ color: TEAL, borderColor: "rgba(94,234,212,0.25)", backgroundColor: "rgba(94,234,212,0.08)" }}
+      className="mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em]"
+    >
       {children}
     </div>
   );
@@ -30,21 +39,21 @@ export function OptionButton({
   return (
     <button
       onClick={onClick}
-      className={[
-        "group w-full rounded-2xl border px-5 py-4 text-left text-[15px] leading-snug transition-all duration-150",
-        ghost
-          ? "border-white/8 bg-transparent text-dim hover:border-white/15 hover:bg-white/4"
-          : "border-white/10 bg-white/4 text-ink hover:border-blh-accent/30 hover:bg-white/7",
+      style={
         selected
-          ? "!border-blh-accent !bg-blh-accent/12 !text-ink shadow-[0_0_0_1px_var(--color-blh-accent)]"
-          : "",
-      ]
-        .filter(Boolean)
-        .join(" ")}
+          ? { borderColor: TEAL, backgroundColor: TEAL_BG, boxShadow: TEAL_GLOW }
+          : undefined
+      }
+      className={[
+        "w-full rounded-2xl border px-5 py-4 text-left text-[15px] leading-snug transition-all duration-150",
+        ghost
+          ? "border-white/10 bg-transparent text-white/50 hover:border-white/20 hover:bg-white/4"
+          : "border-white/10 bg-white/[0.04] text-white hover:border-white/20 hover:bg-white/[0.07]",
+      ].join(" ")}
     >
       <span className="block">{text}</span>
       {sub && (
-        <span className="mt-1 block text-[12.5px] leading-relaxed text-dim">
+        <span className="mt-1 block text-[12.5px] leading-relaxed text-white/40">
           {sub}
         </span>
       )}
@@ -65,7 +74,8 @@ export function PrimaryButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="rounded-xl bg-gradient-to-br from-blh-accent2 to-blh-accent px-7 py-3.5 text-[15px] font-bold tracking-tight text-[#07121f] shadow-[0_4px_20px_rgba(94,234,212,0.2)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,234,212,0.3)] disabled:cursor-default disabled:opacity-30 disabled:shadow-none disabled:hover:translate-y-0"
+      style={{ background: `linear-gradient(135deg, ${SKY} 0%, ${TEAL} 100%)` }}
+      className="rounded-xl px-7 py-3.5 text-[15px] font-bold tracking-tight text-[#07121f] shadow-[0_4px_20px_rgba(94,234,212,0.25)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(94,234,212,0.38)] disabled:cursor-default disabled:opacity-30 disabled:shadow-none disabled:hover:translate-y-0"
     >
       {children}
     </button>
@@ -82,7 +92,7 @@ export function GhostButton({
   return (
     <button
       onClick={onClick}
-      className="rounded-xl border border-white/10 bg-transparent px-6 py-3.5 text-[14.5px] font-medium text-dim transition-colors hover:border-white/20 hover:text-ink"
+      className="rounded-xl border border-white/10 bg-transparent px-6 py-3.5 text-[14.5px] font-medium text-white/50 transition-colors hover:border-white/20 hover:text-white/80"
     >
       {children}
     </button>
@@ -95,26 +105,29 @@ export function IntroScreen({ onBegin }: { onBegin: () => void }) {
   const intro = quizConfig.intro;
   return (
     <div className="flex min-h-dvh flex-col px-5 sm:px-8">
-      {/* Top: Brand mark */}
+      {/* Brand */}
       <div className="flex items-center gap-3 pt-6">
-        <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-blh-accent2 to-blh-accent text-[14px] font-black text-[#08121f]">
+        <div
+          style={{ background: `linear-gradient(135deg, ${SKY} 0%, ${TEAL} 100%)` }}
+          className="flex h-8 w-8 items-center justify-center rounded-xl text-[13px] font-black text-[#08121f]"
+        >
           B
         </div>
-        <span className="text-[11.5px] font-semibold uppercase tracking-[0.15em] text-dim">
+        <span className="text-[11.5px] font-semibold uppercase tracking-[0.15em] text-white/40">
           Blue Light Health
         </span>
       </div>
 
-      {/* Center: Content */}
+      {/* Content — vertically centered */}
       <div className="mx-auto flex w-full max-w-[540px] flex-1 flex-col justify-center py-10">
         <div className="animate-screen-in">
           <Kicker>{intro.kicker}</Kicker>
 
-          <h1 className="text-[clamp(32px,6vw,48px)] font-extrabold leading-[1.1] tracking-tight text-ink">
+          <h1 className="text-[clamp(32px,6vw,48px)] font-extrabold leading-[1.1] tracking-tight text-white">
             {intro.title}
           </h1>
 
-          <p className="mt-5 max-w-[460px] text-[16px] leading-[1.7] text-dim">
+          <p className="mt-5 max-w-[460px] text-[16px] leading-[1.7] text-white/55">
             {intro.paragraphs[0]}
           </p>
         </div>
@@ -122,14 +135,14 @@ export function IntroScreen({ onBegin }: { onBegin: () => void }) {
         {/* CTA — always visible */}
         <div className="animate-screen-in mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
           <PrimaryButton onClick={onBegin}>{intro.cta} →</PrimaryButton>
-          <span className="text-[12px] leading-relaxed text-faint">
+          <span className="text-[12px] text-white/35">
             ~10 min · anonymous · no account
           </span>
         </div>
       </div>
 
-      {/* Bottom: Disclaimer */}
-      <p className="mx-auto w-full max-w-[540px] pb-6 text-[11px] leading-relaxed text-faint">
+      {/* Bottom disclaimer */}
+      <p className="mx-auto w-full max-w-[540px] pb-6 text-[11px] leading-relaxed text-white/25">
         Not a diagnosis or medical advice. If anything brings up urgent safety
         concerns, call or text 988 (U.S.).
       </p>
@@ -155,11 +168,11 @@ function QuestionHeader({ q }: { q: QuizQuestion }) {
   return (
     <div className="mb-6">
       {q.kicker && <Kicker>{q.kicker}</Kicker>}
-      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-ink">
+      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-white">
         {q.question}
       </h2>
       {q.hint && (
-        <p className="mt-2 text-[13px] leading-relaxed text-faint">{q.hint}</p>
+        <p className="mt-2 text-[13px] leading-relaxed text-white/35">{q.hint}</p>
       )}
     </div>
   );
@@ -235,7 +248,7 @@ function MultiQuestion({
         ))}
       </div>
       {q.max && (
-        <p className="mt-3 text-[12px] text-faint">
+        <p className="mt-3 text-[12px] text-white/35">
           {selected.size} of {q.max} selected
         </p>
       )}
@@ -269,19 +282,19 @@ function ScaleQuestion({
           <button
             key={v}
             onClick={() => onAnswer([], v)}
-            className="flex-1 rounded-2xl border border-white/10 bg-white/4 py-5 text-[18px] font-bold text-ink transition-all duration-150 hover:-translate-y-0.5 hover:border-blh-accent/30 hover:bg-white/7"
+            className="flex-1 rounded-2xl border border-white/10 bg-white/[0.04] py-5 text-[18px] font-bold text-white transition-all duration-150 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08]"
           >
             {v + 1}
           </button>
         ))}
       </div>
-      <div className="mt-2.5 flex justify-between text-[12px] text-faint">
+      <div className="mt-2.5 flex justify-between text-[12px] text-white/35">
         <span>{q.scaleLabels?.[0]}</span>
         <span>{q.scaleLabels?.[1]}</span>
       </div>
       <button
         onClick={() => onAnswer(["unsure"])}
-        className="mt-6 text-[13px] text-faint transition-colors hover:text-dim"
+        className="mt-6 text-[13px] text-white/35 transition-colors hover:text-white/60"
       >
         Not sure
       </button>
@@ -300,10 +313,10 @@ export function ConsentScreen({
   return (
     <div className="animate-screen-in">
       <Kicker>{c.kicker}</Kicker>
-      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-ink">
+      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-white">
         {c.title}
       </h2>
-      <p className="mt-4 text-[15px] leading-[1.7] text-dim">{c.body}</p>
+      <p className="mt-4 text-[15px] leading-[1.7] text-white/55">{c.body}</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <PrimaryButton onClick={() => onDecide(true)}>
           {c.continueLabel}
@@ -319,9 +332,12 @@ export function ConsentScreen({
 export function FollowupsWait() {
   return (
     <div className="flex flex-1 items-center justify-center">
-      <div className="animate-pulse-soft text-[14px] tracking-wide text-dim">
+      <div className="animate-pulse-soft text-[14px] tracking-wide text-white/40">
         Reading your answers…
       </div>
     </div>
   );
 }
+
+/* ── Re-export constants for sibling components ───────────────────────── */
+export { TEAL, SKY, TEAL_BG, TEAL_BORDER };

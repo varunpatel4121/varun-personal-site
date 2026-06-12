@@ -30,8 +30,8 @@ export default function Quiz() {
       {!isIntro && (
         <div className="fixed left-0 top-0 z-20 h-[2px] w-full bg-white/5">
           <div
-            className="h-full bg-gradient-to-r from-blh-accent to-blh-accent2 transition-[width] duration-700 ease-out"
-            style={{ width: `${quiz.progress * 100}%` }}
+            style={{ background: "linear-gradient(90deg, #5eead4, #7dd3fc)", width: `${quiz.progress * 100}%` }}
+            className="h-full transition-[width] duration-700 ease-out"
           />
         </div>
       )}
@@ -39,7 +39,7 @@ export default function Quiz() {
       {/* Header — only on question/result screens */}
       {!isIntro && (
         <header className="sticky top-0 z-10 flex w-full items-center gap-3 px-6 py-4 backdrop-blur-sm">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-blh-accent2 to-blh-accent text-[13px] font-black text-[#08121f]">
+          <div style={{ background: "linear-gradient(135deg, #7dd3fc, #5eead4)" }} className="flex h-7 w-7 items-center justify-center rounded-lg text-[13px] font-black text-[#08121f]">
             B
           </div>
           <span className="text-[12px] font-semibold uppercase tracking-[0.15em] text-dim">

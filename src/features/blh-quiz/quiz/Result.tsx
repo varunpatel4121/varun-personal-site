@@ -19,26 +19,22 @@ import phenotypesJson from "../config/phenotypes.json";
 import { buildLlmContext, scoring, type LlmUsage } from "./useQuiz";
 import { GhostButton, Kicker, PrimaryButton } from "./screens";
 
+const TEAL = "#5eead4";
+const SKY = "#7dd3fc";
+
 const content = phenotypesJson as unknown as {
   phenotypes: Record<
     PhenotypeId,
-    {
-      name: string;
-      quote: string;
-      read: string;
-      pull: string;
-      job: string;
-      advice: string;
-    }
+    { name: string; quote: string; read: string; pull: string; job: string; advice: string }
   >;
   severityCopy: Record<string, { label: string; text: string }>;
   noDominantLoop: { title: string; read: string };
 };
 
-const SEV_STYLES: Record<string, string> = {
-  light_grip: "bg-blh-accent/10 text-blh-accent border border-blh-accent/20",
-  steady_pull: "bg-warn/10 text-warn border border-warn/20",
-  deep_loop: "bg-rose/10 text-rose border border-rose/20",
+const SEV_STYLES: Record<string, React.CSSProperties> = {
+  light_grip: { color: TEAL, backgroundColor: "rgba(94,234,212,0.1)", border: "1px solid rgba(94,234,212,0.25)" },
+  steady_pull: { color: "#fbbf24", backgroundColor: "rgba(251,191,36,0.1)", border: "1px solid rgba(251,191,36,0.25)" },
+  deep_loop:   { color: "#fda4af", backgroundColor: "rgba(253,164,175,0.1)", border: "1px solid rgba(253,164,175,0.25)" },
 };
 
 function postSession(record: SessionRecord) {
@@ -47,22 +43,12 @@ function postSession(record: SessionRecord) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(record),
     keepalive: true,
-  }).catch(() => {
-    /* analytics must never break the result page */
-  });
+  }).catch(() => {});
 }
 
 export function ResultScreen({
-  answers,
-  state,
-  classification,
-  severity,
-  safety,
-  llmUsed,
-  sessionId,
-  startedAt,
-  onNarrativeUsed,
-  onRestart,
+  answers, state, classification, severity, safety,
+  llmUsed, sessionId, startedAt, onNarrativeUsed, onRestart,
 }: {
   answers: AnswerRecord[];
   state: ScoringState;
@@ -75,13 +61,10 @@ export function ResultScreen({
   onNarrativeUsed: () => void;
   onRestart: () => void;
 }) {
-  const primary =
-    classification.primary !== "none"
-      ? content.phenotypes[classification.primary]
-      : null;
+  const primary = classification.primary !== "none"
+    ? content.phenotypes[classification.primary] : null;
   const secondary = classification.secondary
-    ? content.phenotypes[classification.secondary]
-    : null;
+    ? content.phenotypes[classification.secondary] : null;
   const sevCopy = content.severityCopy[severity.band];
   const jobs = topJobs(state, 2).map((j) => jobLabel(j as JobTag));
 
@@ -92,14 +75,12 @@ export function ResultScreen({
 
   const buildRecord = (fit: FitRating | null, fitText: string | null) =>
     buildSessionRecord(answers, scoring, {
-      sessionId,
-      startedAt,
+      sessionId, startedAt,
       completedAt: new Date().toISOString(),
       configVersion: scoring.version,
       schemaVersion: SCHEMA_VERSION,
       llmUsed: { ...llmUsed, narrative: narrativeUsedLlm.current },
-      fitRating: fit,
-      fitText,
+      fitRating: fit, fitText,
     });
 
   useEffect(() => {
@@ -108,8 +89,7 @@ export function ResultScreen({
 
     const fallback = primary ? primary.read : content.noDominantLoop.read;
     const ctx = buildLlmContext(answers, {
-      severityBand: severity.band,
-      safety,
+      severityBand: severity.band, safety,
       classification: {
         primaryName: primary?.name ?? null,
         primaryRead: primary?.read ?? null,
@@ -141,77 +121,70 @@ export function ResultScreen({
         {safety ? "Your reflection" : "Your loop, as best we can read it"}
       </Kicker>
 
-      {/* Phenotype header */}
       {primary ? (
         <div>
-          <div className="bg-gradient-to-r from-blh-accent2 to-blh-accent bg-clip-text text-[clamp(26px,5vw,36px)] font-extrabold tracking-tight text-transparent">
+          <div
+            style={{ background: `linear-gradient(90deg, ${SKY}, ${TEAL})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+            className="text-[clamp(26px,5vw,36px)] font-extrabold tracking-tight"
+          >
             {primary.name}
           </div>
-          <div className="mt-1.5 text-[15px] italic leading-relaxed text-dim">
+          <div className="mt-1.5 text-[15px] italic leading-relaxed text-white/50">
             &ldquo;{primary.quote}&rdquo;
           </div>
           {secondary && (
-            <div className="mt-2 text-[13.5px] text-dim">
-              with a secondary thread of{" "}
-              <b className="text-ink">{secondary.name}</b>
+            <div className="mt-2 text-[13.5px] text-white/50">
+              with a secondary thread of <b className="text-white/80">{secondary.name}</b>
             </div>
           )}
         </div>
       ) : (
-        <h1 className="text-[clamp(24px,5vw,32px)] font-extrabold tracking-tight text-ink">
+        <h1 className="text-[clamp(24px,5vw,32px)] font-extrabold tracking-tight text-white">
           {content.noDominantLoop.title}
         </h1>
       )}
 
       {/* Narrative card */}
-      <div className="rounded-2xl border border-white/8 bg-white/4 p-6">
-        <div className="min-h-[80px] whitespace-pre-wrap text-[15px] leading-[1.8] text-ink">
+      <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-6">
+        <div className="min-h-[80px] whitespace-pre-wrap text-[15px] leading-[1.8] text-white/90">
           {narrative || (
-            <span className="animate-pulse-soft text-dim">
-              Writing your read…
-            </span>
+            <span className="animate-pulse-soft text-white/35">Writing your read…</span>
           )}
         </div>
 
         {primary && narrative && (
-          <div className="mt-6 space-y-3 border-t border-white/6 pt-5">
+          <div className="mt-6 space-y-3 border-t border-white/8 pt-5">
             <PillarRow name="The pull" text={primary.pull} />
-            <PillarRow
-              name="The job"
-              text={jobs.length ? jobs.join("; ") : primary.job}
-            />
+            <PillarRow name="The job" text={jobs.length ? jobs.join("; ") : primary.job} />
             <PillarRow name="The loop" text={loopLine(state)} />
-            <PillarRow
-              name="The cost"
-              text={`Taxing ${costPhrase(state)}.`}
-            />
+            <PillarRow name="The cost" text={`Taxing ${costPhrase(state)}.`} />
           </div>
         )}
 
         <div className="mt-5">
           <span
-            className={`inline-flex items-center rounded-full px-3 py-1 text-[12px] font-semibold tracking-wide ${SEV_STYLES[severity.band]}`}
+            style={SEV_STYLES[severity.band]}
+            className="inline-flex items-center rounded-full px-3 py-1 text-[12px] font-semibold tracking-wide"
           >
             {sevCopy.label}
           </span>
-          <p className="mt-2.5 text-[13.5px] leading-[1.65] text-dim">
-            {sevCopy.text}
-          </p>
+          <p className="mt-2.5 text-[13.5px] leading-[1.65] text-white/50">{sevCopy.text}</p>
         </div>
       </div>
 
       {/* Advice callout */}
       {primary && (
-        <div className="rounded-2xl border border-blh-accent/15 bg-blh-accent/6 px-5 py-4.5 text-[14.5px] leading-[1.75] text-ink">
-          <span className="font-semibold text-blh-accent">One thing: </span>
+        <div
+          style={{ borderColor: "rgba(94,234,212,0.2)", backgroundColor: "rgba(94,234,212,0.06)" }}
+          className="rounded-2xl border px-5 py-4.5 text-[14.5px] leading-[1.75] text-white/80"
+        >
+          <span style={{ color: TEAL }} className="font-semibold">One thing: </span>
           {primary.advice}
         </div>
       )}
 
-      {/* Confidence note */}
-      <p className="text-[12px] leading-[1.6] text-faint">
-        Read confidence: {classification.confidence} · built from{" "}
-        {answers.length} answers · a starting point, not a verdict.
+      <p className="text-[12px] leading-[1.6] text-white/30">
+        Read confidence: {classification.confidence} · built from {answers.length} answers · a starting point, not a verdict.
       </p>
 
       {narrativeDone && (
@@ -227,30 +200,30 @@ export function ResultScreen({
 function PillarRow({ name, text }: { name: string; text: string }) {
   return (
     <div className="grid grid-cols-[80px_1fr] gap-3">
-      <div className="pt-0.5 text-[11px] font-bold uppercase tracking-wider text-blh-accent2">
+      <div style={{ color: SKY }} className="pt-0.5 text-[11px] font-bold uppercase tracking-wider">
         {name}
       </div>
-      <div className="text-[13.5px] leading-snug text-dim">{text}</div>
+      <div className="text-[13.5px] leading-snug text-white/55">{text}</div>
     </div>
   );
 }
 
 function SafetyBlock() {
   return (
-    <div className="rounded-2xl border border-blh-accent/20 bg-blh-accent/6 p-5">
-      <h2 className="text-[17px] font-bold text-ink">
+    <div
+      style={{ borderColor: "rgba(94,234,212,0.25)", backgroundColor: "rgba(94,234,212,0.06)" }}
+      className="rounded-2xl border p-5"
+    >
+      <h2 className="text-[17px] font-bold text-white">
         First — the part that matters more than any quiz.
       </h2>
-      <p className="mt-2.5 text-[14.5px] leading-[1.7] text-dim">
-        Your answers suggest you&apos;re carrying a lot right now. Loops like
-        this genuinely respond to support — reaching out is a strength move.
+      <p className="mt-2.5 text-[14.5px] leading-[1.7] text-white/55">
+        Your answers suggest you&apos;re carrying a lot right now. Loops like this genuinely respond to support — reaching out is a strength move.
       </p>
-      <div className="mt-4 rounded-xl border border-white/8 bg-white/4 px-4 py-3.5 text-[13.5px] leading-[1.7] text-dim">
-        <b className="text-ink">If things feel like too much:</b> call or text{" "}
-        <b className="text-blh-accent">988</b> (U.S. Suicide &amp; Crisis
-        Lifeline — free, 24/7), or text{" "}
-        <b className="text-blh-accent">HOME</b> to{" "}
-        <b className="text-blh-accent">741741</b>.
+      <div className="mt-4 rounded-xl border border-white/8 bg-white/[0.04] px-4 py-3.5 text-[13.5px] leading-[1.7] text-white/55">
+        <b className="text-white/90">If things feel like too much:</b> call or text{" "}
+        <b style={{ color: TEAL }}>988</b> (U.S. Suicide &amp; Crisis Lifeline — free, 24/7), or text{" "}
+        <b style={{ color: TEAL }}>HOME</b> to <b style={{ color: TEAL }}>741741</b>.
       </div>
     </div>
   );
@@ -263,10 +236,7 @@ const FIT_OPTIONS: { id: FitRating; label: string }[] = [
   { id: "not_me", label: "Not me" },
 ];
 
-function FeedbackBlock({
-  onSubmit,
-  onRestart,
-}: {
+function FeedbackBlock({ onSubmit, onRestart }: {
   onSubmit: (fit: FitRating, text: string | null) => void;
   onRestart: () => void;
 }) {
@@ -275,8 +245,8 @@ function FeedbackBlock({
   const [done, setDone] = useState(false);
 
   return (
-    <div className="rounded-2xl border border-white/8 bg-white/4 p-6">
-      <h2 className="text-[17px] font-bold text-ink">
+    <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-6">
+      <h2 className="text-[17px] font-bold text-white">
         Last one — how well did we read you?
       </h2>
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -284,12 +254,10 @@ function FeedbackBlock({
           <button
             key={o.id}
             onClick={() => setFit(o.id)}
-            className={[
-              "rounded-xl border px-3 py-3 text-center text-[13.5px] font-medium transition-all duration-150",
-              fit === o.id
-                ? "border-blh-accent bg-blh-accent/12 text-ink shadow-[0_0_0_1px_var(--color-blh-accent)]"
-                : "border-white/8 bg-white/3 text-dim hover:border-white/15 hover:text-ink",
-            ].join(" ")}
+            style={fit === o.id
+              ? { borderColor: TEAL, backgroundColor: "rgba(94,234,212,0.12)", boxShadow: `0 0 0 1px ${TEAL}` }
+              : undefined}
+            className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-3 text-center text-[13.5px] font-medium text-white/60 transition-all duration-150 hover:border-white/20 hover:text-white/90"
           >
             {o.label}
           </button>
@@ -299,24 +267,20 @@ function FeedbackBlock({
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="What did we get right? What did we miss? (optional)"
-        className="mt-3.5 min-h-[70px] w-full resize-y rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-[14px] text-ink placeholder:text-faint focus:border-blh-accent/30 focus:outline-none"
+        className="mt-3.5 min-h-[70px] w-full resize-y rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 text-[14px] text-white/80 placeholder:text-white/25 focus:outline-none"
+        style={{ outlineColor: TEAL }}
       />
       <div className="mt-4 flex items-center gap-3">
         <PrimaryButton
           disabled={fit === null || done}
-          onClick={() => {
-            if (fit) {
-              onSubmit(fit, text.trim() || null);
-              setDone(true);
-            }
-          }}
+          onClick={() => { if (fit) { onSubmit(fit, text.trim() || null); setDone(true); } }}
         >
           Done
         </PrimaryButton>
         <GhostButton onClick={onRestart}>Retake</GhostButton>
       </div>
       {done && (
-        <p className="mt-3 text-[14px] font-semibold text-blh-accent">
+        <p style={{ color: TEAL }} className="mt-3 text-[14px] font-semibold">
           Thank you — this is how the quiz gets sharper.
         </p>
       )}
