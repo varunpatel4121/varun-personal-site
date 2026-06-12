@@ -29,7 +29,9 @@ export function MirrorScreen({
       ? fallbackMirrorText(state) + " Does that track?"
       : "So far your answers don't point at one strong pattern — your use might genuinely be lighter than most. The last few questions will tell us. Does that track?";
 
-    streamProse("/api/quiz/llm/mirror", buildLlmContext(answers), (t) => setText(t))
+    streamProse("/api/quiz/llm/mirror", buildLlmContext(answers), (t) =>
+      setText(t),
+    )
       .then(() => {
         usedLlm.current = true;
         setSettled(true);
@@ -44,21 +46,24 @@ export function MirrorScreen({
   return (
     <div className="animate-screen-in">
       <Kicker>Checking my read</Kicker>
-      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight">
-        Before we finish — let me say back what I think I'm seeing.
+      <h2 className="text-[clamp(20px,4vw,26px)] font-bold leading-[1.3] tracking-tight text-ink">
+        Before we finish — let me say back what I think I&apos;m seeing.
       </h2>
-      <div className="mt-4 min-h-[88px] rounded-r-2xl border-l-[3px] border-blh-accent bg-blh-accent/5 px-5 py-4.5 text-[16.5px] leading-[1.65]">
+
+      <div className="relative mt-6 overflow-hidden rounded-2xl border border-blh-accent/20 bg-blh-accent/6 px-5 py-5 text-[15.5px] leading-[1.7] text-ink">
+        <div className="absolute left-0 top-0 h-full w-[3px] rounded-l-2xl bg-gradient-to-b from-blh-accent2 to-blh-accent" />
         {text || (
           <span className="animate-pulse-soft text-dim">Reading…</span>
         )}
       </div>
+
       <div
-        className={`mt-5 flex flex-col gap-2.5 transition-opacity duration-300 ${
-          settled ? "opacity-100" : "pointer-events-none opacity-30"
+        className={`mt-6 flex flex-col gap-2.5 transition-opacity duration-400 ${
+          settled ? "opacity-100" : "pointer-events-none opacity-20"
         }`}
       >
         <OptionButton
-          text="Yeah. That's… exactly it"
+          text="Yeah. That's exactly it"
           onClick={() => onRespond("exactly", usedLlm.current)}
         />
         <OptionButton
@@ -67,6 +72,7 @@ export function MirrorScreen({
         />
         <OptionButton
           text="No, that's not me"
+          ghost
           onClick={() => onRespond("not_me", usedLlm.current)}
         />
       </div>

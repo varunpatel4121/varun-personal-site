@@ -36,9 +36,9 @@ const content = phenotypesJson as unknown as {
 };
 
 const SEV_STYLES: Record<string, string> = {
-  light_grip: "bg-blh-accent/10 text-blh-accent",
-  steady_pull: "bg-warn/10 text-warn",
-  deep_loop: "bg-rose/15 text-rose",
+  light_grip: "bg-blh-accent/10 text-blh-accent border border-blh-accent/20",
+  steady_pull: "bg-warn/10 text-warn border border-warn/20",
+  deep_loop: "bg-rose/10 text-rose border border-rose/20",
 };
 
 function postSession(record: SessionRecord) {
@@ -48,7 +48,7 @@ function postSession(record: SessionRecord) {
     body: JSON.stringify(record),
     keepalive: true,
   }).catch(() => {
-    /* anonymous analytics must never break the user's result */
+    /* analytics must never break the result page */
   });
 }
 
@@ -134,36 +134,38 @@ export function ResultScreen({
   }, []);
 
   return (
-    <div className="animate-screen-in">
+    <div className="animate-screen-in space-y-5">
       {safety && <SafetyBlock />}
 
       <Kicker>
         {safety ? "Your reflection" : "Your loop, as best we can read it"}
       </Kicker>
 
+      {/* Phenotype header */}
       {primary ? (
-        <>
-          <div className="bg-gradient-to-r from-blh-accent2 to-blh-accent bg-clip-text text-[clamp(24px,5vw,32px)] font-extrabold tracking-tight text-transparent">
+        <div>
+          <div className="bg-gradient-to-r from-blh-accent2 to-blh-accent bg-clip-text text-[clamp(26px,5vw,36px)] font-extrabold tracking-tight text-transparent">
             {primary.name}
           </div>
-          <div className="mt-1 text-[15.5px] italic leading-relaxed text-dim">
+          <div className="mt-1.5 text-[15px] italic leading-relaxed text-dim">
             &ldquo;{primary.quote}&rdquo;
           </div>
           {secondary && (
-            <div className="mt-3 text-[14px] text-dim">
+            <div className="mt-2 text-[13.5px] text-dim">
               with a secondary thread of{" "}
               <b className="text-ink">{secondary.name}</b>
             </div>
           )}
-        </>
+        </div>
       ) : (
-        <h1 className="text-[clamp(24px,5vw,32px)] font-extrabold tracking-tight">
+        <h1 className="text-[clamp(24px,5vw,32px)] font-extrabold tracking-tight text-ink">
           {content.noDominantLoop.title}
         </h1>
       )}
 
-      <div className="mt-5 rounded-2xl border border-line bg-card p-6">
-        <div className="min-h-[72px] whitespace-pre-wrap text-[15.5px] leading-[1.75]">
+      {/* Narrative card */}
+      <div className="rounded-2xl border border-white/8 bg-white/4 p-6">
+        <div className="min-h-[80px] whitespace-pre-wrap text-[15px] leading-[1.8] text-ink">
           {narrative || (
             <span className="animate-pulse-soft text-dim">
               Writing your read…
@@ -171,8 +173,8 @@ export function ResultScreen({
           )}
         </div>
 
-        {primary && (
-          <div className="mt-5 space-y-3">
+        {primary && narrative && (
+          <div className="mt-6 space-y-3 border-t border-white/6 pt-5">
             <PillarRow name="The pull" text={primary.pull} />
             <PillarRow
               name="The job"
@@ -181,42 +183,42 @@ export function ResultScreen({
             <PillarRow name="The loop" text={loopLine(state)} />
             <PillarRow
               name="The cost"
-              text={`It's currently taxing ${costPhrase(state)}.`}
+              text={`Taxing ${costPhrase(state)}.`}
             />
           </div>
         )}
 
-        <div className="mt-4.5">
+        <div className="mt-5">
           <span
-            className={`inline-block rounded-full px-3 py-1 text-[12.5px] font-bold tracking-wide ${SEV_STYLES[severity.band]}`}
+            className={`inline-flex items-center rounded-full px-3 py-1 text-[12px] font-semibold tracking-wide ${SEV_STYLES[severity.band]}`}
           >
             {sevCopy.label}
           </span>
+          <p className="mt-2.5 text-[13.5px] leading-[1.65] text-dim">
+            {sevCopy.text}
+          </p>
         </div>
-        <p className="mt-2 text-[14px] leading-[1.65] text-dim">
-          {sevCopy.text}
-        </p>
       </div>
 
+      {/* Advice callout */}
       {primary && (
-        <div className="mt-4 rounded-2xl border border-line bg-blh-accent2/5 px-5 py-4.5 text-[15px] leading-[1.75]">
-          <span className="font-semibold text-blh-accent">
-            If you change one thing:
-          </span>{" "}
+        <div className="rounded-2xl border border-blh-accent/15 bg-blh-accent/6 px-5 py-4.5 text-[14.5px] leading-[1.75] text-ink">
+          <span className="font-semibold text-blh-accent">One thing: </span>
           {primary.advice}
         </div>
       )}
 
-      <p className="mt-6 text-[12.5px] leading-[1.6] text-faint">
-        Read confidence: {classification.confidence}. This is a draft
-        reflection built from {answers.length} answers — a starting point for
-        understanding your pattern, not a verdict and not a diagnosis. A
-        clinician who knows this territory can tell you whether it actually
-        fits.
+      {/* Confidence note */}
+      <p className="text-[12px] leading-[1.6] text-faint">
+        Read confidence: {classification.confidence} · built from{" "}
+        {answers.length} answers · a starting point, not a verdict.
       </p>
 
       {narrativeDone && (
-        <FeedbackBlock onSubmit={(fit, text) => postSession(buildRecord(fit, text))} onRestart={onRestart} />
+        <FeedbackBlock
+          onSubmit={(fit, text) => postSession(buildRecord(fit, text))}
+          onRestart={onRestart}
+        />
       )}
     </div>
   );
@@ -224,48 +226,41 @@ export function ResultScreen({
 
 function PillarRow({ name, text }: { name: string; text: string }) {
   return (
-    <div className="grid grid-cols-[88px_1fr] items-center gap-3 max-[520px]:grid-cols-[74px_1fr]">
-      <div className="text-xs font-bold uppercase tracking-wider text-blh-accent2">
+    <div className="grid grid-cols-[80px_1fr] gap-3">
+      <div className="pt-0.5 text-[11px] font-bold uppercase tracking-wider text-blh-accent2">
         {name}
       </div>
-      <div className="text-[14px] leading-normal">{text}</div>
+      <div className="text-[13.5px] leading-snug text-dim">{text}</div>
     </div>
   );
 }
 
 function SafetyBlock() {
   return (
-    <div className="mb-6 rounded-2xl border border-blh-accent/30 bg-blh-accent/5 p-6">
-      <h2 className="text-[18px] font-bold">
+    <div className="rounded-2xl border border-blh-accent/20 bg-blh-accent/6 p-5">
+      <h2 className="text-[17px] font-bold text-ink">
         First — the part that matters more than any quiz.
       </h2>
-      <p className="mt-2.5 text-[15px] leading-[1.7] text-dim">
-        Your answers suggest you&apos;re carrying a lot right now, and that the
-        loop you&apos;re in is tangled up with how you feel about yourself. That&apos;s
-        heavy, and it&apos;s not something anyone should white-knuckle alone.
-        Loops like this genuinely respond to support — reaching out is a
-        strength move, not an admission of anything.
+      <p className="mt-2.5 text-[14.5px] leading-[1.7] text-dim">
+        Your answers suggest you&apos;re carrying a lot right now. Loops like
+        this genuinely respond to support — reaching out is a strength move.
       </p>
-      <div className="mt-4 rounded-xl border border-line bg-card px-4 py-3.5 text-[14.5px] leading-[1.7]">
-        <b className="text-ink">If things ever feel like too much:</b>
-        <span className="text-dim">
-          {" "}
-          call or text <b className="text-blh-accent">988</b> (U.S. Suicide &amp;
-          Crisis Lifeline — free, 24/7, confidential), or text{" "}
-          <b className="text-blh-accent">HOME</b> to <b className="text-blh-accent">741741</b>{" "}
-          (Crisis Text Line). Outside the U.S., your local emergency number or
-          a trusted adult is the right first call.
-        </span>
+      <div className="mt-4 rounded-xl border border-white/8 bg-white/4 px-4 py-3.5 text-[13.5px] leading-[1.7] text-dim">
+        <b className="text-ink">If things feel like too much:</b> call or text{" "}
+        <b className="text-blh-accent">988</b> (U.S. Suicide &amp; Crisis
+        Lifeline — free, 24/7), or text{" "}
+        <b className="text-blh-accent">HOME</b> to{" "}
+        <b className="text-blh-accent">741741</b>.
       </div>
     </div>
   );
 }
 
 const FIT_OPTIONS: { id: FitRating; label: string }[] = [
-  { id: "all_me", label: "This is 100% me" },
+  { id: "all_me", label: "100% me" },
   { id: "mostly", label: "Mostly me" },
   { id: "partly", label: "Partly" },
-  { id: "not_me", label: "Not me at all" },
+  { id: "not_me", label: "Not me" },
 ];
 
 function FeedbackBlock({
@@ -280,23 +275,20 @@ function FeedbackBlock({
   const [done, setDone] = useState(false);
 
   return (
-    <div className="mt-6 rounded-2xl border border-line bg-card p-6">
-      <h2 className="text-[18px] font-bold">
-        Last question — and it&apos;s about us, not you
+    <div className="rounded-2xl border border-white/8 bg-white/4 p-6">
+      <h2 className="text-[17px] font-bold text-ink">
+        Last one — how well did we read you?
       </h2>
-      <p className="mt-1.5 text-[14px] text-dim">
-        How well did this actually read you?
-      </p>
-      <div className="mt-3.5 flex flex-wrap gap-2">
+      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {FIT_OPTIONS.map((o) => (
           <button
             key={o.id}
             onClick={() => setFit(o.id)}
             className={[
-              "min-w-[120px] flex-1 rounded-xl border px-3 py-3 text-center text-[14.5px] transition-all duration-150",
+              "rounded-xl border px-3 py-3 text-center text-[13.5px] font-medium transition-all duration-150",
               fit === o.id
-                ? "border-blh-accent bg-blh-accent/10 shadow-[0_0_0_1px_var(--color-blh-accent)]"
-                : "border-line bg-card2 hover:border-line2",
+                ? "border-blh-accent bg-blh-accent/12 text-ink shadow-[0_0_0_1px_var(--color-blh-accent)]"
+                : "border-white/8 bg-white/3 text-dim hover:border-white/15 hover:text-ink",
             ].join(" ")}
           >
             {o.label}
@@ -307,9 +299,9 @@ function FeedbackBlock({
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="What did we get right? What did we miss? (optional)"
-        className="mt-3.5 min-h-[74px] w-full resize-y rounded-xl border border-line bg-card2 px-4 py-3 text-[14.5px] text-ink placeholder:text-faint focus:border-line2 focus:outline-none"
+        className="mt-3.5 min-h-[70px] w-full resize-y rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-[14px] text-ink placeholder:text-faint focus:border-blh-accent/30 focus:outline-none"
       />
-      <div className="mt-4 flex items-center gap-2.5">
+      <div className="mt-4 flex items-center gap-3">
         <PrimaryButton
           disabled={fit === null || done}
           onClick={() => {
@@ -324,9 +316,9 @@ function FeedbackBlock({
         <GhostButton onClick={onRestart}>Retake</GhostButton>
       </div>
       {done && (
-        <div className="mt-3.5 text-[15px] font-semibold text-blh-accent">
-          Thank you — this is exactly how the quiz gets sharper.
-        </div>
+        <p className="mt-3 text-[14px] font-semibold text-blh-accent">
+          Thank you — this is how the quiz gets sharper.
+        </p>
       )}
     </div>
   );

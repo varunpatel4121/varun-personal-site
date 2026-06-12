@@ -17,8 +17,8 @@
   --color-warn: #fbbf24;
   --color-rose: #fda4af;
 
-  --animate-screen-in: screen-in 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
-  --animate-pulse-soft: pulse-soft 1.6s ease-in-out infinite;
+  --animate-screen-in: screen-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pulse-soft: pulse-soft 1.8s ease-in-out infinite;
 }
 
 @keyframes screen-in {
