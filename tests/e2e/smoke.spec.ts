@@ -13,7 +13,7 @@ test.describe("Public pages", () => {
 
   test("sign-in page has Google OAuth entry point", async ({ page }) => {
     await page.goto("/sign-in");
-    const googleButton = page.locator("text=/google/i");
+    const googleButton = page.getByRole("button", { name: /google/i });
     await expect(googleButton).toBeVisible({ timeout: 5000 });
   });
 });
