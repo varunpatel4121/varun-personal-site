@@ -23,8 +23,10 @@ export interface PhenotypeProfile {
   id: PhenotypeId;
   name: string;
   shortLabel: string;
-  /** Doubles as the disambiguation prompt line. */
+  /** First-person recognition line (kept for reference; not shown as the result hero). */
   recognitionLine: string;
+  /** Warm, second-person "the read" shown on the result page ("You're someone who…"). */
+  read: string;
   /** The phenotype's signature tie-breaker tag (worth 4 in rule weights). */
   signatureTieBreaker: TieBreakerTag;
   definition: string;

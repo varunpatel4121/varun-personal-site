@@ -2,14 +2,14 @@
  * Optional AI narrative layer — provider-agnostic.
  *
  * The deterministic engine assigns the phenotype and severity; this layer only
- * produces the *prose read*. The package ships `composeDeterministicNarrative`
- * (the basis AND the offline fallback) and `buildNarratorMessages` (a prompt
- * that asks an LLM to warm the tone of that deterministic draft — never to add
- * claims, diagnose, or change the assignment). The consuming app injects a
- * generic `complete()` so no provider/SDK is bundled here.
+ * produces the *prose read*. Each phenotype ships a warm, second-person "read"
+ * ("You're someone who…") in the library; `composeDeterministicNarrative`
+ * returns that (lightly contextualized by cost) as the basis AND the offline
+ * fallback. `buildNarratorMessages` asks an LLM to warm its tone only — never to
+ * add claims, diagnose, change the assignment, or slip into first person.
  */
 
-import type { OutputContract, PhenotypeProfile, SeverityBand } from "../types";
+import type { OutputContract, PhenotypeProfile } from "../types";
 import { tagLabel } from "../config";
 
 export interface NarrativeInput {
@@ -22,12 +22,8 @@ export interface NarrativeInput {
 export const CRISIS_MESSAGE =
   "Some of what you shared sounds heavy. If you're thinking about harming yourself or you're in danger, you deserve support right now — in the US you can call or text 988 (Suicide & Crisis Lifeline), available 24/7. You can still see your result below, but please reach out.";
 
-const BAND_PHRASE: Record<SeverityBand, string> = {
-  light_grip: "a light grip — a real pattern, but one that still looks mostly in your control",
-  steady_pull: "a steady pull — there's a clear draw here, with some cost showing up",
-  deep_loop: "a deep loop — this is taking a real, repeated toll",
-  high_impact_loop: "a high-impact loop — this is carrying a lot of weight right now",
-};
+const NO_DOMINANT_READ =
+  "From what you shared, there isn't one loop running the show right now. Your use looks mostly like something you steer, not something steering you — and that's worth noticing, and protecting.";
 
 function costPhrase(costs: string[]): string {
   const labels = costs.map((c) => tagLabel("cost_domain", c).toLowerCase());
@@ -38,38 +34,25 @@ function costPhrase(costs: string[]): string {
 }
 
 /**
- * Deterministic, warm result read assembled from the approved library copy.
+ * The warm, second-person result read assembled from the approved library copy.
  * This is what ships when AI is off, and the draft the AI is asked to warm.
  */
 export function composeDeterministicNarrative(input: NarrativeInput): string {
   const { output, profile } = input;
   if (!profile || output.primary_phenotype_id === "no_dominant_loop") {
-    return [
-      "From what you shared, there isn't one dominant loop running the show right now.",
-      "Your use looks mostly like something you're steering, not something steering you. That's worth noticing — and worth protecting.",
-    ].join("\n\n");
+    return NO_DOMINANT_READ;
   }
 
-  const band = BAND_PHRASE[output.severity_label];
+  const parts: string[] = [profile.read];
+
   const costs = costPhrase(output.cost_domains);
-
-  const opening = output.primary_adaptive
-    ? `What I'm hearing sounds like ${profile.name} — and in your case, it reads as mostly adaptive. ${profile.recognitionLine}`
-    : `What I'm hearing sounds like ${profile.name}. ${profile.recognitionLine}`;
-
-  const middle = output.primary_adaptive
-    ? profile.whenAdaptive
-    : `${profile.whatItsDoing} ${costs ? `Where it's showing up lately: ${costs}.` : ""}`.trim();
-
-  const closing = output.primary_adaptive
-    ? `${profile.whatHelps} A small place to start: ${profile.firstTinyStep.toLowerCase()}`
-    : `Right now this reads as ${band}. ${profile.whatHelps} One small place to start: ${profile.firstTinyStep.toLowerCase()}`;
-
-  const secondary = input.secondaryProfile
-    ? `\n\nThere's also a thread of ${input.secondaryProfile.name} here — ${input.secondaryProfile.recognitionLine.toLowerCase()}`
-    : "";
-
-  return `${opening}\n\n${middle}${secondary}\n\n${closing}`;
+  if (!output.primary_adaptive && costs) {
+    parts.push(`Lately it's shown up most in ${costs}.`);
+  }
+  if (input.secondaryProfile) {
+    parts.push(`There's a thread of ${input.secondaryProfile.name} running alongside it, too.`);
+  }
+  return parts.join("\n\n");
 }
 
 export interface NarratorMessages {
@@ -77,22 +60,21 @@ export interface NarratorMessages {
   user: string;
 }
 
-/** Builds the prompt that asks an LLM to warm the deterministic draft. */
+/** Builds the prompt that asks an LLM to warm the deterministic second-person read. */
 export function buildNarratorMessages(input: NarrativeInput): NarratorMessages {
   const draft = composeDeterministicNarrative(input);
   const avoid = input.profile?.avoidSaying ?? "Avoid diagnosis or addiction language.";
   const system = [
-    "You are the warm, precise voice of Blue Light Health's Tech Loop reflection.",
-    "You are given a DETERMINISTIC draft read produced by a scoring engine, plus approved clinical copy.",
-    "Your only job is to lightly warm and personalize the tone of the draft so it feels like a person was truly seen.",
-    "Hard rules: do NOT change the phenotype, severity, or any factual claim. Do NOT add new advice or content not in the draft.",
-    "Do NOT diagnose, label, pathologize, or use addiction language. Use motivational-interviewing voice: open, non-judgmental, autonomy-supporting.",
-    `Phenotype-specific guardrail: ${avoid}`,
-    "Keep it to 2–3 short paragraphs. Return prose only, no preamble.",
+    "You are the warm, perceptive voice of Blue Light Health's Tech Loop reflection.",
+    "You are given a DETERMINISTIC, second-person draft read produced by a scoring engine, plus approved clinical guardrails.",
+    "Your only job is to lightly warm and tighten the draft so the person feels genuinely seen.",
+    "Stay in SECOND person ('you', 'you're someone who'). Never use first person ('I', 'what I'm hearing'). Never name the phenotype label inside the prose.",
+    "Do NOT change the pattern, severity, or any claim. Do NOT add advice or content not in the draft. Do NOT diagnose, pathologize, or use addiction language.",
+    "Voice: plain, warm, a little literary, non-judgmental, autonomy-respecting. 2–3 short paragraphs. Return prose only, no preamble.",
+    `Guardrail for this pattern: ${avoid}`,
   ].join(" ");
   const user = [
     `STRUCTURED RESULT: ${JSON.stringify({
-      primary: input.output.primary_phenotype_name,
       adaptive: input.output.primary_adaptive,
       severity: input.output.severity_label,
       confidence: input.output.primary_confidence,
@@ -100,7 +82,7 @@ export function buildNarratorMessages(input: NarrativeInput): NarratorMessages {
       secondary: input.output.secondary_phenotype_name,
     })}`,
     "",
-    "DETERMINISTIC DRAFT (warm this, do not contradict it):",
+    "SECOND-PERSON DRAFT (warm this; keep its meaning, keep second person):",
     draft,
   ].join("\n");
   return { system, user };
