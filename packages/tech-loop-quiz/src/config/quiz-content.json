@@ -13,7 +13,7 @@
       { "value": "child", "label": "My child or teen" }
     ],
     "identityQuestion": "Where can we send your result?",
-    "identityHint": "Your result is ready.",
+    "identityHint": "Enter your name and email to unlock your full read.",
     "lifeStageQuestion": "What's your current stage of life?",
     "lifeStageOptions": [
       { "value": "school", "label": "In high school" },

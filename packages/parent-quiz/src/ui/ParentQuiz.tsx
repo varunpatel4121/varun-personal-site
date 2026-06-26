@@ -68,8 +68,7 @@ function EmailGate({ view, onSubmit }: { view: ParentResultView; onSubmit: (name
     <div className="q-center">
       <div className="q-kicker">{c.kicker}</div>
       <div className="q-result-name">{view.primary.name}</div>
-      <p className="q-recognition">“{view.primary.recognitionLine}”</p>
-      <p className="q-lead" style={{ margin: "14px auto 0" }}>{c.body}</p>
+      <p className="q-lead" style={{ margin: "8px auto 0" }}>{c.body}</p>
       <input className="q-input" style={{ maxWidth: 360, margin: "18px auto 0", textAlign: "center" }}
         placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
       <input className="q-input" style={{ maxWidth: 360, margin: "10px auto 0", textAlign: "center" }} type="email"

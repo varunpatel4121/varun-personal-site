@@ -10,9 +10,9 @@
   "emailGate": {
     "kicker": "Your result is ready",
     "title": "We think we see the pattern.",
-    "body": "Enter your name and email to see your family's full result and what may help.",
+    "body": "Enter your name and email to unlock your family's full result and what may help.",
     "placeholder": "Your email",
-    "cta": "Show me our result",
+    "cta": "See your result",
     "skip": "Just show the result"
   },
   "result": {

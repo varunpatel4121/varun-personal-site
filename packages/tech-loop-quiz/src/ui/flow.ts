@@ -171,6 +171,19 @@ export function useTechLoopQuiz(opts: UseTechLoopQuizOptions = {}) {
   const progress = step.kind === "result" ? 1 : Math.min(0.97, clampedPos / Math.max(total - 1, 13));
   const canGoBack = clampedPos > 0;
 
+  // Tease the result name on the identity gate. Identity is the last step before
+  // the result, so the full response is already scored deterministically here.
+  const previewName = useMemo(() => {
+    if (step.kind !== "identity") return null;
+    try {
+      const r = score(response);
+      const id = r.output.primary_phenotype_id;
+      return id === "no_dominant_loop" ? r.output.primary_phenotype_name : PHENOTYPE_PROFILE[id].name;
+    } catch {
+      return null;
+    }
+  }, [step.kind, response]);
+
   // Persist on every navigation / answer change.
   useEffect(() => {
     saveSnapshot({
@@ -312,7 +325,7 @@ export function useTechLoopQuiz(opts: UseTechLoopQuizOptions = {}) {
   }, []);
 
   return {
-    step, pos: clampedPos, progress, total, saving, canGoBack,
+    step, pos: clampedPos, progress, total, saving, canGoBack, previewName,
     response, result, narrative,
     begin, goBack, restart, finalize,
     submitReporter, submitIdentity, submitLifeStage, submitBaseline,

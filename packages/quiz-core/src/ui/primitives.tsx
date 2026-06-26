@@ -149,6 +149,13 @@ export function SingleChoice({
   );
 }
 
+/** Compose the multi-select subtext: merge an optional hint with the max. */
+function multiSubtext(hint: string | undefined, max: number | undefined): string {
+  if (hint && max) return `${hint.replace(/[.\s]+$/, "")}, up to ${max}`;
+  if (hint) return hint;
+  return max ? `Pick up to ${max}` : "Pick all that apply";
+}
+
 /** Multi-select with optional max, exclusive options, free text, and Continue. */
 export function MultiChoice({
   kicker,
@@ -196,9 +203,7 @@ export function MultiChoice({
     <>
       {kicker && <div className="q-kicker">{kicker}</div>}
       <h2 className="q-q">{question}</h2>
-      <p className="q-hint">
-        {hint}{hint ? " · " : ""}{max ? `Pick up to ${max}` : "Pick all that apply"}
-      </p>
+      <p className="q-hint">{multiSubtext(hint, max)}</p>
       <div className="q-options">
         {options.map((o) => (
           <button key={o.value} className="q-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>

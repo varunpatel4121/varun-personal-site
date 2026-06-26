@@ -91,6 +91,13 @@ function SingleChoice({
   return centered ? <div className="tlq-mid tlq-mid--center">{inner}</div> : inner;
 }
 
+/** Compose the multi-select subtext: merge an optional hint with the max. */
+function multiSubtext(hint: string | undefined, max: number | undefined): string {
+  if (hint && max) return `${hint.replace(/[.\s]+$/, "")}, up to ${max}`;
+  if (hint) return hint;
+  return max ? `Pick up to ${max}` : "Pick all that apply";
+}
+
 function MultiChoice({
   kicker, question, hint, options, max, allowFreeText, initial, twoCol, onSubmit,
 }: {
@@ -118,7 +125,7 @@ function MultiChoice({
     <>
       {kicker && <div className="tlq-kicker">{kicker}</div>}
       <h2 className="tlq-q">{question}</h2>
-      <p className="tlq-hint">{hint}{hint ? " · " : ""}{max ? `Pick up to ${max}` : "Pick all that apply"}</p>
+      <p className="tlq-hint">{multiSubtext(hint, max)}</p>
       <div className={`tlq-options${twoCol ? " tlq-options--2col" : ""}`}>
         {options.map((o) => (
           <button key={o.value} className="tlq-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>
@@ -256,7 +263,7 @@ function Intro({ onStart }: { onStart: () => void }) {
   );
 }
 
-function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, consent: boolean) => void }) {
+function IdentityScreen({ previewName, onSubmit }: { previewName: string | null; onSubmit: (name: string, email: string, consent: boolean) => void }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tried, setTried] = useState(false);
@@ -265,18 +272,17 @@ function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, 
   // both fields are valid, otherwise it surfaces a gentle inline hint.
   const valid = name.trim().length > 0 && /^\S+@\S+\.\S+$/.test(email.trim());
   const submit = () => (valid ? onSubmit(name.trim(), email.trim(), true) : setTried(true));
+  // Tease the result name (computed at this step) but not the full read.
   return (
-    <>
-      <div className="tlq-kicker">Save your result</div>
-      <h2 className="tlq-q">{c.identityQuestion}</h2>
-      <p className="tlq-hint">{c.identityHint}</p>
-      <input className="tlq-input" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input className="tlq-input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      {tried && !valid && <p className="tlq-hint tlq-hint--error">Enter your name and a valid email to continue.</p>}
-      <div className="tlq-actions">
-        <button className="tlq-btn" onClick={submit}>See my result</button>
-      </div>
-    </>
+    <div className="tlq-center">
+      <div className="tlq-kicker">Your result is ready</div>
+      {previewName && <div className="tlq-result-name">{previewName}</div>}
+      <p className="tlq-lead" style={{ margin: "8px auto 0" }}>{c.identityHint}</p>
+      <input className="tlq-input" style={{ maxWidth: 360, margin: "18px auto 0", textAlign: "center" }} placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input className="tlq-input" style={{ maxWidth: 360, margin: "10px auto 0", textAlign: "center" }} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      {tried && !valid && <p className="tlq-hint tlq-hint--error" style={{ marginTop: 12 }}>Enter your name and a valid email to continue.</p>}
+      <div style={{ marginTop: 18 }}><button className="tlq-btn" onClick={submit}>See your result</button></div>
+    </div>
   );
 }
 
@@ -386,7 +392,7 @@ export function TechLoopQuiz(props: TechLoopQuizProps) {
     case "reporter":
       body = <SingleChoice centered kicker="Quick start" question={c.frame.reporterQuestion} options={c.frame.reporterOptions.map((o) => ({ value: o.value, label: o.label }))} onSelect={(v) => quiz.submitReporter(v as "self" | "child")} />; break;
     case "identity":
-      body = <IdentityScreen onSubmit={quiz.submitIdentity} />; break;
+      body = <IdentityScreen previewName={quiz.previewName} onSubmit={quiz.submitIdentity} />; break;
     case "lifeStage":
       body = <SingleChoice kicker="A little context" question={c.frame.lifeStageQuestion} options={c.frame.lifeStageOptions.map((o) => ({ value: o.value, label: o.label }))} onSelect={(v, l) => quiz.submitLifeStage(v as never, l)} />; break;
     case "baseline":

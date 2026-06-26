@@ -28,7 +28,7 @@ function step() {
   if (nameInput && emailInput) {
     fireEvent.change(nameInput, { target: { value: "Test" } });
     fireEvent.change(emailInput, { target: { value: "t@e.co" } });
-    fireEvent.click(screen.getByText("See my result"));
+    fireEvent.click(screen.getByText("See your result"));
     return;
   }
   const opts = optButtons();
@@ -85,7 +85,9 @@ describe("<TechLoopQuiz/>", () => {
     fireEvent.click(screen.getByText("Back"));
     await tick();
     expect(screen.queryByText("Primary phenotype")).toBeNull();
-    // Identity is now the step right before the result.
-    expect(screen.getByText(QUIZ_CONTENT.frame.identityQuestion)).toBeTruthy();
+    // Identity is the step right before the result — now a "Your result is ready"
+    // gate teasing the result name, with the name + email fields.
+    expect(screen.getByText("Your result is ready")).toBeTruthy();
+    expect(document.querySelector('input[placeholder="Name"]')).toBeTruthy();
   });
 });
