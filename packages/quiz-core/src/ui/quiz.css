@@ -1,0 +1,184 @@
+/* Shared structural quiz styles. All visual values come from --q-* variables,
+   so each quiz themes the same markup differently (see each quiz's theme.css).
+   Everything is scoped under .q. Sensible dark defaults are provided so the
+   primitives render even with no theme. */
+
+.q {
+  --q-bg: #0b1220;
+  --q-surface: #111a2e;
+  --q-surface-2: #16213b;
+  --q-border: #243152;
+  --q-text: #e8edf7;
+  --q-muted: #93a0bd;
+  --q-accent: #38e1c6;
+  --q-accent-ink: #052a26;
+  --q-danger: #ff8c8c;
+  --q-radius: 14px;
+  --q-maxw: 640px;
+  --q-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --q-bg-image: radial-gradient(1200px 600px at 50% -10%, #16223f 0%, var(--q-bg) 55%);
+
+  box-sizing: border-box;
+  color: var(--q-text);
+  background: var(--q-bg-image);
+  min-height: 100%;
+  font-family: var(--q-font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.q *,
+.q *::before,
+.q *::after { box-sizing: border-box; }
+
+.q-shell {
+  max-width: var(--q-maxw);
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.q-progress {
+  height: 4px;
+  width: 100%;
+  background: var(--q-border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.q-progress > div {
+  height: 100%;
+  background: var(--q-accent);
+  border-radius: 999px;
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.q-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--q-accent);
+  margin-bottom: 12px;
+}
+.q-q {
+  font-size: clamp(20px, 3.4vw, 27px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+.q-hint { color: var(--q-muted); font-size: 14px; margin: 0 0 20px; }
+
+.q-options { display: flex; flex-direction: column; gap: 10px; margin: 8px 0 24px; }
+.q-opt {
+  text-align: left;
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: var(--q-radius);
+  border: 1px solid var(--q-border);
+  background: var(--q-surface);
+  color: var(--q-text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 120ms, background 120ms, transform 80ms;
+  display: flex; align-items: center; gap: 12px;
+  font-family: inherit;
+}
+.q-opt:hover { border-color: var(--q-accent); background: var(--q-surface-2); }
+.q-opt:active { transform: scale(0.995); }
+.q-opt[data-selected="true"] {
+  border-color: var(--q-accent);
+  background: var(--q-surface-2);
+}
+.q-opt[data-selected="true"] .q-check { background: var(--q-accent); border-color: var(--q-accent); }
+.q-check {
+  flex: 0 0 auto;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--q-border);
+  display: grid; place-items: center;
+}
+.q-check[data-round="true"] { border-radius: 999px; }
+.q-check svg { width: 12px; height: 12px; color: var(--q-accent-ink); opacity: 0; }
+.q-opt[data-selected="true"] .q-check svg { opacity: 1; }
+.q-sub { display: block; color: var(--q-muted); font-size: 12.5px; margin-top: 3px; }
+.q-rank {
+  margin-left: auto; flex: 0 0 auto;
+  width: 22px; height: 22px; border-radius: 999px;
+  background: var(--q-accent); color: var(--q-accent-ink);
+  font-size: 12px; font-weight: 700; display: grid; place-items: center;
+}
+
+.q-textarea, .q-input {
+  width: 100%;
+  background: var(--q-surface);
+  border: 1px solid var(--q-border);
+  color: var(--q-text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-top: 8px;
+}
+.q-textarea:focus, .q-input:focus { outline: 2px solid var(--q-accent); border-color: transparent; }
+.q-input + .q-input { margin-top: 10px; }
+
+.q-actions { display: flex; gap: 12px; align-items: center; margin-top: auto; padding-top: 24px; }
+.q-btn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--q-accent);
+  color: var(--q-accent-ink);
+  transition: opacity 120ms, transform 80ms;
+  font-family: inherit;
+}
+.q-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.q-btn:not(:disabled):active { transform: scale(0.98); }
+.q-btn--ghost { background: transparent; color: var(--q-muted); padding: 13px 14px; }
+.q-btn--ghost:hover { color: var(--q-text); }
+.q-spacer { flex: 1; }
+
+.q-center { text-align: center; margin: auto 0; }
+.q-title { font-size: clamp(30px, 6vw, 46px); font-weight: 700; letter-spacing: -0.02em; margin: 10px 0 14px; }
+.q-lead { color: var(--q-muted); font-size: 16px; max-width: 460px; margin: 0 auto 28px; }
+
+.q-card {
+  background: var(--q-surface); border: 1px solid var(--q-border);
+  border-radius: var(--q-radius); padding: 18px; margin: 14px 0;
+}
+.q-card h4 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--q-accent); }
+.q-card p { margin: 0; color: var(--q-text); font-size: 15px; }
+
+.q-badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.q-badge {
+  font-size: 12.5px; padding: 5px 11px; border-radius: 999px;
+  background: var(--q-surface-2); border: 1px solid var(--q-border); color: var(--q-muted);
+}
+.q-result-name { font-size: clamp(26px, 5vw, 38px); font-weight: 700; letter-spacing: -0.02em; margin: 6px 0 2px; }
+.q-result-label { color: var(--q-accent); font-weight: 600; margin-bottom: 18px; }
+.q-narrative { font-size: 16px; line-height: 1.65; white-space: pre-wrap; margin: 18px 0; }
+.q-formulation { font-size: 13.5px; color: var(--q-muted); font-style: italic; margin-top: 4px; }
+
+.q-safety {
+  background: rgba(255, 140, 140, 0.08); border: 1px solid rgba(255, 140, 140, 0.4);
+  border-radius: var(--q-radius); padding: 16px; margin-bottom: 18px; color: var(--q-danger);
+  font-size: 14.5px;
+}
+
+/* Smooth step transitions — each screen fades + lifts in. Keyed by step so it
+   replays on navigation. Respects reduced-motion. */
+.q-step { animation: q-fade-in 360ms cubic-bezier(0.16, 0.84, 0.44, 1) both; }
+@keyframes q-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .q-step { animation: none; }
+  .q-progress > div { transition: none; }
+}

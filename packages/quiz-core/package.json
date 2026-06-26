@@ -1,0 +1,35 @@
+{
+  "name": "@blh/quiz-core",
+  "version": "0.1.0",
+  "description": "Blue Light Health — shared quiz core. Themeable React UI primitives, persistence + AI-narrator adapter interfaces, and deterministic scoring helpers used by every BLH quiz. No framework or infrastructure coupling.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./ui": "./src/ui/index.ts",
+    "./ui/quiz.css": "./src/ui/quiz.css"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

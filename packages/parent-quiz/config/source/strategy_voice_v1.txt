@@ -1,0 +1,100 @@
+Blue Light Health Parent Quiz Strategy & Voice
+Parent-facing version of the Tech Loop quiz | v1 foundation
+The Product Shift
+The adult quiz asks: What loop am I in? The parent quiz asks: What is happening in our home, why are screens becoming the center of the relationship, and when does this need more than another rule?
+Core idea: The parent quiz should not make a parent think, My kid is broken. It should make them think, This has become a family pattern, and we probably need support with the loop underneath it.
+
+Quiz Purpose
+Make the parent feel seen. The quiz should name the exhaustion, worry, guilt, and grief of feeling like screens are taking over the relationship.
+Produce a formulation. The output should capture Child Tech Loop x Family Screen Pattern x Cost x Support Urgency.
+Create a therapy-ready bridge. The result should move parents from stricter-rule thinking toward support for regulation, conflict, avoidance, belonging, or reward loops.
+Act as a data instrument. The backend should save structured tags that can later inform clinical intake, ad segmentation, product learning, and follow-up messaging.
+The Parent-Facing Promise
+A short quiz that helps parents understand what screens may be doing for their child, what pattern the family may be stuck in, and what kind of support could actually help.
+Do not lead with addiction. Lead with recognition: I miss my kid. I hate being the phone police. I can tell something is bigger than screen time, but every conversation turns into a fight.
+What This Is Not
+Not a diagnosis.
+Not a screen-time calculator.
+Not a parent-blame tool.
+Not a claim that every child needs therapy.
+Not a punishment pathway for kids who like games, social media, fandom, creators, AI, or online friends.
+Not a generic advice quiz that ends with make a schedule and use parental controls.
+Primary Parent Segments
+Segment
+Private parent thought
+The Exhausted Enforcer
+Screens have become the argument they are tired of having. They want limits, but every limit becomes a fight.
+The Worried Observer
+The child is not always explosive. They are quieter, more withdrawn, less present, and harder to reach.
+The Sleep Spiral Parent
+The parent sees bedtime, mornings, mood, and school starting to bend around late-night use.
+The Social Pressure Parent
+The parent can tell the child's mood is attached to something in a group chat, feed, streak, post, or social world they cannot fully see.
+The Gaming or Online World Parent
+The parent sees games, servers, fandoms, or online worlds becoming the main place the child feels alive, capable, or known.
+The Reward-Risk Parent
+The parent is worried about in-game spending, loot boxes, betting, trading, marketplace loops, secrecy, or money becoming part of the tech pattern.
+The Burned-Out Peacekeeper
+The parent gives in more than they want because they cannot handle another fight, and then feels guilty afterward.
+
+Voice Rules
+Use
+Avoid
+Scene over survey: Which sentence sounds most like your house?
+Clinical screeners: frequency-first language that feels cold.
+Parent private monologue: I hate being the phone police.
+Accusation: You let screens take over.
+Compassionate child framing: Screens may be doing something for them.
+Child-blaming: They are lazy, addicted, manipulative, or defiant.
+Honest cost: Sleep, trust, mood, school, family energy.
+Moral panic: Screens are destroying your child.
+Therapy as relief: support for the loop underneath.
+Therapy as threat: Your child needs help because they cannot control themselves.
+Careful uncertainty: may, can, often, could.
+False certainty: This proves your child has a disorder.
+
+Parent Quiz Formulation Model
+Parent result = Child Tech Loop x Family Screen Pattern x Cost x Support Urgency.
+Child Tech Loop: What screens appear to be doing for the child: soothing, belonging, checking, escape, competence, reward, stimulation, or social comparison.
+Family Screen Pattern: What happens between parent and child: battle, negotiation, detective work, shutdown, peacekeeping, or collaborative limits.
+Cost: Where the pattern is showing up: sleep, school, mood, family conflict, offline life, self-image, money, secrecy, or parent burnout.
+Support Urgency: How much this has moved beyond ordinary tech tension: duration, failed rules, loss of control, concealment, impairment, money risk, or safety concerns.
+Result Page Shape
+Result headline: Your child's screen pattern may be The Nighttime Off-Switch.
+Recognition line: The strongest sentence. It should sound like the parent's private thought, not a clinical summary.
+What you may be seeing: concrete behaviors at home.
+What screens may be doing for your child: the emotional job without over-explaining.
+The family pattern: how the parent-child loop keeps repeating.
+What it may be costing: honest but not shamey.
+What helps at home: one to three practical shifts, not simplistic hacks.
+Why support may help: therapy as a way to work on the loop underneath screens.
+CTA: Book a consult, talk with a therapist, or get a plan for your family.
+Therapy CTA Language
+The result should make therapy feel reasonable, relieving, and early enough. It should not make the parent feel scared into action.
+This is the kind of pattern that often needs more than another screen-time rule.
+You do not need to wait until things are extreme to get support.
+Therapy is not a punishment for screen use. It is support for the regulation, avoidance, conflict, or connection pattern underneath it.
+A therapist can help your child build other ways to regulate, reconnect, tolerate limits, and rebuild trust at home.
+A parent consult can help you stop carrying this alone and make a plan that does not turn every limit into a fight.
+Ad and Marketing Guardrails
+Do not write ads that imply a specific viewer has a mental health condition, addiction, or a child with a disorder.
+Avoid direct callouts like: Is your teen addicted to their phone? Are you worried your child has anxiety? Your child needs therapy.
+Use broader, observable family language: Screen-time arguments, bedtime battles, modern family tech patterns, and helping parents understand the pattern.
+Keep the ad promise simple: Take the quiz to understand the screen pattern showing up at home.
+Do not ask for health information in lead forms. The quiz can collect structured data on behavior and family patterns, with clear consent and privacy language.
+Ethical Guardrails
+Parent report is partial. The result should say what may be happening, not claim to know the child's inner life with certainty.
+Do not pathologize normal adolescent privacy, identity exploration, fandom, gaming, online friendship, queer or gender exploration, creativity, or social media use.
+Do not make every result severe. A low-support branch should exist for normal tech tension.
+If a parent reports safety concerns, exploitation, self-harm content, violence, abuse, or dangerous contact, route to immediate professional or emergency support instead of a standard marketing result.
+The quiz should be clear that it is educational and not medical advice, diagnosis, or crisis care.
+External Anchors To Respect
+These are not copy points for ads. They are guardrails for responsible product language.
+AAP Family Media Plan: https://www.healthychildren.org/English/fmp/Pages/MediaPlan.aspx
+AAP screen-time guidance: https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/qa-portal/qa-portal-library/qa-portal-library-questions/screen-time-guidelines/
+APA health advisory on adolescent social media use: https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use
+U.S. Surgeon General advisory on social media and youth mental health: https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html
+Meta personal attributes policy for ads: https://transparency.meta.com/policies/ad-standards/objectionable-content/privacy-violations-personal-attributes/
+One-Sentence Creative Brief
+Creative brief: Build a short parent quiz that feels like a private mirror for screen-time stress at home, identifies the child tech loop and family pattern, and makes getting support feel like a sane next step instead of a dramatic last resort.
+

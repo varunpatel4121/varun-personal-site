@@ -18,17 +18,19 @@ src/
     (marketing)/  Public site: /, /about, /projects, /lab
     (platform)/   Product apps: /apps/persona (auth-protected)
     (auth)/       Auth pages: /sign-in
-    quiz/         Tech Loop Quiz — thin wrapper over @blh/tech-loop-quiz
-    api/          API routes (incl. /api/quiz/{sessions,narrative})
+    quiz/         Adult Tech Loop Quiz — thin wrapper over @blh/tech-loop-quiz
+    parent-quiz/  Parent quiz — thin wrapper over @blh/parent-quiz
+    api/          API routes (incl. /api/quiz/{sessions,parent-sessions,narrative})
   components/     Shared UI components
   features/       Feature modules (one per app)
     persona/      Persona chat app: components, lib, hooks, types
   config/         Platform-wide config (app registry)
   data/           Static data and types
   lib/            Shared utilities, site config, Supabase clients
-packages/
-  tech-loop-quiz/ Portable phenotyping quiz (@blh/tech-loop-quiz) — engine,
-                  config, UI, persistence + AI adapters. See its README/SCORING.md.
+packages/         Portable BLH quiz products (built to move to bluelighthealth.com)
+  quiz-core/      @blh/quiz-core — shared UI primitives, persistence + AI interfaces, helpers
+  tech-loop-quiz/ @blh/tech-loop-quiz — adult phenotyping quiz (engine, config, UI, schema)
+  parent-quiz/    @blh/parent-quiz — parent marketing-funnel quiz → CARES CTA
 ```
 
 ## Environment Variables
@@ -42,8 +44,9 @@ Copy `.env.local.example` to `.env.local` and fill in:
 | `SUPABASE_SERVICE_ROLE_KEY` | Yes | Supabase service role key (server-only) |
 | `OPENAI_API_KEY` | Yes | OpenAI API key for Persona chat |
 | `PERSONA_CHAT_MODEL` | No | Override chat model (default: `gpt-4.1-nano`) |
-| `ANTHROPIC_API_KEY` | No | Enables the optional Tech Loop Quiz AI narrative (falls back to deterministic copy if unset) |
+| `ANTHROPIC_API_KEY` | No | Enables the optional quiz AI narratives (both quizzes; falls back to deterministic copy if unset) |
 | `QUIZ_NARRATIVE_MODEL` | No | Override quiz narrative model (default: `claude-sonnet-4-6`) |
+| `NEXT_PUBLIC_CARES_BOOKING_URL` | No | Parent quiz CARES booking/consult link (defaults to the package's placeholder) |
 
 ## Persona Chat Setup
 
@@ -55,12 +58,24 @@ The Persona app requires database tables for chats and messages.
 4. Start the dev server: `npm run dev`
 5. Sign in and visit `/apps/persona`
 
-## Tech Loop Quiz
+## BLH Quizzes
 
-The phenotyping quiz at `/quiz` is a portable workspace package,
-[`@blh/tech-loop-quiz`](packages/tech-loop-quiz/README.md), built to move to
-bluelighthealth.com. The deterministic engine classifies into 17 phenotypes; an
-optional LLM only warms the result copy.
+Two portable quiz products live under `packages/`, sharing
+[`@blh/quiz-core`](packages/quiz-core/README.md), built to move to
+bluelighthealth.com. Each has a deterministic engine (the LLM only warms copy),
+runs with no setup, and persists to its own structured Supabase schema when wired:
+
+- **Adult — [`@blh/tech-loop-quiz`](packages/tech-loop-quiz/README.md)** at `/quiz`:
+  17 phenotypes, sub-feature questions, `tlq.*` schema.
+- **Parent — [`@blh/parent-quiz`](packages/parent-quiz/README.md)** at `/parent-quiz`:
+  a marketing funnel → "this is my family" → CARES booking CTA. 10 child loops +
+  family pattern + support level. Email-gated result; `pq.*` schema. Set the CTA
+  with `NEXT_PUBLIC_CARES_BOOKING_URL`; run `packages/parent-quiz/schema/0001_parent_quiz.sql`.
+
+### Adult quiz details
+
+The phenotyping quiz at `/quiz` classifies into 17 phenotypes; an optional LLM
+only warms the result copy.
 
 - **Runs with no setup** — works fully deterministically; the AI narrative and
   Supabase persistence are optional adapters injected in
