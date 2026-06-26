@@ -3,10 +3,9 @@
 /**
  * Brand + UI marks. The Blue Light logo is an inline SVG (no asset file). The
  * platform icons come from Iconify (@iconify/react): Simple Icons for the real
- * brands, Lucide for the generic categories. Every icon is monochrome and
- * inherits the button's text color via `currentColor`, so selected/unselected
- * states follow automatically — no full brand colors, consistent with the dark,
- * clean, outline-style UI.
+ * brands (in their real brand colors), Lucide for the generic categories (which
+ * inherit the button text color via `currentColor`). All render at 22px and fit
+ * the dark, clean UI.
  */
 
 import { Icon } from "@iconify/react";
@@ -47,10 +46,35 @@ const PLATFORM_ICON: Record<string, string> = {
   pc_gaming_console_gaming: "lucide:gamepad-2",
   ai_chat_gpt_gemini_claude: "lucide:sparkles",
   conversational_chatbots: "lucide:message-square",
-  adult_content: "lucide:shield-alert",
-  betting_trading_gambling: "lucide:dice-5",
+  adult_content: "lucide:eye-off",
+  betting_trading_gambling: "lucide:circle-dollar-sign",
+};
+
+/**
+ * Real brand colors for the Simple Icons brands, chosen to read on the dark
+ * navy theme (X is a black/white mark, so it stays white). Generic Lucide
+ * categories have no entry and inherit currentColor (the button text color).
+ */
+const PLATFORM_COLOR: Record<string, string> = {
+  instagram: "#E4405F",
+  tiktok: "#25F4EE",
+  youtube: "#FF0000",
+  twitter: "#FFFFFF",
+  reddit: "#FF4500",
+  meta_facebook: "#0866FF",
+  twitch: "#9146FF",
+  discord: "#5865F2",
+  snapchat: "#FFFC00",
 };
 
 export function PlatformIcon({ id }: { id: string }) {
-  return <Icon icon={PLATFORM_ICON[id] ?? "lucide:globe"} width={22} height={22} aria-hidden />;
+  return (
+    <Icon
+      icon={PLATFORM_ICON[id] ?? "lucide:globe"}
+      width={22}
+      height={22}
+      color={PLATFORM_COLOR[id]}
+      aria-hidden
+    />
+  );
 }
