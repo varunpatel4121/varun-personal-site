@@ -101,7 +101,7 @@
 @media (max-width: 560px) { .tlq-grid-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 380px) { .tlq-grid-2 { grid-template-columns: 1fr; } }
 
-.tlq-icon { font-size: 19px; line-height: 1; flex: 0 0 auto; width: 22px; text-align: center; }
+.tlq-icon { flex: 0 0 auto; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
 .tlq-chip { padding: 13px 14px; font-size: 14.5px; }
 .tlq-chip--mini { padding: 11px 12px; font-size: 13.5px; min-height: 46px; }
 .tlq-rank {

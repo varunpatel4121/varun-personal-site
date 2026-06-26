@@ -24,6 +24,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1"
   },
   "peerDependencies": {
