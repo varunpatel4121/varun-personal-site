@@ -197,7 +197,7 @@ export function MultiChoice({
       {kicker && <div className="q-kicker">{kicker}</div>}
       <h2 className="q-q">{question}</h2>
       <p className="q-hint">
-        {hint}{hint ? " · " : ""}{max ? `pick up to ${max}` : "pick all that apply"}
+        {hint}{hint ? " · " : ""}{max ? `Pick up to ${max}` : "Pick all that apply"}
       </p>
       <div className="q-options">
         {options.map((o) => (
