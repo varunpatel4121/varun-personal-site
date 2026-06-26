@@ -6,7 +6,7 @@
  * a teaser (the recognition line); safety results skip the marketing gate.
  */
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { AnswerLogEntry, Identity, Narrator, QuizPersistence } from "@blh/quiz-core";
 import { CONTENT, QUESTIONS, RESULT_BY_ID, QUESTION_BY_ID } from "../config";
 import { score } from "../engine";
@@ -65,16 +65,16 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
   const progress = step.kind === "result" ? 1 : Math.min(0.97, pos / steps.length);
   const bookingUrl = opts.bookingUrl ?? CONTENT.defaultBookingUrl;
 
-  const scrollTop = () => {
-    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // Scroll to the top of the page on every step change (mobile-friendly).
+  useEffect(() => {
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, [pos]);
   const advance = useCallback(() => {
     setPos((p) => Math.min(steps.length - 1, p + 1));
-    scrollTop();
   }, [steps.length]);
 
   const begin = useCallback(() => setPos(1), []);
-  const goBack = useCallback(() => { setPos((p) => Math.max(0, p - 1)); scrollTop(); }, []);
+  const goBack = useCallback(() => setPos((p) => Math.max(0, p - 1)), []);
   const canGoBack = pos > 0 && step.kind !== "result";
 
   /** Score the response + compose the (optionally AI-warmed) narrative. */

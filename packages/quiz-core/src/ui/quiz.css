@@ -136,3 +136,22 @@
 .q-fit-opt:hover { border-color: var(--q-accent-strong); }
 .q-fit-opt[data-selected="true"] { border-color: var(--q-accent); background: var(--q-sel); }
 .q-fit-thanks { color: var(--q-muted); font-size: 14px; margin: 4px 0; }
+
+/* ── Mobile fixes ─────────────────────────────────────────────────────────── */
+/* Touch devices apply :hover on tap and it sticks, looking like a half-selection.
+   Only the real data-selected state should color an option there. */
+@media (hover: none) {
+  .q-opt:hover:not([data-selected="true"]) {
+    border-color: var(--q-border);
+    background: var(--q-surface);
+    transform: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  }
+  .q-fit-opt:hover { border-color: var(--q-border); }
+  .q-opt:hover .q-check { background: transparent; border-color: var(--q-border); }
+  .q-opt[data-selected="true"] .q-check { background: var(--q-accent); border-color: var(--q-accent); }
+}
+/* Only vertical scrolling — never horizontal. */
+.q { overflow-x: hidden; width: 100%; }
+.q-opt { overflow-wrap: anywhere; min-width: 0; }
+.q-opt > span { min-width: 0; }
