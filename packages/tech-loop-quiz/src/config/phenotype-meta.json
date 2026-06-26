@@ -1,0 +1,87 @@
+[
+  {
+    "id": "night_regulator",
+    "name": "The Night Regulator",
+    "shortLabel": "Late-night off-switch loop"
+  },
+  {
+    "id": "time_reclaimer",
+    "name": "The Time Reclaimer",
+    "shortLabel": "Stolen personal-time loop"
+  },
+  {
+    "id": "autopilot_drifter",
+    "name": "The Autopilot Drifter",
+    "shortLabel": "Automatic gap-filling loop"
+  },
+  {
+    "id": "competence_refuge",
+    "name": "The Competence Refuge",
+    "shortLabel": "Digital mastery escape"
+  },
+  {
+    "id": "optimizer_spiral",
+    "name": "The Optimizer Spiral",
+    "shortLabel": "Preparation instead of action"
+  },
+  {
+    "id": "reassurance_checker",
+    "name": "The Reassurance Checker",
+    "shortLabel": "Short anxious check loop"
+  },
+  {
+    "id": "vigilant_scanner",
+    "name": "The Vigilant Scanner",
+    "shortLabel": "Certainty-seeking search loop"
+  },
+  {
+    "id": "validation_monitor",
+    "name": "The Validation Monitor",
+    "shortLabel": "Social signal checking"
+  },
+  {
+    "id": "comparison_spiral",
+    "name": "The Comparison Spiral",
+    "shortLabel": "Self-ranking feed loop"
+  },
+  {
+    "id": "always_on_responder",
+    "name": "The Always-On Responder",
+    "shortLabel": "Availability and reply-pressure loop"
+  },
+  {
+    "id": "online_home",
+    "name": "The Online Home",
+    "shortLabel": "Primary belonging world"
+  },
+  {
+    "id": "always_there_confidant",
+    "name": "The Always-There Confidant",
+    "shortLabel": "One-to-one digital confidant"
+  },
+  {
+    "id": "creator_anchor",
+    "name": "The Creator Anchor",
+    "shortLabel": "Familiar-voice comfort loop"
+  },
+  {
+    "id": "activation_loop",
+    "name": "The Activation Loop",
+    "shortLabel": "Outrage and intensity loop"
+  },
+  {
+    "id": "reward_chaser",
+    "name": "The Reward Chaser",
+    "shortLabel": "Uncertain-win loop"
+  },
+  {
+    "id": "arousal_regulator",
+    "name": "The Arousal Regulator",
+    "shortLabel": "Private arousal-regulation loop"
+  },
+  {
+    "id": "second_self",
+    "name": "The Second Self",
+    "shortLabel": "Identity immersion loop"
+  }
+]

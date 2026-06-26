@@ -1,5 +1,5 @@
-import Quiz from "@/features/blh-quiz/Quiz";
+import QuizClient from "./QuizClient";
 
 export default function QuizPage() {
-  return <Quiz />;
+  return <QuizClient />;
 }

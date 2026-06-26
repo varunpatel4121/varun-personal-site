@@ -1,0 +1,467 @@
+[
+  {
+    "type": "hook",
+    "tag": "endless_feed",
+    "label": "The Endless Feed"
+  },
+  {
+    "type": "hook",
+    "tag": "tethered_check",
+    "label": "The Tethered Check"
+  },
+  {
+    "type": "hook",
+    "tag": "tethered_social",
+    "label": "The Tethered Social"
+  },
+  {
+    "type": "hook",
+    "tag": "mirror",
+    "label": "The Mirror"
+  },
+  {
+    "type": "hook",
+    "tag": "climb",
+    "label": "The Climb"
+  },
+  {
+    "type": "hook",
+    "tag": "belonging",
+    "label": "The Belonging"
+  },
+  {
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "label": "The Parasocial Bond"
+  },
+  {
+    "type": "hook",
+    "tag": "rabbit_hole",
+    "label": "The Rabbit Hole"
+  },
+  {
+    "type": "hook",
+    "tag": "activation",
+    "label": "The Activation"
+  },
+  {
+    "type": "hook",
+    "tag": "companion",
+    "label": "The Companion"
+  },
+  {
+    "type": "hook",
+    "tag": "reward_chase",
+    "label": "The Reward Chase"
+  },
+  {
+    "type": "hook",
+    "tag": "zone_out",
+    "label": "The Zone-Out"
+  },
+  {
+    "type": "hook",
+    "tag": "arousal_pull",
+    "label": "The Arousal Pull"
+  },
+  {
+    "type": "hook",
+    "tag": "second_self",
+    "label": "The Second Self"
+  },
+  {
+    "type": "job",
+    "tag": "stimulate",
+    "label": "Stimulate me"
+  },
+  {
+    "type": "job",
+    "tag": "soothe",
+    "label": "Soothe me"
+  },
+  {
+    "type": "job",
+    "tag": "reassure",
+    "label": "Reassure me"
+  },
+  {
+    "type": "job",
+    "tag": "validate",
+    "label": "Validate me"
+  },
+  {
+    "type": "job",
+    "tag": "compare",
+    "label": "Compare me"
+  },
+  {
+    "type": "job",
+    "tag": "connect",
+    "label": "Connect me"
+  },
+  {
+    "type": "job",
+    "tag": "empower",
+    "label": "Empower me"
+  },
+  {
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "label": "Night Regulation"
+  },
+  {
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "label": "Morning Check-In"
+  },
+  {
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "label": "Gap Filling"
+  },
+  {
+    "type": "entry_point",
+    "tag": "task_avoidance",
+    "label": "Task Avoidance"
+  },
+  {
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "label": "Stress Relief"
+  },
+  {
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "label": "Alone / Disconnected"
+  },
+  {
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "label": "Under-Stimulated"
+  },
+  {
+    "type": "entry_point",
+    "tag": "anytime_no_pattern",
+    "label": "Anytime / No Pattern"
+  },
+  {
+    "type": "entry_point",
+    "tag": "not_problem",
+    "label": "Not a Problem"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "label": "Quick-Check Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "label": "Time-Sink / Binge Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "autopilot",
+    "label": "Autopilot Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "label": "Waiting / Refresh Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "completion",
+    "label": "Completion Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "background",
+    "label": "Background Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "label": "Social Participation Loop"
+  },
+  {
+    "type": "loop_shape",
+    "tag": "not_sure",
+    "label": "Not Sure"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "calmer_regulated",
+    "label": "Calmer / Regulated"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "connected",
+    "label": "Connected"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "entertained",
+    "label": "Entertained"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "numb",
+    "label": "Numb"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "label": "Guilty / Ashamed"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "worse_self_body",
+    "label": "Worse About Self / Body"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "label": "More Anxious"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "label": "More Lonely"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "tired",
+    "label": "Tired"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "label": "Behind / Panicked"
+  },
+  {
+    "type": "aftertaste",
+    "tag": "no_different",
+    "label": "No Different"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "sleep",
+    "label": "Sleep"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "label": "School / Work / Responsibilities"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "label": "Focus and Attention"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "label": "Mood or Anxiety"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "self_body_image",
+    "label": "Self / Body Image"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "label": "Friendships / Dating / Social Life"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "home_family_conflict",
+    "label": "Home / Family Conflict"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "money",
+    "label": "Money"
+  },
+  {
+    "type": "cost_domain",
+    "tag": "none_meaningful",
+    "label": "Nowhere Meaningful"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "loss_control",
+    "label": "Loss of Control"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "failed_cutback",
+    "label": "Failed Cutback"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "time_creep",
+    "label": "Time Creep"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "withdrawal_restlessness",
+    "label": "Withdrawal / Restlessness"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "mental_pull",
+    "label": "Mental Pull"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "concealment",
+    "label": "Concealment"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "interference_harm",
+    "label": "Interference / Harm"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "compensation_stage",
+    "label": "Compensation Stage"
+  },
+  {
+    "type": "severity_marker",
+    "tag": "none",
+    "label": "None"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "night_avoid_head",
+    "label": "Night Avoid Head"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "night_only_time_mine",
+    "label": "Only Time Mine"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "hand_went_there",
+    "label": "Hand Went There"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "effort_turns_progress",
+    "label": "Effort Turns Progress"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "preparing_becomes_thing",
+    "label": "Preparing Becomes Thing"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "see_if_changed",
+    "label": "See If Changed"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "read_enough_safe",
+    "label": "Read Enough To Feel Safe"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "checking_reaction_to_me",
+    "label": "Checking Reaction To Me"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "see_where_i_stand",
+    "label": "See Where I Stand"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "failing_someone",
+    "label": "Failing Someone"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "these_are_my_people",
+    "label": "These Are My People"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "always_answers",
+    "label": "Always Answers"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "voice_part_of_day",
+    "label": "Voice Part Of Day"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "angry_feels_awake",
+    "label": "Angry Feels Awake"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "next_one_could_be_one",
+    "label": "Next One Could Be The One"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "private_changes_channel",
+    "label": "Private Changes Channel"
+  },
+  {
+    "type": "tie_breaker",
+    "tag": "real_life_no_room",
+    "label": "Real Life No Room"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "betting_trading_gambling",
+    "label": "Betting / Trading / Gambling"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "adult_or_intimacy_content",
+    "label": "Adult / Intimacy Content"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "ai_chatbot_support",
+    "label": "AI / Chatbot Emotional Support"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "gaming_ranked_progress",
+    "label": "Gaming / Ranked / Progress"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "creator_streamer_media",
+    "label": "Creator / Streamer / Personality"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "community_server_group",
+    "label": "Community / Server / Group"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "posting_metrics",
+    "label": "Posting / Metrics / Matches"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "news_health_search",
+    "label": "News / Health / Decision Search"
+  },
+  {
+    "type": "platform_feature",
+    "tag": "shopping_deals_marketplace",
+    "label": "Shopping / Deals / Marketplace"
+  }
+]

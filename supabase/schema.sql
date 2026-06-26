@@ -677,6 +677,12 @@ create policy "Users can delete own documents"
 -- Quiz sessions (anonymous analytics for the Tech Loop Quiz)
 -- No user_id — all data is anonymous by design.
 -- Inserts come from the server-side API route using the service role key.
+--
+-- SUPERSEDED (June 2026): the Tech Loop Quiz now writes to the structured
+-- `tlq.*` schema in packages/tech-loop-quiz/schema/0001_tech_loop_quiz.sql
+-- (sessions / respondents / answers / results). The table below is kept for
+-- historical rows; new sessions land in tlq.*. Run the package migration to
+-- enable structured persistence.
 -- ============================================================
 
 create table public.quiz_sessions (

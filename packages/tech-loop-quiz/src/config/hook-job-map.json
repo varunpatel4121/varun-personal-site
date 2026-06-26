@@ -1,0 +1,16 @@
+{
+  "endless_feed": ["stimulate", "soothe"],
+  "tethered_check": ["reassure", "validate"],
+  "tethered_social": ["connect", "reassure", "validate"],
+  "mirror": ["compare", "validate"],
+  "climb": ["empower", "validate", "stimulate"],
+  "belonging": ["connect", "reassure"],
+  "parasocial_bond": ["connect", "soothe", "validate"],
+  "rabbit_hole": ["reassure", "empower", "stimulate"],
+  "activation": ["stimulate", "soothe", "validate"],
+  "companion": ["connect", "soothe", "validate"],
+  "reward_chase": ["stimulate", "empower", "validate"],
+  "zone_out": ["soothe"],
+  "arousal_pull": ["stimulate", "soothe", "validate"],
+  "second_self": ["empower", "soothe", "validate", "connect"]
+}

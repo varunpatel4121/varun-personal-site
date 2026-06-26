@@ -11,6 +11,27 @@ Personal website and platform for varunpatel.me. Deployed on Vercel, DNS on Clou
 - Tailwind CSS v4 (CSS-based config, no tailwind.config.ts)
 - Supabase (auth, database, storage)
 - Geist Sans + Geist Mono fonts
+- npm workspaces (monorepo); shared packages live in `packages/`
+
+## Tech Loop Quiz (`packages/tech-loop-quiz`)
+
+The phenotyping quiz at `/quiz` is a **portable workspace package**
+(`@blh/tech-loop-quiz`), built to move to bluelighthealth.com. It owns the
+deterministic scoring engine, the versioned config (the five Blue Light "AI
+Quiz" sheets as JSON — 17 phenotypes, 361 rule-weights, 56 sub-features), the
+React UI, a persistence-adapter interface, and an optional AI narrator — with no
+app or infra coupling. The app only injects adapters in
+`src/app/quiz/QuizClient.tsx` and provides two thin routes
+(`src/app/api/quiz/{sessions,narrative}`). The structured Supabase schema lives
+in `packages/tech-loop-quiz/schema/` (the `tlq.*` tables). Engine is
+deterministic + unit-tested (66 tests); the LLM only warms the result copy.
+
+**Before changing the quiz, read `packages/tech-loop-quiz/AGENTS.md`** (context +
+transfer/backend runbooks), then `SCORING.md` (engine spec). The source of truth
+for all content + scoring is the Blue Light Health **"AI Quiz"** Google Drive
+folder (<https://drive.google.com/drive/u/0/folders/1aouYdVqSbrQgGjASTnfruDSqvI-7kg-4>);
+the config → doc mapping is in `packages/tech-loop-quiz/config/source/SOURCES.md`.
+Don't invent quiz content — change the sheets and re-derive.
 
 ## Architecture
 

@@ -1,0 +1,699 @@
+[
+  {
+    "id": "instagram",
+    "label": "Instagram",
+    "subfeatures": [
+      {
+        "id": "stories",
+        "label": "Stories",
+        "potentialHooks": [
+          "tethered_social",
+          "tethered_check",
+          "mirror",
+          "parasocial_bond",
+          "belonging"
+        ],
+        "platformFeature": "posting_metrics"
+      },
+      {
+        "id": "reels",
+        "label": "Reels",
+        "potentialHooks": [
+          "endless_feed",
+          "zone_out",
+          "activation",
+          "arousal_pull",
+          "mirror"
+        ]
+      },
+      {
+        "id": "explore_page",
+        "label": "Explore page",
+        "potentialHooks": [
+          "endless_feed",
+          "mirror",
+          "rabbit_hole",
+          "reward_chase",
+          "arousal_pull"
+        ]
+      },
+      {
+        "id": "posts",
+        "label": "Posts",
+        "potentialHooks": [
+          "mirror",
+          "tethered_check",
+          "parasocial_bond",
+          "belonging"
+        ],
+        "platformFeature": "posting_metrics"
+      },
+      {
+        "id": "dms",
+        "label": "DMs",
+        "potentialHooks": [
+          "tethered_social",
+          "tethered_check",
+          "companion",
+          "belonging",
+          "arousal_pull"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tiktok",
+    "label": "TikTok",
+    "subfeatures": [
+      {
+        "id": "for_you_page",
+        "label": "For You Page",
+        "potentialHooks": [
+          "endless_feed",
+          "zone_out",
+          "activation",
+          "rabbit_hole",
+          "mirror"
+        ]
+      },
+      {
+        "id": "following_specific_creators",
+        "label": "Following specific creators",
+        "potentialHooks": [
+          "parasocial_bond",
+          "belonging",
+          "tethered_check",
+          "companion"
+        ],
+        "platformFeature": "creator_streamer_media"
+      },
+      {
+        "id": "tiktok_shop",
+        "label": "TikTok Shop",
+        "potentialHooks": [
+          "reward_chase",
+          "rabbit_hole",
+          "mirror",
+          "endless_feed"
+        ],
+        "platformFeature": "shopping_deals_marketplace"
+      },
+      {
+        "id": "dms_and_sharing_videos",
+        "label": "DMs & sharing videos",
+        "potentialHooks": [
+          "tethered_social",
+          "belonging",
+          "companion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "youtube",
+    "label": "YouTube",
+    "subfeatures": [
+      {
+        "id": "recommended_videos",
+        "label": "Recommended videos",
+        "potentialHooks": [
+          "endless_feed",
+          "rabbit_hole",
+          "zone_out",
+          "reward_chase"
+        ]
+      },
+      {
+        "id": "shorts",
+        "label": "Shorts",
+        "potentialHooks": [
+          "endless_feed",
+          "zone_out",
+          "activation",
+          "arousal_pull",
+          "mirror"
+        ]
+      },
+      {
+        "id": "long_form_videos",
+        "label": "Long-form videos",
+        "potentialHooks": [
+          "zone_out",
+          "parasocial_bond",
+          "rabbit_hole",
+          "companion",
+          "second_self"
+        ]
+      },
+      {
+        "id": "search",
+        "label": "Search",
+        "potentialHooks": [
+          "rabbit_hole",
+          "climb",
+          "companion",
+          "tethered_check"
+        ],
+        "platformFeature": "news_health_search"
+      }
+    ]
+  },
+  {
+    "id": "twitter",
+    "label": "Twitter",
+    "subfeatures": [
+      {
+        "id": "feed",
+        "label": "Feed",
+        "potentialHooks": [
+          "activation",
+          "endless_feed",
+          "tethered_check"
+        ]
+      },
+      {
+        "id": "replies_and_threads",
+        "label": "Replies & Threads",
+        "potentialHooks": [
+          "activation",
+          "tethered_check",
+          "belonging",
+          "mirror"
+        ]
+      },
+      {
+        "id": "trending_and_search",
+        "label": "Trending & Search",
+        "potentialHooks": [
+          "rabbit_hole",
+          "activation",
+          "reward_chase"
+        ],
+        "platformFeature": "news_health_search"
+      },
+      {
+        "id": "spaces",
+        "label": "Spaces",
+        "potentialHooks": [
+          "belonging",
+          "parasocial_bond",
+          "companion",
+          "activation"
+        ],
+        "platformFeature": "community_server_group"
+      }
+    ]
+  },
+  {
+    "id": "tv_and_streaming",
+    "label": "TV & Streaming",
+    "subfeatures": [
+      {
+        "id": "shows_and_movies",
+        "label": "Shows & Movies",
+        "potentialHooks": [
+          "zone_out",
+          "endless_feed",
+          "parasocial_bond",
+          "companion",
+          "activation",
+          "second_self"
+        ]
+      },
+      {
+        "id": "binge_watching",
+        "label": "Binge-watching",
+        "potentialHooks": [
+          "zone_out",
+          "endless_feed",
+          "parasocial_bond",
+          "companion",
+          "activation",
+          "second_self"
+        ]
+      },
+      {
+        "id": "live_sports_or_events",
+        "label": "Live sports or events",
+        "potentialHooks": [
+          "belonging",
+          "activation",
+          "reward_chase",
+          "zone_out",
+          "tethered_social"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reddit",
+    "label": "Reddit",
+    "subfeatures": [
+      {
+        "id": "home_feed",
+        "label": "Home feed",
+        "potentialHooks": [
+          "rabbit_hole",
+          "endless_feed",
+          "activation",
+          "reward_chase"
+        ]
+      },
+      {
+        "id": "subreddits",
+        "label": "Subreddits",
+        "potentialHooks": [
+          "belonging",
+          "rabbit_hole",
+          "companion",
+          "tethered_check"
+        ],
+        "platformFeature": "community_server_group"
+      },
+      {
+        "id": "comments_and_threads",
+        "label": "Comments & Threads",
+        "potentialHooks": [
+          "rabbit_hole",
+          "activation",
+          "belonging",
+          "tethered_check",
+          "mirror"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "meta_facebook",
+    "label": "Meta (Facebook)",
+    "subfeatures": [
+      {
+        "id": "home_feed",
+        "label": "Home Feed",
+        "potentialHooks": [
+          "tethered_social",
+          "mirror",
+          "endless_feed",
+          "tethered_check",
+          "belonging"
+        ]
+      },
+      {
+        "id": "reels_and_videos",
+        "label": "Reels & Videos",
+        "potentialHooks": [
+          "endless_feed",
+          "zone_out",
+          "activation",
+          "tethered_check"
+        ]
+      },
+      {
+        "id": "groups",
+        "label": "Groups",
+        "potentialHooks": [
+          "belonging",
+          "tethered_social",
+          "rabbit_hole",
+          "tethered_check"
+        ],
+        "platformFeature": "community_server_group"
+      },
+      {
+        "id": "marketplace",
+        "label": "Marketplace",
+        "potentialHooks": [
+          "reward_chase",
+          "rabbit_hole",
+          "tethered_check"
+        ],
+        "platformFeature": "shopping_deals_marketplace"
+      },
+      {
+        "id": "messenger",
+        "label": "Messenger",
+        "potentialHooks": [
+          "tethered_social",
+          "companion",
+          "tethered_check",
+          "belonging"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "twitch",
+    "label": "Twitch",
+    "subfeatures": [
+      {
+        "id": "livestreams",
+        "label": "Livestreams",
+        "potentialHooks": [
+          "belonging",
+          "parasocial_bond",
+          "zone_out",
+          "tethered_social"
+        ],
+        "platformFeature": "creator_streamer_media"
+      },
+      {
+        "id": "live_chat",
+        "label": "Live chat",
+        "potentialHooks": [
+          "belonging",
+          "tethered_social",
+          "parasocial_bond",
+          "activation"
+        ],
+        "platformFeature": "creator_streamer_media"
+      }
+    ]
+  },
+  {
+    "id": "discord",
+    "label": "Discord",
+    "subfeatures": [
+      {
+        "id": "servers_and_channels",
+        "label": "Servers & Channels",
+        "potentialHooks": [
+          "belonging",
+          "tethered_social",
+          "companion",
+          "tethered_check"
+        ],
+        "platformFeature": "community_server_group"
+      },
+      {
+        "id": "voice_chat",
+        "label": "Voice chat",
+        "potentialHooks": [
+          "belonging",
+          "companion",
+          "tethered_social",
+          "tethered_check",
+          "zone_out"
+        ],
+        "platformFeature": "community_server_group"
+      },
+      {
+        "id": "dms",
+        "label": "DMs",
+        "potentialHooks": [
+          "companion",
+          "tethered_social",
+          "tethered_check",
+          "belonging"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pc_gaming_console_gaming",
+    "label": "PC Gaming / Console Gaming",
+    "subfeatures": [
+      {
+        "id": "competitive_ranked",
+        "label": "Competitive / ranked",
+        "potentialHooks": [
+          "climb",
+          "reward_chase",
+          "activation",
+          "tethered_check"
+        ],
+        "platformFeature": "gaming_ranked_progress"
+      },
+      {
+        "id": "open_world_sandbox",
+        "label": "Open-world / sandbox",
+        "potentialHooks": [
+          "second_self",
+          "zone_out",
+          "climb",
+          "companion"
+        ]
+      },
+      {
+        "id": "multiplayer_social",
+        "label": "Multiplayer / social",
+        "potentialHooks": [
+          "belonging",
+          "tethered_social",
+          "climb",
+          "companion"
+        ],
+        "platformFeature": "gaming_ranked_progress"
+      },
+      {
+        "id": "story_campaign",
+        "label": "Story / campaign",
+        "potentialHooks": [
+          "second_self",
+          "zone_out",
+          "companion",
+          "parasocial_bond"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "snapchat",
+    "label": "Snapchat",
+    "subfeatures": [
+      {
+        "id": "snaps_and_chat",
+        "label": "Snaps & Chat",
+        "potentialHooks": [
+          "tethered_social",
+          "tethered_check",
+          "belonging",
+          "arousal_pull",
+          "companion"
+        ]
+      },
+      {
+        "id": "stories",
+        "label": "Stories",
+        "potentialHooks": [
+          "tethered_social",
+          "mirror",
+          "tethered_check",
+          "belonging"
+        ],
+        "platformFeature": "posting_metrics"
+      },
+      {
+        "id": "spotlight",
+        "label": "Spotlight",
+        "potentialHooks": [
+          "endless_feed",
+          "zone_out",
+          "mirror",
+          "reward_chase"
+        ]
+      },
+      {
+        "id": "snap_map",
+        "label": "Snap Map",
+        "potentialHooks": [
+          "tethered_social",
+          "mirror",
+          "rabbit_hole",
+          "tethered_check"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ai_chat_gpt_gemini_claude",
+    "label": "AI (Chat GPT, Gemini, Claude)",
+    "subfeatures": [
+      {
+        "id": "ai_tools",
+        "label": "AI tools",
+        "potentialHooks": [
+          "tethered_check",
+          "rabbit_hole",
+          "climb",
+          "reward_chase",
+          "companion"
+        ],
+        "platformFeature": "ai_chatbot_support"
+      },
+      {
+        "id": "tasks_productivity",
+        "label": "Tasks / productivity",
+        "potentialHooks": [
+          "climb",
+          "tethered_check",
+          "reward_chase",
+          "mirror"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "conversational_chatbots",
+    "label": "Conversational Chatbots",
+    "subfeatures": [
+      {
+        "id": "companionship",
+        "label": "Companionship",
+        "potentialHooks": [
+          "companion",
+          "parasocial_bond",
+          "belonging"
+        ],
+        "platformFeature": "ai_chatbot_support"
+      },
+      {
+        "id": "therapy_or_emotional_support",
+        "label": "Therapy or emotional support",
+        "potentialHooks": [
+          "companion",
+          "rabbit_hole",
+          "zone_out",
+          "tethered_check"
+        ],
+        "platformFeature": "ai_chatbot_support"
+      },
+      {
+        "id": "roleplay",
+        "label": "Roleplay",
+        "potentialHooks": [
+          "second_self",
+          "companion",
+          "arousal_pull",
+          "parasocial_bond"
+        ],
+        "platformFeature": "adult_or_intimacy_content"
+      },
+      {
+        "id": "romantic_intimacy_simulation",
+        "label": "Romantic / intimacy simulation",
+        "potentialHooks": [
+          "companion",
+          "parasocial_bond",
+          "arousal_pull",
+          "second_self"
+        ],
+        "platformFeature": "adult_or_intimacy_content"
+      }
+    ]
+  },
+  {
+    "id": "adult_content",
+    "label": "Adult Content",
+    "platformFeature": "adult_or_intimacy_content",
+    "subfeatures": [
+      {
+        "id": "videos",
+        "label": "Videos",
+        "potentialHooks": [
+          "arousal_pull",
+          "zone_out",
+          "endless_feed",
+          "reward_chase"
+        ],
+        "platformFeature": "adult_or_intimacy_content"
+      },
+      {
+        "id": "live_cams",
+        "label": "Live cams",
+        "potentialHooks": [
+          "arousal_pull",
+          "parasocial_bond",
+          "reward_chase",
+          "companion"
+        ],
+        "platformFeature": "creator_streamer_media"
+      },
+      {
+        "id": "onlyfans",
+        "label": "OnlyFans",
+        "potentialHooks": [
+          "parasocial_bond",
+          "arousal_pull",
+          "tethered_check",
+          "reward_chase"
+        ],
+        "platformFeature": "creator_streamer_media"
+      },
+      {
+        "id": "chat_messaging",
+        "label": "Chat / Messaging",
+        "potentialHooks": [
+          "companion",
+          "arousal_pull",
+          "parasocial_bond",
+          "tethered_check"
+        ],
+        "platformFeature": "adult_or_intimacy_content"
+      },
+      {
+        "id": "ai",
+        "label": "AI",
+        "potentialHooks": [
+          "companion",
+          "arousal_pull",
+          "second_self",
+          "parasocial_bond"
+        ],
+        "platformFeature": "adult_or_intimacy_content"
+      }
+    ]
+  },
+  {
+    "id": "betting_trading_gambling",
+    "label": "Betting / Trading / Gambling",
+    "platformFeature": "betting_trading_gambling",
+    "subfeatures": [
+      {
+        "id": "sports_betting",
+        "label": "Sports betting",
+        "potentialHooks": [
+          "reward_chase",
+          "tethered_check",
+          "activation",
+          "belonging",
+          "rabbit_hole"
+        ],
+        "platformFeature": "betting_trading_gambling"
+      },
+      {
+        "id": "casino_slots_apps",
+        "label": "Casino / slots apps",
+        "potentialHooks": [
+          "reward_chase",
+          "zone_out",
+          "endless_feed",
+          "arousal_pull"
+        ],
+        "platformFeature": "betting_trading_gambling"
+      },
+      {
+        "id": "stocks_crypto_trading",
+        "label": "Stocks / Crypto trading",
+        "potentialHooks": [
+          "reward_chase",
+          "tethered_check",
+          "rabbit_hole",
+          "climb",
+          "activation"
+        ],
+        "platformFeature": "betting_trading_gambling"
+      },
+      {
+        "id": "loot_boxes",
+        "label": "Loot boxes",
+        "potentialHooks": [
+          "reward_chase",
+          "climb",
+          "second_self",
+          "endless_feed"
+        ],
+        "platformFeature": "betting_trading_gambling"
+      }
+    ]
+  }
+]

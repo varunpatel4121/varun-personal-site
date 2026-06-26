@@ -1,0 +1,30 @@
+{
+  "components": [
+    { "field": "baselineSelfRating" },
+    { "field": "controlFrequency" }
+  ],
+  "markerPoints": {
+    "loss_control": 2,
+    "failed_cutback": 2,
+    "time_creep": 1,
+    "withdrawal_restlessness": 2,
+    "mental_pull": 1,
+    "concealment": 2,
+    "interference_harm": 3,
+    "compensation_stage": 2
+  },
+  "costPerDomain": 1,
+  "costCap": 4,
+  "modifiers": {
+    "moneyWithReward": 1,
+    "sleepWithNight": 1,
+    "selfBodyWithComparison": 1
+  },
+  "noMeaningfulCostCap": 4,
+  "bands": [
+    { "id": "light_grip", "min": 0 },
+    { "id": "steady_pull", "min": 5 },
+    { "id": "deep_loop", "min": 10 },
+    { "id": "high_impact_loop", "min": 16 }
+  ]
+}

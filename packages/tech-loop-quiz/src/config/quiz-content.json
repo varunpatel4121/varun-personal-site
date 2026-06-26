@@ -1,0 +1,135 @@
+{
+  "version": "1.0.0",
+  "intro": {
+    "kicker": "Blue Light Health",
+    "title": "What's your tech loop?",
+    "disclaimer": "This takes about 5 minutes. It's a reflection of your relationship with technology, not a diagnosis or medical advice.",
+    "cta": "Start"
+  },
+  "frame": {
+    "reporterQuestion": "Before we start, who is this for?",
+    "reporterOptions": [
+      { "value": "self", "label": "Me" },
+      { "value": "child", "label": "My child or teen" }
+    ],
+    "identityQuestion": "Where can we send your result?",
+    "identityHint": "Name and email — optional, only used to save your result and the waitlist.",
+    "lifeStageQuestion": "What's your life mostly about right now?",
+    "lifeStageOptions": [
+      { "value": "school", "label": "In elementary, middle, or high school" },
+      { "value": "college", "label": "In college" },
+      { "value": "grad", "label": "In grad or professional school" },
+      { "value": "working", "label": "Working" },
+      { "value": "between", "label": "Between things right now" },
+      { "value": "other", "label": "Other" }
+    ]
+  },
+  "baseline": {
+    "question": "No judgment or overthinking. In the past month, what's your relationship with your phone, screens, and other technology?",
+    "options": [
+      { "value": 0, "label": "I'm in control of my screens. They serve me." },
+      { "value": 1, "label": "Mostly fine, I just get pulled in more than I'd like." },
+      { "value": 2, "label": "I use it more than I really want to." },
+      { "value": 3, "label": "It often feels hard to stop, even when I try." },
+      { "value": 4, "label": "It's running my life more than I'm running it." }
+    ]
+  },
+  "pull": {
+    "platformQuestion": "Pick up to 3 platforms that draw you in the most.",
+    "platformHint": "The ones you reach for without thinking.",
+    "subfeatureQuestion": "Which features are the hardest to stop, or cause the most problems? Pick up to 3.",
+    "subfeatureHint": "Order matters a little — put the strongest one first."
+  },
+  "loop": {
+    "entryQuestion": "When does this usually pull you in the hardest? Pick up to 2.",
+    "entryOptions": [
+      { "value": "night_regulation", "label": "Late at night, especially in bed" },
+      { "value": "morning_check_in", "label": "First thing when I wake up" },
+      { "value": "gap_filling", "label": "Between things — meetings, classes, errands, transit, bathroom, waiting" },
+      { "value": "task_avoidance", "label": "Right before I need to start work, school, a task, or something hard" },
+      { "value": "stress_relief", "label": "After I'm drained, overwhelmed, stressed, or upset" },
+      { "value": "alone_disconnected", "label": "When I'm alone or feel disconnected" },
+      { "value": "under_stimulated", "label": "When I'm bored, restless, or under-stimulated" },
+      { "value": "anytime_no_pattern", "label": "No real pattern" },
+      { "value": "not_problem", "label": "Honestly, it doesn't really get away from me" }
+    ],
+    "patternQuestion": "What does the loop usually look like? Pick up to 2.",
+    "patternOptions": [
+      { "value": "quick_check", "label": "I quickly check throughout the day." },
+      { "value": "time_sink_binge", "label": "I only mean to use it for a little while, but I end up staying way longer than I planned." },
+      { "value": "autopilot", "label": "Sometimes I open it without meaning to. My hand just goes there." },
+      { "value": "waiting_refresh", "label": "I keep coming back to see if something changed — a new reply, like, view, update, score, or notification." },
+      { "value": "completion", "label": "I keep going because I feel like I need to finish, clear, find, or complete something." },
+      { "value": "background", "label": "I leave it on in the background while I'm doing other things." },
+      { "value": "social_participation", "label": "I get pulled in because I'm actively chatting, replying, posting, gaming, or keeping up with people." },
+      { "value": "not_sure", "label": "Not sure" }
+    ],
+    "controlQuestion": "\"I keep using it even though part of me wants to stop.\" Lately, how often does this describe you?",
+    "controlOptions": [
+      { "value": 0, "label": "Never" },
+      { "value": 1, "label": "Rarely" },
+      { "value": 2, "label": "Sometimes" },
+      { "value": 3, "label": "Often" },
+      { "value": 4, "label": "Almost every time" }
+    ],
+    "severityQuestion": "In the last month, which of these have been true? Be honest and pick all that apply.",
+    "severityOptions": [
+      { "value": "loss_control", "label": "I keep going even after part of me wants to stop." },
+      { "value": "failed_cutback", "label": "I tried to cut down and couldn't." },
+      { "value": "time_creep", "label": "I tell myself \"just a little,\" but it keeps turning into more." },
+      { "value": "withdrawal_restlessness", "label": "I feel restless, anxious, irritated, or off when I can't use it." },
+      { "value": "mental_pull", "label": "I keep thinking about it even when I'm doing something else." },
+      { "value": "concealment", "label": "I sometimes hide, downplay, or make it sound like less than it is." },
+      { "value": "interference_harm", "label": "Sometimes it gets in the way of my sleep, work, school, mood, money, body, or relationships." },
+      { "value": "compensation_stage", "label": "It doesn't even feel good anymore, but it still helps when I'm stressed, bored, lonely, or restless." },
+      { "value": "none", "label": "None of these.", "hint": "exclusive" }
+    ]
+  },
+  "cost": {
+    "aftertasteQuestion": "After you've used longer than you meant to, how do you usually feel?",
+    "aftertasteOptions": [
+      { "value": "calmer_regulated", "label": "Calmer, regulated" },
+      { "value": "connected", "label": "Connected" },
+      { "value": "entertained", "label": "Entertained" },
+      { "value": "numb", "label": "Numb" },
+      { "value": "guilty_ashamed", "label": "Guilty or ashamed" },
+      { "value": "worse_self_body", "label": "Worse about myself or my body" },
+      { "value": "more_anxious", "label": "More anxious" },
+      { "value": "more_lonely", "label": "More lonely" },
+      { "value": "tired", "label": "Tired" },
+      { "value": "behind_panicked", "label": "Behind and panicked" },
+      { "value": "no_different", "label": "No different" }
+    ],
+    "costQuestion": "Where has it actually cost you lately? Pick all that are real.",
+    "costOptions": [
+      { "value": "sleep", "label": "Sleep" },
+      { "value": "work_school_responsibilities", "label": "School, work, or other responsibilities" },
+      { "value": "focus_attention", "label": "Focus and attention" },
+      { "value": "mood_anxiety", "label": "Mood or anxiety" },
+      { "value": "self_body_image", "label": "How I feel about myself or my body" },
+      { "value": "friendships_dating_social", "label": "Friendships, dating, and social life" },
+      { "value": "home_family_conflict", "label": "Conflict at home or with family" },
+      { "value": "money", "label": "Money" },
+      { "value": "none_meaningful", "label": "Nowhere meaningful, honestly", "hint": "exclusive" }
+    ]
+  },
+  "disambiguation": {
+    "prompt": "Two patterns came up close. Which one feels more true?",
+    "noneLabel": "Neither, honestly"
+  },
+  "result": {
+    "fitQuestion": "Did we get it right?",
+    "fitOptions": [
+      { "value": 0, "label": "Not really" },
+      { "value": 1, "label": "A little" },
+      { "value": 2, "label": "Most of it fits" },
+      { "value": 3, "label": "Yes, that's me" },
+      { "value": 4, "label": "Wow, this feels exactly right" }
+    ],
+    "missedQuestion": "If none quite fit, or we got something wrong, tell us what we missed about how you actually use tech.",
+    "convertTitle": "Want to go deeper?",
+    "convertBody": "Join the waitlist to save your full result, get personalized next steps, and hear when Blue Light launches.",
+    "convertCta": "Join the waitlist"
+  },
+  "somethingElseLabel": "Something else"
+}
