@@ -68,8 +68,9 @@
 
 .tlq-options { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 8px; }
 /* Two-column option grid (short multi-selects). Collapses on the narrowest phones. */
-.tlq-options--2col { display: grid; grid-template-columns: repeat(2, 1fr); align-items: stretch; }
-.tlq-options--2col .tlq-opt { height: 100%; }
+/* align-items: start so each card hugs its own text — a single-line option
+   (e.g. "Sleep") next to a two-line one doesn't stretch to match it. */
+.tlq-options--2col { display: grid; grid-template-columns: repeat(2, 1fr); align-items: start; }
 @media (max-width: 380px) { .tlq-options--2col { grid-template-columns: 1fr; } }
 
 .tlq-opt {
