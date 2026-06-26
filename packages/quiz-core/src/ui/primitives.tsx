@@ -156,6 +156,7 @@ export function MultiChoice({
   hint,
   options,
   max,
+  initial,
   allowFreeText,
   freeTextPlaceholder,
   continueLabel = "Continue",
@@ -166,12 +167,14 @@ export function MultiChoice({
   hint?: string;
   options: Option[];
   max?: number;
+  /** Pre-selected values (so navigating Back restores the previous answer). */
+  initial?: string[];
   allowFreeText?: boolean;
   freeTextPlaceholder?: string;
   continueLabel?: string;
   onSubmit: (values: string[], labels: string[], freeText?: string) => void;
 }) {
-  const [sel, setSel] = useState<string[]>([]);
+  const [sel, setSel] = useState<string[]>(initial ?? []);
   const [text, setText] = useState("");
   const exclusive = useMemo(
     () => new Set(options.filter((o) => o.exclusive).map((o) => o.value)),
@@ -193,12 +196,9 @@ export function MultiChoice({
     <>
       {kicker && <div className="q-kicker">{kicker}</div>}
       <h2 className="q-q">{question}</h2>
-      {(hint || max) && (
-        <p className="q-hint">
-          {hint}
-          {max ? `${hint ? " · " : ""}up to ${max}` : ""}
-        </p>
-      )}
+      <p className="q-hint">
+        {hint}{hint ? " · " : ""}{max ? `pick up to ${max}` : "pick all that apply"}
+      </p>
       <div className="q-options">
         {options.map((o) => (
           <button key={o.value} className="q-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>

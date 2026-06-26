@@ -171,6 +171,7 @@
 .tlq-fit-opt:hover { border-color: var(--tlq-accent-strong); }
 .tlq-fit-opt[data-selected="true"] { border-color: var(--tlq-accent); background: var(--tlq-sel); }
 .tlq-fit-thanks { color: var(--tlq-muted); font-size: 14px; margin: 4px 0; }
+.tlq-disclaimer { text-align: center; color: var(--tlq-muted); font-size: 12.5px; margin: 22px auto 0; max-width: 36ch; opacity: 0.85; }
 
 /* Brand / logo */
 .tlq-brand { display: flex; align-items: center; padding: 2px 0 18px; }

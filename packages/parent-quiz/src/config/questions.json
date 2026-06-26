@@ -9,12 +9,36 @@
       "question": "How old is your child or teen?",
       "hint": "Optional — used for copy and relevance, not scoring.",
       "options": [
-        { "value": "child", "label": "8 to 10", "ageBand": "child" },
-        { "value": "tween", "label": "11 to 13", "ageBand": "tween" },
-        { "value": "young_teen", "label": "14 to 15", "ageBand": "young_teen" },
-        { "value": "older_teen", "label": "16 to 18", "ageBand": "older_teen" },
-        { "value": "launch", "label": "College-age but still living at home", "ageBand": "launch" },
-        { "value": "other", "label": "Other", "ageBand": "other" }
+        {
+          "value": "child",
+          "label": "8 to 10",
+          "ageBand": "child"
+        },
+        {
+          "value": "tween",
+          "label": "11 to 13",
+          "ageBand": "tween"
+        },
+        {
+          "value": "young_teen",
+          "label": "14 to 15",
+          "ageBand": "young_teen"
+        },
+        {
+          "value": "older_teen",
+          "label": "16 to 18",
+          "ageBand": "older_teen"
+        },
+        {
+          "value": "launch",
+          "label": "College-age but still living at home",
+          "ageBand": "launch"
+        },
+        {
+          "value": "other",
+          "label": "Other",
+          "ageBand": "other"
+        }
       ]
     },
     {
@@ -25,14 +49,63 @@
       "question": "What made you take this quiz today?",
       "hint": "Pick all that fit.",
       "options": [
-        { "value": "battle", "label": "Setting screen limits has turned into a constant fight.", "loops": { "daily_battle": 3 } },
-        { "value": "withdrawn", "label": "They're pulling away from us, and screens are where they disappear.", "loops": { "quiet_pull_away": 3 } },
-        { "value": "bedtime", "label": "Sleep, bedtime, or mornings now revolve around the device.", "loops": { "night_off_switch": 3 } },
-        { "value": "social", "label": "Their mood rises and falls with likes, streaks, group chats, or social drama.", "loops": { "social_mirror": 2, "always_checking": 1 } },
-        { "value": "gaming", "label": "Gaming or online worlds seem to matter more than anything offline.", "loops": { "competence_refuge": 2, "online_belonging": 1 } },
-        { "value": "intense", "label": "The content itself feels intense: anger, outrage, drama, or nonstop stimulation.", "loops": { "intensity_loop": 3 } },
-        { "value": "money", "label": "Money keeps coming up: in-game purchases, loot boxes, betting, or trades.", "loops": { "reward_chase": 3 } },
-        { "value": "unsure", "label": "I'm not sure. Something just feels off.", "urgency": 1, "exclusive": true }
+        {
+          "value": "battle",
+          "label": "Setting screen limits has turned into a constant fight.",
+          "loops": {
+            "daily_battle": 3
+          }
+        },
+        {
+          "value": "withdrawn",
+          "label": "They're pulling away from us, and screens are where they disappear.",
+          "loops": {
+            "quiet_pull_away": 3
+          }
+        },
+        {
+          "value": "bedtime",
+          "label": "Sleep, bedtime, or mornings now revolve around the device.",
+          "loops": {
+            "night_off_switch": 3
+          }
+        },
+        {
+          "value": "social",
+          "label": "Their mood rises and falls with likes, streaks, group chats, or social drama.",
+          "loops": {
+            "social_mirror": 2,
+            "always_checking": 1
+          }
+        },
+        {
+          "value": "gaming",
+          "label": "Gaming or online worlds seem to matter more than anything offline.",
+          "loops": {
+            "competence_refuge": 2,
+            "online_belonging": 1
+          }
+        },
+        {
+          "value": "intense",
+          "label": "The content itself feels intense: anger, outrage, drama, or nonstop stimulation.",
+          "loops": {
+            "intensity_loop": 3
+          }
+        },
+        {
+          "value": "money",
+          "label": "Money keeps coming up: in-game purchases, loot boxes, betting, or trades.",
+          "loops": {
+            "reward_chase": 3
+          }
+        },
+        {
+          "value": "unsure",
+          "label": "I'm not sure. Something just feels off.",
+          "urgency": 1,
+          "exclusive": true
+        }
       ]
     },
     {
@@ -42,13 +115,73 @@
       "max": 2,
       "question": "When you try to set a limit, what usually happens?",
       "options": [
-        { "value": "fight", "label": "It turns into a fight, even when I try to stay calm.", "family": { "battle": 3 }, "loops": { "daily_battle": 1 }, "urgency": 2 },
-        { "value": "one_more", "label": "There's always one more round, one more episode, one more thing they need to finish.", "loops": { "autopilot_zone_out": 1, "competence_refuge": 1 }, "family": { "negotiation": 1 } },
-        { "value": "crushed", "label": "They seem crushed or unreachable, like I took away the only thing that was helping.", "loops": { "quiet_pull_away": 1, "night_off_switch": 1 }, "family": { "quiet_distance": 1 } },
-        { "value": "sneak", "label": "They sneak it, hide it, downplay it, or make it sound like less than it is.", "markers": ["concealment"], "urgency": 2 },
-        { "value": "annoyed_stop", "label": "They're annoyed, but they can usually stop." },
-        { "value": "avoid", "label": "Honestly, I avoid setting the limit because I can't handle another blow-up.", "family": { "give_in_burnout": 2, "battle": 1 }, "loops": { "daily_battle": 1 }, "costs": ["parent_burnout"] },
-        { "value": "works", "label": "We have limits that mostly work.", "family": { "collaborative": 1 }, "lowConcern": true }
+        {
+          "value": "fight",
+          "label": "It turns into a fight, even when I try to stay calm.",
+          "family": {
+            "battle": 3
+          },
+          "loops": {
+            "daily_battle": 1
+          },
+          "urgency": 2
+        },
+        {
+          "value": "one_more",
+          "label": "There's always one more round, one more episode, one more thing they need to finish.",
+          "loops": {
+            "autopilot_zone_out": 1,
+            "competence_refuge": 1
+          },
+          "family": {
+            "negotiation": 1
+          }
+        },
+        {
+          "value": "crushed",
+          "label": "They seem crushed or unreachable, like I took away the only thing that was helping.",
+          "loops": {
+            "quiet_pull_away": 1,
+            "night_off_switch": 1
+          },
+          "family": {
+            "quiet_distance": 1
+          }
+        },
+        {
+          "value": "sneak",
+          "label": "They sneak it, hide it, downplay it, or make it sound like less than it is.",
+          "markers": [
+            "concealment"
+          ],
+          "urgency": 2
+        },
+        {
+          "value": "annoyed_stop",
+          "label": "They're annoyed, but they can usually stop."
+        },
+        {
+          "value": "avoid",
+          "label": "Honestly, I avoid setting the limit because I can't handle another blow-up.",
+          "family": {
+            "give_in_burnout": 2,
+            "battle": 1
+          },
+          "loops": {
+            "daily_battle": 1
+          },
+          "costs": [
+            "parent_burnout"
+          ]
+        },
+        {
+          "value": "works",
+          "label": "We have limits that mostly work.",
+          "family": {
+            "collaborative": 1
+          },
+          "lowConcern": true
+        }
       ]
     },
     {
@@ -58,32 +191,64 @@
       "max": 2,
       "question": "When is screen use hardest to interrupt?",
       "options": [
-        { "value": "late_night", "label": "Late at night, especially in bed.", "loops": { "night_off_switch": 2 } },
-        { "value": "morning", "label": "First thing in the morning.", "loops": { "always_checking": 2 } },
-        { "value": "before_hard", "label": "Before homework, chores, schoolwork, or anything hard.", "loops": { "competence_refuge": 1, "autopilot_zone_out": 1 } },
-        { "value": "after_stress", "label": "After school or after a stressful day.", "loops": { "night_off_switch": 1, "autopilot_zone_out": 1 } },
-        { "value": "bored", "label": "When they're bored, waiting, or between things.", "loops": { "autopilot_zone_out": 2 } },
-        { "value": "alone", "label": "When they're alone, left out, or disconnected.", "loops": { "online_belonging": 1, "quiet_pull_away": 1 } },
-        { "value": "group_event", "label": "When a group chat, game, stream, or online event is happening.", "loops": { "online_belonging": 1, "always_checking": 1 } },
-        { "value": "all_time", "label": "There's no clear pattern. It feels like all the time.", "urgency": 1 }
-      ]
-    },
-    {
-      "id": "q4_giving",
-      "section": "loop",
-      "type": "multi",
-      "max": 2,
-      "question": "If you had to guess, what is the screen giving them?",
-      "hint": "What it's really for, even if you're not sure.",
-      "options": [
-        { "value": "calm", "label": "A way to calm down, shut off, or not think for a while.", "loops": { "night_off_switch": 2, "autopilot_zone_out": 1 } },
-        { "value": "good_at", "label": "A place where they feel good at something.", "loops": { "competence_refuge": 3 } },
-        { "value": "their_people", "label": "Their people: friends, servers, fandoms, creators, or a world where they feel known.", "loops": { "online_belonging": 3 } },
-        { "value": "included", "label": "Proof that they're included, liked, noticed, or not missing out.", "loops": { "social_mirror": 2, "always_checking": 1 } },
-        { "value": "better_self", "label": "A version of themselves or a world that feels better than real life right now.", "loops": { "quiet_pull_away": 2, "online_belonging": 1 } },
-        { "value": "intensity", "label": "Intensity, drama, edge, anger, or something that makes them feel awake.", "loops": { "intensity_loop": 3 } },
-        { "value": "win", "label": "The chance of a win, drop, reward, deal, trade, pull, or score.", "loops": { "reward_chase": 3 } },
-        { "value": "dont_know", "label": "I honestly don't know.", "exclusive": true }
+        {
+          "value": "late_night",
+          "label": "Late at night, especially in bed.",
+          "loops": {
+            "night_off_switch": 2
+          }
+        },
+        {
+          "value": "morning",
+          "label": "First thing in the morning.",
+          "loops": {
+            "always_checking": 2
+          }
+        },
+        {
+          "value": "before_hard",
+          "label": "Before homework, chores, schoolwork, or anything hard.",
+          "loops": {
+            "competence_refuge": 1,
+            "autopilot_zone_out": 1
+          }
+        },
+        {
+          "value": "after_stress",
+          "label": "After school or after a stressful day.",
+          "loops": {
+            "night_off_switch": 1,
+            "autopilot_zone_out": 1
+          }
+        },
+        {
+          "value": "bored",
+          "label": "When they're bored, waiting, or between things.",
+          "loops": {
+            "autopilot_zone_out": 2
+          }
+        },
+        {
+          "value": "alone",
+          "label": "When they're alone, left out, or disconnected.",
+          "loops": {
+            "online_belonging": 1,
+            "quiet_pull_away": 1
+          }
+        },
+        {
+          "value": "group_event",
+          "label": "When a group chat, game, stream, or online event is happening.",
+          "loops": {
+            "online_belonging": 1,
+            "always_checking": 1
+          }
+        },
+        {
+          "value": "all_time",
+          "label": "There's no clear pattern. It feels like all the time.",
+          "urgency": 1
+        }
       ]
     },
     {
@@ -93,31 +258,159 @@
       "max": 2,
       "question": "After screen time goes too long, what do you notice?",
       "options": [
-        { "value": "exhausted", "label": "They're exhausted, hard to wake, or the next morning is rough.", "loops": { "night_off_switch": 1 }, "costs": ["sleep"] },
-        { "value": "irritable", "label": "They're irritable, wired, or easier to set off.", "loops": { "intensity_loop": 1 }, "costs": ["mood"] },
-        { "value": "smaller", "label": "They seem smaller, more self-conscious, or upset by social stuff.", "loops": { "social_mirror": 1 }, "costs": ["self_image"] },
-        { "value": "blank", "label": "They seem blank, numb, or checked out.", "loops": { "autopilot_zone_out": 1, "quiet_pull_away": 1 } },
-        { "value": "defensive", "label": "They're defensive or secretive when I ask what happened.", "markers": ["concealment"], "urgency": 1 },
-        { "value": "calmer_back", "label": "They're calmer for a little while, but the same need comes back.", "loops": { "night_off_switch": 1 } },
-        { "value": "not_much", "label": "I don't notice much afterward.", "exclusive": true }
+        {
+          "value": "exhausted",
+          "label": "They're exhausted, hard to wake, or the next morning is rough.",
+          "loops": {
+            "night_off_switch": 1
+          },
+          "costs": [
+            "sleep"
+          ]
+        },
+        {
+          "value": "irritable",
+          "label": "They're irritable, wired, or easier to set off.",
+          "loops": {
+            "intensity_loop": 1
+          },
+          "costs": [
+            "mood"
+          ]
+        },
+        {
+          "value": "smaller",
+          "label": "They seem smaller, more self-conscious, or upset by social stuff.",
+          "loops": {
+            "social_mirror": 1
+          },
+          "costs": [
+            "self_image"
+          ]
+        },
+        {
+          "value": "blank",
+          "label": "They seem blank, numb, or checked out.",
+          "loops": {
+            "autopilot_zone_out": 1,
+            "quiet_pull_away": 1
+          }
+        },
+        {
+          "value": "defensive",
+          "label": "They're defensive or secretive when I ask what happened.",
+          "markers": [
+            "concealment"
+          ],
+          "urgency": 1
+        },
+        {
+          "value": "calmer_back",
+          "label": "They're calmer for a little while, but the same need comes back.",
+          "loops": {
+            "night_off_switch": 1
+          }
+        },
+        {
+          "value": "not_much",
+          "label": "I don't notice much afterward.",
+          "exclusive": true
+        }
       ]
     },
     {
       "id": "q6_cost",
       "section": "cost",
       "type": "multi",
-      "question": "Where is this costing your child or your family lately?",
+      "question": "How is this impacting your child or family?",
       "options": [
-        { "value": "sleep", "label": "Sleep or mornings.", "costs": ["sleep"], "urgency": 1 },
-        { "value": "school", "label": "School, homework, chores, or responsibilities.", "costs": ["school"] },
-        { "value": "mood", "label": "Mood, irritability, stress, or emotional swings.", "costs": ["mood"] },
-        { "value": "conflict", "label": "Family conflict, trust, or the relationship between you.", "costs": ["conflict"] },
-        { "value": "offline", "label": "Offline friends, activities, sports, hobbies, or leaving the house.", "costs": ["offline_life"] },
-        { "value": "self_image", "label": "Self-image, appearance stress, comparison, or social confidence.", "costs": ["self_image"] },
-        { "value": "money", "label": "Money, purchases, bets, trades, or charges.", "costs": ["money"], "hardRules": ["reward_money"] },
-        { "value": "secrecy", "label": "Secrecy, sneaking, lying, or hiding.", "costs": ["trust"], "markers": ["concealment"], "urgency": 2 },
-        { "value": "parent_stress", "label": "My own stress as a parent.", "costs": ["parent_burnout"] },
-        { "value": "nowhere", "label": "Nowhere meaningful, honestly.", "lowConcern": true }
+        {
+          "value": "sleep",
+          "label": "Sleep or mornings.",
+          "costs": [
+            "sleep"
+          ],
+          "urgency": 1
+        },
+        {
+          "value": "school",
+          "label": "School, homework, chores, or responsibilities.",
+          "costs": [
+            "school"
+          ]
+        },
+        {
+          "value": "mood",
+          "label": "Mood, irritability, stress, or emotional swings.",
+          "costs": [
+            "mood"
+          ]
+        },
+        {
+          "value": "conflict",
+          "label": "Family conflict, trust, or the relationship between you.",
+          "costs": [
+            "conflict"
+          ]
+        },
+        {
+          "value": "offline",
+          "label": "Offline friends, activities, sports, hobbies, or leaving the house.",
+          "costs": [
+            "offline_life"
+          ]
+        },
+        {
+          "value": "self_image",
+          "label": "Self-image, appearance stress, comparison, or social confidence.",
+          "costs": [
+            "self_image"
+          ]
+        },
+        {
+          "value": "money",
+          "label": "Money, purchases, bets, trades, or charges.",
+          "costs": [
+            "money"
+          ],
+          "hardRules": [
+            "reward_money"
+          ]
+        },
+        {
+          "value": "secrecy",
+          "label": "Secrecy, sneaking, lying, or hiding.",
+          "costs": [
+            "trust"
+          ],
+          "markers": [
+            "concealment"
+          ],
+          "urgency": 2
+        },
+        {
+          "value": "parent_stress",
+          "label": "My own stress as a parent.",
+          "costs": [
+            "parent_burnout"
+          ]
+        },
+        {
+          "value": "safety",
+          "label": "A serious safety concern: unsafe contact, exploitation, self-harm content, violence, or abuse.",
+          "markers": [
+            "safety"
+          ],
+          "hardRules": [
+            "safety"
+          ],
+          "urgency": 3
+        },
+        {
+          "value": "nowhere",
+          "label": "Nowhere meaningful, honestly.",
+          "lowConcern": true
+        }
       ]
     },
     {
@@ -127,30 +420,63 @@
       "max": 2,
       "question": "What role have you fallen into as the parent?",
       "options": [
-        { "value": "police", "label": "The phone police. I enforce, they resist, and we repeat.", "family": { "battle": 2 }, "parentRole": "enforcer" },
-        { "value": "detective", "label": "The detective. I check, monitor, investigate, or try to catch what's happening.", "family": { "detective": 2 }, "parentRole": "detective" },
-        { "value": "negotiator", "label": "The negotiator. Everything becomes a deal, exception, or argument over minutes.", "family": { "negotiation": 2 }, "parentRole": "negotiator" },
-        { "value": "peacekeeper", "label": "The peacekeeper. Sometimes I give in because I need the house to calm down.", "family": { "give_in_burnout": 2 }, "parentRole": "peacekeeper" },
-        { "value": "fixer", "label": "The fixer. I keep researching tools, controls, rules, and expert advice.", "family": { "fixer": 2 }, "parentRole": "fixer" },
-        { "value": "observer", "label": "The worried observer. I can see something is off, but I don't know how to reach them.", "family": { "quiet_distance": 2 }, "parentRole": "worried_observer" },
-        { "value": "collaborator", "label": "The collaborator. We can usually talk about it and adjust.", "family": { "collaborative": 2 }, "parentRole": "collaborator", "exclusive": true }
-      ]
-    },
-    {
-      "id": "q8_month",
-      "section": "urgency",
-      "type": "multi",
-      "question": "In the past month, which of these have been true?",
-      "options": [
-        { "value": "failed_limits", "label": "We tried rules or limits, and they didn't really stick.", "markers": ["failed_limits"], "urgency": 2 },
-        { "value": "keep_going", "label": "They keep going after a clear stopping point.", "markers": ["loss_of_control"], "urgency": 2 },
-        { "value": "restless", "label": "They get restless, anxious, angry, or very off when they can't use it.", "markers": ["withdrawal_restless"], "urgency": 2 },
-        { "value": "hide", "label": "They hide, sneak, downplay, or lie about use.", "markers": ["concealment"], "urgency": 2 },
-        { "value": "sleep", "label": "Sleep or mornings are clearly affected.", "costs": ["sleep"], "urgency": 1 },
-        { "value": "function", "label": "School, responsibilities, or offline life are clearly affected.", "costs": ["school"], "urgency": 2 },
-        { "value": "money", "label": "Money, charges, risky purchases, betting, or trading are involved.", "markers": ["money_risk"], "costs": ["money"], "hardRules": ["reward_money"], "urgency": 3 },
-        { "value": "safety", "label": "I have a serious safety concern, like unsafe contact, exploitation, self-harm content, violence, or abuse.", "markers": ["safety"], "hardRules": ["safety"] },
-        { "value": "none", "label": "None of these.", "exclusive": true }
+        {
+          "value": "police",
+          "label": "The tech police. I enforce, they resist, and we repeat.",
+          "family": {
+            "battle": 2
+          },
+          "parentRole": "enforcer"
+        },
+        {
+          "value": "detective",
+          "label": "The detective. I check, monitor, investigate, or try to catch what's happening.",
+          "family": {
+            "detective": 2
+          },
+          "parentRole": "detective"
+        },
+        {
+          "value": "negotiator",
+          "label": "The negotiator. Everything becomes a deal, exception, or argument over minutes.",
+          "family": {
+            "negotiation": 2
+          },
+          "parentRole": "negotiator"
+        },
+        {
+          "value": "peacekeeper",
+          "label": "The peacekeeper. Sometimes I give in because I need the house to calm down.",
+          "family": {
+            "give_in_burnout": 2
+          },
+          "parentRole": "peacekeeper"
+        },
+        {
+          "value": "fixer",
+          "label": "The fixer. I keep researching tools, controls, rules, and expert advice.",
+          "family": {
+            "fixer": 2
+          },
+          "parentRole": "fixer"
+        },
+        {
+          "value": "observer",
+          "label": "The worried observer. I can see something is off, but I don't know how to reach them.",
+          "family": {
+            "quiet_distance": 2
+          },
+          "parentRole": "worried_observer"
+        },
+        {
+          "value": "collaborator",
+          "label": "The collaborator. We can usually talk about it and adjust.",
+          "family": {
+            "collaborative": 2
+          },
+          "parentRole": "collaborator",
+          "exclusive": true
+        }
       ]
     }
   ]

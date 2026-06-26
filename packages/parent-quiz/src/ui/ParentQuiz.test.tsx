@@ -9,6 +9,7 @@
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { ParentQuiz } from "./ParentQuiz";
+import { CONTENT } from "../config";
 
 beforeAll(() => {
   // jsdom doesn't implement scrollTo; stub it so the flow's smooth-scroll is a no-op.
@@ -31,7 +32,7 @@ describe("<ParentQuiz/>", () => {
 
     // Answer each screen by clicking its first option (+ Continue for multi).
     for (let i = 0; i < 14; i++) {
-      if (screen.queryByText("Just show the result") || screen.queryByText(/Reading your family/)) break;
+      if (screen.queryByPlaceholderText("Your name") || screen.queryByText(/Reading your family/)) break;
       const opts = screen.getAllByRole("button").filter((b) => b.classList.contains("q-opt"));
       if (!opts.length) break;
       fireEvent.click(opts[0]!);
@@ -40,9 +41,11 @@ describe("<ParentQuiz/>", () => {
       await tick();
     }
 
-    // Email gate → skip → result.
-    const skip = await screen.findByText("Just show the result");
-    fireEvent.click(skip);
+    // Email gate now requires name + email (no skip).
+    const nameInput = await screen.findByPlaceholderText("Your name");
+    fireEvent.change(nameInput, { target: { value: "Test Parent" } });
+    fireEvent.change(document.querySelector('input[type="email"]')!, { target: { value: "t@e.co" } });
+    fireEvent.click(screen.getByText(CONTENT.emailGate.cta));
 
     const book = await screen.findByText(/book a free consult/i);
     expect(book.getAttribute("href")).toBe("https://example.com/cares");

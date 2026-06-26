@@ -58,6 +58,8 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
 
   const [view, setView] = useState<ParentResultView | null>(null);
   const [fitRating, setFitRating] = useState<number | null>(null);
+  // Mirror of answers for the UI, so navigating Back can pre-fill selections.
+  const [saved, setSaved] = useState<Record<string, string[]>>({});
 
   const step = steps[pos]!;
   const progress = step.kind === "result" ? 1 : Math.min(0.97, pos / steps.length);
@@ -113,6 +115,7 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
   const answer = useCallback(
     (qid: string, values: string[], labels: string[]) => {
       answersRef.current = { ...answersRef.current, [qid]: values };
+      setSaved(answersRef.current);
       if (qid === "age") {
         const opt = QUESTION_BY_ID.get("age")?.options.find((o) => o.value === values[0]);
         ageRef.current = opt?.ageBand;
@@ -153,10 +156,8 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
 
   /** Email gate → unlock the full result. */
   const submitEmail = useCallback(
-    async (email: string) => {
-      identityRef.current = email
-        ? { email, consentedToContact: true }
-        : identityRef.current;
+    async (name: string, email: string) => {
+      identityRef.current = { name: name || undefined, email: email || undefined, consentedToContact: Boolean(email) };
       const v = view ?? (await compute());
       persist(v, null, null);
       advance();
@@ -175,6 +176,7 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
 
   const restart = useCallback(() => {
     answersRef.current = {};
+    setSaved({});
     ageRef.current = undefined;
     logRef.current = [];
     identityRef.current = {};
@@ -193,6 +195,7 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
     fitRating,
     bookingUrl,
     canGoBack,
+    saved,
     begin,
     goBack,
     answer,
