@@ -22,14 +22,19 @@ const optButtons = () =>
 
 /** Advance one screen: pick its first option (+ Continue / Skip as needed). */
 function step() {
+  // Required identity gate (name + email, no skip) sits right before the result.
+  const nameInput = document.querySelector('input[placeholder="Name"]') as HTMLInputElement | null;
+  const emailInput = document.querySelector('input[placeholder="Email"]') as HTMLInputElement | null;
+  if (nameInput && emailInput) {
+    fireEvent.change(nameInput, { target: { value: "Test" } });
+    fireEvent.change(emailInput, { target: { value: "t@e.co" } });
+    fireEvent.click(screen.getByText("See my result"));
+    return;
+  }
   const opts = optButtons();
   if (opts.length) fireEvent.click(opts[0]!);
   const cont = screen.queryByText("Continue");
   if (cont) fireEvent.click(cont);
-  else if (!opts.length) {
-    const skip = screen.queryByText("Skip");
-    if (skip) fireEvent.click(skip);
-  }
 }
 
 describe("<TechLoopQuiz/>", () => {

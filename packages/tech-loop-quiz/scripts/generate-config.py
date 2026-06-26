@@ -232,7 +232,7 @@ for p in platforms.values():
             item["platformFeature"] = s["platformFeature"]
         subs.append(item)
     # Display-label overrides (slug/id stays derived from the source sheet).
-    label_override = {"twitter": "X (Twitter)", "ai_chat_gpt_gemini_claude": "AI (Chat GPT, Gemini, Claude, etc.)"}
+    label_override = {"twitter": "X (Twitter)", "ai_chat_gpt_gemini_claude": "AI (Chat GPT, Gemini, Claude, etc.)", "adult_content": "Pornography"}
     entry = {"id": p["id"], "label": label_override.get(p["id"], p["label"])}
     if p["id"] in PF_BY_PLATFORM:
         entry["platformFeature"] = PF_BY_PLATFORM[p["id"]]

@@ -56,8 +56,8 @@ export function evaluateParentHardRules(input: ParentHardRuleInput): ParentHardR
     fire({ ruleId: "PR_REWARD_MONEY", bandDelta: 1, forceSecondary: "reward_chase" });
   }
 
-  // Night off-switch + sleep cost + failed limits — raise at least one band.
-  if (input.loopScores.night_off_switch > 0 && input.costs.has("sleep") && input.markers.has("failed_limits")) {
+  // Night off-switch + sleep cost — the kid's sleep is taking the hit; raise a band.
+  if (input.loopScores.night_off_switch > 0 && input.costs.has("sleep")) {
     fire({ ruleId: "PR_NIGHT_SLEEP", bandDelta: 1 });
   }
 

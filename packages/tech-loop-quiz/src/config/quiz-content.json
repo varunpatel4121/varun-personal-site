@@ -13,10 +13,10 @@
       { "value": "child", "label": "My child or teen" }
     ],
     "identityQuestion": "Where can we send your result?",
-    "identityHint": "Optional — to save your result and hear when Blue Light launches. You can skip it.",
+    "identityHint": "We'll save your result here and let you know when Blue Light launches.",
     "lifeStageQuestion": "What's your current stage of life?",
     "lifeStageOptions": [
-      { "value": "school", "label": "In elementary, middle, or high school" },
+      { "value": "school", "label": "In high school" },
       { "value": "college", "label": "In college" },
       { "value": "grad", "label": "In grad or professional school" },
       { "value": "working", "label": "Working" },
@@ -31,7 +31,7 @@
       { "value": 1, "label": "Mostly fine, I just get pulled in more than I'd like." },
       { "value": 2, "label": "I use it more than I really want to." },
       { "value": 3, "label": "It often feels hard to stop, even when I try." },
-      { "value": 4, "label": "It's running my life more than I'm running it." }
+      { "value": 4, "label": "It's totally taken over my life." }
     ]
   },
   "pull": {
@@ -41,12 +41,12 @@
     "subfeatureHint": ""
   },
   "loop": {
-    "entryQuestion": "When do you usually get pulled in the hardest?",
+    "entryQuestion": "When do you usually get pulled in the most?",
     "entryOptions": [
       { "value": "night_regulation", "label": "Late at night, especially in bed" },
       { "value": "morning_check_in", "label": "First thing when I wake up" },
-      { "value": "gap_filling", "label": "Between things like meetings, classes, errands, transit, bathroom, waiting" },
-      { "value": "task_avoidance", "label": "Right before I need to start work, school, a task, or something hard" },
+      { "value": "gap_filling", "label": "Fill the downtime throughout the day like waiting, commuting, bathroom breaks, or time between meetings and classes." },
+      { "value": "task_avoidance", "label": "Before I start something hard like work, school, or a task" },
       { "value": "stress_relief", "label": "After I'm drained, overwhelmed, stressed, or upset" },
       { "value": "alone_disconnected", "label": "When I'm alone or feel disconnected" },
       { "value": "under_stimulated", "label": "When I'm bored, restless, or under-stimulated" },
@@ -72,7 +72,7 @@
       { "value": 3, "label": "Often" },
       { "value": 4, "label": "Almost every time" }
     ],
-    "severityQuestion": "In the last month, which of these have been true? Be honest and pick all that apply.",
+    "severityQuestion": "In the last month, which of these have been true?",
     "severityOptions": [
       { "value": "loss_control", "label": "I keep going even after part of me wants to stop." },
       { "value": "failed_cutback", "label": "I tried to cut down and couldn't." },
@@ -86,7 +86,7 @@
     ]
   },
   "cost": {
-    "aftertasteQuestion": "After you've used longer than you meant to, how do you usually feel?",
+    "aftertasteQuestion": "After you've used these applications, how do you usually feel?",
     "aftertasteOptions": [
       { "value": "calmer_regulated", "label": "Calmer, regulated" },
       { "value": "connected", "label": "Connected" },
@@ -100,7 +100,7 @@
       { "value": "behind_panicked", "label": "Behind and panicked" },
       { "value": "no_different", "label": "No different" }
     ],
-    "costQuestion": "Where has it actually cost you lately? Pick all that are real.",
+    "costQuestion": "Where has it impacted your life?",
     "costOptions": [
       { "value": "sleep", "label": "Sleep" },
       { "value": "work_school_responsibilities", "label": "School, work, or other responsibilities" },

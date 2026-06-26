@@ -118,9 +118,7 @@ function MultiChoice({
     <>
       {kicker && <div className="tlq-kicker">{kicker}</div>}
       <h2 className="tlq-q">{question}</h2>
-      {(hint || max) && (
-        <p className="tlq-hint">{hint}{hint && max ? " · " : ""}{max ? `pick up to ${max}` : ""}</p>
-      )}
+      <p className="tlq-hint">{hint}{hint ? " · " : ""}{max ? `pick up to ${max}` : "pick all that apply"}</p>
       <div className="tlq-options">
         {options.map((o) => (
           <button key={o.value} className="tlq-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>
@@ -228,8 +226,6 @@ function HookQuestion({
   onSelect: (optionId: string, hook: HookTag | null, label: string, freeText?: string) => void;
 }) {
   const q = SUBFEATURE_QUESTION_MAP.get(`${platform}.${subfeature}`);
-  const [freeMode, setFreeMode] = useState(false);
-  const [text, setText] = useState("");
   if (!q) return null;
   return (
     <>
@@ -244,18 +240,7 @@ function HookQuestion({
         <button className="tlq-opt" onClick={() => onSelect("normal_use", null, "This doesn't really pull me in")}>
           <Check round /><span>This doesn&apos;t really pull me in.</span>
         </button>
-        <button className="tlq-opt" data-selected={freeMode} onClick={() => setFreeMode((v) => !v)}>
-          <Check round /><span>{QUIZ_CONTENT.somethingElseLabel}…</span>
-        </button>
       </div>
-      {freeMode && (
-        <>
-          <textarea className="tlq-textarea" rows={2} placeholder="In your own words…" value={text} onChange={(e) => setText(e.target.value)} />
-          <div className="tlq-actions">
-            <button className="tlq-btn" disabled={!text.trim()} onClick={() => onSelect("something_else", null, "Something else", text.trim())}>Continue</button>
-          </div>
-        </>
-      )}
     </>
   );
 }
@@ -266,7 +251,6 @@ function Intro({ onStart }: { onStart: () => void }) {
     <div className="tlq-center">
       <div className="tlq-brand tlq-intro-logo"><Logo size={26} /></div>
       <h1 className="tlq-title">{c.title}</h1>
-      <p className="tlq-lead">{c.disclaimer}</p>
       <button className="tlq-btn" onClick={onStart}>{c.cta}</button>
     </div>
   );
@@ -281,12 +265,10 @@ function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, 
       <div className="tlq-kicker">Save your result</div>
       <h2 className="tlq-q">{c.identityQuestion}</h2>
       <p className="tlq-hint">{c.identityHint}</p>
-      <input className="tlq-input" placeholder="Name (optional)" value={name} onChange={(e) => setName(e.target.value)} />
-      <input className="tlq-input" type="email" placeholder="Email (optional)" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input className="tlq-input" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input className="tlq-input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <div className="tlq-actions">
-        <button className="tlq-btn--ghost tlq-btn" onClick={() => onSubmit("", "", false)}>Skip</button>
-        <div className="tlq-spacer" />
-        <button className="tlq-btn" onClick={() => onSubmit(name.trim(), email.trim(), Boolean(email.trim()))}>See my result</button>
+        <button className="tlq-btn" disabled={!(name.trim() && /^\S+@\S+\.\S+$/.test(email.trim()))} onClick={() => onSubmit(name.trim(), email.trim(), true)}>See my result</button>
       </div>
     </>
   );
@@ -379,6 +361,7 @@ function ResultScreen({ quiz, waitlistUrl }: { quiz: ReturnType<typeof useTechLo
       <div className="tlq-actions" style={{ justifyContent: "center" }}>
         <button className="tlq-btn--ghost tlq-btn" onClick={restart}>Start over</button>
       </div>
+      <p className="tlq-disclaimer">{QUIZ_CONTENT.intro.disclaimer}</p>
     </>
   );
 }
@@ -421,7 +404,7 @@ export function TechLoopQuiz(props: TechLoopQuizProps) {
     case "aftertaste":
       body = <MultiChoice kicker="The Cost" question={c.cost.aftertasteQuestion} max={2} initial={response.aftertastes} options={c.cost.aftertasteOptions} onSubmit={(v, l) => quiz.submitMulti("aftertaste", "aftertastes", v, l, "cost.aftertaste", c.cost.aftertasteQuestion, "cost")} />; break;
     case "cost":
-      body = <MultiChoice kicker="The Cost" question={c.cost.costQuestion} allowFreeText initial={response.costDomains} options={c.cost.costOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("cost", "costDomains", v, l, "cost.cost", c.cost.costQuestion, "cost")} />; break;
+      body = <MultiChoice kicker="The Cost" question={c.cost.costQuestion} initial={response.costDomains} options={c.cost.costOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("cost", "costDomains", v, l, "cost.cost", c.cost.costQuestion, "cost")} />; break;
     case "result":
       return <Shell progress={1} canGoBack={canGoBack} onBack={goBack} wide><div className="tlq-step" key={stepKey}><ResultScreen quiz={quiz} waitlistUrl={waitlistUrl} /></div></Shell>;
   }

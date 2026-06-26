@@ -67,21 +67,25 @@ function Safety({ onRestart }: { onRestart?: () => void }) {
   );
 }
 
-function EmailGate({ view, onSubmit }: { view: ParentResultView; onSubmit: (email: string) => void }) {
+function EmailGate({ view, onSubmit }: { view: ParentResultView; onSubmit: (name: string, email: string) => void }) {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   if (view.output.safety_flag) return <Safety />;
   const c = CONTENT.emailGate;
+  const valid = name.trim().length > 0 && /^\S+@\S+\.\S+$/.test(email.trim());
+  const submit = () => valid && onSubmit(name.trim(), email.trim());
   return (
     <div className="q-center">
       <div className="q-kicker">{c.kicker}</div>
       <div className="q-result-name">{view.primary.name}</div>
       <p className="q-recognition">“{view.primary.recognitionLine}”</p>
       <p className="q-lead" style={{ margin: "14px auto 0" }}>{c.body}</p>
-      <input className="q-input" style={{ maxWidth: 360, margin: "20px auto 0", textAlign: "center" }} type="email"
+      <input className="q-input" style={{ maxWidth: 360, margin: "18px auto 0", textAlign: "center" }}
+        placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input className="q-input" style={{ maxWidth: 360, margin: "10px auto 0", textAlign: "center" }} type="email"
         placeholder={c.placeholder} value={email} onChange={(e) => setEmail(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && onSubmit(email.trim())} />
-      <div style={{ marginTop: 18 }}><Button onClick={() => onSubmit(email.trim())}>{c.cta}</Button></div>
-      <div style={{ marginTop: 12 }}><Button variant="ghost" onClick={() => onSubmit("")}>{c.skip}</Button></div>
+        onKeyDown={(e) => e.key === "Enter" && submit()} />
+      <div style={{ marginTop: 18 }}><Button disabled={!valid} onClick={submit}>{c.cta}</Button></div>
     </div>
   );
 }
@@ -189,6 +193,7 @@ export function ParentQuiz(props: ParentQuizProps) {
     ) : (
       <>
         <MultiChoice kicker={KICKER[q.section]} question={q.question} hint={q.hint} max={q.max}
+          initial={quiz.saved[q.id]}
           options={q.options.map((o) => ({ value: o.value, label: o.label, exclusive: o.lowConcern || o.exclusive }))}
           onSubmit={(vals, labels) => quiz.answer(q.id, vals, labels)} />
         {skip}

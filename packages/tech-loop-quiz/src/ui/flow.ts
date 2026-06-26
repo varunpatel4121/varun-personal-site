@@ -74,9 +74,10 @@ function emptyResponse(): QuizResponse {
 
 /** The step sequence is a pure function of the response so far. */
 function buildSteps(r: QuizResponse): Step[] {
+  // Reporter ("who is this for?") is omitted — /quiz is already the adult
+  // self-report path (parents have /parent-quiz).
   const steps: Step[] = [
     { kind: "intro" },
-    { kind: "reporter" },
     { kind: "lifeStage" },
     { kind: "baseline" },
     { kind: "platforms" },
