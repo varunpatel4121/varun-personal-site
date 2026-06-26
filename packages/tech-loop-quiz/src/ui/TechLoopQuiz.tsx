@@ -92,11 +92,11 @@ function SingleChoice({
 }
 
 function MultiChoice({
-  kicker, question, hint, options, max, allowFreeText, initial, onSubmit,
+  kicker, question, hint, options, max, allowFreeText, initial, twoCol, onSubmit,
 }: {
   kicker?: string; question: string; hint?: string;
   options: { value: string; label: string; exclusive?: boolean }[];
-  max?: number; allowFreeText?: boolean; initial?: string[];
+  max?: number; allowFreeText?: boolean; initial?: string[]; twoCol?: boolean;
   onSubmit: (values: string[], labels: string[], freeText?: string) => void;
 }) {
   const [sel, setSel] = useState<string[]>(initial ?? []);
@@ -119,7 +119,7 @@ function MultiChoice({
       {kicker && <div className="tlq-kicker">{kicker}</div>}
       <h2 className="tlq-q">{question}</h2>
       <p className="tlq-hint">{hint}{hint ? " · " : ""}{max ? `Pick up to ${max}` : "Pick all that apply"}</p>
-      <div className="tlq-options">
+      <div className={`tlq-options${twoCol ? " tlq-options--2col" : ""}`}>
         {options.map((o) => (
           <button key={o.value} className="tlq-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>
             <Check />
@@ -259,7 +259,12 @@ function Intro({ onStart }: { onStart: () => void }) {
 function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, consent: boolean) => void }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [tried, setTried] = useState(false);
   const c = QUIZ_CONTENT.frame;
+  // Button stays visually solid (never dampened); the click only advances once
+  // both fields are valid, otherwise it surfaces a gentle inline hint.
+  const valid = name.trim().length > 0 && /^\S+@\S+\.\S+$/.test(email.trim());
+  const submit = () => (valid ? onSubmit(name.trim(), email.trim(), true) : setTried(true));
   return (
     <>
       <div className="tlq-kicker">Save your result</div>
@@ -267,8 +272,9 @@ function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, 
       <p className="tlq-hint">{c.identityHint}</p>
       <input className="tlq-input" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       <input className="tlq-input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      {tried && !valid && <p className="tlq-hint tlq-hint--error">Enter your name and a valid email to continue.</p>}
       <div className="tlq-actions">
-        <button className="tlq-btn" disabled={!(name.trim() && /^\S+@\S+\.\S+$/.test(email.trim()))} onClick={() => onSubmit(name.trim(), email.trim(), true)}>See my result</button>
+        <button className="tlq-btn" onClick={submit}>See my result</button>
       </div>
     </>
   );
@@ -402,9 +408,9 @@ export function TechLoopQuiz(props: TechLoopQuizProps) {
     case "severity":
       body = <MultiChoice kicker="The Loop" question={c.loop.severityQuestion} initial={response.severityMarkers} options={c.loop.severityOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("severity", "severityMarkers", v, l, "loop.severity", c.loop.severityQuestion, "loop")} />; break;
     case "aftertaste":
-      body = <MultiChoice kicker="The Cost" question={c.cost.aftertasteQuestion} max={2} initial={response.aftertastes} options={c.cost.aftertasteOptions} onSubmit={(v, l) => quiz.submitMulti("aftertaste", "aftertastes", v, l, "cost.aftertaste", c.cost.aftertasteQuestion, "cost")} />; break;
+      body = <MultiChoice kicker="The Cost" question={c.cost.aftertasteQuestion} max={2} twoCol initial={response.aftertastes} options={c.cost.aftertasteOptions} onSubmit={(v, l) => quiz.submitMulti("aftertaste", "aftertastes", v, l, "cost.aftertaste", c.cost.aftertasteQuestion, "cost")} />; break;
     case "cost":
-      body = <MultiChoice kicker="The Cost" question={c.cost.costQuestion} initial={response.costDomains} options={c.cost.costOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("cost", "costDomains", v, l, "cost.cost", c.cost.costQuestion, "cost")} />; break;
+      body = <MultiChoice kicker="The Cost" question={c.cost.costQuestion} twoCol initial={response.costDomains} options={c.cost.costOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("cost", "costDomains", v, l, "cost.cost", c.cost.costQuestion, "cost")} />; break;
     case "result":
       return <Shell progress={1} canGoBack={canGoBack} onBack={goBack} wide><div className="tlq-step" key={stepKey}><ResultScreen quiz={quiz} waitlistUrl={waitlistUrl} /></div></Shell>;
   }

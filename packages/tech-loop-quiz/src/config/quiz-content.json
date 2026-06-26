@@ -13,7 +13,7 @@
       { "value": "child", "label": "My child or teen" }
     ],
     "identityQuestion": "Where can we send your result?",
-    "identityHint": "We'll save your result here and let you know when Blue Light launches.",
+    "identityHint": "Your result is ready.",
     "lifeStageQuestion": "What's your current stage of life?",
     "lifeStageOptions": [
       { "value": "school", "label": "In high school" },
