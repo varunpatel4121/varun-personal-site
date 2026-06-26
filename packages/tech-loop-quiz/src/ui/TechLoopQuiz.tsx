@@ -118,7 +118,7 @@ function MultiChoice({
     <>
       {kicker && <div className="tlq-kicker">{kicker}</div>}
       <h2 className="tlq-q">{question}</h2>
-      <p className="tlq-hint">{hint}{hint ? " · " : ""}{max ? `pick up to ${max}` : "pick all that apply"}</p>
+      <p className="tlq-hint">{hint}{hint ? " · " : ""}{max ? `Pick up to ${max}` : "Pick all that apply"}</p>
       <div className="tlq-options">
         {options.map((o) => (
           <button key={o.value} className="tlq-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>
@@ -193,7 +193,7 @@ function SubfeaturePicker({
     <>
       <div className="tlq-kicker">The Pull</div>
       <h2 className="tlq-q">{QUIZ_CONTENT.pull.subfeatureQuestion}</h2>
-      <p className="tlq-hint">pick up to 3</p>
+      <p className="tlq-hint">Pick up to 3</p>
       {platforms.map((p) => (
         <div key={p.id}>
           <div className="tlq-group-label">{p.label}</div>
