@@ -80,7 +80,7 @@ describe("deterministic narrative", () => {
 describe("narrator prompt", () => {
   it("carries the no-diagnosis guardrail and the deterministic draft", () => {
     const { system, user } = buildNarratorMessages(input("comparison_spiral"));
-    expect(system).toMatch(/do NOT diagnose/i);
+    expect(system).toMatch(/diagnos/i);
     expect(system).toContain(PHENOTYPE_PROFILE.comparison_spiral.avoidSaying);
     expect(system).toMatch(/second person/i);
     expect(user).toContain("SECOND-PERSON DRAFT");

@@ -14,25 +14,22 @@ import {
   QUIZ_CONTENT,
   SUBFEATURE_QUESTION_MAP,
 } from "../config";
-import { bandLabel } from "../engine";
-import { CRISIS_MESSAGE } from "../ai";
-import type { HookTag, Platform, SubfeatureSelection } from "../types";
+import { CRISIS_MESSAGE, composeDeterministicNarrative, severityDescription } from "../ai";
+import type { HookTag, PhenotypeId, Platform, SubfeatureSelection } from "../types";
 import type { QuizPersistence } from "../persistence";
 import type { AINarrator } from "../ai";
 import { useTechLoopQuiz } from "./flow";
+import { Logo, PlatformIcon } from "./icons";
 import "./styles.css";
 
 export interface TechLoopQuizProps {
   persistence?: QuizPersistence;
   narrator?: AINarrator;
+  /** Waitlist URL for the result CTA. */
+  waitlistUrl?: string;
 }
 
-const PLATFORM_ICON: Record<string, string> = {
-  instagram: "📸", tiktok: "🎵", youtube: "▶️", twitter: "✖️", tv_and_streaming: "📺",
-  reddit: "🟠", meta_facebook: "👥", twitch: "🎥", discord: "🎧",
-  pc_gaming_console_gaming: "🕹️", snapchat: "👻", ai_chat_gpt_gemini_claude: "🤖",
-  conversational_chatbots: "💬", adult_content: "🔞", betting_trading_gambling: "🎲",
-};
+const DEFAULT_WAITLIST_URL = "https://bluelighthealth.com";
 
 const Check = ({ round = false }: { round?: boolean }) => (
   <span className="tlq-check" data-round={round}>
@@ -47,13 +44,14 @@ const BackIcon = () => (
 );
 
 function Shell({
-  progress, canGoBack, onBack, wide, children,
+  progress, canGoBack, onBack, wide, brand = true, children,
 }: {
-  progress: number; canGoBack?: boolean; onBack?: () => void; wide?: boolean; children: React.ReactNode;
+  progress: number; canGoBack?: boolean; onBack?: () => void; wide?: boolean; brand?: boolean; children: React.ReactNode;
 }) {
   return (
     <div className="tlq">
       <div className={`tlq-shell${wide ? " tlq-shell--wide" : ""}`}>
+        {brand && <div className="tlq-brand"><Logo size={20} /></div>}
         <div className="tlq-topbar">
           {canGoBack ? (
             <button className="tlq-back" onClick={onBack} aria-label="Back"><BackIcon /> Back</button>
@@ -120,7 +118,9 @@ function MultiChoice({
     <>
       {kicker && <div className="tlq-kicker">{kicker}</div>}
       <h2 className="tlq-q">{question}</h2>
-      <p className="tlq-hint">{hint ? `${hint} · ` : ""}{max ? `pick up to ${max}` : "pick all that apply"}</p>
+      {(hint || max) && (
+        <p className="tlq-hint">{hint}{hint && max ? " · " : ""}{max ? `pick up to ${max}` : ""}</p>
+      )}
       <div className="tlq-options">
         {options.map((o) => (
           <button key={o.value} className="tlq-opt" data-selected={sel.includes(o.value)} onClick={() => toggle(o.value)}>
@@ -151,11 +151,11 @@ function PlatformPicker({ initial, onSubmit }: { initial: string[]; onSubmit: (i
     <>
       <div className="tlq-kicker">The Pull</div>
       <h2 className="tlq-q">{QUIZ_CONTENT.pull.platformQuestion}</h2>
-      <p className="tlq-hint">{QUIZ_CONTENT.pull.platformHint} · pick up to 3</p>
+      <p className="tlq-hint">{QUIZ_CONTENT.pull.platformHint}</p>
       <div className="tlq-grid-2">
         {platforms.map((p) => (
           <button key={p.id} className="tlq-opt tlq-chip" data-selected={sel.includes(p.id)} onClick={() => toggle(p.id)}>
-            <span className="tlq-icon">{PLATFORM_ICON[p.id] ?? "📱"}</span>
+            <span className="tlq-icon"><PlatformIcon id={p.id} /></span>
             <span>{p.label}</span>
           </button>
         ))}
@@ -195,20 +195,16 @@ function SubfeaturePicker({
     <>
       <div className="tlq-kicker">The Pull</div>
       <h2 className="tlq-q">{QUIZ_CONTENT.pull.subfeatureQuestion}</h2>
-      <p className="tlq-hint">{QUIZ_CONTENT.pull.subfeatureHint} · pick up to 3</p>
+      <p className="tlq-hint">pick up to 3</p>
       {platforms.map((p) => (
         <div key={p.id}>
-          <div className="tlq-group-label">{PLATFORM_ICON[p.id] ?? "📱"} {p.label}</div>
+          <div className="tlq-group-label">{p.label}</div>
           <div className="tlq-grid-3">
-            {p.subfeatures.map((s) => {
-              const rank = rankOf(p.id, s.id);
-              return (
-                <button key={`${p.id}.${s.id}`} className="tlq-opt tlq-chip tlq-chip--mini" data-selected={rank >= 0} onClick={() => toggle(p.id, s.id)}>
-                  <span>{s.label}</span>
-                  {rank >= 0 && <span className="tlq-rank">{rank + 1}</span>}
-                </button>
-              );
-            })}
+            {p.subfeatures.map((s) => (
+              <button key={`${p.id}.${s.id}`} className="tlq-opt tlq-chip tlq-chip--mini" data-selected={rankOf(p.id, s.id) >= 0} onClick={() => toggle(p.id, s.id)}>
+                <span>{s.label}</span>
+              </button>
+            ))}
           </div>
         </div>
       ))}
@@ -268,7 +264,7 @@ function Intro({ onStart }: { onStart: () => void }) {
   const c = QUIZ_CONTENT.intro;
   return (
     <div className="tlq-center">
-      <div className="tlq-kicker">{c.kicker}</div>
+      <div className="tlq-brand tlq-intro-logo"><Logo size={26} /></div>
       <h1 className="tlq-title">{c.title}</h1>
       <p className="tlq-lead">{c.disclaimer}</p>
       <button className="tlq-btn" onClick={onStart}>{c.cta}</button>
@@ -282,7 +278,7 @@ function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, 
   const c = QUIZ_CONTENT.frame;
   return (
     <>
-      <div className="tlq-kicker">Almost there</div>
+      <div className="tlq-kicker">Save your result</div>
       <h2 className="tlq-q">{c.identityQuestion}</h2>
       <p className="tlq-hint">{c.identityHint}</p>
       <input className="tlq-input" placeholder="Name (optional)" value={name} onChange={(e) => setName(e.target.value)} />
@@ -290,15 +286,16 @@ function IdentityScreen({ onSubmit }: { onSubmit: (name: string, email: string, 
       <div className="tlq-actions">
         <button className="tlq-btn--ghost tlq-btn" onClick={() => onSubmit("", "", false)}>Skip</button>
         <div className="tlq-spacer" />
-        <button className="tlq-btn" onClick={() => onSubmit(name.trim(), email.trim(), Boolean(email.trim()))}>Continue</button>
+        <button className="tlq-btn" onClick={() => onSubmit(name.trim(), email.trim(), Boolean(email.trim()))}>See my result</button>
       </div>
     </>
   );
 }
 
-function ResultScreen({ quiz }: { quiz: ReturnType<typeof useTechLoopQuiz> }) {
+function ResultScreen({ quiz, waitlistUrl }: { quiz: ReturnType<typeof useTechLoopQuiz>; waitlistUrl: string }) {
   const { result, narrative, submitFit, restart } = quiz;
   const [done, setDone] = useState(false);
+  const [picked, setPicked] = useState<PhenotypeId | null>(null);
 
   useEffect(() => {
     if (!result) void quiz.finalize();
@@ -308,25 +305,32 @@ function ResultScreen({ quiz }: { quiz: ReturnType<typeof useTechLoopQuiz> }) {
   if (!result) return <div className="tlq-center"><p className="tlq-lead">Reading your loop…</p></div>;
 
   const o = result.output;
-  const profile = o.primary_phenotype_id === "no_dominant_loop" ? null : PHENOTYPE_PROFILE[o.primary_phenotype_id];
-  const spectrum = Object.entries(result.spectrum).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).slice(0, 5);
-  const maxScore = spectrum[0]?.[1] ?? 1;
+  const primaryId = o.primary_phenotype_id;
+  const top3 = (Object.entries(result.spectrum) as [PhenotypeId, number][])
+    .filter(([, v]) => v > 0)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3);
+
+  const selectedId: PhenotypeId | "no_dominant_loop" = picked ?? primaryId;
+  const isPrimary = selectedId === primaryId;
+  const profile = selectedId === "no_dominant_loop" ? null : PHENOTYPE_PROFILE[selectedId];
+  // The primary uses the (optionally AI-warmed) narrative; clicking another
+  // phenotype recomposes that lens from the user's own signals, deterministically.
+  const read = isPrimary ? narrative : composeDeterministicNarrative({ output: o, profile, secondaryProfile: null });
 
   return (
     <>
       {o.safety_triggered && <div className="tlq-safety">{CRISIS_MESSAGE}</div>}
       <div className="tlq-result-grid">
         <div>
-          <div className="tlq-kicker">Your tech loop</div>
-          <h1 className="tlq-result-name">{o.primary_phenotype_name}</h1>
+          <div className="tlq-kicker">{isPrimary ? "Primary phenotype" : "Also in your mix"}</div>
+          <h1 className="tlq-result-name">{profile ? profile.name : o.primary_phenotype_name}</h1>
           {profile && <div className="tlq-result-label">{profile.shortLabel}</div>}
-          <p className="tlq-read">{narrative}</p>
-          <div className="tlq-chips">
-            <span className="tlq-chip-badge" data-tone="accent">{bandLabel(o.severity_label)}</span>
-            {o.primary_adaptive && <span className="tlq-chip-badge">mostly adaptive</span>}
-            {o.secondary_phenotype_name && <span className="tlq-chip-badge">also: {o.secondary_phenotype_name}</span>}
-          </div>
-          <p className="tlq-formulation">{o.formulation_sentence}</p>
+          <p className="tlq-sev-desc">{severityDescription(o.severity_label)}</p>
+          <p className="tlq-read">{read}</p>
+          {isPrimary && o.primary_adaptive && (
+            <div className="tlq-chips"><span className="tlq-chip-badge" data-tone="accent">mostly adaptive</span></div>
+          )}
         </div>
 
         <div>
@@ -339,16 +343,17 @@ function ResultScreen({ quiz }: { quiz: ReturnType<typeof useTechLoopQuiz> }) {
           <div className="tlq-card tlq-cta">
             <h4>{QUIZ_CONTENT.result.convertTitle}</h4>
             <p>{QUIZ_CONTENT.result.convertBody}</p>
+            <a className="tlq-cta-book" href={waitlistUrl} target="_blank" rel="noopener noreferrer">{QUIZ_CONTENT.result.convertCta}</a>
           </div>
-          {spectrum.length > 1 && (
+          {top3.length > 1 && (
             <div className="tlq-card">
               <h4>Where else you showed up</h4>
               <div className="tlq-spectrum">
-                {spectrum.map(([id, v]) => (
-                  <div className="tlq-spectrum-row" key={id}>
-                    <span>{PHENOTYPE_PROFILE[id as keyof typeof PHENOTYPE_PROFILE]?.name ?? id}</span>
-                    <span className="tlq-bar"><div style={{ width: `${Math.round((v / maxScore) * 100)}%` }} /></span>
-                  </div>
+                {top3.map(([id]) => (
+                  <button key={id} className="tlq-spectrum-btn" data-selected={id === selectedId} onClick={() => setPicked(id)}>
+                    <span>{PHENOTYPE_PROFILE[id].name}</span>
+                    <span style={{ color: "var(--tlq-muted)", fontSize: 12 }}>{id === primaryId ? "primary" : "view"}</span>
+                  </button>
                 ))}
               </div>
             </div>
@@ -382,6 +387,7 @@ export function TechLoopQuiz(props: TechLoopQuizProps) {
   const quiz = useTechLoopQuiz({ persistence: props.persistence, narrator: props.narrator });
   const { step, progress, response, canGoBack, goBack } = quiz;
   const c = QUIZ_CONTENT;
+  const waitlistUrl = props.waitlistUrl ?? DEFAULT_WAITLIST_URL;
   const stepKey = `${step.kind}-${step.subIndex ?? 0}-${quiz.pos}`;
 
   let body: React.ReactNode = null;
@@ -417,8 +423,8 @@ export function TechLoopQuiz(props: TechLoopQuizProps) {
     case "cost":
       body = <MultiChoice kicker="The Cost" question={c.cost.costQuestion} allowFreeText initial={response.costDomains} options={c.cost.costOptions.map((o) => ({ value: o.value, label: o.label, exclusive: o.hint === "exclusive" }))} onSubmit={(v, l) => quiz.submitMulti("cost", "costDomains", v, l, "cost.cost", c.cost.costQuestion, "cost")} />; break;
     case "result":
-      return <Shell progress={1} canGoBack={canGoBack} onBack={goBack} wide><div className="tlq-step" key={stepKey}><ResultScreen quiz={quiz} /></div></Shell>;
+      return <Shell progress={1} canGoBack={canGoBack} onBack={goBack} wide><div className="tlq-step" key={stepKey}><ResultScreen quiz={quiz} waitlistUrl={waitlistUrl} /></div></Shell>;
   }
 
-  return <Shell progress={progress} canGoBack={canGoBack} onBack={goBack}><div className="tlq-step" key={stepKey}>{body}</div></Shell>;
+  return <Shell progress={progress} canGoBack={canGoBack} onBack={goBack} brand={step.kind !== "intro"}><div className="tlq-step" key={stepKey}>{body}</div></Shell>;
 }

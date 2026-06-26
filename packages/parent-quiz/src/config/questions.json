@@ -107,7 +107,6 @@
       "section": "cost",
       "type": "multi",
       "question": "Where is this costing your child or your family lately?",
-      "hint": "Pick all that are real.",
       "options": [
         { "value": "sleep", "label": "Sleep or mornings.", "costs": ["sleep"], "urgency": 1 },
         { "value": "school", "label": "School, homework, chores, or responsibilities.", "costs": ["school"] },
@@ -142,7 +141,6 @@
       "section": "urgency",
       "type": "multi",
       "question": "In the past month, which of these have been true?",
-      "hint": "Pick all that apply.",
       "options": [
         { "value": "failed_limits", "label": "We tried rules or limits, and they didn't really stick.", "markers": ["failed_limits"], "urgency": 2 },
         { "value": "keep_going", "label": "They keep going after a clear stopping point.", "markers": ["loss_of_control"], "urgency": 2 },

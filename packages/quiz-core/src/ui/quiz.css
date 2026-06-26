@@ -47,7 +47,7 @@
 .q-mid--center .q-options { width: 100%; max-width: 440px; }
 
 .q-kicker { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; font-weight: 700; color: var(--q-accent); margin-bottom: 12px; }
-.q-q { font-size: clamp(21px, 3.4vw, 28px); font-weight: 650; letter-spacing: -0.015em; margin: 0 0 8px; }
+.q-q { font-size: clamp(21px, 3.4vw, 28px); font-weight: 650; letter-spacing: -0.015em; margin: 0 0 8px; white-space: pre-line; }
 .q-hint { color: var(--q-muted); font-size: 14px; margin: 0 0 20px; }
 
 .q-options { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 8px; }
@@ -93,6 +93,13 @@
 .q-center { text-align: center; margin: auto 0; }
 .q-title { font-size: clamp(32px, 6vw, 48px); font-weight: 750; letter-spacing: -0.025em; margin: 10px 0 14px; }
 .q-lead { color: var(--q-muted); font-size: 16px; max-width: 460px; margin: 0 auto 30px; }
+
+/* Brand / logo */
+.q-brand { display: flex; align-items: center; padding: 2px 0 16px; }
+.q-logo { display: inline-flex; align-items: center; gap: 9px; }
+.q-wordmark { font-size: 13.5px; font-weight: 700; letter-spacing: 0.01em; color: var(--q-text); }
+.q-intro-logo { justify-content: center; margin-bottom: 16px; }
+.q-intro-logo .q-wordmark { font-size: 16px; }
 
 .q-step { animation: q-fade-in 360ms cubic-bezier(0.16, 0.84, 0.44, 1) both; }
 @keyframes q-fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

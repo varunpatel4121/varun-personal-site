@@ -77,7 +77,6 @@ function buildSteps(r: QuizResponse): Step[] {
   const steps: Step[] = [
     { kind: "intro" },
     { kind: "reporter" },
-    { kind: "identity" },
     { kind: "lifeStage" },
     { kind: "baseline" },
     { kind: "platforms" },
@@ -92,6 +91,9 @@ function buildSteps(r: QuizResponse): Step[] {
       { kind: "severity" },
       { kind: "aftertaste" },
       { kind: "cost" },
+      // Identity is the last step before the result — an optional "save your
+      // result" gate the user can skip.
+      { kind: "identity" },
       { kind: "result" },
     );
   }

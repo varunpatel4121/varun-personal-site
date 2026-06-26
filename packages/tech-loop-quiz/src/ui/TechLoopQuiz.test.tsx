@@ -66,12 +66,12 @@ describe("<TechLoopQuiz/>", () => {
   it("walks to a second-person result, then Back returns to the quiz", async () => {
     render(<TechLoopQuiz />);
     fireEvent.click(screen.getByText(QUIZ_CONTENT.intro.cta));
-    for (let i = 0; i < 30 && !screen.queryByText("Your tech loop"); i++) {
+    for (let i = 0; i < 30 && !screen.queryByText("Primary phenotype"); i++) {
       step();
       await tick();
     }
     // Result rendered with the second-person read + actionable card + fit.
-    expect(await screen.findByText("Your tech loop")).toBeTruthy();
+    expect(await screen.findByText("Primary phenotype")).toBeTruthy();
     expect(document.querySelector(".tlq-read")?.textContent ?? "").toContain("You're someone who");
     expect(screen.getByText("What helps")).toBeTruthy();
     expect(screen.getByText(QUIZ_CONTENT.result.fitQuestion)).toBeTruthy();
@@ -79,7 +79,8 @@ describe("<TechLoopQuiz/>", () => {
     // Back leaves the result and returns to the last question.
     fireEvent.click(screen.getByText("Back"));
     await tick();
-    expect(screen.queryByText("Your tech loop")).toBeNull();
-    expect(screen.getByText(QUIZ_CONTENT.cost.costQuestion)).toBeTruthy();
+    expect(screen.queryByText("Primary phenotype")).toBeNull();
+    // Identity is now the step right before the result.
+    expect(screen.getByText(QUIZ_CONTENT.frame.identityQuestion)).toBeTruthy();
   });
 });
