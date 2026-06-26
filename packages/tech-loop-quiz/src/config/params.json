@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "anchorRankMultipliers": [1.25, 1.0, 0.85],
+  "confidence": {
+    "highMinScore": 8,
+    "highMinMargin": 2.5,
+    "mediumMinScore": 6,
+    "mediumMinMargin": 1,
+    "mixedMargin": 1.5
+  },
+  "classification": {
+    "secondaryMinScore": 5,
+    "severityFloorScores": {
+      "light_grip": 0,
+      "steady_pull": 5,
+      "deep_loop": 10,
+      "high_impact_loop": 16
+    }
+  }
+}

@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Claude Code worktrees carry their own build output — never lint them.
+    ".claude/**",
+    // Committed source sheets for the quiz package (provenance, not code).
+    "packages/*/config/source/**",
   ]),
 ]);
 

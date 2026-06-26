@@ -1,0 +1,1584 @@
+[
+  {
+    "platform": "instagram",
+    "subfeature": "stories",
+    "question": "When you're tapping through Instagram Stories, what usually feels most true?",
+    "options": [
+      {
+        "id": "stories_tethered_social",
+        "hook": "tethered_social",
+        "text": "I tap through because people are posting little real-time moments, and I don't want to feel out of the loop."
+      },
+      {
+        "id": "stories_tethered_check",
+        "hook": "tethered_check",
+        "text": "After I post something, I keep checking to see who watched, who reacted, who replied, or if anything new happened."
+      },
+      {
+        "id": "stories_mirror",
+        "hook": "mirror",
+        "text": "I end up noticing how people look, where they are, who they are with, and then I start thinking about how my own life looks next to that."
+      },
+      {
+        "id": "stories_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I like watching certain people's Stories because their small updates make me feel like I know what is going on in their life."
+      },
+      {
+        "id": "stories_belonging",
+        "hook": "belonging",
+        "text": "I tap through Stories because it helps me feel connected to my friends, my circle, or whatever everyone seems to be part of right now."
+      }
+    ]
+  },
+  {
+    "platform": "instagram",
+    "subfeature": "reels",
+    "question": "When you find yourself scrolling Instagram Reels, what usually feels most true?",
+    "options": [
+      {
+        "id": "reels_endless_feed",
+        "hook": "endless_feed",
+        "text": "I tell myself I will watch a few, but every swipe gives me another one that might be funny, useful, or exactly my kind of thing."
+      },
+      {
+        "id": "reels_zone_out",
+        "hook": "zone_out",
+        "text": "I open Reels when I want my brain to go quiet for a bit, and suddenly I am just swiping without really thinking."
+      },
+      {
+        "id": "reels_activation",
+        "hook": "activation",
+        "text": "I get pulled into Reels that are dramatic, annoying, or intense, and I keep watching because I want to see what people are saying about it."
+      },
+      {
+        "id": "reels_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I keep swiping because there is always another attractive, suggestive, or spicy clip that catches my attention."
+      },
+      {
+        "id": "reels_mirror",
+        "hook": "mirror",
+        "text": "I catch myself comparing my body, face, style, or life to the people in the Reels, even when I only meant to scroll for a minute."
+      }
+    ]
+  },
+  {
+    "platform": "instagram",
+    "subfeature": "explore_page",
+    "question": "When you're browsing the Instagram Explore page, what usually feels most true?",
+    "options": [
+      {
+        "id": "explore_page_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep browsing Explore because there is always another post or clip that looks like it might be the one I actually want to see."
+      },
+      {
+        "id": "explore_page_mirror",
+        "hook": "mirror",
+        "text": "I notice people with better bodies, better outfits, better trips, or better lives, and it makes me check where I stand."
+      },
+      {
+        "id": "explore_page_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I follow one interesting post into another search, profile, or topic, and then I am suddenly deep in something I did not plan to look up."
+      },
+      {
+        "id": "explore_page_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep refreshing or tapping around because it feels like the best find, account, post, or idea might be one more scroll away."
+      },
+      {
+        "id": "explore_page_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I get pulled toward attractive or suggestive posts because the page always seems to have something a little more tempting nearby."
+      }
+    ]
+  },
+  {
+    "platform": "instagram",
+    "subfeature": "posts",
+    "question": "When you're looking through Instagram posts, what usually feels most true?",
+    "options": [
+      {
+        "id": "posts_mirror",
+        "hook": "mirror",
+        "text": "I look at posts and start measuring my photos, plans, body, friends, or life against what other people are showing."
+      },
+      {
+        "id": "posts_tethered_check",
+        "hook": "tethered_check",
+        "text": "After I post, I keep coming back to see who liked it, who commented, and whether it is getting the reaction I hoped for."
+      },
+      {
+        "id": "posts_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I keep up with certain people through their posts because their updates feel familiar, like I am following a story I know."
+      },
+      {
+        "id": "posts_belonging",
+        "hook": "belonging",
+        "text": "Seeing what everyone is posting helps me feel like I know what my people are doing and what everyone is part of."
+      }
+    ]
+  },
+  {
+    "platform": "instagram",
+    "subfeature": "dms",
+    "question": "When you're checking Instagram DMs, what usually feels most true?",
+    "options": [
+      {
+        "id": "dms_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep checking DMs because I do not want to miss a message, leave someone hanging, or seem unavailable."
+      },
+      {
+        "id": "dms_tethered_check",
+        "hook": "tethered_check",
+        "text": "I open DMs to see if they replied, if they saw it, or if something changed since the last time I checked."
+      },
+      {
+        "id": "dms_companion",
+        "hook": "companion",
+        "text": "Sometimes I go to DMs because I just want someone to be there to talk to, even if it is only a quick back-and-forth."
+      },
+      {
+        "id": "dms_belonging",
+        "hook": "belonging",
+        "text": "Being in the group chats and side conversations makes me feel included, like I am still part of what is happening."
+      },
+      {
+        "id": "dms_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "DMs can pull me in when the conversation gets flirty, private, or exciting and I want to see where it goes."
+      }
+    ]
+  },
+  {
+    "platform": "tiktok",
+    "subfeature": "for_you_page",
+    "question": "When you're scrolling the TikTok For You Page, what usually feels most true?",
+    "options": [
+      {
+        "id": "for_you_page_endless_feed",
+        "hook": "endless_feed",
+        "text": "I plan to watch a couple videos, but the next swipe always feels like it could be funnier, weirder, or more perfect for me."
+      },
+      {
+        "id": "for_you_page_zone_out",
+        "hook": "zone_out",
+        "text": "I scroll the For You Page when I want to stop thinking and let the videos carry me for a while."
+      },
+      {
+        "id": "for_you_page_activation",
+        "hook": "activation",
+        "text": "I keep watching videos that make me mad, shocked, or worked up because I want to see what happened and what people think."
+      },
+      {
+        "id": "for_you_page_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "One TikTok sends me to the comments, then to a search, then to another video, and suddenly I am trying to piece the whole thing together."
+      },
+      {
+        "id": "for_you_page_mirror",
+        "hook": "mirror",
+        "text": "I end up comparing my look, taste, routine, relationships, or life to what TikTok keeps putting in front of me."
+      }
+    ]
+  },
+  {
+    "platform": "tiktok",
+    "subfeature": "following_specific_creators",
+    "question": "When you're catching up on creators you follow on TikTok, what usually feels most true?",
+    "options": [
+      {
+        "id": "following_specific_creators_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I keep up with certain creators because their updates feel familiar, like I know their routine, jokes, and story."
+      },
+      {
+        "id": "following_specific_creators_belonging",
+        "hook": "belonging",
+        "text": "Following the same creators as everyone else makes me feel part of the inside jokes, trends, or little world around them."
+      },
+      {
+        "id": "following_specific_creators_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check to see whether my favorite creators posted, went live, replied, or shared anything new."
+      },
+      {
+        "id": "following_specific_creators_companion",
+        "hook": "companion",
+        "text": "I put on creators I like because their voice and style feel like company when I am doing other things or do not want quiet."
+      }
+    ]
+  },
+  {
+    "platform": "tiktok",
+    "subfeature": "tiktok_shop",
+    "question": "When you're browsing TikTok Shop, what usually feels most true?",
+    "options": [
+      {
+        "id": "tiktok_shop_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep browsing because there might be a better deal, a smarter find, or one product that feels worth grabbing before it is gone."
+      },
+      {
+        "id": "tiktok_shop_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I start looking at one product and end up watching reviews, comparisons, comments, and demos until I feel sure."
+      },
+      {
+        "id": "tiktok_shop_mirror",
+        "hook": "mirror",
+        "text": "I get pulled toward things that seem like they could make me look better, live better, or keep up with what everyone is using."
+      },
+      {
+        "id": "tiktok_shop_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep swiping through products because there is always another item that looks useful, cheap, or strangely tempting."
+      }
+    ]
+  },
+  {
+    "platform": "tiktok",
+    "subfeature": "dms_and_sharing_videos",
+    "question": "When you're sending or checking TikTok DMs and shared videos, what usually feels most true?",
+    "options": [
+      {
+        "id": "dms_and_sharing_videos_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep checking because people send videos fast, and I do not want to miss the joke or respond too late."
+      },
+      {
+        "id": "dms_and_sharing_videos_belonging",
+        "hook": "belonging",
+        "text": "Sharing videos makes me feel plugged into my friends' humor and the little references we all understand."
+      },
+      {
+        "id": "dms_and_sharing_videos_companion",
+        "hook": "companion",
+        "text": "Sending videos back and forth feels like an easy way to talk when I do not have anything big to say."
+      }
+    ]
+  },
+  {
+    "platform": "youtube",
+    "subfeature": "recommended_videos",
+    "question": "When you're browsing YouTube recommendations, what usually feels most true?",
+    "options": [
+      {
+        "id": "recommended_videos_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep browsing recommendations because every thumbnail looks like it could be the one I actually want to settle into."
+      },
+      {
+        "id": "recommended_videos_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "One recommendation leads to another topic, creator, or explanation, and then I am chasing the next piece that will make it all click."
+      },
+      {
+        "id": "recommended_videos_zone_out",
+        "hook": "zone_out",
+        "text": "I open recommendations when I want something to take over the quiet, and I let YouTube choose what comes next."
+      },
+      {
+        "id": "recommended_videos_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep looking through the recommendations because it feels like there is a better video somewhere if I keep checking."
+      }
+    ]
+  },
+  {
+    "platform": "youtube",
+    "subfeature": "shorts",
+    "question": "When you're scrolling YouTube Shorts, what usually feels most true?",
+    "options": [
+      {
+        "id": "shorts_endless_feed",
+        "hook": "endless_feed",
+        "text": "I tell myself I will watch a few Shorts, but there is always another quick one that feels easy to swipe into."
+      },
+      {
+        "id": "shorts_zone_out",
+        "hook": "zone_out",
+        "text": "Shorts are where I go when I want to shut my brain off for a minute, even if that minute turns into a lot longer."
+      },
+      {
+        "id": "shorts_activation",
+        "hook": "activation",
+        "text": "I get stuck on Shorts that are dramatic, annoying, or outrageous because I want to see the take, the response, or the comments."
+      },
+      {
+        "id": "shorts_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I keep swiping when the videos get attractive, suggestive, or just a little more tempting than the last one."
+      },
+      {
+        "id": "shorts_mirror",
+        "hook": "mirror",
+        "text": "I end up comparing my face, body, skills, routine, or life to the people who keep showing up in Shorts."
+      }
+    ]
+  },
+  {
+    "platform": "youtube",
+    "subfeature": "long_form_videos",
+    "question": "When you're watching longer YouTube videos, what usually feels most true?",
+    "options": [
+      {
+        "id": "long_form_videos_zone_out",
+        "hook": "zone_out",
+        "text": "I put on a longer video when I want to sink into something and not sit alone with the quiet."
+      },
+      {
+        "id": "long_form_videos_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I like spending time with certain creators because their voice, habits, and stories start to feel familiar."
+      },
+      {
+        "id": "long_form_videos_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I watch long videos because I want the full explanation, and then I keep going until I feel like I finally understand it."
+      },
+      {
+        "id": "long_form_videos_companion",
+        "hook": "companion",
+        "text": "Long videos feel like company in the background while I eat, work, clean, or try not to feel alone."
+      },
+      {
+        "id": "long_form_videos_second_self",
+        "hook": "second_self",
+        "text": "I like watching people live a totally different kind of life because it lets me imagine what it would feel like to be that kind of person for a while."
+      }
+    ]
+  },
+  {
+    "platform": "youtube",
+    "subfeature": "search",
+    "question": "When you're searching on YouTube, what usually feels most true?",
+    "options": [
+      {
+        "id": "search_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I search one thing, then another, because I feel like the right video will finally answer the question or settle the feeling."
+      },
+      {
+        "id": "search_climb",
+        "hook": "climb",
+        "text": "I use Search to find tutorials, guides, or breakdowns that make me feel like I am getting better at something."
+      },
+      {
+        "id": "search_companion",
+        "hook": "companion",
+        "text": "Sometimes I search for a video because I want a voice to walk me through something or keep me company while I figure it out."
+      },
+      {
+        "id": "search_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking Search to see if there is a new upload, update, explanation, or reaction that was not there before."
+      }
+    ]
+  },
+  {
+    "platform": "twitter",
+    "subfeature": "feed",
+    "question": "When you're scrolling your Twitter feed, what usually feels most true?",
+    "options": [
+      {
+        "id": "feed_activation",
+        "hook": "activation",
+        "text": "I keep scrolling because something is always breaking, annoying, or worth reacting to, and I want to know what people are saying."
+      },
+      {
+        "id": "feed_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep going because the next post might be the sharpest joke, newest update, or most interesting take."
+      },
+      {
+        "id": "feed_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check the feed to see what changed, who posted, what people are reacting to, or whether I am missing something."
+      }
+    ]
+  },
+  {
+    "platform": "twitter",
+    "subfeature": "replies_and_threads",
+    "question": "When you're reading Twitter replies and threads, what usually feels most true?",
+    "options": [
+      {
+        "id": "replies_and_threads_activation",
+        "hook": "activation",
+        "text": "I get pulled into replies and threads because I want to see the argument, the comeback, or who is getting called out."
+      },
+      {
+        "id": "replies_and_threads_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking replies to see if anyone responded, liked my take, or pushed back."
+      },
+      {
+        "id": "replies_and_threads_belonging",
+        "hook": "belonging",
+        "text": "Reading threads makes me feel tuned into the conversation everyone in my corner of the internet is having."
+      },
+      {
+        "id": "replies_and_threads_mirror",
+        "hook": "mirror",
+        "text": "I compare my opinions, status, humor, or how I come across to the people getting attention in the replies."
+      }
+    ]
+  },
+  {
+    "platform": "twitter",
+    "subfeature": "trending_and_search",
+    "question": "When you're checking Twitter trends or search, what usually feels most true?",
+    "options": [
+      {
+        "id": "trending_and_search_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I check a trend, then search more, because I want to understand what happened and why everyone is talking about it."
+      },
+      {
+        "id": "trending_and_search_activation",
+        "hook": "activation",
+        "text": "Trends pull me in when something feels urgent, messy, or outrageous and I want to watch it unfold."
+      },
+      {
+        "id": "trending_and_search_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep checking trends because there might be a big update, wild post, or useful angle that just appeared."
+      }
+    ]
+  },
+  {
+    "platform": "twitter",
+    "subfeature": "spaces",
+    "question": "When you're listening in Twitter Spaces, what usually feels most true?",
+    "options": [
+      {
+        "id": "spaces_belonging",
+        "hook": "belonging",
+        "text": "Listening to Spaces makes me feel like I am in the room with people who care about the same things."
+      },
+      {
+        "id": "spaces_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I tune in because certain voices feel familiar, and I like hearing them talk in a more unfiltered way."
+      },
+      {
+        "id": "spaces_companion",
+        "hook": "companion",
+        "text": "I put on a Space because it feels like having people around while I do other things."
+      },
+      {
+        "id": "spaces_activation",
+        "hook": "activation",
+        "text": "I stay when the conversation gets heated or dramatic because I want to hear what happens next."
+      }
+    ]
+  },
+  {
+    "platform": "tv_and_streaming",
+    "subfeature": "shows_and_movies",
+    "question": "When you're choosing or watching streaming shows and movies, what usually feels most true?",
+    "options": [
+      {
+        "id": "shows_and_movies_zone_out",
+        "hook": "zone_out",
+        "text": "I put something on because I want to disappear into a story and not think about everything else for a while."
+      },
+      {
+        "id": "shows_and_movies_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep browsing because there is always another show, trailer, or movie that might be the perfect thing to watch."
+      },
+      {
+        "id": "shows_and_movies_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I get attached to certain characters, actors, or worlds and want to keep spending time with them."
+      },
+      {
+        "id": "shows_and_movies_companion",
+        "hook": "companion",
+        "text": "Having a show or movie on makes the room feel less empty, even if I am not fully watching."
+      },
+      {
+        "id": "shows_and_movies_activation",
+        "hook": "activation",
+        "text": "I gravitate toward shows or movies that feel intense, suspenseful, or dramatic because they wake me up."
+      },
+      {
+        "id": "shows_and_movies_second_self",
+        "hook": "second_self",
+        "text": "I like stories that let me imagine living a different life, being a different kind of person, or stepping into another world."
+      }
+    ]
+  },
+  {
+    "platform": "tv_and_streaming",
+    "subfeature": "binge_watching",
+    "question": "When you're letting one episode roll into the next, what usually feels most true?",
+    "options": [
+      {
+        "id": "binge_watching_zone_out",
+        "hook": "zone_out",
+        "text": "I let the next episode start because staying in the show feels easier than coming back to real life."
+      },
+      {
+        "id": "binge_watching_endless_feed",
+        "hook": "endless_feed",
+        "text": "Once one episode ends, the next one is right there, and it feels harmless to keep going a little longer."
+      },
+      {
+        "id": "binge_watching_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I keep watching because I feel attached to the characters or people and want to know what happens to them."
+      },
+      {
+        "id": "binge_watching_companion",
+        "hook": "companion",
+        "text": "Binge-watching feels like steady company when I do not want the night to feel quiet or empty."
+      },
+      {
+        "id": "binge_watching_activation",
+        "hook": "activation",
+        "text": "I keep going because every episode ends with a twist, conflict, or cliffhanger that makes stopping feel impossible."
+      },
+      {
+        "id": "binge_watching_second_self",
+        "hook": "second_self",
+        "text": "I like getting fully absorbed in a world where I can imagine being someone else for a while."
+      }
+    ]
+  },
+  {
+    "platform": "tv_and_streaming",
+    "subfeature": "live_sports_or_events",
+    "question": "When you're watching live sports or events, what usually feels most true?",
+    "options": [
+      {
+        "id": "live_sports_or_events_belonging",
+        "hook": "belonging",
+        "text": "Watching live makes me feel part of the crowd, the group chat, or the bigger moment everyone is reacting to."
+      },
+      {
+        "id": "live_sports_or_events_activation",
+        "hook": "activation",
+        "text": "I keep watching because the tension, bad calls, big plays, or drama keep my body switched on."
+      },
+      {
+        "id": "live_sports_or_events_reward_chase",
+        "hook": "reward_chase",
+        "text": "I stay locked in because the next play, score, twist, or result could be the moment that changes everything."
+      },
+      {
+        "id": "live_sports_or_events_zone_out",
+        "hook": "zone_out",
+        "text": "Having the game or event on gives me something to sink into without having to think too much."
+      },
+      {
+        "id": "live_sports_or_events_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep checking because people are reacting in real time, and I do not want to miss the moment everyone talks about."
+      }
+    ]
+  },
+  {
+    "platform": "reddit",
+    "subfeature": "home_feed",
+    "question": "When you're scrolling your Reddit home feed, what usually feels most true?",
+    "options": [
+      {
+        "id": "home_feed_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I open one post, then another, because I keep looking for the comment, detail, or answer that makes the whole thing click."
+      },
+      {
+        "id": "home_feed_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep scrolling because it feels like something funnier, more interesting, or more useful might be just a little further down."
+      },
+      {
+        "id": "home_feed_activation",
+        "hook": "activation",
+        "text": "I get pulled into posts that are messy, infuriating, or dramatic because I want to see what people are saying."
+      },
+      {
+        "id": "home_feed_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep hunting for the best post, the best comment, or that one thread that makes the scroll feel worth it."
+      }
+    ]
+  },
+  {
+    "platform": "reddit",
+    "subfeature": "subreddits",
+    "question": "When you're checking specific subreddits, what usually feels most true?",
+    "options": [
+      {
+        "id": "subreddits_belonging",
+        "hook": "belonging",
+        "text": "Checking certain subreddits makes me feel like I have a place where people understand the same interests, problems, or jokes."
+      },
+      {
+        "id": "subreddits_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I go into a subreddit for one thing and end up reading guides, debates, updates, and old posts for way longer than planned."
+      },
+      {
+        "id": "subreddits_companion",
+        "hook": "companion",
+        "text": "Sometimes a subreddit feels like a room I can sit in where people are always talking about something I care about."
+      },
+      {
+        "id": "subreddits_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking to see if there are new posts, replies, updates, or answers from the communities I follow."
+      }
+    ]
+  },
+  {
+    "platform": "reddit",
+    "subfeature": "comments_and_threads",
+    "question": "When you're reading Reddit comments and threads, what usually feels most true?",
+    "options": [
+      {
+        "id": "comments_and_threads_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I read the comments because I am looking for the best explanation, hidden detail, or take that finally makes sense of the post."
+      },
+      {
+        "id": "comments_and_threads_activation",
+        "hook": "activation",
+        "text": "I get stuck in comment threads when people are arguing, being dramatic, or saying things I cannot believe."
+      },
+      {
+        "id": "comments_and_threads_belonging",
+        "hook": "belonging",
+        "text": "The comments make me feel like I am part of a crowd reacting together, even if I never say anything."
+      },
+      {
+        "id": "comments_and_threads_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep coming back to see if anyone replied, upvoted, corrected something, or added a new update."
+      },
+      {
+        "id": "comments_and_threads_mirror",
+        "hook": "mirror",
+        "text": "I compare my opinions, experiences, or choices to what other people say in the thread."
+      }
+    ]
+  },
+  {
+    "platform": "meta_facebook",
+    "subfeature": "home_feed",
+    "question": "When you're scrolling your Facebook home feed, what usually feels most true?",
+    "options": [
+      {
+        "id": "home_feed_tethered_social",
+        "hook": "tethered_social",
+        "text": "I scroll the feed because family, friends, and people I know are posting updates, and I feel like I should keep up."
+      },
+      {
+        "id": "home_feed_mirror",
+        "hook": "mirror",
+        "text": "I compare my life, family, photos, milestones, or choices to what other people are posting."
+      },
+      {
+        "id": "home_feed_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep scrolling because there is always another update, memory, video, or post that might catch my attention."
+      },
+      {
+        "id": "home_feed_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check back to see if anyone liked, commented, tagged me, or posted something new."
+      },
+      {
+        "id": "home_feed_belonging",
+        "hook": "belonging",
+        "text": "The feed helps me feel connected to my wider circle, even people I do not talk to much anymore."
+      }
+    ]
+  },
+  {
+    "platform": "meta_facebook",
+    "subfeature": "reels_and_videos",
+    "question": "When you're watching Facebook Reels and videos, what usually feels most true?",
+    "options": [
+      {
+        "id": "reels_and_videos_endless_feed",
+        "hook": "endless_feed",
+        "text": "I watch one video and then another because the next one might be funnier, sweeter, stranger, or more useful."
+      },
+      {
+        "id": "reels_and_videos_zone_out",
+        "hook": "zone_out",
+        "text": "I use Reels and videos when I want something easy to watch without thinking too hard."
+      },
+      {
+        "id": "reels_and_videos_activation",
+        "hook": "activation",
+        "text": "I get pulled into videos that are dramatic, political, upsetting, or outrageous because I want to see what people are reacting to."
+      },
+      {
+        "id": "reels_and_videos_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking videos and posts to see what is new, who reacted, or whether people are talking about it."
+      }
+    ]
+  },
+  {
+    "platform": "meta_facebook",
+    "subfeature": "groups",
+    "question": "When you're checking Facebook Groups, what usually feels most true?",
+    "options": [
+      {
+        "id": "groups_belonging",
+        "hook": "belonging",
+        "text": "Checking Groups makes me feel part of a local community, interest, or circle where people know what I am talking about."
+      },
+      {
+        "id": "groups_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep up with Groups because people ask, answer, tag, and expect quick responses."
+      },
+      {
+        "id": "groups_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I go into a Group for one post and end up reading opinions, recommendations, and old threads for a long time."
+      },
+      {
+        "id": "groups_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check back to see if anyone answered my post, reacted, tagged me, or added new information."
+      }
+    ]
+  },
+  {
+    "platform": "meta_facebook",
+    "subfeature": "marketplace",
+    "question": "When you're browsing Facebook Marketplace, what usually feels most true?",
+    "options": [
+      {
+        "id": "marketplace_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep browsing because the perfect deal, rare find, or underpriced item might show up if I check at the right time."
+      },
+      {
+        "id": "marketplace_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I start with one item and end up comparing listings, prices, sellers, and neighborhoods until I know way too much."
+      },
+      {
+        "id": "marketplace_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking messages, saved searches, and listings to see if someone replied or if something new got posted."
+      }
+    ]
+  },
+  {
+    "platform": "meta_facebook",
+    "subfeature": "messenger",
+    "question": "When you're checking Facebook Messenger, what usually feels most true?",
+    "options": [
+      {
+        "id": "messenger_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep Messenger close because people expect replies, and I do not want to leave anyone waiting."
+      },
+      {
+        "id": "messenger_companion",
+        "hook": "companion",
+        "text": "I open Messenger when I want an easy conversation or someone to be there for a bit."
+      },
+      {
+        "id": "messenger_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check to see if they saw it, replied, are typing, or if a group chat moved on without me."
+      },
+      {
+        "id": "messenger_belonging",
+        "hook": "belonging",
+        "text": "Being in Messenger threads helps me feel included in family, friend, or group plans."
+      }
+    ]
+  },
+  {
+    "platform": "twitch",
+    "subfeature": "livestreams",
+    "question": "When you're watching Twitch livestreams, what usually feels most true?",
+    "options": [
+      {
+        "id": "livestreams_belonging",
+        "hook": "belonging",
+        "text": "Watching a stream makes me feel part of a shared room where everyone is reacting at the same time."
+      },
+      {
+        "id": "livestreams_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I come back to certain streamers because their voice, routines, and jokes feel familiar."
+      },
+      {
+        "id": "livestreams_zone_out",
+        "hook": "zone_out",
+        "text": "I keep a stream on because it is easy to sink into and let it fill the background."
+      },
+      {
+        "id": "livestreams_tethered_social",
+        "hook": "tethered_social",
+        "text": "I check streams because if I miss them live, I miss the chat, the jokes, and the moments everyone saw together."
+      }
+    ]
+  },
+  {
+    "platform": "twitch",
+    "subfeature": "live_chat",
+    "question": "When you're following or typing in Twitch live chat, what usually feels most true?",
+    "options": [
+      {
+        "id": "live_chat_belonging",
+        "hook": "belonging",
+        "text": "Chat makes me feel like I am part of the stream, not just watching from the outside."
+      },
+      {
+        "id": "live_chat_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep an eye on chat because things move fast, and I do not want to miss a reply, mention, or inside joke."
+      },
+      {
+        "id": "live_chat_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I like when the streamer notices chat because it makes the whole thing feel more personal."
+      },
+      {
+        "id": "live_chat_activation",
+        "hook": "activation",
+        "text": "I get pulled into chat when people are reacting hard, arguing, spamming, or making the moment feel bigger."
+      }
+    ]
+  },
+  {
+    "platform": "discord",
+    "subfeature": "servers_and_channels",
+    "question": "When you're checking Discord servers and channels, what usually feels most true?",
+    "options": [
+      {
+        "id": "servers_and_channels_belonging",
+        "hook": "belonging",
+        "text": "Checking servers makes me feel like I have a place where people know the same jokes, games, projects, or interests."
+      },
+      {
+        "id": "servers_and_channels_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep up with channels because conversations move fast, and I do not want to miss something people expect me to see."
+      },
+      {
+        "id": "servers_and_channels_companion",
+        "hook": "companion",
+        "text": "Discord feels like there is always a room open when I want to be around people without making a big plan."
+      },
+      {
+        "id": "servers_and_channels_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking for pings, replies, unread channels, or whether someone said something new."
+      }
+    ]
+  },
+  {
+    "platform": "discord",
+    "subfeature": "voice_chat",
+    "question": "When you're sitting in Discord voice chat, what usually feels most true?",
+    "options": [
+      {
+        "id": "voice_chat_belonging",
+        "hook": "belonging",
+        "text": "Sitting in voice makes me feel part of the group, even when we are barely talking."
+      },
+      {
+        "id": "voice_chat_companion",
+        "hook": "companion",
+        "text": "Voice chat gives me company in the background while I game, work, or just do not want to be alone."
+      },
+      {
+        "id": "voice_chat_tethered_social",
+        "hook": "tethered_social",
+        "text": "I stay nearby because if people hop in or need me, I do not want to miss it."
+      },
+      {
+        "id": "voice_chat_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking who is in voice, who joined, who left, or whether the group moved somewhere else."
+      },
+      {
+        "id": "voice_chat_zone_out",
+        "hook": "zone_out",
+        "text": "I can sit in voice for a long time because it fills the quiet without asking much from me."
+      }
+    ]
+  },
+  {
+    "platform": "discord",
+    "subfeature": "dms",
+    "question": "When you're checking Discord DMs, what usually feels most true?",
+    "options": [
+      {
+        "id": "dms_companion",
+        "hook": "companion",
+        "text": "I open DMs when I want someone specific to talk to without making it a whole group thing."
+      },
+      {
+        "id": "dms_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep checking because I do not want to miss a message or seem like I am ignoring someone."
+      },
+      {
+        "id": "dms_tethered_check",
+        "hook": "tethered_check",
+        "text": "I look to see if they replied, read it, are typing, or if anything changed since I last checked."
+      },
+      {
+        "id": "dms_belonging",
+        "hook": "belonging",
+        "text": "DMs make me feel connected to my closer people inside the bigger server world."
+      }
+    ]
+  },
+  {
+    "platform": "pc_gaming_console_gaming",
+    "subfeature": "competitive_ranked",
+    "question": "When you're playing competitive or ranked games, what usually feels most true?",
+    "options": [
+      {
+        "id": "competitive_ranked_climb",
+        "hook": "climb",
+        "text": "I keep queuing because I want to rank up, improve, and see proof that I am getting better."
+      },
+      {
+        "id": "competitive_ranked_reward_chase",
+        "hook": "reward_chase",
+        "text": "I start another match because the next win, drop, rank points, or good round could make the session feel worth it."
+      },
+      {
+        "id": "competitive_ranked_activation",
+        "hook": "activation",
+        "text": "Ranked gets me worked up, but the pressure and intensity make it hard to stop."
+      },
+      {
+        "id": "competitive_ranked_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking stats, rank, messages, invites, or match results to see where I stand."
+      }
+    ]
+  },
+  {
+    "platform": "pc_gaming_console_gaming",
+    "subfeature": "open_world_sandbox",
+    "question": "When you're exploring an open-world or sandbox game, what usually feels most true?",
+    "options": [
+      {
+        "id": "open_world_sandbox_second_self",
+        "hook": "second_self",
+        "text": "I like stepping into a world where I can be a different version of myself and choose what kind of life I build there."
+      },
+      {
+        "id": "open_world_sandbox_zone_out",
+        "hook": "zone_out",
+        "text": "I wander, gather, build, or explore because it lets me drift away from everything else for a while."
+      },
+      {
+        "id": "open_world_sandbox_climb",
+        "hook": "climb",
+        "text": "I keep playing because there is always something to unlock, upgrade, craft, finish, or get better at."
+      },
+      {
+        "id": "open_world_sandbox_companion",
+        "hook": "companion",
+        "text": "The world itself starts to feel like company, a familiar place I can return to when I want to settle in."
+      }
+    ]
+  },
+  {
+    "platform": "pc_gaming_console_gaming",
+    "subfeature": "multiplayer_social",
+    "question": "When you're playing multiplayer or social games, what usually feels most true?",
+    "options": [
+      {
+        "id": "multiplayer_social_belonging",
+        "hook": "belonging",
+        "text": "Playing with others makes me feel part of a team, squad, guild, or friend group."
+      },
+      {
+        "id": "multiplayer_social_tethered_social",
+        "hook": "tethered_social",
+        "text": "I log on because people might be waiting, inviting me, or counting on me to show up."
+      },
+      {
+        "id": "multiplayer_social_climb",
+        "hook": "climb",
+        "text": "I keep playing because I want to improve with the group, win more, and feel like I am contributing."
+      },
+      {
+        "id": "multiplayer_social_companion",
+        "hook": "companion",
+        "text": "The game gives me an easy way to hang out without needing a big conversation."
+      }
+    ]
+  },
+  {
+    "platform": "pc_gaming_console_gaming",
+    "subfeature": "story_campaign",
+    "question": "When you're playing a story or campaign game, what usually feels most true?",
+    "options": [
+      {
+        "id": "story_campaign_second_self",
+        "hook": "second_self",
+        "text": "I get pulled into the character and world because I can live inside a different story for a while."
+      },
+      {
+        "id": "story_campaign_zone_out",
+        "hook": "zone_out",
+        "text": "Playing through the campaign helps me tune out everything else and focus on the next mission or scene."
+      },
+      {
+        "id": "story_campaign_companion",
+        "hook": "companion",
+        "text": "The characters and world start to feel like company, especially when I have spent a lot of time with them."
+      },
+      {
+        "id": "story_campaign_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I get attached to certain characters and want to keep following what happens to them."
+      }
+    ]
+  },
+  {
+    "platform": "snapchat",
+    "subfeature": "snaps_and_chat",
+    "question": "When you're sending or checking Snapchat snaps and chats, what usually feels most true?",
+    "options": [
+      {
+        "id": "snaps_and_chat_tethered_social",
+        "hook": "tethered_social",
+        "text": "I keep checking snaps and chats because replies can feel time-sensitive, and I do not want to disappear."
+      },
+      {
+        "id": "snaps_and_chat_tethered_check",
+        "hook": "tethered_check",
+        "text": "I look to see if they opened it, replied, snapped back, or if the streak or conversation changed."
+      },
+      {
+        "id": "snaps_and_chat_belonging",
+        "hook": "belonging",
+        "text": "Snapping back and forth makes me feel part of my close circle in a casual, everyday way."
+      },
+      {
+        "id": "snaps_and_chat_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "Private snaps or chats can pull me in when they get flirty, suggestive, or exciting."
+      },
+      {
+        "id": "snaps_and_chat_companion",
+        "hook": "companion",
+        "text": "Sometimes snapping someone feels like a low-effort way to have someone there with me."
+      }
+    ]
+  },
+  {
+    "platform": "snapchat",
+    "subfeature": "stories",
+    "question": "When you're tapping through Snapchat Stories, what usually feels most true?",
+    "options": [
+      {
+        "id": "stories_tethered_social",
+        "hook": "tethered_social",
+        "text": "I tap through Stories because they show what people are doing right now, and I do not want to feel out of the loop."
+      },
+      {
+        "id": "stories_mirror",
+        "hook": "mirror",
+        "text": "I catch myself comparing where people are, who they are with, and how their life looks compared with mine."
+      },
+      {
+        "id": "stories_tethered_check",
+        "hook": "tethered_check",
+        "text": "After I post a Story, I keep checking who viewed it, who reacted, or whether the right person saw it."
+      },
+      {
+        "id": "stories_belonging",
+        "hook": "belonging",
+        "text": "Stories help me feel connected to my friends' day-to-day lives, even when we are not talking directly."
+      }
+    ]
+  },
+  {
+    "platform": "snapchat",
+    "subfeature": "spotlight",
+    "question": "When you're scrolling Snapchat Spotlight, what usually feels most true?",
+    "options": [
+      {
+        "id": "spotlight_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep swiping Spotlight because the next video might be funnier, stranger, or more worth sending to someone."
+      },
+      {
+        "id": "spotlight_zone_out",
+        "hook": "zone_out",
+        "text": "I scroll Spotlight when I want something quick and easy to watch without thinking."
+      },
+      {
+        "id": "spotlight_mirror",
+        "hook": "mirror",
+        "text": "I end up comparing myself to the faces, bodies, styles, or lives that keep showing up."
+      },
+      {
+        "id": "spotlight_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep looking for the best clip, the funniest thing, or something good enough to share."
+      }
+    ]
+  },
+  {
+    "platform": "snapchat",
+    "subfeature": "snap_map",
+    "question": "When you're checking Snap Map, what usually feels most true?",
+    "options": [
+      {
+        "id": "snap_map_tethered_social",
+        "hook": "tethered_social",
+        "text": "I check Snap Map because I want to know where people are and what everyone is up to."
+      },
+      {
+        "id": "snap_map_mirror",
+        "hook": "mirror",
+        "text": "Seeing where people are can make me compare my night, plans, or social life to theirs."
+      },
+      {
+        "id": "snap_map_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I zoom around checking places, names, and updates because one location makes me curious about another."
+      },
+      {
+        "id": "snap_map_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking to see if someone moved, showed up somewhere, or posted from a place I noticed."
+      }
+    ]
+  },
+  {
+    "platform": "ai_chat_gpt_gemini_claude",
+    "subfeature": "ai_tools",
+    "question": "When you're using AI tools like ChatGPT, Gemini, or Claude, what usually feels most true?",
+    "options": [
+      {
+        "id": "ai_tools_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep returning to the AI to see if it can give me a better answer, a cleaner version, or one more idea."
+      },
+      {
+        "id": "ai_tools_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I ask one question, then another, because each answer gives me a new thing to look up, test, or clarify."
+      },
+      {
+        "id": "ai_tools_climb",
+        "hook": "climb",
+        "text": "I use AI because it makes me feel like I can get better, move faster, and finally make progress on something."
+      },
+      {
+        "id": "ai_tools_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep trying prompts because the next response might be the one that nails it."
+      },
+      {
+        "id": "ai_tools_companion",
+        "hook": "companion",
+        "text": "Sometimes I use AI because it is there whenever I want to talk something through or not feel stuck alone."
+      }
+    ]
+  },
+  {
+    "platform": "ai_chat_gpt_gemini_claude",
+    "subfeature": "tasks_productivity",
+    "question": "When you're using AI to get tasks done, what usually feels most true?",
+    "options": [
+      {
+        "id": "tasks_productivity_climb",
+        "hook": "climb",
+        "text": "I keep using AI for tasks because it makes me feel more capable and helps me get through things faster."
+      },
+      {
+        "id": "tasks_productivity_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep asking for another draft, check, rewrite, or version because I want to make sure it is right."
+      },
+      {
+        "id": "tasks_productivity_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep prompting because one more version might be sharper, cleaner, or exactly what I was hoping for."
+      },
+      {
+        "id": "tasks_productivity_mirror",
+        "hook": "mirror",
+        "text": "I compare my own work to what the AI gives me and start wondering whether my version is good enough."
+      }
+    ]
+  },
+  {
+    "platform": "conversational_chatbots",
+    "subfeature": "companionship",
+    "question": "When you're chatting with a companion-style chatbot, what usually feels most true?",
+    "options": [
+      {
+        "id": "companionship_companion",
+        "hook": "companion",
+        "text": "I chat because something is always there to answer, listen, or keep me company when I want a response."
+      },
+      {
+        "id": "companionship_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I start to feel attached to the way it talks to me, remembers the thread, or feels familiar over time."
+      },
+      {
+        "id": "companionship_belonging",
+        "hook": "belonging",
+        "text": "The chat can feel like a small private place where I am understood without having to explain everything."
+      }
+    ]
+  },
+  {
+    "platform": "conversational_chatbots",
+    "subfeature": "therapy_or_emotional_support",
+    "question": "When you're using a chatbot for support or to talk things through, what usually feels most true?",
+    "options": [
+      {
+        "id": "therapy_or_emotional_support_companion",
+        "hook": "companion",
+        "text": "I use it when I want to talk something out right away and have something respond gently."
+      },
+      {
+        "id": "therapy_or_emotional_support_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I keep asking more because I am looking for the one answer, reframe, or explanation that finally makes me feel settled."
+      },
+      {
+        "id": "therapy_or_emotional_support_zone_out",
+        "hook": "zone_out",
+        "text": "Sometimes I keep chatting because it lets me stay inside the conversation instead of sitting alone with the feeling."
+      },
+      {
+        "id": "therapy_or_emotional_support_tethered_check",
+        "hook": "tethered_check",
+        "text": "I come back to ask again, check my thinking, or see if it says something that makes me feel more sure."
+      }
+    ]
+  },
+  {
+    "platform": "conversational_chatbots",
+    "subfeature": "roleplay",
+    "question": "When you're roleplaying with a chatbot, what usually feels most true?",
+    "options": [
+      {
+        "id": "roleplay_second_self",
+        "hook": "second_self",
+        "text": "I like stepping into a role where I can be bolder, softer, more powerful, or just different from my regular self."
+      },
+      {
+        "id": "roleplay_companion",
+        "hook": "companion",
+        "text": "Roleplay gives me someone to interact with whenever I want the story or conversation to keep going."
+      },
+      {
+        "id": "roleplay_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I keep going when the scene gets flirtier, more intense, or more private."
+      },
+      {
+        "id": "roleplay_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I can get attached to the character because the back-and-forth starts to feel familiar and personal."
+      }
+    ]
+  },
+  {
+    "platform": "conversational_chatbots",
+    "subfeature": "romantic_intimacy_simulation",
+    "question": "When you're chatting in a romantic or intimacy simulation, what usually feels most true?",
+    "options": [
+      {
+        "id": "romantic_intimacy_simulation_companion",
+        "hook": "companion",
+        "text": "I keep chatting because it feels nice to have something affectionate, responsive, and available."
+      },
+      {
+        "id": "romantic_intimacy_simulation_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I can start caring about the simulated person because the attention and routine feel personal."
+      },
+      {
+        "id": "romantic_intimacy_simulation_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I get pulled back when the conversation becomes flirty, sexual, or exciting in a private way."
+      },
+      {
+        "id": "romantic_intimacy_simulation_second_self",
+        "hook": "second_self",
+        "text": "It lets me try on a version of myself who feels wanted, confident, or more open than I usually do."
+      }
+    ]
+  },
+  {
+    "platform": "adult_content",
+    "subfeature": "videos",
+    "question": "When you're watching adult videos, what usually feels most true?",
+    "options": [
+      {
+        "id": "videos_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I watch because it is private, quick, and there is always something new that catches my body before I think much about it."
+      },
+      {
+        "id": "videos_zone_out",
+        "hook": "zone_out",
+        "text": "Sometimes I keep watching because it lets me turn off my brain and not sit with whatever else I am feeling."
+      },
+      {
+        "id": "videos_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep clicking because there is always another video that looks closer to what I want."
+      },
+      {
+        "id": "videos_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep looking because the perfect video always feels like it might be one more click away."
+      }
+    ]
+  },
+  {
+    "platform": "adult_content",
+    "subfeature": "live_cams",
+    "question": "When you're watching adult live cams, what usually feels most true?",
+    "options": [
+      {
+        "id": "live_cams_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I watch because the live, sexual, and unpredictable part makes it feel more exciting than a regular video."
+      },
+      {
+        "id": "live_cams_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I can get attached to certain performers because seeing them live makes the attention feel more personal."
+      },
+      {
+        "id": "live_cams_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep watching or browsing because the next moment, response, or show might be the one I was waiting for."
+      },
+      {
+        "id": "live_cams_companion",
+        "hook": "companion",
+        "text": "The live back-and-forth can feel like company, especially because someone is there in real time."
+      }
+    ]
+  },
+  {
+    "platform": "adult_content",
+    "subfeature": "onlyfans",
+    "question": "When you're checking OnlyFans, what usually feels most true?",
+    "options": [
+      {
+        "id": "onlyfans_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I keep up with certain creators because their posts and messages can feel personal, like I am getting closer access."
+      },
+      {
+        "id": "onlyfans_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I come back because the content is private, sexual, and tailored enough to feel more tempting."
+      },
+      {
+        "id": "onlyfans_tethered_check",
+        "hook": "tethered_check",
+        "text": "I check to see if there is a new post, message, reply, or update from someone I follow."
+      },
+      {
+        "id": "onlyfans_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep browsing or subscribing because the next post, unlock, or message might feel worth it."
+      }
+    ]
+  },
+  {
+    "platform": "adult_content",
+    "subfeature": "chat_messaging",
+    "question": "When you're using adult chat or messaging, what usually feels most true?",
+    "options": [
+      {
+        "id": "chat_messaging_companion",
+        "hook": "companion",
+        "text": "I keep messaging because there is someone there to respond in a private, attention-focused way."
+      },
+      {
+        "id": "chat_messaging_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "The conversation pulls me in when it gets sexual, flirty, or more explicit."
+      },
+      {
+        "id": "chat_messaging_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "I can start feeling attached when the same person remembers me, responds warmly, or makes it feel personal."
+      },
+      {
+        "id": "chat_messaging_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep checking to see if they replied, sent something new, or are available again."
+      }
+    ]
+  },
+  {
+    "platform": "adult_content",
+    "subfeature": "ai",
+    "question": "When you're using AI adult content or chat, what usually feels most true?",
+    "options": [
+      {
+        "id": "ai_companion",
+        "hook": "companion",
+        "text": "I use it because it is always available and can respond the way I want in the moment."
+      },
+      {
+        "id": "ai_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "I keep going when the AI can make the conversation sexual, novel, and private right away."
+      },
+      {
+        "id": "ai_second_self",
+        "hook": "second_self",
+        "text": "It lets me try on a fantasy version of myself or a scene I would not act out in normal life."
+      },
+      {
+        "id": "ai_parasocial_bond",
+        "hook": "parasocial_bond",
+        "text": "The repeated back-and-forth can start to feel personal, even though I know it is generated."
+      }
+    ]
+  },
+  {
+    "platform": "betting_trading_gambling",
+    "subfeature": "sports_betting",
+    "question": "When you're checking or placing sports bets, what usually feels most true?",
+    "options": [
+      {
+        "id": "sports_betting_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep checking lines and placing bets because the next pick feels like it could be the one that pays off."
+      },
+      {
+        "id": "sports_betting_tethered_check",
+        "hook": "tethered_check",
+        "text": "I keep refreshing odds, scores, cash-out options, and bet slips to see if anything changed."
+      },
+      {
+        "id": "sports_betting_activation",
+        "hook": "activation",
+        "text": "The game feels more intense when I have something on it, and every play suddenly matters more."
+      },
+      {
+        "id": "sports_betting_belonging",
+        "hook": "belonging",
+        "text": "Betting can make me feel part of the group chat, picks, debates, and shared excitement around the game."
+      },
+      {
+        "id": "sports_betting_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I start checking one matchup and end up digging through stats, injuries, odds, and predictions."
+      }
+    ]
+  },
+  {
+    "platform": "betting_trading_gambling",
+    "subfeature": "casino_slots_apps",
+    "question": "When you're playing casino or slots apps, what usually feels most true?",
+    "options": [
+      {
+        "id": "casino_slots_apps_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep spinning because the next one could be the bonus, jackpot, or run that turns it around."
+      },
+      {
+        "id": "casino_slots_apps_zone_out",
+        "hook": "zone_out",
+        "text": "Slots give me something simple to do with my hands and eyes when I do not want to think."
+      },
+      {
+        "id": "casino_slots_apps_endless_feed",
+        "hook": "endless_feed",
+        "text": "I keep moving from spin to spin or game to game because there is always another chance right there."
+      },
+      {
+        "id": "casino_slots_apps_arousal_pull",
+        "hook": "arousal_pull",
+        "text": "The lights, sounds, near-wins, and quick pace keep me keyed up and wanting another round."
+      }
+    ]
+  },
+  {
+    "platform": "betting_trading_gambling",
+    "subfeature": "stocks_crypto_trading",
+    "question": "When you're checking stocks or crypto, what usually feels most true?",
+    "options": [
+      {
+        "id": "stocks_crypto_trading_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep checking because the next move, trade, or breakout could be the one that pays off."
+      },
+      {
+        "id": "stocks_crypto_trading_tethered_check",
+        "hook": "tethered_check",
+        "text": "I refresh prices, charts, alerts, and positions to see if anything changed since the last time I looked."
+      },
+      {
+        "id": "stocks_crypto_trading_rabbit_hole",
+        "hook": "rabbit_hole",
+        "text": "I start with one ticker or coin and end up digging through charts, threads, news, and predictions."
+      },
+      {
+        "id": "stocks_crypto_trading_climb",
+        "hook": "climb",
+        "text": "I keep learning charts, strategies, and setups because I want to feel sharper and more in control."
+      },
+      {
+        "id": "stocks_crypto_trading_activation",
+        "hook": "activation",
+        "text": "The swings make me anxious and excited at the same time, so it is hard to look away."
+      }
+    ]
+  },
+  {
+    "platform": "betting_trading_gambling",
+    "subfeature": "loot_boxes",
+    "question": "When you're opening loot boxes, what usually feels most true?",
+    "options": [
+      {
+        "id": "loot_boxes_reward_chase",
+        "hook": "reward_chase",
+        "text": "I keep opening because the next box could finally have the rare item I want."
+      },
+      {
+        "id": "loot_boxes_climb",
+        "hook": "climb",
+        "text": "I want the items, upgrades, or collection progress that make my account feel stronger or more complete."
+      },
+      {
+        "id": "loot_boxes_second_self",
+        "hook": "second_self",
+        "text": "Getting the right skin, character, or cosmetic makes the version of me in the game feel more like who I want to be."
+      },
+      {
+        "id": "loot_boxes_endless_feed",
+        "hook": "endless_feed",
+        "text": "Once I start opening, there is always another box, bundle, or reward screen ready to go."
+      }
+    ]
+  }
+]

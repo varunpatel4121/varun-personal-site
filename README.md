@@ -18,13 +18,17 @@ src/
     (marketing)/  Public site: /, /about, /projects, /lab
     (platform)/   Product apps: /apps/persona (auth-protected)
     (auth)/       Auth pages: /sign-in
-    api/          API routes
+    quiz/         Tech Loop Quiz — thin wrapper over @blh/tech-loop-quiz
+    api/          API routes (incl. /api/quiz/{sessions,narrative})
   components/     Shared UI components
   features/       Feature modules (one per app)
     persona/      Persona chat app: components, lib, hooks, types
   config/         Platform-wide config (app registry)
   data/           Static data and types
   lib/            Shared utilities, site config, Supabase clients
+packages/
+  tech-loop-quiz/ Portable phenotyping quiz (@blh/tech-loop-quiz) — engine,
+                  config, UI, persistence + AI adapters. See its README/SCORING.md.
 ```
 
 ## Environment Variables
@@ -38,6 +42,8 @@ Copy `.env.local.example` to `.env.local` and fill in:
 | `SUPABASE_SERVICE_ROLE_KEY` | Yes | Supabase service role key (server-only) |
 | `OPENAI_API_KEY` | Yes | OpenAI API key for Persona chat |
 | `PERSONA_CHAT_MODEL` | No | Override chat model (default: `gpt-4.1-nano`) |
+| `ANTHROPIC_API_KEY` | No | Enables the optional Tech Loop Quiz AI narrative (falls back to deterministic copy if unset) |
+| `QUIZ_NARRATIVE_MODEL` | No | Override quiz narrative model (default: `claude-sonnet-4-6`) |
 
 ## Persona Chat Setup
 
@@ -48,6 +54,25 @@ The Persona app requires database tables for chats and messages.
 3. Add your `OPENAI_API_KEY` to `.env.local`
 4. Start the dev server: `npm run dev`
 5. Sign in and visit `/apps/persona`
+
+## Tech Loop Quiz
+
+The phenotyping quiz at `/quiz` is a portable workspace package,
+[`@blh/tech-loop-quiz`](packages/tech-loop-quiz/README.md), built to move to
+bluelighthealth.com. The deterministic engine classifies into 17 phenotypes; an
+optional LLM only warms the result copy.
+
+- **Runs with no setup** — works fully deterministically; the AI narrative and
+  Supabase persistence are optional adapters injected in
+  `src/app/quiz/QuizClient.tsx`.
+- **Persistence (optional):** run `packages/tech-loop-quiz/schema/0001_tech_loop_quiz.sql`
+  against Supabase to create the structured `tlq.*` tables; `/api/quiz/sessions`
+  writes to them. Without it, sessions are discarded (the route succeeds quietly).
+- **AI narrative (optional):** set `ANTHROPIC_API_KEY`; `/api/quiz/narrative`
+  relays the engine's prompt to Anthropic. Without it, the deterministic copy is
+  used.
+- **Engine + config:** `cd packages/tech-loop-quiz && npm test` (36 tests). See
+  its `SCORING.md` for the full spec.
 
 ## Testing
 

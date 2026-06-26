@@ -1,0 +1,263 @@
+[
+  {
+    "phenotype": "night_regulator",
+    "id": "GATE_NIGHT_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 6,
+    "requires": [
+      [
+        [{ "type": "entry_point", "tag": "night_regulation" }],
+        [{ "type": "tie_breaker", "tag": "night_avoid_head" }],
+        [{ "type": "cost_domain", "tag": "sleep" }, { "type": "loop_shape", "tag": "time_sink_binge" }]
+      ]
+    ],
+    "notes": "Do not let generic soothing win Night Regulator without a night/sleep signal."
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "id": "GATE_TIME_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 6,
+    "requires": [
+      [
+        [{ "type": "tie_breaker", "tag": "night_only_time_mine" }],
+        [{ "type": "entry_point", "tag": "night_regulation" }, { "type": "cost_domain", "tag": "sleep" }]
+      ]
+    ],
+    "notes": "Needs late-night use plus reclaimed-time signal or sleep cost."
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "id": "GATE_DRIFT_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "loop_shape", "tag": "autopilot" }],
+        [{ "type": "entry_point", "tag": "gap_filling" }],
+        [{ "type": "entry_point", "tag": "anytime_no_pattern" }],
+        [{ "type": "tie_breaker", "tag": "hand_went_there" }]
+      ]
+    ],
+    "notes": "Requires automaticity or transition/gap pattern."
+  },
+  {
+    "phenotype": "competence_refuge",
+    "id": "GATE_REFUGE_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "climb" }],
+        [{ "type": "job", "tag": "empower" }],
+        [{ "type": "platform_feature", "tag": "gaming_ranked_progress" }],
+        [{ "type": "tie_breaker", "tag": "effort_turns_progress" }]
+      ]
+    ],
+    "notes": "Requires progress, competence, mastery, or empowerment signal."
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "id": "GATE_OPT_01",
+    "kind": "soft_required_all",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "rabbit_hole" }],
+        [{ "type": "platform_feature", "tag": "ai_chatbot_support" }]
+      ],
+      [
+        [{ "type": "entry_point", "tag": "task_avoidance" }],
+        [{ "type": "loop_shape", "tag": "completion" }],
+        [{ "type": "tie_breaker", "tag": "preparing_becomes_thing" }]
+      ]
+    ],
+    "notes": "Needs preparation/research plus avoidance or completion-loop behavior."
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "id": "GATE_REASSURE_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "tethered_check" }],
+        [{ "type": "loop_shape", "tag": "quick_check" }],
+        [{ "type": "tie_breaker", "tag": "see_if_changed" }]
+      ]
+    ],
+    "notes": "Short checking must be visible."
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "id": "GATE_SCAN_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "rabbit_hole" }, { "type": "job", "tag": "reassure" }],
+        [{ "type": "platform_feature", "tag": "news_health_search" }],
+        [{ "type": "tie_breaker", "tag": "read_enough_safe" }]
+      ]
+    ],
+    "notes": "Research/search must be about safety, certainty, decision, threat, or health."
+  },
+  {
+    "phenotype": "validation_monitor",
+    "id": "GATE_VALIDATION_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "platform_feature", "tag": "posting_metrics" }],
+        [{ "type": "job", "tag": "validate" }, { "type": "loop_shape", "tag": "waiting_refresh" }],
+        [{ "type": "tie_breaker", "tag": "checking_reaction_to_me" }]
+      ]
+    ],
+    "notes": "Needs own-output response monitoring, not generic checking."
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "id": "GATE_COMPARE_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "mirror" }],
+        [{ "type": "job", "tag": "compare" }],
+        [{ "type": "aftertaste", "tag": "worse_self_body" }],
+        [{ "type": "tie_breaker", "tag": "see_where_i_stand" }]
+      ]
+    ],
+    "notes": "Needs self-ranking or self-image signal."
+  },
+  {
+    "phenotype": "always_on_responder",
+    "id": "GATE_RESPOND_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "tethered_social" }],
+        [{ "type": "loop_shape", "tag": "social_participation" }, { "type": "job", "tag": "connect" }],
+        [{ "type": "tie_breaker", "tag": "failing_someone" }]
+      ]
+    ],
+    "notes": "Needs reply pressure, availability, or social obligation."
+  },
+  {
+    "phenotype": "online_home",
+    "id": "GATE_HOME_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "belonging" }],
+        [{ "type": "platform_feature", "tag": "community_server_group" }],
+        [{ "type": "tie_breaker", "tag": "these_are_my_people" }]
+      ]
+    ],
+    "notes": "Needs group/community belonging, not just one-to-one connection."
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "id": "GATE_CONFIDANT_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "companion" }, { "type": "platform_feature", "tag": "ai_chatbot_support" }],
+        [{ "type": "tie_breaker", "tag": "always_answers" }]
+      ]
+    ],
+    "notes": "Needs one-to-one responsive digital presence."
+  },
+  {
+    "phenotype": "creator_anchor",
+    "id": "GATE_CREATOR_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "parasocial_bond" }],
+        [{ "type": "platform_feature", "tag": "creator_streamer_media" }],
+        [{ "type": "tie_breaker", "tag": "voice_part_of_day" }]
+      ]
+    ],
+    "notes": "Needs creator/personality attachment."
+  },
+  {
+    "phenotype": "activation_loop",
+    "id": "GATE_ACTIVATION_01",
+    "kind": "soft_required_any",
+    "action": "cap_score",
+    "cap": 7,
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "activation" }],
+        [{ "type": "tie_breaker", "tag": "angry_feels_awake" }]
+      ]
+    ],
+    "notes": "Needs anger, conflict, drama, threat, or moral-intensity signal."
+  },
+  {
+    "phenotype": "reward_chaser",
+    "id": "GATE_REWARD_01",
+    "kind": "hard_required_any",
+    "action": "block",
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "reward_chase" }],
+        [{ "type": "platform_feature", "tag": "betting_trading_gambling" }],
+        [{ "type": "platform_feature", "tag": "shopping_deals_marketplace" }],
+        [{ "type": "tie_breaker", "tag": "next_one_could_be_one" }]
+      ]
+    ],
+    "notes": "Do not assign Reward Chaser from generic stimulation alone."
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "id": "GATE_AROUSAL_01",
+    "kind": "hard_required_all",
+    "action": "block_or_adaptive_note",
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "arousal_pull" }],
+        [{ "type": "platform_feature", "tag": "adult_or_intimacy_content" }]
+      ],
+      [
+        [{ "type": "cost_domain", "tag": "*" }],
+        [{ "type": "severity_marker", "tag": "*" }],
+        [{ "type": "aftertaste", "tag": "guilty_ashamed" }],
+        [{ "type": "tie_breaker", "tag": "private_changes_channel" }]
+      ]
+    ],
+    "notes": "Do not pathologize arousal content without control, distress, values conflict, or cost."
+  },
+  {
+    "phenotype": "second_self",
+    "id": "GATE_SECOND_01",
+    "kind": "hard_required_any",
+    "action": "block",
+    "requires": [
+      [
+        [{ "type": "hook", "tag": "second_self" }],
+        [{ "type": "tie_breaker", "tag": "real_life_no_room" }]
+      ]
+    ],
+    "notes": "Do not assign from generic fantasy unless identity-immersion signal is present."
+  }
+]

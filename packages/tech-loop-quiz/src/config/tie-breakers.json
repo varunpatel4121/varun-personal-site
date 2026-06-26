@@ -1,0 +1,82 @@
+[
+  {
+    "a": "night_regulator",
+    "b": "time_reclaimer",
+    "tagA": "night_avoid_head",
+    "tagB": "night_only_time_mine",
+    "fallback": {
+      "preferA": [
+        { "type": "aftertaste", "tag": "more_anxious" },
+        { "type": "aftertaste", "tag": "numb" }
+      ],
+      "preferB": [
+        { "type": "aftertaste", "tag": "tired" },
+        { "type": "aftertaste", "tag": "no_different" }
+      ]
+    },
+    "notes": "Quiet/dread/loneliness -> Night Regulator. Reclaimed time/freedom -> Time Reclaimer."
+  },
+  {
+    "a": "reassurance_checker",
+    "b": "vigilant_scanner",
+    "tagA": "see_if_changed",
+    "tagB": "read_enough_safe",
+    "notes": "Short signal checks -> Reassurance Checker. Extended safety/certainty research -> Vigilant Scanner."
+  },
+  {
+    "a": "validation_monitor",
+    "b": "comparison_spiral",
+    "tagA": "checking_reaction_to_me",
+    "tagB": "see_where_i_stand",
+    "notes": "Checking response to my own post -> Validation Monitor. Measuring against others -> Comparison Spiral."
+  },
+  {
+    "a": "competence_refuge",
+    "b": "second_self",
+    "tagA": "effort_turns_progress",
+    "tagB": "real_life_no_room",
+    "notes": "Progress/mastery/rank -> Competence Refuge. Avatar/identity/alternate self -> Second Self."
+  },
+  {
+    "a": "online_home",
+    "b": "always_on_responder",
+    "tagA": "these_are_my_people",
+    "tagB": "failing_someone",
+    "notes": "A community becoming my world -> Online Home. Obligation to reply -> Always-On Responder."
+  },
+  {
+    "a": "always_there_confidant",
+    "b": "creator_anchor",
+    "tagA": "always_answers",
+    "tagB": "voice_part_of_day",
+    "notes": "Responsive one-to-one AI/bot -> Confidant. One-way familiar creator -> Creator Anchor."
+  },
+  {
+    "a": "activation_loop",
+    "b": "reward_chaser",
+    "tagA": "angry_feels_awake",
+    "tagB": "next_one_could_be_one",
+    "notes": "Anger/drama/moral charge -> Activation. Uncertain win/loss recovery/money risk -> Reward Chaser."
+  },
+  {
+    "a": "autopilot_drifter",
+    "b": "reward_chaser",
+    "tagA": "hand_went_there",
+    "tagB": "next_one_could_be_one",
+    "notes": "Joyless automatic gap filling -> Autopilot Drifter. Searching for a possible win -> Reward Chaser."
+  },
+  {
+    "a": "optimizer_spiral",
+    "b": "vigilant_scanner",
+    "tagA": "preparing_becomes_thing",
+    "tagB": "read_enough_safe",
+    "notes": "Preparing/tooling/learning instead of starting -> Optimizer Spiral. Safety/threat certainty -> Vigilant Scanner."
+  },
+  {
+    "a": "always_there_confidant",
+    "b": "online_home",
+    "tagA": "always_answers",
+    "tagB": "these_are_my_people",
+    "notes": "One-to-one disclosure to a responsive presence -> Confidant. Group/community belonging -> Online Home."
+  }
+]

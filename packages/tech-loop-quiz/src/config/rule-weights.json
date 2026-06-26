@@ -1,0 +1,2172 @@
+[
+  {
+    "phenotype": "night_regulator",
+    "type": "hook",
+    "tag": "zone_out",
+    "weight": 3.0,
+    "notes": "Content is functioning as a pre-sleep off-switch."
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 3.0,
+    "notes": "Content is functioning as a pre-sleep off-switch."
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 1.5,
+    "notes": "Can be sound, company, or familiar presence at night."
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.5,
+    "notes": "Can be sound, company, or familiar presence at night."
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "job",
+    "tag": "connect",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "loop_shape",
+    "tag": "background",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "aftertaste",
+    "tag": "tired",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "aftertaste",
+    "tag": "numb",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "night_regulator",
+    "type": "tie_breaker",
+    "tag": "night_avoid_head",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "hook",
+    "tag": "zone_out",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "hook",
+    "tag": "second_self",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "hook",
+    "tag": "reward_chase",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "job",
+    "tag": "empower",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "entry_point",
+    "tag": "task_avoidance",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "loop_shape",
+    "tag": "background",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "aftertaste",
+    "tag": "tired",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "time_reclaimer",
+    "type": "tie_breaker",
+    "tag": "night_only_time_mine",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "hook",
+    "tag": "zone_out",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "entry_point",
+    "tag": "anytime_no_pattern",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "loop_shape",
+    "tag": "autopilot",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "loop_shape",
+    "tag": "background",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "aftertaste",
+    "tag": "no_different",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "aftertaste",
+    "tag": "numb",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "autopilot_drifter",
+    "type": "tie_breaker",
+    "tag": "hand_went_there",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "hook",
+    "tag": "climb",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "hook",
+    "tag": "reward_chase",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "hook",
+    "tag": "second_self",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "hook",
+    "tag": "zone_out",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "job",
+    "tag": "empower",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "entry_point",
+    "tag": "task_avoidance",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "cost_domain",
+    "tag": "home_family_conflict",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "platform_feature",
+    "tag": "gaming_ranked_progress",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "competence_refuge",
+    "type": "tie_breaker",
+    "tag": "effort_turns_progress",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "hook",
+    "tag": "rabbit_hole",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "hook",
+    "tag": "climb",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "job",
+    "tag": "empower",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "entry_point",
+    "tag": "task_avoidance",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "platform_feature",
+    "tag": "ai_chatbot_support",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "platform_feature",
+    "tag": "news_health_search",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "optimizer_spiral",
+    "type": "tie_breaker",
+    "tag": "preparing_becomes_thing",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "hook",
+    "tag": "tethered_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "job",
+    "tag": "connect",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "aftertaste",
+    "tag": "tired",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "aftertaste",
+    "tag": "no_different",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "reassurance_checker",
+    "type": "tie_breaker",
+    "tag": "see_if_changed",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "hook",
+    "tag": "rabbit_hole",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "hook",
+    "tag": "activation",
+    "weight": 0.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "job",
+    "tag": "empower",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "entry_point",
+    "tag": "anytime_no_pattern",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "platform_feature",
+    "tag": "news_health_search",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "vigilant_scanner",
+    "type": "tie_breaker",
+    "tag": "read_enough_safe",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "hook",
+    "tag": "mirror",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "hook",
+    "tag": "climb",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "hook",
+    "tag": "tethered_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "job",
+    "tag": "validate",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "job",
+    "tag": "compare",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "job",
+    "tag": "connect",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "aftertaste",
+    "tag": "worse_self_body",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "cost_domain",
+    "tag": "self_body_image",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "platform_feature",
+    "tag": "posting_metrics",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "validation_monitor",
+    "type": "tie_breaker",
+    "tag": "checking_reaction_to_me",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "hook",
+    "tag": "mirror",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "job",
+    "tag": "compare",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "job",
+    "tag": "validate",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "loop_shape",
+    "tag": "autopilot",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "aftertaste",
+    "tag": "worse_self_body",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "cost_domain",
+    "tag": "self_body_image",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "comparison_spiral",
+    "type": "tie_breaker",
+    "tag": "see_where_i_stand",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "hook",
+    "tag": "tethered_social",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "hook",
+    "tag": "belonging",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "job",
+    "tag": "connect",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "aftertaste",
+    "tag": "tired",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "cost_domain",
+    "tag": "home_family_conflict",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_on_responder",
+    "type": "tie_breaker",
+    "tag": "failing_someone",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "hook",
+    "tag": "belonging",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "hook",
+    "tag": "tethered_social",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "job",
+    "tag": "connect",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "loop_shape",
+    "tag": "background",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "aftertaste",
+    "tag": "connected",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "online_home",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "platform_feature",
+    "tag": "community_server_group",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "online_home",
+    "type": "tie_breaker",
+    "tag": "these_are_my_people",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "hook",
+    "tag": "second_self",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "job",
+    "tag": "connect",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "aftertaste",
+    "tag": "connected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "aftertaste",
+    "tag": "calmer_regulated",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "platform_feature",
+    "tag": "ai_chatbot_support",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "always_there_confidant",
+    "type": "tie_breaker",
+    "tag": "always_answers",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "hook",
+    "tag": "belonging",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "job",
+    "tag": "connect",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "loop_shape",
+    "tag": "background",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "aftertaste",
+    "tag": "connected",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "aftertaste",
+    "tag": "calmer_regulated",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "cost_domain",
+    "tag": "money",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "platform_feature",
+    "tag": "creator_streamer_media",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "creator_anchor",
+    "type": "tie_breaker",
+    "tag": "voice_part_of_day",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "hook",
+    "tag": "activation",
+    "weight": 3.5
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "hook",
+    "tag": "rabbit_hole",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "entry_point",
+    "tag": "morning_check_in",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "entry_point",
+    "tag": "gap_filling",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "aftertaste",
+    "tag": "no_different",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "cost_domain",
+    "tag": "focus_attention",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "cost_domain",
+    "tag": "home_family_conflict",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "activation_loop",
+    "type": "tie_breaker",
+    "tag": "angry_feels_awake",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "hook",
+    "tag": "reward_chase",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "hook",
+    "tag": "climb",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "hook",
+    "tag": "tethered_check",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "job",
+    "tag": "empower",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "job",
+    "tag": "reassure",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "entry_point",
+    "tag": "anytime_no_pattern",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "loop_shape",
+    "tag": "waiting_refresh",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "aftertaste",
+    "tag": "behind_panicked",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "aftertaste",
+    "tag": "more_anxious",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "cost_domain",
+    "tag": "money",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "platform_feature",
+    "tag": "betting_trading_gambling",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "platform_feature",
+    "tag": "shopping_deals_marketplace",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "reward_chaser",
+    "type": "tie_breaker",
+    "tag": "next_one_could_be_one",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "hook",
+    "tag": "arousal_pull",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "hook",
+    "tag": "companion",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "hook",
+    "tag": "second_self",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "hook",
+    "tag": "endless_feed",
+    "weight": 1.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "job",
+    "tag": "stimulate",
+    "weight": 2.5
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "job",
+    "tag": "validate",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "job",
+    "tag": "connect",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "entry_point",
+    "tag": "under_stimulated",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "loop_shape",
+    "tag": "quick_check",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "aftertaste",
+    "tag": "guilty_ashamed",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "aftertaste",
+    "tag": "numb",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "cost_domain",
+    "tag": "sleep",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "platform_feature",
+    "tag": "adult_or_intimacy_content",
+    "weight": 3.0
+  },
+  {
+    "phenotype": "arousal_regulator",
+    "type": "tie_breaker",
+    "tag": "private_changes_channel",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "hook",
+    "tag": "second_self",
+    "weight": 4.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "hook",
+    "tag": "parasocial_bond",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "hook",
+    "tag": "belonging",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "hook",
+    "tag": "climb",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "hook",
+    "tag": "zone_out",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "job",
+    "tag": "empower",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "job",
+    "tag": "soothe",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "job",
+    "tag": "validate",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "job",
+    "tag": "connect",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "entry_point",
+    "tag": "alone_disconnected",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "entry_point",
+    "tag": "stress_relief",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "entry_point",
+    "tag": "night_regulation",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "entry_point",
+    "tag": "task_avoidance",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "loop_shape",
+    "tag": "time_sink_binge",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "loop_shape",
+    "tag": "social_participation",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "loop_shape",
+    "tag": "completion",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "aftertaste",
+    "tag": "connected",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "aftertaste",
+    "tag": "calmer_regulated",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "aftertaste",
+    "tag": "more_lonely",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "aftertaste",
+    "tag": "worse_self_body",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "cost_domain",
+    "tag": "friendships_dating_social",
+    "weight": 2.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "cost_domain",
+    "tag": "work_school_responsibilities",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "cost_domain",
+    "tag": "mood_anxiety",
+    "weight": 1.0
+  },
+  {
+    "phenotype": "second_self",
+    "type": "tie_breaker",
+    "tag": "real_life_no_room",
+    "weight": 4.0
+  }
+]

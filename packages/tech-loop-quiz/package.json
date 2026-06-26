@@ -1,0 +1,41 @@
+{
+  "name": "@blh/tech-loop-quiz",
+  "version": "0.1.0",
+  "description": "Blue Light Health — Tech Loop & Phenotype Formulation Quiz. Portable, deterministic phenotyping engine + versioned config + React UI. No framework or infrastructure coupling.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./engine": "./src/engine/index.ts",
+    "./types": "./src/types/index.ts",
+    "./config": "./src/config/index.ts",
+    "./ui": "./src/ui/index.ts",
+    "./ui/styles.css": "./src/ui/styles.css",
+    "./persistence": "./src/persistence/index.ts",
+    "./ai": "./src/ai/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}
