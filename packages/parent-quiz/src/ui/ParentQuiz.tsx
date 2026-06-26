@@ -41,9 +41,7 @@ function Intro({ onStart }: { onStart: () => void }) {
     <div className="q-center">
       <div className="q-brand q-intro-logo"><Logo size={26} /></div>
       <h1 className="q-title">{c.title}</h1>
-      <p className="q-lead">{c.subtitle}</p>
       <Button onClick={onStart}>{c.cta}</Button>
-      <p className="q-hint" style={{ marginTop: 20 }}>{c.disclaimer}</p>
     </div>
   );
 }
@@ -153,6 +151,7 @@ function Result({
       <div className="q-actions" style={{ justifyContent: "center" }}>
         <Button variant="ghost" onClick={onRestart}>Start over</Button>
       </div>
+      <p className="q-disclaimer">{CONTENT.intro.disclaimer}</p>
     </>
   );
 }
