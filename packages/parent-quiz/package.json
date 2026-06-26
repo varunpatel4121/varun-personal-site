@@ -1,0 +1,36 @@
+{
+  "name": "@blh/parent-quiz",
+  "version": "0.1.0",
+  "description": "Blue Light Health — Parent Tech Loop Quiz. A marketing-funnel, soul-reading parent-report quiz that names the family screen pattern and bridges to CARES support. Deterministic engine + warm UI on @blh/quiz-core. Portable.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./ui": "./src/ui/index.ts",
+    "./ui/theme.css": "./src/ui/theme.css"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@blh/quiz-core": "*",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

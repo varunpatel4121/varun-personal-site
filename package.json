@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",
+    "@blh/parent-quiz": "*",
+    "@blh/quiz-core": "*",
     "@blh/tech-loop-quiz": "*",
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.103.0",

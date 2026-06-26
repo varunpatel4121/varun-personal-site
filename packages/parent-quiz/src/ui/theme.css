@@ -1,0 +1,129 @@
+/* Parent quiz theme — a warm, soul-reading, editorial aesthetic. Distinct from
+   the adult quiz's cool dark theme: warm ivory surfaces, deep warm ink, a human
+   terracotta accent, serif headings. Only overrides the shared --q-* variables
+   (+ parent-only result pieces), so it rides on the same core primitives. */
+
+.q[data-theme="parent"] {
+  --q-bg: #faf5ee;
+  --q-surface: #ffffff;
+  --q-surface-2: #f6eee2;
+  --q-border: #ece1d1;
+  --q-text: #2b2522;
+  --q-muted: #8c7d6c;
+  --q-accent: #c25e3f;
+  --q-accent-ink: #ffffff;
+  --q-danger: #a8392a;
+  --q-radius: 16px;
+  --q-maxw: 600px;
+  --q-bg-image: radial-gradient(1100px 520px at 50% -8%, #fdf2e4 0%, var(--q-bg) 60%);
+
+  --pq-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+}
+
+/* Serif headings for warmth and gravity. */
+.q[data-theme="parent"] .q-q,
+.q[data-theme="parent"] .q-title {
+  font-family: var(--pq-serif);
+  letter-spacing: -0.015em;
+}
+.q[data-theme="parent"] .q-opt { box-shadow: 0 1px 2px rgba(60, 40, 20, 0.03); }
+.q[data-theme="parent"] .q-lead { font-size: 17px; }
+
+/* ── Result page ─────────────────────────────────────────────────────────── */
+.pq-result { display: flex; flex-direction: column; }
+
+.pq-hero { text-align: center; margin: 8px 0 4px; }
+.pq-hero .q-kicker { color: var(--q-muted); }
+.pq-hero-name {
+  font-family: var(--pq-serif);
+  font-size: clamp(30px, 6vw, 44px);
+  font-weight: 700; letter-spacing: -0.025em; line-height: 1.08;
+  margin: 6px 0 14px; color: var(--q-text);
+}
+.pq-recognition {
+  font-family: var(--pq-serif);
+  font-size: clamp(20px, 3.8vw, 26px);
+  line-height: 1.42; font-style: italic; color: var(--q-text);
+  max-width: 30ch; margin: 0 auto;
+}
+.pq-chips {
+  margin: 18px auto 0; font-size: 13px; color: var(--q-muted);
+  letter-spacing: 0.01em;
+}
+
+.pq-narrative {
+  text-align: center; font-size: 17px; line-height: 1.7;
+  color: var(--q-text); max-width: 34ch; margin: 22px auto 6px;
+}
+
+.pq-points { display: flex; flex-direction: column; gap: 12px; margin: 18px 0 6px; }
+.pq-point {
+  background: var(--q-surface); border: 1px solid var(--q-border);
+  border-radius: var(--q-radius); padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(60, 40, 20, 0.04);
+}
+.pq-point h4 {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--q-accent); margin: 0 0 6px;
+}
+.pq-point p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--q-text); }
+
+/* The one-line support recommendation that bridges into the CTA. */
+.pq-support-line {
+  text-align: center; font-size: 16px; font-weight: 500; line-height: 1.5;
+  color: var(--q-text); max-width: 36ch; margin: 22px auto 2px;
+}
+
+/* The CARES conversion card — the focal point of the page. */
+.pq-cta {
+  background: linear-gradient(180deg, #ffffff 0%, #fbf3e9 100%);
+  border: 1px solid #e7d6c2; border-radius: 20px;
+  padding: 28px 24px; margin: 24px 0 12px; text-align: center;
+  box-shadow: 0 6px 22px rgba(150, 90, 50, 0.08);
+}
+.pq-cta h3 {
+  font-family: var(--pq-serif); font-size: clamp(21px, 3.4vw, 26px);
+  font-weight: 700; letter-spacing: -0.02em; margin: 0 0 10px; color: var(--q-text);
+}
+.pq-cta p { color: var(--q-text); font-size: 15.5px; line-height: 1.55; margin: 0 auto; max-width: 38ch; }
+.pq-cta-book {
+  display: inline-block; margin-top: 18px;
+  background: var(--q-accent); color: var(--q-accent-ink);
+  text-decoration: none; font-weight: 600; font-size: 16.5px;
+  padding: 15px 34px; border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(194, 94, 63, 0.32);
+  transition: transform 120ms, box-shadow 120ms;
+}
+.pq-cta-book:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(194, 94, 63, 0.4); }
+.pq-reassure { font-size: 13px; color: var(--q-muted); margin-top: 14px; font-style: italic; }
+
+/* Expandable "full picture" — keeps the detail without a wall of text. */
+.pq-detail { margin: 8px 0; border-top: 1px solid var(--q-border); padding-top: 8px; }
+.pq-detail > summary {
+  list-style: none; cursor: pointer; text-align: center;
+  color: var(--q-muted); font-size: 14px; padding: 10px; user-select: none;
+}
+.pq-detail > summary::-webkit-details-marker { display: none; }
+.pq-detail > summary:hover { color: var(--q-text); }
+.pq-detail[open] > summary { color: var(--q-text); margin-bottom: 6px; }
+.pq-detail .pq-points { margin-top: 4px; }
+
+/* Compact result-fit feedback — light, low in the page. */
+.pq-fit { text-align: center; margin: 18px 0 4px; }
+.pq-fit-q { font-size: 14px; color: var(--q-muted); margin: 0 0 10px; }
+.pq-fit-opts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.pq-fit-opt {
+  border: 1px solid var(--q-border); background: var(--q-surface);
+  color: var(--q-text); border-radius: 999px; padding: 8px 14px;
+  font-size: 13.5px; cursor: pointer; font-family: inherit;
+}
+.pq-fit-opt[data-selected="true"] { border-color: var(--q-accent); background: var(--q-surface-2); }
+.pq-fit-thanks { font-size: 14px; color: var(--q-muted); text-align: center; margin: 16px 0; }
+
+/* Email gate — centered, the teaser sells the unlock. */
+.pq-gate { text-align: center; }
+.pq-gate .q-result-name, .pq-gate .pq-hero-name { margin-top: 4px; }
+.pq-gate .pq-recognition { margin: 10px auto 0; }
+.pq-gate .q-input { max-width: 360px; margin: 22px auto 0; text-align: center; }
+.pq-teaser { color: var(--q-muted); font-size: 15px; max-width: 36ch; margin: 16px auto 0; }
+.pq-gate-skip { margin-top: 14px; }

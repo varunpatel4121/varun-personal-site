@@ -1,0 +1,269 @@
+Blue Light Health Parent Quiz Taxonomy & Question Bank
+Short parent-report quiz foundation | v1
+Operating Principle
+This quiz is not a parent version of the adult self-report. Parents are not inside the child's urge. They are inside the home pattern. The quiz should ask what they see, what they have tried, what happens when they intervene, and what screens seem to be doing for the child.
+Recommended length: Use 8 core questions, plus optional child age and contact capture. The quiz should feel fast enough for marketing but specific enough to return a real result.
+
+Output Objects
+Every completed quiz should save these objects:
+Primary child tech loop: the strongest screen function or behavior pattern.
+Secondary child tech loop: useful when the primary result needs nuance.
+Family screen pattern: battle, detective, negotiation, quiet distance, give-in burnout, or collaborative reset.
+Support level: normal tension, pattern forming, family-impact loop, or support recommended.
+Cost domains: sleep, school, mood, conflict, offline life, self-image, money, secrecy, parent mental load.
+Parent role: enforcer, detective, negotiator, peacekeeper, guilty/inconsistent, worried observer, or collaborator.
+CTA readiness: wants a plan, wants a therapist, wants help talking, wants to understand first, or not ready.
+
+Core Tags
+Tag
+What it means
+NIGHT_OFF_SWITCH
+Screens are used late at night as a settling tool or sleep-delay loop.
+DAILY_BATTLE
+Limits repeatedly turn into conflict, threats, bargaining, or escalation.
+QUIET_PULL_AWAY
+The child withdraws into screens and offline presence shrinks.
+SOCIAL_MIRROR
+Mood and self-image are tied to posts, appearance, likes, status, exclusion, or group drama.
+ALWAYS_CHECKING
+Repeated checking for updates, replies, messages, streaks, location, or certainty.
+ONLINE_BELONGING
+Online communities, servers, fandoms, creators, or groups become the primary social place.
+COMPETENCE_REFUGE
+Games, rankings, stats, builds, or digital projects become the main place the child feels capable.
+REWARD_CHASE
+Uncertain rewards, money, purchases, betting, trades, drops, or loot-box-like mechanics drive the loop.
+INTENSITY_LOOP
+Drama, threat, conflict, anger, edgy content, or high stimulation keeps pulling them back.
+AUTOPILOT_ZONE_OUT
+Automatic, gap-filling, low-awareness use that quietly eats time and attention.
+
+The Parent Quiz
+Intro copy: This takes about 3 minutes. It is a reflection of the screen pattern showing up at home, not a diagnosis or medical advice.
+Optional. How old is your child or teen?
+Use for copy and clinical relevance, not primary scoring.
+8 to 10 [AGE_CHILD]
+11 to 13 [AGE_TWEEN]
+14 to 15 [AGE_YOUNG_TEEN]
+16 to 18 [AGE_OLDER_TEEN]
+College-age but still living at home [AGE_LAUNCH]
+Other [AGE_OTHER]
+Q1. What made you take this quiz today?
+Pick the one that sounds most like your house right now.
+Screens have become the argument I am tired of having. [DAILY_BATTLE]
+They seem more withdrawn, and screens are where they disappear. [QUIET_PULL_AWAY]
+Bedtime, mornings, or sleep are starting to revolve around the device. [NIGHT_OFF_SWITCH]
+Their mood seems tied to likes, streaks, group chats, posts, or social drama. [SOCIAL_MIRROR + ALWAYS_CHECKING]
+Gaming, online worlds, or digital projects seem to matter more than anything offline. [COMPETENCE_REFUGE + ONLINE_BELONGING]
+I am worried about spending, loot boxes, trades, betting, purchases, or risky choices. [REWARD_CHASE]
+Everything feels more intense: arguments, anger, content, drama, or constant stimulation. [INTENSITY_LOOP]
+I am not sure. I just know something feels off. [GENERAL_CONCERN]
+Q2. When you try to set a limit, what usually happens?
+Pick one.
+It turns into a fight, even when I try to stay calm. [DAILY_BATTLE + URGENCY_2]
+There is always one more round, one more episode, one more thing they need to finish. [AUTOPILOT_ZONE_OUT + COMPETENCE_REFUGE]
+They seem crushed or unreachable, like I took away the only thing that was helping. [QUIET_PULL_AWAY + NIGHT_OFF_SWITCH]
+They sneak it, hide it, downplay it, or make it sound like less than it is. [CONCEALMENT + URGENCY_2]
+They are annoyed, but they can usually stop. [LOWER_URGENCY]
+Honestly, I avoid setting the limit because I cannot handle another blow-up. [PARENT_BURNOUT + DAILY_BATTLE]
+We have limits that mostly work. [LOW_CONCERN]
+Q3. When is screen use hardest to interrupt?
+Pick up to two.
+Late at night, especially in bed. [NIGHT_OFF_SWITCH]
+First thing in the morning. [ALWAYS_CHECKING]
+Before homework, chores, schoolwork, or anything hard. [COMPETENCE_REFUGE + AUTOPILOT_ZONE_OUT]
+After school or after a stressful day. [NIGHT_OFF_SWITCH + AUTOPILOT_ZONE_OUT]
+When they are bored, waiting, or between things. [AUTOPILOT_ZONE_OUT]
+When they are alone, left out, or disconnected. [ONLINE_BELONGING + QUIET_PULL_AWAY]
+When a group chat, game, stream, or online event is happening. [ONLINE_BELONGING + ALWAYS_CHECKING]
+There is no clear pattern. It feels like all the time. [GENERALIZED + URGENCY_1]
+Q4. If you had to guess, what is the screen giving them?
+Pick the answer that feels most true, even if you are not sure.
+A way to calm down, shut off, or not think for a while. [NIGHT_OFF_SWITCH + AUTOPILOT_ZONE_OUT]
+A place where they feel good at something. [COMPETENCE_REFUGE]
+Their people: friends, servers, fandoms, creators, or a world where they feel known. [ONLINE_BELONGING]
+Proof that they are included, liked, noticed, or not missing out. [SOCIAL_MIRROR + ALWAYS_CHECKING]
+A version of themselves or a world that feels better than real life right now. [QUIET_PULL_AWAY + ONLINE_BELONGING]
+Intensity, drama, edge, anger, or something that makes them feel awake. [INTENSITY_LOOP]
+The chance of a win, drop, reward, deal, trade, pull, or score. [REWARD_CHASE]
+I honestly do not know. [UNKNOWN_JOB]
+Q5. After screen time goes too long, what do you notice?
+Pick one or two.
+They are exhausted, hard to wake, or the next morning is rough. [NIGHT_OFF_SWITCH + COST_SLEEP]
+They are irritable, wired, or easier to set off. [INTENSITY_LOOP + COST_MOOD]
+They seem smaller, more self-conscious, or upset by social stuff. [SOCIAL_MIRROR + COST_SELF_IMAGE]
+They seem blank, numb, or checked out. [AUTOPILOT_ZONE_OUT + QUIET_PULL_AWAY]
+They are defensive or secretive when I ask what happened. [CONCEALMENT + URGENCY_1]
+They are calmer for a little while, but the same need comes back. [REGULATION_LOOP]
+I do not notice much afterward. [LOWER_URGENCY]
+Q6. Where is this costing your child or your family lately?
+Pick all that are real.
+Sleep or mornings. [COST_SLEEP]
+School, homework, chores, or responsibilities. [COST_SCHOOL]
+Mood, irritability, stress, or emotional swings. [COST_MOOD]
+Family conflict, trust, or the relationship between you. [COST_CONFLICT]
+Offline friends, activities, sports, hobbies, or leaving the house. [COST_OFFLINE_LIFE]
+Self-image, appearance stress, comparison, or social confidence. [COST_SELF_IMAGE]
+Money, purchases, bets, trades, or charges. [COST_MONEY + HARD_RULE_REWARD]
+Secrecy, sneaking, lying, or hiding. [COST_TRUST + URGENCY_2]
+My own stress as a parent. [PARENT_BURNOUT]
+Nowhere meaningful, honestly. [LOW_CONCERN]
+Q7. What role have you fallen into as the parent?
+Pick one.
+The phone police. I enforce, they resist, and we repeat. [FAMILY_DAILY_BATTLE]
+The detective. I check, monitor, investigate, or try to catch what is happening. [FAMILY_DETECTIVE]
+The negotiator. Everything becomes a deal, exception, or argument over minutes. [FAMILY_NEGOTIATION]
+The peacekeeper. Sometimes I give in because I need the house to calm down. [FAMILY_GIVE_IN_BURNOUT]
+The fixer. I keep researching tools, controls, rules, and expert advice. [FAMILY_FIXER]
+The worried observer. I can see something is off, but I do not know how to reach them. [FAMILY_QUIET_DISTANCE]
+The collaborator. We can usually talk about it and adjust. [FAMILY_COLLABORATIVE]
+Q8. In the past month, which of these have been true?
+Pick all that apply.
+We tried rules or limits, and they did not really stick. [FAILED_LIMITS + URGENCY_2]
+They keep going after a clear stopping point. [LOSS_OF_CONTROL + URGENCY_2]
+They get restless, anxious, angry, or very off when they cannot use it. [WITHDRAWAL_RESTLESS + URGENCY_2]
+They hide, sneak, downplay, or lie about use. [CONCEALMENT + URGENCY_2]
+Sleep or mornings are clearly affected. [COST_SLEEP + URGENCY_1]
+School, responsibilities, or offline life are clearly affected. [COST_FUNCTION + URGENCY_2]
+Money, charges, risky purchases, betting, or trading are involved. [HARD_RULE_REWARD + URGENCY_3]
+I have a serious safety concern, like unsafe contact, exploitation, self-harm content, violence, or abuse. [HARD_RULE_SAFETY]
+None of these. [LOWER_URGENCY]
+Q9. What kind of next step would feel most useful?
+Optional CTA-routing question.
+A plan that does not turn every limit into a fight. [CTA_PARENT_PLAN]
+Help talking to my child without making them shut down. [CTA_CONVERSATION]
+A therapist who understands kids, teens, and technology. [CTA_THERAPY_CHILD]
+Support for me as a parent, because I am exhausted. [CTA_PARENT_SUPPORT]
+I want to understand the pattern first. [CTA_EDUCATION]
+I am not ready for help. I am just looking. [CTA_LOW_READY]
+Scoring Sketch
+Keep the parent quiz deterministic. AI can warm or personalize the final copy after the result is selected, but the result itself should be rule-based.
+Each answer adds 1 to 3 points to one or more child tech loop tags.
+Each answer can also add family pattern tags and urgency points.
+Primary result = highest child tech loop score, unless a hard rule overrides.
+Secondary result = second-highest child tech loop when it is within roughly 70 percent of the primary score.
+Family pattern = highest family pattern tag from Q2 and Q7, modified by Q6/Q8 costs.
+Support level = urgency points plus cost count plus hard-rule modifiers.
+Support level
+Use when
+Result page CTA
+Normal tech tension
+Low concern, few costs, limits mostly work.
+Offer a family media plan or parent guide.
+Pattern forming
+Some repeated conflict or cost, but still flexible.
+Offer quiz result and a practical reset plan.
+Family-impact loop
+Multiple costs, failed limits, sleep/school/mood/family impact.
+Recommend parent consult or therapist-informed plan.
+Support recommended
+Concealment, strong loss of control, major impairment, money risk, or family burnout.
+Recommend booking with Blue Light Health.
+Safety route
+Unsafe contact, exploitation, self-harm content, violence, abuse, or immediate safety concern.
+Bypass normal marketing result and show urgent professional/emergency support guidance.
+
+
+Hard Rules
+If HARD_RULE_SAFETY is selected, do not show a standard conversion result first. Show safety guidance and encourage immediate professional or emergency help.
+If HARD_RULE_REWARD plus COST_MONEY appears, prioritize Reward Chase or mention it as a high-urgency secondary result.
+If NIGHT_OFF_SWITCH plus COST_SLEEP plus FAILED_LIMITS appears, raise support level at least one band.
+If CONCEALMENT plus COST_FUNCTION or COST_TRUST appears, raise support level at least one band.
+If LOW_CONCERN and FAMILY_COLLABORATIVE dominate, show a normal-tech-tension result and do not over-sell therapy.
+Result Library
+Each result should feel like a parent can recognize their own house in the first sentence.
+The Daily Battle Loop
+I do not want to be the phone police, but screens have become the fight we keep having.
+What you may be seeing: Limits turn into arguments, bargaining, threats, taking the device, giving it back, and starting over. The screen issue has become a relationship issue.
+What screens may be doing: Screens may be serving a real emotional job, but the family only meets the loop at the point of conflict.
+What it may be costing: Trust erodes. The parent gets exhausted. The child learns to defend the device instead of talking about what it is doing for them.
+What helps: Move the conversation earlier than the limit moment. Build a predictable plan, reduce surprise enforcement, and name the pattern without making the child the problem.
+Why support may help: Therapy can help the family stop repeating the same fight and work on the regulation, avoidance, or belonging need underneath the screen.
+The Quiet Pull-Away
+They say they are fine, but I can feel them disappearing behind the screen.
+What you may be seeing: Less family time, fewer offline interests, more closed doors, shorter answers, and a child who seems harder to reach.
+What screens may be doing: Screens may be offering privacy, comfort, identity, belonging, or a place to disappear when real life feels too exposed.
+What it may be costing: The cost is not always a blow-up. Sometimes it is distance, loneliness, missed development, and a parent who starts grieving a kid who is still in the house.
+What helps: Start with curiosity instead of interrogation. Look for one low-pressure bridge back into shared time, and do not make the first real conversation about taking the device away.
+Why support may help: Support can help clarify whether this is normal privacy, stress, mood, social pain, or a deeper withdrawal pattern.
+The Nighttime Off-Switch
+It does not feel like they are just staying up. It feels like the screen is how they get through the night.
+What you may be seeing: Late-night use, devices in bed, hard mornings, irritability, school-day fatigue, and repeated promises that tonight will be different.
+What screens may be doing: The screen may be helping them avoid quiet, boredom, dread, loneliness, or the exposed feeling that shows up when the day finally stops.
+What it may be costing: Sleep goes first. Then mood, patience, focus, family mornings, school capacity, and the parent's sense that every day starts behind.
+What helps: Replace the off-switch before removing it. Build a wind-down that meets the actual night feeling: device parking, low-stimulation comfort, check-in time, and a plan for what happens when sleep feels hard.
+Why support may help: Therapy can help a child build other ways to settle at night, especially when screens have become the only reliable off-switch.
+The Social Mirror Loop
+Their mood rises and falls with a world I cannot see.
+What you may be seeing: Checking posts, likes, group chats, streaks, views, comments, Snap Map, DMs, appearance content, or friend drama, followed by mood changes.
+What screens may be doing: Screens may be answering questions like: Am I included? Did I matter? Do I look okay? Where do I stand?
+What it may be costing: Self-image, confidence, sleep, friendship stress, and family calm can all get pulled into invisible social signals.
+What helps: Do not dismiss it as drama. Ask what the app makes them check for, reduce the highest-trigger features, and help them build self-worth measures that are not only social metrics.
+Why support may help: Therapy can help when social comparison, exclusion, or validation checking starts shaping mood, identity, or daily functioning.
+The Always-Checking Loop
+They cannot seem to settle unless they know what changed.
+What you may be seeing: Quick checks throughout the day, repeated refreshing, anxiety when separated from the phone, and attention split between family life and whatever might update.
+What screens may be doing: The screen may be offering reassurance: nothing changed, no one is mad, no message was missed, no update has happened without them.
+What it may be costing: Focus, sleep, patience, and presence get fragmented. The child may never get long enough away from the phone to learn the feeling can pass.
+What helps: Stretch gaps gently, reduce unnecessary alerts, create predictable check windows, and work with the fear that checking is trying to quiet.
+Why support may help: Therapy can help if checking has become the main way your child manages uncertainty, social worry, or the fear of missing something important.
+The Online Belonging World
+Those people may really matter to them. The problem is that offline life is getting smaller.
+What you may be seeing: Servers, group chats, fandoms, gaming groups, online communities, or creators become the main place the child feels known and expected.
+What screens may be doing: The online world may be giving real belonging, especially if offline life feels lonely, awkward, unsafe, or like nowhere fits.
+What it may be costing: The risk is not that online belonging exists. The risk is that one online world starts holding too much: identity, mood, friendship, schedule, and self-worth.
+What helps: Do not amputate the community. Understand what it gives them, then build one or two additional sources of belonging offline, nearby, or in healthier mixed spaces.
+Why support may help: Therapy can help bridge online strengths back into offline life without shaming the community that may have been protecting them.
+The Digital Competence Refuge
+In there, they know how to win. Out here, everything feels harder.
+What you may be seeing: Games, rankings, streaks, stats, creator systems, edits, builds, or online projects become the place where effort feels clear and rewarding.
+What screens may be doing: The screen may be restoring competence and control when school, chores, relationships, sports, or life feel uncertain or defeating.
+What it may be costing: The avoided offline area can decay, which makes the child feel even more behind and makes the refuge even more necessary.
+What helps: Do not only remove the place they feel capable. Build small offline wins, shrink avoided tasks, and keep progress visible outside the screen too.
+Why support may help: Therapy can help when screens are not just fun, but the only place a child feels effective, capable, or in control.
+The Reward Chase Loop
+The next one could be the win, the drop, the pull, the trade, or the thing that makes it feel worth it.
+What you may be seeing: Loot boxes, in-game purchases, sports betting, trading, marketplaces, gacha, rare drops, deals, secret spending, or repeated checking for wins.
+What screens may be doing: The screen may be offering hope and charge through uncertain rewards. The maybe-next-time feeling can become stronger than the actual prize.
+What it may be costing: Money, secrecy, trust, sleep, school, and risk can escalate faster here than in most other loops.
+What helps: Treat money and access seriously. Use parent-controlled limits, remove saved payment methods, document spending, and do not rely on willpower at the moment of reward.
+Why support may help: Outside support is recommended when money, secrecy, loss chasing, or betting-like mechanics are part of the pattern.
+The Intensity Loop
+They keep coming back more wired, more angry, or more impossible to reach.
+What you may be seeing: Drama, arguments, rage-bait, threat content, edgy videos, conflict, intense gaming, or online fights leave the child activated and irritable.
+What screens may be doing: The screen may be converting boredom, numbness, anxiety, or helplessness into intensity and certainty.
+What it may be costing: The charge spills into the house. The child's baseline can become more reactive, and the family starts living around the next blow-up.
+What helps: Separate the body charge from the content. Build decompression after intense use, reduce feeds that reward escalation, and create other ways to feel awake without conflict.
+Why support may help: Therapy can help if intensity, anger, or conflict has become a main way your child regulates or feels in control.
+The Autopilot Zone-Out
+It is not always a huge problem at once. It is the little disappearances all day.
+What you may be seeing: The child opens screens automatically in gaps, during chores, after school, while eating, during homework, in the bathroom, or whenever nothing is happening.
+What screens may be doing: The screen may be smoothing over boredom, transition friction, task-starting discomfort, or quiet moments before they can feel them.
+What it may be costing: Time, attention, chores, homework, family presence, and small intentions leak away without one dramatic crisis.
+What helps: Create choice points in the highest-friction gaps. Replace one automatic moment at a time instead of trying to overhaul the whole day.
+Why support may help: Support can help when automatic use is connected to avoidance, attention problems, low mood, or family conflict around everyday routines.
+Recommended Result Copy Formula
+Your result: [Primary Result Name]
+Recognition line: [private parent thought]
+It may look like: [observed behaviors]
+Underneath, screens may be doing: [child job]
+The family loop may be: [family pattern]
+The real cost may be: [cost domains]
+What helps now: [one to three practical moves]
+Why support may help: [therapy bridge]
+CTA: [parent plan, consult, therapist, or safety route]
+Data Fields To Save
+parent_email
+child_age_band
+primary_concern
+primary_child_loop
+secondary_child_loop
+family_pattern
+support_level
+cost_domains
+parent_role
+urgency_markers
+safety_flag
+cta_readiness
+free_text_optional
+result_fit_feedback

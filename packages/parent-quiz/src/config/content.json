@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "intro": {
+    "kicker": "Blue Light Health",
+    "title": "What's really going on with screens at home?",
+    "subtitle": "A 3-minute mirror for the screen pattern showing up in your family.",
+    "disclaimer": "Not a diagnosis or medical advice.",
+    "cta": "Start"
+  },
+  "emailGate": {
+    "kicker": "Your read is ready",
+    "title": "We think we see what's happening.",
+    "body": "Enter your email to see your family's full result and what may help.",
+    "placeholder": "Your email",
+    "cta": "Show me our result",
+    "skip": "Just show the result"
+  },
+  "result": {
+    "headlinePrefix": "Your child's screen pattern may be",
+    "sections": {
+      "seeing": "What you may be seeing",
+      "doing": "What screens may be doing for your child",
+      "family": "The family pattern",
+      "cost": "What it may be costing",
+      "helps": "What helps at home",
+      "support": "Why support may help"
+    },
+    "secondaryPrefix": "There may also be a thread of",
+    "fitQuestion": "Does this sound like your house?",
+    "fitOptions": [
+      { "value": 0, "label": "Not really" },
+      { "value": 1, "label": "A little" },
+      { "value": 2, "label": "Most of it" },
+      { "value": 3, "label": "Yes, this is us" },
+      { "value": 4, "label": "This is exactly us" }
+    ],
+    "missedQuestion": "Anything we missed about your family?"
+  },
+  "supportCopy": {
+    "normal_tension": "This looks like normal tech tension. A family media plan or a simple reset may be all you need right now.",
+    "pattern_forming": "A pattern is forming. A practical reset now can keep it from hardening into something harder to undo.",
+    "family_impact_loop": "This has grown into a family-impact loop — multiple costs and limits that don't stick. A parent consult or therapist-informed plan is worth it.",
+    "support_recommended": "This is the kind of pattern where support is genuinely recommended. You don't need to wait until things are extreme.",
+    "safety_route": "Safety comes first."
+  },
+  "cta": {
+    "title": "You don't have to carry this alone.",
+    "body": "This is the kind of pattern that usually needs more than another screen-time rule. Blue Light CARES helps your child build other ways to regulate and reconnect, and helps you stop turning every limit into a fight.",
+    "reassure": "Therapy isn't a punishment for screen use. It's support for the regulation, avoidance, conflict, or connection pattern underneath it.",
+    "bookLabel": "Book a free consult",
+    "lowReadyTitle": "No pressure.",
+    "lowReadyBody": "When you're ready, Blue Light is here. You can save your result and come back anytime.",
+    "safetyTitle": "This needs more than a quiz.",
+    "safetyBody": "Some of what you shared points to a possible safety concern. Please reach out to a professional now. In the US you can call or text 988 (Suicide & Crisis Lifeline) anytime, or call 911 in an emergency. Blue Light can also help you find the right support."
+  },
+  "familyPatternLabels": {
+    "battle": "The Daily Battle",
+    "detective": "Detective Mode",
+    "negotiation": "Constant Negotiation",
+    "give_in_burnout": "Give-In Burnout",
+    "fixer": "The Fixer",
+    "quiet_distance": "Quiet Distance",
+    "collaborative": "Collaborative"
+  },
+  "defaultBookingUrl": "https://bluelighthealth.com/cares"
+}

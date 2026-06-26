@@ -1,0 +1,102 @@
+[
+  {
+    "id": "daily_battle",
+    "name": "The Daily Battle Loop",
+    "recognitionLine": "I don't want to be the phone police, but screens have become the fight we keep having.",
+    "whatYouMayBeSeeing": "Limits turn into arguments, bargaining, threats, taking the device, giving it back, and starting over. The screen issue has become a relationship issue.",
+    "whatScreensMayBeDoing": "Screens may be serving a real emotional job, but the family only meets the loop at the point of conflict.",
+    "whatItMayBeCosting": "Trust erodes. The parent gets exhausted. The child learns to defend the device instead of talking about what it's doing for them.",
+    "whatHelps": "Move the conversation earlier than the limit moment. Build a predictable plan, reduce surprise enforcement, and name the pattern without making the child the problem.",
+    "whySupportMayHelp": "Therapy can help the family stop repeating the same fight and work on the regulation, avoidance, or belonging need underneath the screen."
+  },
+  {
+    "id": "quiet_pull_away",
+    "name": "The Quiet Pull-Away",
+    "recognitionLine": "They say they're fine, but I can feel them disappearing behind the screen.",
+    "whatYouMayBeSeeing": "Less family time, fewer offline interests, more closed doors, shorter answers, and a child who seems harder to reach.",
+    "whatScreensMayBeDoing": "Screens may be offering privacy, comfort, identity, belonging, or a place to disappear when real life feels too exposed.",
+    "whatItMayBeCosting": "The cost is not always a blow-up. Sometimes it's distance, loneliness, missed development, and a parent who starts grieving a kid who is still in the house.",
+    "whatHelps": "Start with curiosity instead of interrogation. Look for one low-pressure bridge back into shared time, and don't make the first real conversation about taking the device away.",
+    "whySupportMayHelp": "Support can help clarify whether this is normal privacy, stress, mood, social pain, or a deeper withdrawal pattern."
+  },
+  {
+    "id": "night_off_switch",
+    "name": "The Nighttime Off-Switch",
+    "recognitionLine": "It doesn't feel like they're just staying up. It feels like the screen is how they get through the night.",
+    "whatYouMayBeSeeing": "Late-night use, devices in bed, hard mornings, irritability, school-day fatigue, and repeated promises that tonight will be different.",
+    "whatScreensMayBeDoing": "The screen may be helping them avoid quiet, boredom, dread, loneliness, or the exposed feeling that shows up when the day finally stops.",
+    "whatItMayBeCosting": "Sleep goes first. Then mood, patience, focus, family mornings, school capacity, and the parent's sense that every day starts behind.",
+    "whatHelps": "Replace the off-switch before removing it. Build a wind-down that meets the actual night feeling: device parking, low-stimulation comfort, check-in time, and a plan for what happens when sleep feels hard.",
+    "whySupportMayHelp": "Therapy can help a child build other ways to settle at night, especially when screens have become the only reliable off-switch."
+  },
+  {
+    "id": "social_mirror",
+    "name": "The Social Mirror Loop",
+    "recognitionLine": "Their mood rises and falls with a world I cannot see.",
+    "whatYouMayBeSeeing": "Checking posts, likes, group chats, streaks, views, comments, Snap Map, DMs, appearance content, or friend drama, followed by mood changes.",
+    "whatScreensMayBeDoing": "Screens may be answering questions like: Am I included? Did I matter? Do I look okay? Where do I stand?",
+    "whatItMayBeCosting": "Self-image, confidence, sleep, friendship stress, and family calm can all get pulled into invisible social signals.",
+    "whatHelps": "Don't dismiss it as drama. Ask what the app makes them check for, reduce the highest-trigger features, and help them build self-worth measures that aren't only social metrics.",
+    "whySupportMayHelp": "Therapy can help when social comparison, exclusion, or validation checking starts shaping mood, identity, or daily functioning."
+  },
+  {
+    "id": "always_checking",
+    "name": "The Always-Checking Loop",
+    "recognitionLine": "They can't seem to settle unless they know what changed.",
+    "whatYouMayBeSeeing": "Quick checks throughout the day, repeated refreshing, anxiety when separated from the phone, and attention split between family life and whatever might update.",
+    "whatScreensMayBeDoing": "The screen may be offering reassurance: nothing changed, no one is mad, no message was missed, no update has happened without them.",
+    "whatItMayBeCosting": "Focus, sleep, patience, and presence get fragmented. The child may never get long enough away from the phone to learn the feeling can pass.",
+    "whatHelps": "Stretch gaps gently, reduce unnecessary alerts, create predictable check windows, and work with the fear that checking is trying to quiet.",
+    "whySupportMayHelp": "Therapy can help if checking has become the main way your child manages uncertainty, social worry, or the fear of missing something important."
+  },
+  {
+    "id": "online_belonging",
+    "name": "The Online Belonging World",
+    "recognitionLine": "Those people may really matter to them. The problem is that offline life is getting smaller.",
+    "whatYouMayBeSeeing": "Servers, group chats, fandoms, gaming groups, online communities, or creators become the main place the child feels known and expected.",
+    "whatScreensMayBeDoing": "The online world may be giving real belonging, especially if offline life feels lonely, awkward, unsafe, or like nowhere fits.",
+    "whatItMayBeCosting": "The risk is not that online belonging exists. The risk is that one online world starts holding too much: identity, mood, friendship, schedule, and self-worth.",
+    "whatHelps": "Don't amputate the community. Understand what it gives them, then build one or two additional sources of belonging offline, nearby, or in healthier mixed spaces.",
+    "whySupportMayHelp": "Therapy can help bridge online strengths back into offline life without shaming the community that may have been protecting them."
+  },
+  {
+    "id": "competence_refuge",
+    "name": "The Digital Competence Refuge",
+    "recognitionLine": "In there, they know how to win. Out here, everything feels harder.",
+    "whatYouMayBeSeeing": "Games, rankings, streaks, stats, creator systems, edits, builds, or online projects become the place where effort feels clear and rewarding.",
+    "whatScreensMayBeDoing": "The screen may be restoring competence and control when school, chores, relationships, sports, or life feel uncertain or defeating.",
+    "whatItMayBeCosting": "The avoided offline area can decay, which makes the child feel even more behind and makes the refuge even more necessary.",
+    "whatHelps": "Don't only remove the place they feel capable. Build small offline wins, shrink avoided tasks, and keep progress visible outside the screen too.",
+    "whySupportMayHelp": "Therapy can help when screens are not just fun, but the only place a child feels effective, capable, or in control."
+  },
+  {
+    "id": "reward_chase",
+    "name": "The Reward Chase Loop",
+    "recognitionLine": "The next one could be the win, the drop, the pull, the trade, or the thing that makes it feel worth it.",
+    "whatYouMayBeSeeing": "Loot boxes, in-game purchases, sports betting, trading, marketplaces, gacha, rare drops, deals, secret spending, or repeated checking for wins.",
+    "whatScreensMayBeDoing": "The screen may be offering hope and charge through uncertain rewards. The maybe-next-time feeling can become stronger than the actual prize.",
+    "whatItMayBeCosting": "Money, secrecy, trust, sleep, school, and risk can escalate faster here than in most other loops.",
+    "whatHelps": "Treat money and access seriously. Use parent-controlled limits, remove saved payment methods, document spending, and don't rely on willpower at the moment of reward.",
+    "whySupportMayHelp": "Outside support is recommended when money, secrecy, loss chasing, or betting-like mechanics are part of the pattern."
+  },
+  {
+    "id": "intensity_loop",
+    "name": "The Intensity Loop",
+    "recognitionLine": "They keep coming back more wired, more angry, or more impossible to reach.",
+    "whatYouMayBeSeeing": "Drama, arguments, rage-bait, threat content, edgy videos, conflict, intense gaming, or online fights leave the child activated and irritable.",
+    "whatScreensMayBeDoing": "The screen may be converting boredom, numbness, anxiety, or helplessness into intensity and certainty.",
+    "whatItMayBeCosting": "The charge spills into the house. The child's baseline can become more reactive, and the family starts living around the next blow-up.",
+    "whatHelps": "Separate the body charge from the content. Build decompression after intense use, reduce feeds that reward escalation, and create other ways to feel awake without conflict.",
+    "whySupportMayHelp": "Therapy can help if intensity, anger, or conflict has become a main way your child regulates or feels in control."
+  },
+  {
+    "id": "autopilot_zone_out",
+    "name": "The Autopilot Zone-Out",
+    "recognitionLine": "It's not always a huge problem at once. It's the little disappearances all day.",
+    "whatYouMayBeSeeing": "The child opens screens automatically in gaps, during chores, after school, while eating, during homework, in the bathroom, or whenever nothing is happening.",
+    "whatScreensMayBeDoing": "The screen may be smoothing over boredom, transition friction, task-starting discomfort, or quiet moments before they can feel them.",
+    "whatItMayBeCosting": "Time, attention, chores, homework, family presence, and small intentions leak away without one dramatic crisis.",
+    "whatHelps": "Create choice points in the highest-friction gaps. Replace one automatic moment at a time instead of trying to overhaul the whole day.",
+    "whySupportMayHelp": "Support can help when automatic use is connected to avoidance, attention problems, low mood, or family conflict around everyday routines."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "secondaryRatio": 0.7,
+  "costCap": 6,
+  "supportBands": [
+    { "id": "normal_tension", "min": 0 },
+    { "id": "pattern_forming", "min": 3 },
+    { "id": "family_impact_loop", "min": 6 },
+    { "id": "support_recommended", "min": 10 }
+  ],
+  "confidence": {
+    "highMinScore": 5,
+    "highMinMargin": 2,
+    "mediumMinScore": 3,
+    "mediumMinMargin": 1,
+    "mixedMargin": 1.5
+  }
+}
