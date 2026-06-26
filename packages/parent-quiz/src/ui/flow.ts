@@ -72,6 +72,8 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
   }, [steps.length]);
 
   const begin = useCallback(() => setPos(1), []);
+  const goBack = useCallback(() => { setPos((p) => Math.max(0, p - 1)); scrollTop(); }, []);
+  const canGoBack = pos > 0 && step.kind !== "result";
 
   /** Score the response + compose the (optionally AI-warmed) narrative. */
   const compute = useCallback(async (): Promise<ParentResultView> => {
@@ -190,7 +192,9 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
     view,
     fitRating,
     bookingUrl,
+    canGoBack,
     begin,
+    goBack,
     answer,
     skip,
     submitEmail,

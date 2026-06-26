@@ -26,20 +26,41 @@ export function Check({ round = false }: { round?: boolean }) {
   );
 }
 
+function BackIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none">
+      <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function QuizFrame({
   theme,
   progress,
+  canGoBack,
+  onBack,
+  wide,
   children,
 }: {
   theme: string;
   progress: number;
+  canGoBack?: boolean;
+  onBack?: () => void;
+  wide?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <div className="q" data-theme={theme}>
-      <div className="q-shell">
-        <div className="q-progress">
-          <div style={{ width: `${Math.round(Math.min(1, Math.max(0, progress)) * 100)}%` }} />
+      <div className={wide ? "q-shell q-shell--wide" : "q-shell"}>
+        <div className="q-topbar">
+          {canGoBack ? (
+            <button className="q-back" onClick={onBack} aria-label="Back"><BackIcon /> Back</button>
+          ) : (
+            <span style={{ width: 1 }} />
+          )}
+          <div className="q-progress">
+            <div style={{ width: `${Math.round(Math.min(1, Math.max(0, progress)) * 100)}%` }} />
+          </div>
         </div>
         {children}
       </div>

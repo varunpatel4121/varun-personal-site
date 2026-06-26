@@ -114,6 +114,8 @@ export interface POption {
   parentRole?: ParentRole;
   cta?: CtaReadiness;
   lowConcern?: boolean;
+  /** Opt-out option in a multi-select (e.g. "I don't know") — clears the rest. */
+  exclusive?: boolean;
   ageBand?: AgeBand;
 }
 

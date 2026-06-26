@@ -48,10 +48,10 @@ describe("<ParentQuiz/>", () => {
     expect(book.getAttribute("href")).toBe("https://example.com/cares");
     expect(book.getAttribute("target")).toBe("_blank");
 
-    // Recognition line + expandable detail + fit feedback are present.
-    expect(document.querySelector(".pq-recognition")?.textContent?.length).toBeGreaterThan(10);
-    expect(document.querySelector(".pq-detail")).toBeTruthy();
+    // Recognition line + expandable detail + fit feedback are present (shared q-* UI).
+    expect(document.querySelector(".q-recognition")?.textContent?.length).toBeGreaterThan(10);
+    expect(document.querySelector("details")).toBeTruthy();
     expect(screen.getByText(/does this sound like your house/i)).toBeTruthy();
-    expect(document.querySelector(".pq-hero-name")?.textContent).toMatch(/^The /);
+    expect(document.querySelector(".q-result-name")?.textContent).toMatch(/^The /);
   });
 });
