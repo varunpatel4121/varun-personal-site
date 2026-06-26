@@ -41,7 +41,7 @@
     "subfeatureHint": "Order matters a little — put the strongest one first."
   },
   "loop": {
-    "entryQuestion": "When does this usually pull you in the hardest? Pick up to 2.",
+    "entryQuestion": "When do you usually get pulled in the hardest?",
     "entryOptions": [
       { "value": "night_regulation", "label": "Late at night, especially in bed" },
       { "value": "morning_check_in", "label": "First thing when I wake up" },
@@ -53,7 +53,7 @@
       { "value": "anytime_no_pattern", "label": "No real pattern" },
       { "value": "not_problem", "label": "Honestly, it doesn't really get away from me" }
     ],
-    "patternQuestion": "What does the loop usually look like? Pick up to 2.",
+    "patternQuestion": "What does the loop usually look like?",
     "patternOptions": [
       { "value": "quick_check", "label": "I quickly check throughout the day." },
       { "value": "time_sink_binge", "label": "I only mean to use it for a little while, but I end up staying way longer than I planned." },

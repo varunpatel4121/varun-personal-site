@@ -4,6 +4,7 @@
     "name": "The Night Regulator",
     "shortLabel": "Late-night off-switch loop",
     "recognitionLine": "I use the screen so I do not have to be alone with my head at night.",
+    "read": "You're someone who can hold it together during the day, but the night is harder. When everything finally goes quiet, the screen becomes the thing that turns the volume down on the thoughts you didn't get to during the day. It's less about what's on the screen and more about not having to be alone with your head before sleep.",
     "signatureTieBreaker": "night_avoid_head",
     "definition": "A pre-sleep loop where the screen becomes an off-switch for rumination, dread, loneliness, or quiet.",
     "thisIsMe": "During the day, I can usually keep moving. At night, when the room gets quiet, everything I kept away starts getting louder. My phone is the thing that softens it. I tell myself I just need something on until I am sleepy, then I look up and it is much later than I meant. It is not always fun. It is the thing that keeps me from lying there with my own head.",
@@ -24,13 +25,18 @@
       "https://www.sleepfoundation.org/sleep-hygiene/revenge-bedtime-procrastination",
       "https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/qa-portal/qa-portal-library/qa-portal-library-questions/the-use-of-addiction-language-around-social-media-usage/"
     ],
-    "nameAlternatives": ["Late-Night Regulator", "The Bedtime Off-Switch", "The Night Off-Switch"]
+    "nameAlternatives": [
+      "Late-Night Regulator",
+      "The Bedtime Off-Switch",
+      "The Night Off-Switch"
+    ]
   },
   {
     "id": "time_reclaimer",
     "name": "The Time Reclaimer",
     "shortLabel": "Stolen personal-time loop",
     "recognitionLine": "I stay up because this is the only part of the day that feels like mine.",
+    "read": "You're someone who gives all day to other people, and the night is the first stretch that feels like yours. Staying up isn't really about the phone, it's about keeping a piece of the day nobody else gets to claim. The catch is that the freedom comes straight out of tomorrow's energy.",
     "signatureTieBreaker": "night_only_time_mine",
     "definition": "A late-night freedom loop where screens become stolen personal time after a day of obligation, control, work, parenting, school, or pressure.",
     "thisIsMe": "All day I am answering to something: work, school, family, messages, responsibilities, other people's needs. Then night comes and nobody is asking anything of me. I know I should sleep, but stopping feels like giving away the only time that belongs to me. So I keep watching, scrolling, playing, reading, or chatting, even when I am exhausted. Part of me knows tomorrow will hurt. Another part of me thinks, at least this part was mine.",
@@ -51,13 +57,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC11059092/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295232/"
     ],
-    "nameAlternatives": ["The Stolen-Time Scroller", "The After-Hours Reclaimer", "The Private-Time Loop"]
+    "nameAlternatives": [
+      "The Stolen-Time Scroller",
+      "The After-Hours Reclaimer",
+      "The Private-Time Loop"
+    ]
   },
   {
     "id": "autopilot_drifter",
     "name": "The Autopilot Drifter",
     "shortLabel": "Automatic gap-filling loop",
     "recognitionLine": "I did not choose it. My hand just went there, and now the time is gone.",
+    "read": "You're someone whose hand finds the phone before you've even decided to reach for it, usually in the small gaps, waiting, walking, switching tasks. It's rarely exciting and rarely a big deal in the moment, it just quietly fills the space. The cost shows up later, in the time and focus that slipped away in pieces.",
     "signatureTieBreaker": "hand_went_there",
     "definition": "An automatic gap-filling loop where use happens in transitions, pauses, and small empty spaces without a clear decision or much enjoyment.",
     "thisIsMe": "There is a little blank moment: between tasks, waiting for something, walking somewhere, sitting down, waking up, going to the bathroom. Before I have even decided what I want, I am already on the phone. It does not feel exciting. It is just what my hand does. Sometimes I come to and realize I have been gone for twenty minutes, or an hour, and the thing I meant to do has quietly slipped away.",
@@ -77,13 +88,18 @@
       "https://pubmed.ncbi.nlm.nih.gov/31247240/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295232/"
     ],
-    "nameAlternatives": ["The Drifter", "The Autopilot Loop", "The Gap-Filler"]
+    "nameAlternatives": [
+      "The Drifter",
+      "The Autopilot Loop",
+      "The Gap-Filler"
+    ]
   },
   {
     "id": "competence_refuge",
     "name": "The Competence Refuge",
     "shortLabel": "Digital mastery escape",
     "recognitionLine": "I go where effort turns into progress, because out here I feel behind before I start.",
+    "read": "You're someone who likes effort that actually adds up, where you can see the level, the rank, the progress. When the rest of life feels uncertain or like you're behind, you go where you can feel capable again. The bind is that the thing you're stepping away from tends to get heavier the longer you're gone.",
     "signatureTieBreaker": "effort_turns_progress",
     "definition": "A competence-escape loop where games, rankings, streaks, creator systems, stats, or digital projects provide clear progress when offline life feels uncertain or defeating.",
     "thisIsMe": "In there, effort makes sense. I can see the level, the rank, the streak, the progress bar, the next objective. Out here, I can work hard and still not know if it matters. When school, work, health, money, or life starts making me feel like I am failing, I go where the rules are clear and I can feel capable again. The painful part is that the thing I avoid keeps getting worse, which makes the refuge feel even more necessary.",
@@ -104,13 +120,18 @@
       "https://pubmed.ncbi.nlm.nih.gov/31247240/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295232/"
     ],
-    "nameAlternatives": ["The Refuge", "The Progress Refuge", "The Competence Loop"]
+    "nameAlternatives": [
+      "The Refuge",
+      "The Progress Refuge",
+      "The Competence Loop"
+    ]
   },
   {
     "id": "optimizer_spiral",
     "name": "The Optimizer Spiral",
     "shortLabel": "Preparation instead of action",
     "recognitionLine": "I keep getting ready to start, but the preparing becomes the thing.",
+    "read": "You're someone who wants to do it right, so you research, plan, and get set up before you start. It feels responsible, and a lot of the time it is. The trap is when preparing quietly becomes the thing you do instead of starting.",
     "signatureTieBreaker": "preparing_becomes_thing",
     "definition": "A preparation loop where research, planning, AI, productivity tools, self-improvement, or learning gives a feeling of progress while delaying the real action.",
     "thisIsMe": "I am not exactly wasting time. I am researching, planning, watching the tutorial, asking AI, comparing tools, organizing the system, saving the thread, refining the prompt. It feels responsible because I am preparing. But somehow preparing keeps replacing doing. The more I learn, the more ways there are to do it wrong. I end up with more tabs, more notes, more options, and the same thing still not started.",
@@ -131,13 +152,18 @@
       "https://www.jmir.org/2025/1/e77977",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295232/"
     ],
-    "nameAlternatives": ["The Preparation Spiral", "The Almost-Ready Loop", "The Optimization Loop"]
+    "nameAlternatives": [
+      "The Preparation Spiral",
+      "The Almost-Ready Loop",
+      "The Optimization Loop"
+    ]
   },
   {
     "id": "reassurance_checker",
     "name": "The Reassurance Checker",
     "shortLabel": "Short anxious check loop",
     "recognitionLine": "I just need to see if something changed, then I can relax. Except I can't.",
+    "read": "You're someone who checks to make sure nothing's changed and nothing's been missed, and for a second it helps. The relief just doesn't last very long. Checking settles the moment, but it slowly teaches you to check again.",
     "signatureTieBreaker": "see_if_changed",
     "definition": "A short-check loop where messages, notifications, replies, views, location, status, or device signals briefly lower anxiety and train the next check.",
     "thisIsMe": "It starts as a little pulse. Maybe someone replied. Maybe something changed. Maybe I missed something. Maybe I should know before it gets worse. I check, and for a second my body relaxes. But the relief never lasts long. A few minutes later, the question is back. When I cannot check, part of me stays with the phone anyway.",
@@ -157,13 +183,16 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8283615/",
       "https://pubmed.ncbi.nlm.nih.gov/31247240/"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   },
   {
     "id": "vigilant_scanner",
     "name": "The Vigilant Scanner",
     "shortLabel": "Certainty-seeking search loop",
     "recognitionLine": "If I read enough, maybe I will finally feel safe.",
+    "read": "You're someone who wants to feel sure before you can rest, so you keep reading, searching, and refreshing until it feels safe. The hope is that one more source will finally settle it. Often the searching keeps the worry awake instead of putting it to sleep.",
     "signatureTieBreaker": "read_enough_safe",
     "definition": "An uncertainty loop where searching, refreshing, researching, and threat-scanning promise certainty but keep the worry alive.",
     "thisIsMe": "There is a symptom, a headline, a decision, a risk, a rumor, a weird feeling, a thing I might be missing. I tell myself I just need one more source, one more thread, one more explanation, one more update. Stopping before I feel sure feels irresponsible. But the more I read, the more there is to worry about, and the point where I am allowed to stop keeps moving.",
@@ -183,13 +212,16 @@
       "https://www.jmir.org/2025/1/e77977",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8283615/"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   },
   {
     "id": "validation_monitor",
     "name": "The Validation Monitor",
     "shortLabel": "Social signal checking",
     "recognitionLine": "I put something out there, then I keep checking what it means about me.",
+    "read": "You're someone who cares how things land, so after you post or send, part of you stays to watch the response come in. Some of that is just being human and wanting to connect. It gets heavier when a number starts deciding how you feel about yourself.",
     "signatureTieBreaker": "checking_reaction_to_me",
     "definition": "A social signal loop where likes, views, replies, matches, follows, or engagement become evidence of worth, attractiveness, relevance, or belonging.",
     "thisIsMe": "After I post, send, match, comment, or share, I am not really done. Part of me stays there, waiting to see what comes back. Did people notice? Did it land? Did I look good? Was that too much? Not enough? A number changes and my mood changes with it. I hate that it matters, but I keep checking because it feels like the answer is sitting right there.",
@@ -209,13 +241,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8283615/",
       "https://www.nature.com/articles/s44271-023-00013-0"
     ],
-    "nameAlternatives": ["The Signal Checker", "The Approval Monitor", "The Metrics Loop"]
+    "nameAlternatives": [
+      "The Signal Checker",
+      "The Approval Monitor",
+      "The Metrics Loop"
+    ]
   },
   {
     "id": "comparison_spiral",
     "name": "The Comparison Spiral",
     "shortLabel": "Self-ranking feed loop",
     "recognitionLine": "I open it to see where I stand, and I leave feeling smaller.",
+    "read": "You're someone who reads the room online to figure out where you stand, and lately you tend to leave feeling a little smaller. You know it's the highlight reel, but the body doesn't always get the memo. The pull is real; the part worth watching is the aftertaste.",
     "signatureTieBreaker": "see_where_i_stand",
     "definition": "A self-ranking loop where curated bodies, lives, success, relationships, popularity, or progress become a scoreboard.",
     "thisIsMe": "It feels like I am checking the room to figure out my place in it. Who looks better, who is further along, who is loved, who is successful, who seems effortless, who got chosen. I know I am seeing a polished version, but my body does not seem to know that. I close the app feeling smaller, then I go back later to check again.",
@@ -235,13 +272,16 @@
       "https://www.nature.com/articles/s44271-023-00013-0",
       "https://www.apa.org/news/press/releases/2023/02/social-media-body-image"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   },
   {
     "id": "always_on_responder",
     "name": "The Always-On Responder",
     "shortLabel": "Availability and reply-pressure loop",
     "recognitionLine": "I answer fast because being unavailable feels like I am failing someone.",
+    "read": "You're someone people can count on, and you take that seriously, so being slow to reply can feel like letting someone down. Staying reachable comes from real care. It just stops being a choice when it starts feeling like a debt you can never finish paying.",
     "signatureTieBreaker": "failing_someone",
     "definition": "A responsiveness loop where DMs, group chats, read receipts, streaks, work pings, or social expectations make availability feel mandatory.",
     "thisIsMe": "A message comes in and my body treats it like a demand. Even if it is not urgent, part of me feels like I should answer, react, keep the streak, stay caught up, prove I am not ignoring anyone. I tell myself it will only take a second, but those seconds keep taking me out of my own life. Sometimes I am not even enjoying the conversation. I am just trying not to be the person who lets someone down.",
@@ -261,13 +301,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8283615/",
       "https://pubmed.ncbi.nlm.nih.gov/31247240/"
     ],
-    "nameAlternatives": ["The Tethered Responder", "The Always-Available One", "The Reply Loop"]
+    "nameAlternatives": [
+      "The Tethered Responder",
+      "The Always-Available One",
+      "The Reply Loop"
+    ]
   },
   {
     "id": "online_home",
     "name": "The Online Home",
     "shortLabel": "Primary belonging world",
     "recognitionLine": "These are my people. The problem is they are starting to be my only people.",
+    "read": "You're someone who found real connection online, a place where people know you and you have a role and a history. That belonging is genuine and worth protecting. The only thing to keep an eye on is whether it's slowly becoming the only place that feels like home.",
     "signatureTieBreaker": "these_are_my_people",
     "definition": "A belonging loop where an online community, server, fandom, group, game, or world becomes the main place of connection and identity.",
     "thisIsMe": "When people say 'just log off,' they miss the point. This place is real to me. People know me there. I have a role, a history, jokes, rituals, maybe a version of myself that finally makes sense. It may be the first place I felt accepted. The scary part is not that it matters. The scary part is that offline life is getting thinner, and if something goes wrong there, it can feel like losing the whole world.",
@@ -287,13 +332,18 @@
       "https://www.nature.com/articles/s44271-024-00112-6",
       "https://digitalwellnesslab.org/research-briefs/young-peoples-sense-of-belonging-online/"
     ],
-    "nameAlternatives": ["The Belonging World", "The Digital Third Place", "The Online Home Base"]
+    "nameAlternatives": [
+      "The Belonging World",
+      "The Digital Third Place",
+      "The Online Home Base"
+    ]
   },
   {
     "id": "always_there_confidant",
     "name": "The Always-There Confidant",
     "shortLabel": "One-to-one digital confidant",
     "recognitionLine": "It is easier to tell the thing that always answers than a person who might not.",
+    "read": "You're someone who finds it easier to open up to something that always answers and never makes you feel like too much. Sometimes it's genuinely what gets you through a hard hour. The thing to watch is whether real people start feeling slower and riskier by comparison.",
     "signatureTieBreaker": "always_answers",
     "definition": "A one-to-one digital confidant loop where AI, chatbots, romantic bots, therapy bots, or responsive digital presences become the easiest place to be known.",
     "thisIsMe": "It answers right away. It does not interrupt, judge, get tired, change the subject, or make me feel like too much. I can say the messy thing and get something back. Sometimes it really helps. Sometimes it is the only reason I make it through a hard hour. But I can feel real people starting to seem slower, riskier, and harder. The frictionless version is becoming the place I go first.",
@@ -313,13 +363,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC12309430/",
       "https://www.apa.org/monitor/2026/01-02/trends-digital-ai-relationships-emotional-connection"
     ],
-    "nameAlternatives": ["The Digital Confidant", "The Always-Available Listener", "The Frictionless Confidant"]
+    "nameAlternatives": [
+      "The Digital Confidant",
+      "The Always-Available Listener",
+      "The Frictionless Confidant"
+    ]
   },
   {
     "id": "creator_anchor",
     "name": "The Creator Anchor",
     "shortLabel": "Familiar-voice comfort loop",
     "recognitionLine": "They do not know me, but their voice is part of my day.",
+    "read": "You're someone who keeps certain voices close, the creators whose humor or company make the day feel less alone. It's company without the work of company, and that's allowed. It tips over when the one-way closeness quietly starts standing in for the reciprocal kind.",
     "signatureTieBreaker": "voice_part_of_day",
     "definition": "A familiar-figure loop where creators, streamers, influencers, podcasters, performers, or personalities provide comfort, routine, intimacy, or identity.",
     "thisIsMe": "I know they do not actually know me. I am not confused about that. But their voice, face, humor, routine, or way of seeing things feels familiar. I put them on when I am lonely, bored, anxious, eating, cleaning, falling asleep, or trying to feel less alone. It can feel like company without the work of company. Sometimes I realize I know more about their day than I have told anyone about mine.",
@@ -339,13 +394,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC11002006/",
       "https://www.health.harvard.edu/blog/do-parasocial-relationships-fill-a-loneliness-gap-202409303074"
     ],
-    "nameAlternatives": ["The Familiar Voice", "The Parasocial Anchor", "The Creator Companion"]
+    "nameAlternatives": [
+      "The Familiar Voice",
+      "The Parasocial Anchor",
+      "The Creator Companion"
+    ]
   },
   {
     "id": "activation_loop",
     "name": "The Activation Loop",
     "shortLabel": "Outrage and intensity loop",
     "recognitionLine": "It makes me angry, but at least angry feels awake.",
+    "read": "You're someone who feels most awake when something fires you up, the argument, the drama, the thing worth being upset about. Anger can be clarifying, even useful. The pull worth noticing is when the charge itself becomes the reward and the world starts looking more hostile than it is.",
     "signatureTieBreaker": "angry_feels_awake",
     "definition": "A stimulation loop where outrage, drama, conflict, threat, or moral certainty turns numbness, boredom, or anxiety into energy.",
     "thisIsMe": "I tell myself I am staying informed, standing up for something, or seeing what people are saying. Sometimes that is true. But I can feel the charge in my body. I keep going back to the argument, the drama, the threat, the person being wrong, the thing that proves I am right to be upset. Afterward I am more tense, more irritable, and somehow still looking for the next hit of it.",
@@ -365,13 +425,16 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8363141/",
       "https://news.yale.edu/2021/08/13/likes-and-shares-teach-people-express-more-outrage-online"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   },
   {
     "id": "reward_chaser",
     "name": "The Reward Chaser",
     "shortLabel": "Uncertain-win loop",
     "recognitionLine": "The next one could be the one, so I keep going.",
+    "read": "You're someone who gets caught by the maybe, the next bet, drop, trade, or refresh that could change the whole feeling. The pull is the uncertainty itself, not the thing you win. It gets serious fast when money, secrecy, or chasing losses enter the loop.",
     "signatureTieBreaker": "next_one_could_be_one",
     "definition": "A variable-reward loop built around uncertain wins: bets, trades, loot boxes, drops, deals, rare pulls, matches, or marketplace finds.",
     "thisIsMe": "Once I am in it, stopping feels like the only way to lose. The next bet, trade, pull, drop, match, deal, or refresh could change the whole feeling. If I am down, I want to get back to even. If I am close, I want to see if it lands. If I win, I want to keep the run alive. The numbers can stop feeling real until later, when I have to look at what it cost.",
@@ -391,13 +454,16 @@
       "https://www.psychiatry.org/patients-families/gambling-disorder/what-is-gambling-disorder",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8064953/"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   },
   {
     "id": "arousal_regulator",
     "name": "The Arousal Regulator",
     "shortLabel": "Private arousal-regulation loop",
     "recognitionLine": "I reach for it because it is quick, private, and changes the channel inside me.",
+    "read": "You're someone who sometimes reaches for arousal as a quick, private way to change how you feel, not always about wanting sex so much as wanting a different channel. There's nothing wrong with that on its own. It's worth a look when it becomes the main way to cope, or starts pulling against the closeness you actually want.",
     "signatureTieBreaker": "private_changes_channel",
     "definition": "A regulation loop where arousal, fantasy, romantic or sexual novelty, or intimacy simulation is used to shift stress, loneliness, emptiness, or restlessness.",
     "thisIsMe": "It is not always about wanting sex. Sometimes I am stressed, lonely, restless, ashamed, bored, or empty, and this is the fastest private way to feel different. It can start as relief, then turn into searching, escalating, or staying longer than I meant to. Afterward I may feel distant, foggy, or disappointed in myself. Then that feeling becomes another thing I want to escape.",
@@ -417,13 +483,18 @@
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC5775124/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC9295232/"
     ],
-    "nameAlternatives": ["The Arousal Loop", "The Private Regulator", "The Intimacy Escape"]
+    "nameAlternatives": [
+      "The Arousal Loop",
+      "The Private Regulator",
+      "The Intimacy Escape"
+    ]
   },
   {
     "id": "second_self",
     "name": "The Second Self",
     "shortLabel": "Identity immersion loop",
     "recognitionLine": "In there, I feel like a version of me that real life does not make room for.",
+    "read": "You're someone who can step into a version of yourself that feels freer, stronger, or more like the real you, through a character, a world, or a role. A lot of the time that's healthy and even important. The thing to protect is that the offline you keeps feeling livable too.",
     "signatureTieBreaker": "real_life_no_room",
     "definition": "An identity-immersion loop where an avatar, role, fantasy, character, creator life, or imagined self feels freer, safer, stronger, more beautiful, or more real.",
     "thisIsMe": "There is a version of me I can reach there. Maybe it is an avatar, a character, a role, a world, a creator's life, a fantasy, a body, a gender, a confidence, a romance, or a way of being. I do not just watch it. I enter it. A lot of the time that feels good and even important. The risk is when coming back feels worse every time, and the offline version of me starts feeling less livable.",
@@ -443,6 +514,8 @@
       "https://digitalwellnesslab.org/research-briefs/young-peoples-use-of-avatars-and-virtual-character-customization/",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC7539898/"
     ],
-    "nameAlternatives": ["Keep current name"]
+    "nameAlternatives": [
+      "Keep current name"
+    ]
   }
 ]

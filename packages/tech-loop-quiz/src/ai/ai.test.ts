@@ -48,11 +48,14 @@ const input = (id: PhenotypeId, over?: Partial<OutputContract>): NarrativeInput 
 });
 
 describe("deterministic narrative", () => {
-  it("produces non-empty copy naming the phenotype for all 17", () => {
+  it("produces a second-person read for all 17 (no phenotype label in prose)", () => {
     for (const id of PHENOTYPES) {
       const text = composeDeterministicNarrative(input(id));
       expect(text.length).toBeGreaterThan(80);
-      expect(text).toContain(PHENOTYPE_PROFILE[id].name);
+      // The read itself is the basis of the narrative.
+      expect(text).toContain(PHENOTYPE_PROFILE[id].read);
+      // Second person, never the clinical label.
+      expect(text).not.toContain(PHENOTYPE_PROFILE[id].name);
     }
   });
 
@@ -62,13 +65,15 @@ describe("deterministic narrative", () => {
       profile: null,
       secondaryProfile: null,
     });
-    expect(text.toLowerCase()).toContain("dominant loop");
+    expect(text.toLowerCase()).toContain("running the show");
+    expect(text.length).toBeGreaterThan(60);
   });
 
-  it("uses the adaptive framing when primary_adaptive is set", () => {
+  it("omits the cost line when primary_adaptive is set", () => {
     const id: PhenotypeId = "second_self";
     const text = composeDeterministicNarrative(input(id, { primary_adaptive: true }));
-    expect(text).toContain(PHENOTYPE_PROFILE[id].whenAdaptive.slice(0, 24));
+    expect(text).toContain(PHENOTYPE_PROFILE[id].read);
+    expect(text).not.toContain("shown up most in"); // adaptive results don't pile on cost
   });
 });
 
@@ -77,7 +82,8 @@ describe("narrator prompt", () => {
     const { system, user } = buildNarratorMessages(input("comparison_spiral"));
     expect(system).toMatch(/do NOT diagnose/i);
     expect(system).toContain(PHENOTYPE_PROFILE.comparison_spiral.avoidSaying);
-    expect(user).toContain("DETERMINISTIC DRAFT");
+    expect(system).toMatch(/second person/i);
+    expect(user).toContain("SECOND-PERSON DRAFT");
   });
 });
 
