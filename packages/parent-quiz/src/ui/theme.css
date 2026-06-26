@@ -10,3 +10,6 @@
 /* Expandable "full picture" detail grid on the result page. */
 .q-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
 @media (max-width: 560px) { .q-detail-grid { grid-template-columns: 1fr; } }
+
+/* Disclaimer moved off the intro to the result footer (mirrors the adult quiz). */
+.q-disclaimer { text-align: center; color: var(--q-muted); font-size: 12.5px; margin: 22px auto 0; max-width: 46ch; opacity: 0.85; }
