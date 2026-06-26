@@ -160,7 +160,7 @@
   },
   {
     "id": "twitter",
-    "label": "Twitter",
+    "label": "X (Twitter)",
     "subfeatures": [
       {
         "id": "feed",
@@ -506,7 +506,7 @@
   },
   {
     "id": "ai_chat_gpt_gemini_claude",
-    "label": "AI (Chat GPT, Gemini, Claude)",
+    "label": "AI (Chat GPT, Gemini, Claude, etc.)",
     "subfeatures": [
       {
         "id": "ai_tools",

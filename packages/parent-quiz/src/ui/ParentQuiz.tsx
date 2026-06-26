@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useState } from "react";
-import { QuizFrame, SingleChoice, MultiChoice, Button } from "@blh/quiz-core/ui";
+import { QuizFrame, SingleChoice, MultiChoice, Button, Logo } from "@blh/quiz-core/ui";
 import type { QuizPersistence, Narrator } from "@blh/quiz-core";
 import { CONTENT, QUESTION_BY_ID } from "../config";
 import type { CostDomain, SupportLevel } from "../types";
@@ -47,7 +47,7 @@ function Intro({ onStart }: { onStart: () => void }) {
   const c = CONTENT.intro;
   return (
     <div className="q-center">
-      <div className="q-kicker">{c.kicker}</div>
+      <div className="q-brand q-intro-logo"><Logo size={26} /></div>
       <h1 className="q-title">{c.title}</h1>
       <p className="q-lead">{c.subtitle}</p>
       <Button onClick={onStart}>{c.cta}</Button>
@@ -201,7 +201,7 @@ export function ParentQuiz(props: ParentQuizProps) {
   }
 
   return (
-    <QuizFrame theme="parent" progress={quiz.progress} canGoBack={quiz.canGoBack} onBack={quiz.goBack} wide={step.kind === "result"}>
+    <QuizFrame theme="parent" progress={quiz.progress} canGoBack={quiz.canGoBack} onBack={quiz.goBack} wide={step.kind === "result"} brand={step.kind !== "intro"}>
       <div className="q-step" key={stepKey}>{body}</div>
     </QuizFrame>
   );

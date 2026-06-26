@@ -62,7 +62,7 @@
 .tlq-mid--center .tlq-options { width: 100%; max-width: 440px; }
 
 .tlq-kicker { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; font-weight: 700; color: var(--tlq-accent); margin-bottom: 12px; }
-.tlq-q { font-size: clamp(21px, 3.4vw, 28px); font-weight: 650; letter-spacing: -0.015em; margin: 0 0 8px; }
+.tlq-q { font-size: clamp(21px, 3.4vw, 28px); font-weight: 650; letter-spacing: -0.015em; margin: 0 0 8px; white-space: pre-line; }
 .tlq-hint { color: var(--tlq-muted); font-size: 14px; margin: 0 0 20px; }
 
 .tlq-options { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 8px; }
@@ -171,3 +171,22 @@
 .tlq-fit-opt:hover { border-color: var(--tlq-accent-strong); }
 .tlq-fit-opt[data-selected="true"] { border-color: var(--tlq-accent); background: var(--tlq-sel); }
 .tlq-fit-thanks { color: var(--tlq-muted); font-size: 14px; margin: 4px 0; }
+
+/* Brand / logo */
+.tlq-brand { display: flex; align-items: center; padding: 2px 0 18px; }
+.tlq-logo { display: inline-flex; align-items: center; gap: 9px; }
+.tlq-wordmark { font-size: 13.5px; font-weight: 700; letter-spacing: 0.01em; color: var(--tlq-text); }
+.tlq-intro-logo { justify-content: center; margin-bottom: 18px; }
+.tlq-intro-logo .tlq-wordmark { font-size: 16px; }
+
+/* Result: severity description + clickable spectrum */
+.tlq-sev-desc { color: var(--tlq-muted); font-size: 14.5px; line-height: 1.55; margin: 2px 0 16px; }
+.tlq-spectrum-btn {
+  display: grid; grid-template-columns: 1fr 70px; gap: 12px; align-items: center; width: 100%;
+  text-align: left; background: transparent; border: 1px solid transparent; border-radius: 10px;
+  padding: 9px 10px; cursor: pointer; font-family: inherit; color: var(--tlq-text); font-size: 13.5px;
+  transition: background 120ms, border-color 120ms;
+}
+.tlq-spectrum-btn:hover { background: var(--tlq-surface-2); }
+.tlq-spectrum-btn[data-selected="true"] { border-color: var(--tlq-accent); background: var(--tlq-sel); }
+.tlq-spectrum-btn[data-selected="true"] span:first-child { color: var(--tlq-accent); font-weight: 600; }

@@ -34,12 +34,32 @@ function BackIcon() {
   );
 }
 
+/** Blue Light Health wordmark — inline SVG light mark, no asset file. */
+export function Logo({ size = 20, wordmark = true }: { size?: number; wordmark?: boolean }) {
+  return (
+    <span className="q-logo">
+      <svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="14" cy="14" r="11" fill="none" stroke="var(--q-accent)" strokeWidth="1.4" opacity="0.35" />
+        <circle cx="14" cy="14" r="5.4" fill="var(--q-accent)" />
+        <g stroke="var(--q-accent)" strokeWidth="1.6" strokeLinecap="round">
+          <line x1="14" y1="1.5" x2="14" y2="4.4" /><line x1="14" y1="23.6" x2="14" y2="26.5" />
+          <line x1="1.5" y1="14" x2="4.4" y2="14" /><line x1="23.6" y1="14" x2="26.5" y2="14" />
+          <line x1="5.2" y1="5.2" x2="7.2" y2="7.2" /><line x1="20.8" y1="20.8" x2="22.8" y2="22.8" />
+          <line x1="22.8" y1="5.2" x2="20.8" y2="7.2" /><line x1="7.2" y1="20.8" x2="5.2" y2="22.8" />
+        </g>
+      </svg>
+      {wordmark && <span className="q-wordmark">Blue Light Health</span>}
+    </span>
+  );
+}
+
 export function QuizFrame({
   theme,
   progress,
   canGoBack,
   onBack,
   wide,
+  brand = true,
   children,
 }: {
   theme: string;
@@ -47,11 +67,13 @@ export function QuizFrame({
   canGoBack?: boolean;
   onBack?: () => void;
   wide?: boolean;
+  brand?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <div className="q" data-theme={theme}>
       <div className={wide ? "q-shell q-shell--wide" : "q-shell"}>
+        {brand && <div className="q-brand"><Logo size={20} /></div>}
         <div className="q-topbar">
           {canGoBack ? (
             <button className="q-back" onClick={onBack} aria-label="Back"><BackIcon /> Back</button>
