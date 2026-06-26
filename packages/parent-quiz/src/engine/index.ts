@@ -1,3 +1,3 @@
 export { score } from "./score";
-export { evaluateParentHardRules } from "./hard-rules";
-export type { ParentHardRuleEffect, ParentHardRuleInput } from "./hard-rules";
+export { selectPatterns, RISK_IDS } from "./hard-rules";
+export type { SelectionInput, SelectionResult } from "./hard-rules";

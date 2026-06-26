@@ -1,17 +1,18 @@
 {
-  "version": "1.0.0",
-  "secondaryRatio": 0.7,
-  "costCap": 6,
-  "supportBands": [
-    { "id": "normal_tension", "min": 0 },
-    { "id": "pattern_forming", "min": 3 },
-    { "id": "family_impact_loop", "min": 6 },
-    { "id": "support_recommended", "min": 10 }
-  ],
+  "version": "2.0.0",
+  "primaryMinScore": 5,
+  "secondaryMinScore": 4,
+  "secondaryWithin": 3,
+  "maxSecondary": 2,
+  "bmsTieMinScore": 6,
+  "severityThresholds": {
+    "moderate": 1,
+    "high_support_need": 3
+  },
   "confidence": {
-    "highMinScore": 5,
+    "highMinScore": 6,
     "highMinMargin": 2,
-    "mediumMinScore": 3,
+    "mediumMinScore": 4,
     "mediumMinMargin": 1,
     "mixedMargin": 1.5
   }

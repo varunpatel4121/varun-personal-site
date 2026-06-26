@@ -54,7 +54,7 @@ describe("<ParentQuiz/>", () => {
     // Recognition line + expandable detail + fit feedback are present (shared q-* UI).
     expect(document.querySelector(".q-recognition")?.textContent?.length).toBeGreaterThan(10);
     expect(document.querySelector("details")).toBeTruthy();
-    expect(screen.getByText(/does this sound like your house/i)).toBeTruthy();
+    expect(screen.getByText(/did we get it right/i)).toBeTruthy();
     expect(document.querySelector(".q-result-name")?.textContent).toMatch(/^The /);
   });
 });

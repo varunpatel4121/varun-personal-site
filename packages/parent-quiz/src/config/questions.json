@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "questions": [
     {
       "id": "age",
@@ -9,36 +9,12 @@
       "question": "How old is your child or teen?",
       "hint": "Optional — used for copy and relevance, not scoring.",
       "options": [
-        {
-          "value": "child",
-          "label": "8 to 10",
-          "ageBand": "child"
-        },
-        {
-          "value": "tween",
-          "label": "11 to 13",
-          "ageBand": "tween"
-        },
-        {
-          "value": "young_teen",
-          "label": "14 to 15",
-          "ageBand": "young_teen"
-        },
-        {
-          "value": "older_teen",
-          "label": "16 to 18",
-          "ageBand": "older_teen"
-        },
-        {
-          "value": "launch",
-          "label": "College-age but still living at home",
-          "ageBand": "launch"
-        },
-        {
-          "value": "other",
-          "label": "Other",
-          "ageBand": "other"
-        }
+        { "value": "age_8_10", "label": "8 to 10", "ageBand": "child", "ageNote": "parent_guided" },
+        { "value": "age_11_13", "label": "11 to 13", "ageBand": "tween" },
+        { "value": "age_14_15", "label": "14 to 15", "ageBand": "young_teen" },
+        { "value": "age_16_18", "label": "16 to 18", "ageBand": "older_teen", "ageNote": "autonomy_privacy" },
+        { "value": "age_college_home", "label": "College-age but still living at home", "ageBand": "launch", "ageNote": "collaborative_adult" },
+        { "value": "age_other", "label": "Other", "ageBand": "other" }
       ]
     },
     {
@@ -50,431 +26,356 @@
       "hint": "Pick all that fit.",
       "options": [
         {
-          "value": "battle",
+          "value": "q1_limits_fight",
           "label": "Setting screen limits has turned into a constant fight.",
-          "loops": {
-            "daily_battle": 3
-          }
+          "patterns": { "LB": 3, "EP": 1 },
+          "signals": ["limit_conflict"]
         },
         {
-          "value": "withdrawn",
+          "value": "q1_pulling_away",
           "label": "They're pulling away from us, and screens are where they disappear.",
-          "loops": {
-            "quiet_pull_away": 3
-          }
+          "patterns": { "QPA": 3, "OLS": 1 },
+          "signals": ["withdrawal"]
         },
         {
-          "value": "bedtime",
+          "value": "q1_sleep",
           "label": "Sleep, bedtime, or mornings now revolve around the device.",
-          "loops": {
-            "night_off_switch": 3
-          }
+          "patterns": { "BMS": 3 },
+          "signals": ["sleep"]
         },
         {
-          "value": "social",
+          "value": "q1_social_mood",
           "label": "Their mood rises and falls with likes, streaks, group chats, or social drama.",
-          "loops": {
-            "social_mirror": 2,
-            "always_checking": 1
-          }
+          "patterns": { "SWL": 3, "QPA": 1 },
+          "signals": ["social_fallout"]
         },
         {
-          "value": "gaming",
+          "value": "q1_online_worlds",
           "label": "Gaming or online worlds seem to matter more than anything offline.",
-          "loops": {
-            "competence_refuge": 2,
-            "online_belonging": 1
-          }
+          "patterns": { "OLS": 2, "QPA": 1, "LB": 1 },
+          "signals": ["displacement"]
         },
         {
-          "value": "intense",
+          "value": "q1_intense_content",
           "label": "The content itself feels intense: anger, outrage, drama, or nonstop stimulation.",
-          "loops": {
-            "intensity_loop": 3
-          }
+          "patterns": { "SWL": 1, "LB": 1, "OLS": 1 },
+          "flags": ["activation"],
+          "signals": ["activation"]
         },
         {
-          "value": "money",
+          "value": "q1_money",
           "label": "Money keeps coming up: in-game purchases, loot boxes, betting, or trades.",
-          "loops": {
-            "reward_chase": 3
-          }
+          "patterns": { "SRS": 5 },
+          "flags": ["money", "srs_risk", "high_urgency"],
+          "signals": ["money"]
         },
         {
-          "value": "unsure",
+          "value": "q1_not_sure",
           "label": "I'm not sure. Something just feels off.",
-          "urgency": 1,
+          "patterns": { "QPA": 1, "OLS": 1 },
+          "signals": ["diffuse_worry"],
           "exclusive": true
         }
       ]
     },
     {
       "id": "q2_limit",
-      "section": "family",
+      "section": "limits",
       "type": "multi",
       "max": 2,
       "question": "When you try to set a limit, what usually happens?",
       "options": [
         {
-          "value": "fight",
+          "value": "q2_fight",
           "label": "It turns into a fight, even when I try to stay calm.",
-          "family": {
-            "battle": 3
-          },
-          "loops": {
-            "daily_battle": 1
-          },
-          "urgency": 2
+          "patterns": { "LB": 3 },
+          "signals": ["limit_conflict"]
         },
         {
-          "value": "one_more",
+          "value": "q2_one_more",
           "label": "There's always one more round, one more episode, one more thing they need to finish.",
-          "loops": {
-            "autopilot_zone_out": 1,
-            "competence_refuge": 1
-          },
-          "family": {
-            "negotiation": 1
-          }
+          "patterns": { "LB": 1, "OLS": 1 },
+          "signals": ["displacement"]
         },
         {
-          "value": "crushed",
+          "value": "q2_crushed",
           "label": "They seem crushed or unreachable, like I took away the only thing that was helping.",
-          "loops": {
-            "quiet_pull_away": 1,
-            "night_off_switch": 1
-          },
-          "family": {
-            "quiet_distance": 1
-          }
+          "patterns": { "QPA": 1, "OLS": 1, "LB": 1 }
         },
         {
-          "value": "sneak",
+          "value": "q2_sneak_hide",
           "label": "They sneak it, hide it, downplay it, or make it sound like less than it is.",
-          "markers": [
-            "concealment"
-          ],
-          "urgency": 2
+          "patterns": { "SRS": 4, "LB": 1 },
+          "flags": ["secrecy", "srs_risk"],
+          "signals": ["secrecy"]
         },
         {
-          "value": "annoyed_stop",
-          "label": "They're annoyed, but they can usually stop."
+          "value": "q2_annoyed_stop",
+          "label": "They're annoyed, but they can usually stop.",
+          "patterns": { "LOW": 2 },
+          "severity": -1,
+          "flags": ["low_signal"]
         },
         {
-          "value": "avoid",
+          "value": "q2_avoid_limit",
           "label": "Honestly, I avoid setting the limit because I can't handle another blow-up.",
-          "family": {
-            "give_in_burnout": 2,
-            "battle": 1
-          },
-          "loops": {
-            "daily_battle": 1
-          },
-          "costs": [
-            "parent_burnout"
-          ]
+          "patterns": { "EP": 4, "LB": 1 },
+          "signals": ["parent_burnout"]
         },
         {
-          "value": "works",
+          "value": "q2_limits_work",
           "label": "We have limits that mostly work.",
-          "family": {
-            "collaborative": 1
-          },
-          "lowConcern": true
-        }
-      ]
-    },
-    {
-      "id": "q3_hardest",
-      "section": "loop",
-      "type": "multi",
-      "max": 2,
-      "question": "When is screen use hardest to interrupt?",
-      "options": [
-        {
-          "value": "late_night",
-          "label": "Late at night, especially in bed.",
-          "loops": {
-            "night_off_switch": 2
-          }
-        },
-        {
-          "value": "morning",
-          "label": "First thing in the morning.",
-          "loops": {
-            "always_checking": 2
-          }
-        },
-        {
-          "value": "before_hard",
-          "label": "Before homework, chores, schoolwork, or anything hard.",
-          "loops": {
-            "competence_refuge": 1,
-            "autopilot_zone_out": 1
-          }
-        },
-        {
-          "value": "after_stress",
-          "label": "After school or after a stressful day.",
-          "loops": {
-            "night_off_switch": 1,
-            "autopilot_zone_out": 1
-          }
-        },
-        {
-          "value": "bored",
-          "label": "When they're bored, waiting, or between things.",
-          "loops": {
-            "autopilot_zone_out": 2
-          }
-        },
-        {
-          "value": "alone",
-          "label": "When they're alone, left out, or disconnected.",
-          "loops": {
-            "online_belonging": 1,
-            "quiet_pull_away": 1
-          }
-        },
-        {
-          "value": "group_event",
-          "label": "When a group chat, game, stream, or online event is happening.",
-          "loops": {
-            "online_belonging": 1,
-            "always_checking": 1
-          }
-        },
-        {
-          "value": "all_time",
-          "label": "There's no clear pattern. It feels like all the time.",
-          "urgency": 1
-        }
-      ]
-    },
-    {
-      "id": "q5_aftermath",
-      "section": "cost",
-      "type": "multi",
-      "max": 2,
-      "question": "After screen time goes too long, what do you notice?",
-      "options": [
-        {
-          "value": "exhausted",
-          "label": "They're exhausted, hard to wake, or the next morning is rough.",
-          "loops": {
-            "night_off_switch": 1
-          },
-          "costs": [
-            "sleep"
-          ]
-        },
-        {
-          "value": "irritable",
-          "label": "They're irritable, wired, or easier to set off.",
-          "loops": {
-            "intensity_loop": 1
-          },
-          "costs": [
-            "mood"
-          ]
-        },
-        {
-          "value": "smaller",
-          "label": "They seem smaller, more self-conscious, or upset by social stuff.",
-          "loops": {
-            "social_mirror": 1
-          },
-          "costs": [
-            "self_image"
-          ]
-        },
-        {
-          "value": "blank",
-          "label": "They seem blank, numb, or checked out.",
-          "loops": {
-            "autopilot_zone_out": 1,
-            "quiet_pull_away": 1
-          }
-        },
-        {
-          "value": "defensive",
-          "label": "They're defensive or secretive when I ask what happened.",
-          "markers": [
-            "concealment"
-          ],
-          "urgency": 1
-        },
-        {
-          "value": "calmer_back",
-          "label": "They're calmer for a little while, but the same need comes back.",
-          "loops": {
-            "night_off_switch": 1
-          }
-        },
-        {
-          "value": "not_much",
-          "label": "I don't notice much afterward.",
+          "patterns": { "LOW": 3 },
+          "severity": -2,
+          "flags": ["low_signal"],
           "exclusive": true
         }
       ]
     },
     {
-      "id": "q6_cost",
+      "id": "q3_hardest",
+      "section": "timing",
+      "type": "multi",
+      "max": 2,
+      "question": "When is screen use hardest to interrupt?",
+      "options": [
+        {
+          "value": "q3_late_night",
+          "label": "Late at night, especially in bed.",
+          "patterns": { "BMS": 3 },
+          "signals": ["sleep"]
+        },
+        {
+          "value": "q3_morning",
+          "label": "First thing in the morning.",
+          "patterns": { "BMS": 2 },
+          "signals": ["sleep"]
+        },
+        {
+          "value": "q3_before_hard",
+          "label": "Before homework, chores, schoolwork, or anything hard.",
+          "patterns": { "OLS": 2, "LB": 1 },
+          "signals": ["displacement"]
+        },
+        {
+          "value": "q3_after_stress",
+          "label": "After school or after a stressful day.",
+          "patterns": { "OLS": 1, "QPA": 1 }
+        },
+        {
+          "value": "q3_bored_waiting",
+          "label": "When they're bored, waiting, or between things.",
+          "patterns": { "OLS": 2 },
+          "signals": ["displacement"]
+        },
+        {
+          "value": "q3_alone_left_out",
+          "label": "When they're alone, left out, or disconnected.",
+          "patterns": { "QPA": 2, "SWL": 1 },
+          "signals": ["withdrawal"]
+        },
+        {
+          "value": "q3_group_event",
+          "label": "When a group chat, game, stream, or online event is happening.",
+          "patterns": { "SWL": 2, "LB": 1, "OLS": 1 },
+          "signals": ["social_fallout"]
+        },
+        {
+          "value": "q3_all_time",
+          "label": "There's no clear pattern. It feels like all the time.",
+          "patterns": { "OLS": 2, "LB": 1 },
+          "signals": ["displacement"]
+        }
+      ]
+    },
+    {
+      "id": "q4_aftermath",
+      "section": "aftermath",
+      "type": "multi",
+      "max": 2,
+      "question": "After screen time goes too long, what do you notice?",
+      "options": [
+        {
+          "value": "q4_exhausted",
+          "label": "They're exhausted, hard to wake, or the next morning is rough.",
+          "patterns": { "BMS": 3 },
+          "signals": ["sleep"]
+        },
+        {
+          "value": "q4_irritable",
+          "label": "They're irritable, wired, or easier to set off.",
+          "patterns": { "LB": 1, "SWL": 1, "OLS": 1 },
+          "severity": 1,
+          "flags": ["activation"],
+          "signals": ["activation"]
+        },
+        {
+          "value": "q4_self_conscious",
+          "label": "They seem smaller, more self-conscious, or upset by social stuff.",
+          "patterns": { "SWL": 3, "QPA": 1 },
+          "signals": ["self_image"]
+        },
+        {
+          "value": "q4_blank",
+          "label": "They seem blank, numb, or checked out.",
+          "patterns": { "QPA": 2, "OLS": 2 },
+          "signals": ["withdrawal"]
+        },
+        {
+          "value": "q4_secretive",
+          "label": "They're defensive or secretive when I ask what happened.",
+          "patterns": { "SRS": 3 },
+          "flags": ["secrecy", "srs_risk"],
+          "signals": ["secrecy"]
+        },
+        {
+          "value": "q4_calmer_then_returns",
+          "label": "They're calmer for a little while, but the same need comes back.",
+          "patterns": { "OLS": 1, "QPA": 1 }
+        },
+        {
+          "value": "q4_no_after",
+          "label": "I don't notice much afterward.",
+          "patterns": { "LOW": 2 },
+          "severity": -1,
+          "flags": ["low_signal"],
+          "exclusive": true
+        }
+      ]
+    },
+    {
+      "id": "q5_cost",
       "section": "cost",
       "type": "multi",
       "question": "How is this impacting your child or family?",
       "options": [
         {
-          "value": "sleep",
+          "value": "q5_sleep",
           "label": "Sleep or mornings.",
-          "costs": [
-            "sleep"
-          ],
-          "urgency": 1
+          "patterns": { "BMS": 4 },
+          "severity": 1,
+          "signals": ["sleep"]
         },
         {
-          "value": "school",
+          "value": "q5_responsibilities",
           "label": "School, homework, chores, or responsibilities.",
-          "costs": [
-            "school"
-          ]
+          "patterns": { "OLS": 3 },
+          "severity": 1,
+          "signals": ["displacement"]
         },
         {
-          "value": "mood",
+          "value": "q5_mood",
           "label": "Mood, irritability, stress, or emotional swings.",
-          "costs": [
-            "mood"
-          ]
+          "patterns": { "SWL": 1, "QPA": 1, "LB": 1 },
+          "severity": 1,
+          "signals": ["mood"]
         },
         {
-          "value": "conflict",
+          "value": "q5_family_conflict",
           "label": "Family conflict, trust, or the relationship between you.",
-          "costs": [
-            "conflict"
-          ]
+          "patterns": { "LB": 3, "EP": 1, "SRS": 1 },
+          "severity": 1,
+          "signals": ["limit_conflict"]
         },
         {
-          "value": "offline",
+          "value": "q5_offline_life",
           "label": "Offline friends, activities, sports, hobbies, or leaving the house.",
-          "costs": [
-            "offline_life"
-          ]
+          "patterns": { "OLS": 3, "QPA": 1 },
+          "severity": 1,
+          "signals": ["displacement"]
         },
         {
-          "value": "self_image",
+          "value": "q5_self_image",
           "label": "Self-image, appearance stress, comparison, or social confidence.",
-          "costs": [
-            "self_image"
-          ]
+          "patterns": { "SWL": 3 },
+          "severity": 1,
+          "signals": ["self_image"]
         },
         {
-          "value": "money",
+          "value": "q5_money",
           "label": "Money, purchases, bets, trades, or charges.",
-          "costs": [
-            "money"
-          ],
-          "hardRules": [
-            "reward_money"
-          ]
+          "patterns": { "SRS": 5 },
+          "flags": ["money", "srs_risk", "high_urgency"],
+          "signals": ["money"]
         },
         {
-          "value": "secrecy",
+          "value": "q5_secrecy",
           "label": "Secrecy, sneaking, lying, or hiding.",
-          "costs": [
-            "trust"
-          ],
-          "markers": [
-            "concealment"
-          ],
-          "urgency": 2
+          "patterns": { "SRS": 4 },
+          "flags": ["secrecy", "srs_risk", "high_urgency"],
+          "signals": ["secrecy"]
         },
         {
-          "value": "parent_stress",
+          "value": "q5_parent_stress",
           "label": "My own stress as a parent.",
-          "costs": [
-            "parent_burnout"
-          ]
+          "patterns": { "EP": 3 },
+          "severity": 1,
+          "signals": ["parent_burnout"]
         },
         {
-          "value": "safety",
+          "value": "q5_safety",
           "label": "A serious safety concern: unsafe contact, exploitation, self-harm content, violence, or abuse.",
-          "markers": [
-            "safety"
-          ],
-          "hardRules": [
-            "safety"
-          ],
-          "urgency": 3
+          "patterns": { "SRS": 8 },
+          "flags": ["safety"],
+          "signals": ["safety"]
         },
         {
-          "value": "nowhere",
+          "value": "q5_nowhere",
           "label": "Nowhere meaningful, honestly.",
-          "lowConcern": true
+          "patterns": { "LOW": 4 },
+          "severity": -3,
+          "flags": ["low_signal"],
+          "exclusive": true
         }
       ]
     },
     {
-      "id": "q7_role",
-      "section": "family",
+      "id": "q6_role",
+      "section": "role",
       "type": "multi",
       "max": 2,
       "question": "What role have you fallen into as the parent?",
       "options": [
         {
-          "value": "police",
+          "value": "q6_tech_police",
           "label": "The tech police. I enforce, they resist, and we repeat.",
-          "family": {
-            "battle": 2
-          },
-          "parentRole": "enforcer"
+          "patterns": { "LB": 3 },
+          "signals": ["limit_conflict"]
         },
         {
-          "value": "detective",
+          "value": "q6_detective",
           "label": "The detective. I check, monitor, investigate, or try to catch what's happening.",
-          "family": {
-            "detective": 2
-          },
-          "parentRole": "detective"
+          "patterns": { "SRS": 2, "QPA": 1, "SWL": 1 },
+          "signals": ["secrecy"]
         },
         {
-          "value": "negotiator",
+          "value": "q6_negotiator",
           "label": "The negotiator. Everything becomes a deal, exception, or argument over minutes.",
-          "family": {
-            "negotiation": 2
-          },
-          "parentRole": "negotiator"
+          "patterns": { "LB": 2, "EP": 1 }
         },
         {
-          "value": "peacekeeper",
+          "value": "q6_peacekeeper",
           "label": "The peacekeeper. Sometimes I give in because I need the house to calm down.",
-          "family": {
-            "give_in_burnout": 2
-          },
-          "parentRole": "peacekeeper"
+          "patterns": { "EP": 4 },
+          "signals": ["parent_burnout"]
         },
         {
-          "value": "fixer",
+          "value": "q6_fixer",
           "label": "The fixer. I keep researching tools, controls, rules, and expert advice.",
-          "family": {
-            "fixer": 2
-          },
-          "parentRole": "fixer"
+          "patterns": { "EP": 1, "LB": 1 }
         },
         {
-          "value": "observer",
+          "value": "q6_worried_observer",
           "label": "The worried observer. I can see something is off, but I don't know how to reach them.",
-          "family": {
-            "quiet_distance": 2
-          },
-          "parentRole": "worried_observer"
+          "patterns": { "QPA": 3, "SWL": 1 },
+          "signals": ["withdrawal"]
         },
         {
-          "value": "collaborator",
+          "value": "q6_collaborator",
           "label": "The collaborator. We can usually talk about it and adjust.",
-          "family": {
-            "collaborative": 2
-          },
-          "parentRole": "collaborator",
+          "patterns": { "LOW": 3 },
+          "severity": -2,
+          "flags": ["low_signal"],
           "exclusive": true
         }
       ]

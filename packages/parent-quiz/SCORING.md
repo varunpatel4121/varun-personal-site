@@ -1,58 +1,104 @@
-# Parent Quiz — Scoring
+# Parent Quiz — Scoring (v2)
 
-Deterministic engine for the parent funnel. Source of truth = the two docs in
-the Drive **AI Quiz / Parent Quiz** folder (see `config/source/SOURCES.md`).
-The engine classifies; the LLM only warms the result copy.
+Deterministic engine for the parent funnel. Source of truth = the **three docs**
+in the Drive **AI Quiz / Parent Quiz** folder (see `config/source/SOURCES.md`):
+*Parent Quiz Taxonomy & Question Bank*, *Parent Quiz Scoring System*, and the
+*Parent Phenotype Library*. The engine classifies; the LLM only warms the copy.
 
 ## Formulation
 
-`Child Tech Loop × Family Screen Pattern × Cost × Support Urgency`
+`Observable Concern(s) × Limit Response × Timing / Aftermath × Cost × Parent Role`
+→ a **primary** + up to two **secondary** parent patterns, a **severity band**,
+and a **support-urgency** signal.
+
+## Parent patterns
+
+| id | name |
+|----|------|
+| `LB` | The Limit Battle |
+| `EP` | The Exhausted Peacekeeper |
+| `BMS` | The Bedtime/Morning Spiral |
+| `QPA` | The Quiet Pull-Away |
+| `SWL` | The Social Weather Loop |
+| `OLS` | The Offline-Life Shrink |
+| `SRS` | The Secrecy and Risk Spiral |
+| `LOW` | No strong problem pattern / collaborative monitoring |
 
 ## Pipeline (`src/engine/score.ts`)
 
-1. **Accumulate** tags from selected options (`config/questions.json`): child-loop
-   weights, family-pattern weights, cost domains, urgency points, urgency
-   markers, hard-rule flags, parent role, CTA readiness.
-2. **Rank child loops** (`rankDesc`, canonical-order tiebreak). Primary = top;
-   **secondary** = runner-up if ≥ 70% of the primary (`secondaryRatio`).
-3. **Family pattern** = top family tag (from Q2 + Q7).
-4. **Support urgency** = `urgency points + min(costCap, distinct cost domains)` →
-   band via `supportBands` (`normal_tension / pattern_forming /
-   family_impact_loop / support_recommended`).
-5. **Hard rules** (`hard-rules.ts`) adjust the band / route to safety:
-   - `PR_SAFETY` — any safety concern → **safety_route** (bypasses the marketing
-     result; UI shows 988/emergency guidance).
-   - `PR_REWARD_MONEY` — reward flag + money cost → force Reward Chase as
-     secondary + raise a band.
-   - `PR_NIGHT_SLEEP` — night off-switch + sleep cost + failed limits → +1 band.
-   - `PR_CONCEAL` — concealment + functional/trust cost → +1 band.
-   - `PR_LOW_CONCERN` — low-concern + collaborative family + no markers → cap at
-     `normal_tension` (don't over-sell therapy).
-6. **Confidence** from the top score + margin (`marginConfidence`, shared core).
-7. **Output contract** — primary/secondary loop, family pattern, parent role,
-   support level, cost domains, urgency markers, safety flag, CTA readiness,
-   primary concern, hard rules, and the 10-loop spectrum.
+1. **Accumulate** from each selected option (`config/questions.json`, keyed by the
+   doc's canonical answer ids, e.g. `q1_limits_fight`): per-pattern **points**, a
+   **severity** delta, **flags** (`safety` / `money` / `secrecy` / `srs_risk` /
+   `high_urgency` / `activation` / `low_signal`), and **evidence signals**.
+2. **Conditional rule** — `q2_one_more` + any sleep signal ⇒ `BMS +1`.
+3. **Selection** (`hard-rules.ts → selectPatterns`): apply hard rules, pick the
+   primary, then the secondaries.
+4. **Severity band** ⇒ **support urgency** (1:1 mapping).
+5. **Output payload**.
 
-## Weights
+### Hard rules (`selectPatterns`)
 
-Strong single-select signals (Q1 "what brings you here", Q4 "what is the screen
-giving them") add **3** to the loop; multi-selects (Q3, Q5) add **1–2**; Q2/Q7
-feed family patterns + urgency; Q6/Q8 feed costs + urgency markers + hard-rule
-flags. All weights live in `config/questions.json` so they're tunable without
-code. Full per-option mapping is in that file.
+1. `PR_SAFETY` — `q5_safety` ⇒ primary **SRS**, `supportUrgency = safety_urgent`,
+   `safety_flag` (UI shows 988 / emergency guidance, bypassing the funnel).
+2. `PR_RISK_CLUSTER` — **≥2** of `{q1_money, q5_money, q2_sneak_hide, q4_secretive,
+   q5_secrecy}` ⇒ prioritize **SRS**, urgency floor **high**.
+   (`PR_MONEY_SECRECY` — a single money/secrecy answer still floors urgency high.)
+3. `PR_LOW_MONITORING` — no problem pattern reaches the primary threshold ⇒
+   **LOW** (light, collaborative-monitoring result, not a pathology result).
+4. **BMS tie** — BMS ≥ `bmsTieMinScore` (6) with a sleep impact wins ties over OLS/LB.
+5. **EP vs LB tie** — EP wins only with `q2_avoid_limit` / `q6_peacekeeper`, else LB.
+6. **SWL vs QPA tie** — SWL on social signals (`social_fallout` / `self_image`),
+   QPA on distance (`withdrawal`).
+
+### Primary / secondary selection
+
+- **Primary** = highest-scoring non-LOW pattern after hard rules; eligible at
+  `primaryMinScore` (5) or above, unless a hard rule forces it. Below that ⇒ LOW.
+- **Secondary** = non-primary problem patterns with ≥ `secondaryMinScore` (4)
+  points **and** within `secondaryWithin` (3) of the primary; at most `maxSecondary` (2).
+
+### Severity → support urgency
+
+`severityScore` = Σ per-option severity deltas (each cost domain +1, aftermath
+activation +1; low-signal answers negative). Then:
+
+| condition | band | urgency |
+|-----------|------|---------|
+| `q5_safety` | `safety_urgent` | `safety_urgent` |
+| money/secrecy high-urgency floor | `high_support_need` | `high` |
+| `severityScore ≥ 3` | `high_support_need` | `high` |
+| `severityScore ≥ 1` | `moderate` | `moderate` |
+| else | `light` | `low` |
+
+A `LOW` primary is capped at `moderate` (a collaborative result never reads "high").
+
+## Output payload (`ParentOutput`)
+
+`primary_pattern`, `primary_result_name`, `secondary_patterns[]`, `severity_band`,
+`support_urgency`, `safety_flag`, `evidence_signals[]`, `result_copy_key`,
+`primary_concern`, `age_band`, `confidence`, `hard_rules_triggered[]`, and the
+full 8-pattern `spectrum`. (Mirrors the Scoring System doc's example payload.)
+
+## Tuning surface
+
+All weights/flags/severity deltas live in `config/questions.json`; thresholds in
+`config/scoring.json`; result copy in `config/results.json`. No code change is
+needed to retune — edit the JSON to match the doc and run `npm test`.
 
 ## Reconciliations / doc improvements
 
-- **`daily_battle`** is scored as a child loop (so "The Daily Battle Loop" is
-  reachable) *and* mapped to the `battle` family pattern — the doc lists it as a
-  loop tag though it's relational.
-- The doc's "each answer adds 1–3 points" was made concrete (above); see
-  `config/questions.json`.
-- A gentle fallback (`autopilot_zone_out` + `normal_tension`) covers the rare
-  case where a parent's answers score no loop at all.
+- **Age** is a copy modifier only (`ageNote`), never a scoring input (per the doc).
+- The doc's qualitative severity definitions are made concrete as the
+  `severityScore` thresholds above.
+- Generic ties with no governing rule resolve by a fixed clinical priority
+  (`SRS > BMS > SWL > QPA > OLS > LB > EP`); the rule-paired patterns are kept
+  adjacent so the documented tie-breaks stay consistent.
+- A `LOW` (collaborative monitoring) result is authored locally — the Phenotype
+  Library covers only the seven problem patterns.
 
 ## Tests (`src/engine/score.test.ts`)
 
-All 10 child loops reachable as primary; each hard rule (safety, reward+money,
-night+sleep, low-concern); support banding; the 70% secondary rule; determinism.
-`npm test` (18 cases).
+`selectPatterns` unit tests for the primary threshold, secondary windowing, and
+hard rules 1–6 (synthetic scores); end-to-end `score` tests for all 8 patterns'
+reachability, safety/money routing, the BMS conditional, severity banding, and
+determinism. `npm test`.
