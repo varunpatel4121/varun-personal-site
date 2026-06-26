@@ -24,8 +24,9 @@ move to bluelighthealth.com, sharing a common core:
   (17 phenotypes, 361 rule-weights, 56 sub-features; from the 5 "AI Quiz" sheets).
   Cool dark theme. Live in production. Structured `tlq.*` schema.
 - **`@blh/parent-quiz`** — parent marketing-funnel quiz at **`/parent-quiz`**
-  (10 child loops + family pattern + support level → CARES booking CTA; from the
-  2 "AI Quiz / Parent Quiz" docs). Warm/editorial theme. Structured `pq.*` schema.
+  (7 parent patterns + collaborative LOW → severity band + support urgency →
+  CARES booking CTA; from the 3 "AI Quiz / Parent Quiz" docs). Shares the blue
+  BLH UI with the adult quiz. Structured `pq.*` schema.
 
 In every quiz the deterministic engine classifies and is unit-tested; the LLM
 only warms the result copy. The app injects adapters in

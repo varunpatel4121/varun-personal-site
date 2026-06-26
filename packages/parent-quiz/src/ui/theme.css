@@ -6,3 +6,7 @@
  * blue defaults), so there are no overrides here. This file is kept as the
  * documented seam for any parent-only visual tweaks in the future.
  */
+
+/* Expandable "full picture" detail grid on the result page. */
+.q-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+@media (max-width: 560px) { .q-detail-grid { grid-template-columns: 1fr; } }

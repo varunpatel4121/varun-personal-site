@@ -29,7 +29,7 @@ export interface UseParentQuizOptions {
 export interface ParentResultView {
   output: ParentOutput;
   primary: ParentResult;
-  secondary: ParentResult | null;
+  secondaries: ParentResult[];
   narrative: string;
 }
 
@@ -81,9 +81,9 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
   const compute = useCallback(async (): Promise<ParentResultView> => {
     const response: ParentResponse = { ageBand: ageRef.current, answers: answersRef.current };
     const output = score(response);
-    const primary = RESULT_BY_ID[output.primary_child_loop];
-    const secondary = output.secondary_child_loop ? RESULT_BY_ID[output.secondary_child_loop] : null;
-    const narrativeInput = { output, result: primary, secondaryResult: secondary };
+    const primary = RESULT_BY_ID[output.primary_pattern];
+    const secondaries = output.secondary_patterns.map((p) => RESULT_BY_ID[p]);
+    const narrativeInput = { output, result: primary, secondaryResults: secondaries };
     const fallback = composeParentNarrative(narrativeInput);
     let narrative = fallback;
     if (opts.narrator && !output.safety_flag) {
@@ -91,7 +91,7 @@ export function useParentQuiz(opts: UseParentQuizOptions = {}) {
       narrative = out.text;
       aiUsedRef.current = out.aiUsed;
     }
-    const v: ParentResultView = { output, primary, secondary, narrative };
+    const v: ParentResultView = { output, primary, secondaries, narrative };
     setView(v);
     return v;
   }, [opts]);

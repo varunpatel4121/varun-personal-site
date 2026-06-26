@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { QuizFrame, SingleChoice, MultiChoice, Button, Logo } from "@blh/quiz-core/ui";
 import type { QuizPersistence, Narrator } from "@blh/quiz-core";
 import { CONTENT, QUESTION_BY_ID } from "../config";
-import type { CostDomain, SupportLevel } from "../types";
 import { useParentQuiz, type ParentResultView } from "./flow";
 import "./theme.css";
 
@@ -22,21 +21,14 @@ export interface ParentQuizProps {
   bookingUrl?: string;
 }
 
-const COST_LABEL: Record<CostDomain, string> = {
-  sleep: "sleep", school: "school & responsibilities", mood: "mood",
-  conflict: "family conflict", offline_life: "offline life", self_image: "self-image",
-  money: "money", trust: "trust & secrecy", parent_burnout: "your own energy",
-};
-
-const SUPPORT_CHIP: Record<SupportLevel, string> = {
-  normal_tension: "Normal tech tension", pattern_forming: "A pattern forming",
-  family_impact_loop: "A family-impact loop", support_recommended: "Support recommended",
-  safety_route: "",
-};
-
 const KICKER: Record<string, string> = {
-  frame: "A little context", concern: "What brings you here", family: "The family pattern",
-  loop: "What you're noticing", cost: "The cost", urgency: "The last month",
+  frame: "A little context",
+  concern: "What brings you here",
+  limits: "When you set a limit",
+  timing: "When it's hardest",
+  aftermath: "Afterward",
+  cost: "The impact",
+  role: "Your role",
 };
 
 function Loading() {
@@ -111,14 +103,11 @@ function Result({
   view: ParentResultView; bookingUrl: string;
   onFit: (rating: number | null, text: string) => void; onRestart: () => void;
 }) {
-  const { output, primary, secondary, narrative } = view;
+  const { output, primary, secondaries, narrative } = view;
   if (output.safety_flag) return <Safety onRestart={onRestart} />;
 
   const s = CONTENT.result.sections;
-  const familyLabel = output.family_pattern ? CONTENT.familyPatternLabels[output.family_pattern] : null;
-  const costs = output.cost_domains.filter((c) => c !== "parent_burnout").map((c) => COST_LABEL[c]);
-  const chips = [SUPPORT_CHIP[output.support_level], familyLabel, secondary ? `also ${secondary.name}` : null]
-    .filter(Boolean).join("  ·  ");
+  const severityChip = CONTENT.severityChip[output.severity_band];
 
   return (
     <>
@@ -126,22 +115,23 @@ function Result({
         <div>
           <div className="q-kicker">{CONTENT.result.headlinePrefix}</div>
           <h1 className="q-result-name">{primary.name}</h1>
+          <div className="q-result-label">{primary.shortLabel}</div>
           <p className="q-recognition">“{primary.recognitionLine}”</p>
           <p className="q-read">{narrative}</p>
-          {chips && <div className="q-chips"><span className="q-chip-badge" data-tone="accent">{SUPPORT_CHIP[output.support_level] || "Support"}</span>
-            {familyLabel && <span className="q-chip-badge">{familyLabel}</span>}
-            {secondary && <span className="q-chip-badge">also: {secondary.name}</span>}</div>}
+          <div className="q-chips">
+            <span className="q-chip-badge" data-tone="accent">{severityChip}</span>
+            {secondaries.map((sec) => (
+              <span key={sec.id} className="q-chip-badge">also: {sec.name}</span>
+            ))}
+          </div>
         </div>
 
         <div>
-          <div className="q-card">
-            <h4>{s.cost}</h4>
-            <p>{primary.whatItMayBeCosting}{costs.length > 0 && <> Lately it may be showing up in <strong>{costs.join(", ")}</strong>.</>}</p>
-          </div>
+          <div className="q-card"><h4>{s.cost}</h4><p>{primary.cost}</p></div>
           <div className="q-card"><h4>{s.helps}</h4><p>{primary.whatHelps}</p></div>
           <div className="q-card q-cta">
             <h4>{CONTENT.cta.title}</h4>
-            <p>{CONTENT.supportCopy[output.support_level]} {CONTENT.cta.body}</p>
+            <p>{CONTENT.severityCopy[output.severity_band]} {CONTENT.cta.body}</p>
             <a className="q-cta-book" href={bookingUrl} target="_blank" rel="noopener noreferrer">{CONTENT.cta.bookLabel}</a>
             <p className="q-reassure">{CONTENT.cta.reassure}</p>
           </div>
@@ -149,12 +139,13 @@ function Result({
       </div>
 
       <details className="q-card" style={{ marginTop: 6 }}>
-        <summary style={{ cursor: "pointer", color: "var(--q-muted)", fontSize: 14 }}>What the screen may be giving them, and why support helps</summary>
-        <div style={{ marginTop: 12 }}>
-          <h4 style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--q-accent)", margin: "0 0 6px" }}>{s.doing}</h4>
-          <p style={{ margin: "0 0 14px", fontSize: 15, lineHeight: 1.55 }}>{primary.whatScreensMayBeDoing}</p>
-          <h4 style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--q-accent)", margin: "0 0 6px" }}>{s.support}</h4>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55 }}>{primary.whySupportMayHelp}</p>
+        <summary style={{ cursor: "pointer", color: "var(--q-muted)", fontSize: 14 }}>The full picture — what you can see, the loop, and when it tips over</summary>
+        <div className="q-detail-grid" style={{ marginTop: 14 }}>
+          <DetailBlock title={s.observe} body={primary.observe} />
+          <DetailBlock title={s.family} body={primary.familyLoop} />
+          <DetailBlock title={s.whenNormal} body={primary.whenNormal} />
+          <DetailBlock title={s.whenProblem} body={primary.whenProblem} />
+          <DetailBlock title={s.support} body={primary.supportBridge} />
         </div>
       </details>
 
@@ -163,6 +154,15 @@ function Result({
         <Button variant="ghost" onClick={onRestart}>Start over</Button>
       </div>
     </>
+  );
+}
+
+function DetailBlock({ title, body }: { title: string; body: string }) {
+  return (
+    <div>
+      <h4 style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--q-accent)", margin: "0 0 6px" }}>{title}</h4>
+      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55 }}>{body}</p>
+    </div>
   );
 }
 
@@ -194,7 +194,7 @@ export function ParentQuiz(props: ParentQuizProps) {
       <>
         <MultiChoice kicker={KICKER[q.section]} question={q.question} hint={q.hint} max={q.max}
           initial={quiz.saved[q.id]}
-          options={q.options.map((o) => ({ value: o.value, label: o.label, exclusive: o.lowConcern || o.exclusive }))}
+          options={q.options.map((o) => ({ value: o.value, label: o.label, exclusive: o.exclusive }))}
           onSubmit={(vals, labels) => quiz.answer(q.id, vals, labels)} />
         {skip}
       </>

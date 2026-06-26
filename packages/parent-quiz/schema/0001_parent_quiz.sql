@@ -21,7 +21,8 @@ create table if not exists pq.sessions (
   completed_at      timestamptz,
   duration_ms       integer,
   safety_flag       boolean not null default false,
-  support_level     text,
+  severity_band     text,
+  support_urgency   text,
   fit_rating        smallint,
   fit_text          text,
   ai_narrative_used boolean not null default false,
@@ -31,7 +32,7 @@ create table if not exists pq.sessions (
 );
 create index if not exists idx_pq_sessions_session_id on pq.sessions (session_id);
 create index if not exists idx_pq_sessions_created_at on pq.sessions (created_at desc);
-create index if not exists idx_pq_sessions_support on pq.sessions (support_level);
+create index if not exists idx_pq_sessions_severity on pq.sessions (severity_band);
 
 -- Respondents (PII / leads — access-controlled).
 create table if not exists pq.respondents (
@@ -60,25 +61,23 @@ create index if not exists idx_pq_answers_session_id on pq.answers (session_id);
 create table if not exists pq.results (
   id                    uuid primary key default gen_random_uuid(),
   session_id            text not null references pq.sessions (session_id) on delete cascade,
-  primary_child_loop    text not null,
+  primary_pattern       text not null,
   primary_result_name   text not null,
-  secondary_child_loop  text,
-  family_pattern        text,
-  parent_role           text,
-  support_level         text not null,
-  cost_domains          jsonb not null default '[]',
-  urgency_markers       jsonb not null default '[]',
-  urgency_score         numeric not null default 0,
+  secondary_patterns    jsonb not null default '[]',
+  severity_band         text not null,
+  support_urgency       text not null,
   safety_flag           boolean not null default false,
-  cta_readiness         text,
+  evidence_signals      jsonb not null default '[]',
+  result_copy_key       text,
   primary_concern       text,
+  age_band              text,
   confidence            text not null,
   hard_rules_triggered  jsonb not null default '[]',
   spectrum              jsonb not null default '{}',
   created_at            timestamptz not null default now(),
   unique (session_id)
 );
-create index if not exists idx_pq_results_primary on pq.results (primary_child_loop);
+create index if not exists idx_pq_results_primary on pq.results (primary_pattern);
 
 alter table pq.sessions    enable row level security;
 alter table pq.respondents enable row level security;

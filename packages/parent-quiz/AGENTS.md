@@ -10,25 +10,27 @@ adult `@blh/tech-loop-quiz`, built on the shared `@blh/quiz-core`. Portable to
 bluelighthealth.com.
 
 ## Source of truth
-The two docs in the Drive **AI Quiz / Parent Quiz** folder
+The three docs in the Drive **AI Quiz / Parent Quiz** folder — Taxonomy &
+Question Bank, Scoring System, Phenotype Library
 (<https://drive.google.com/drive/u/0/folders/1aouYdVqSbrQgGjASTnfruDSqvI-7kg-4>).
 Mapping in `config/source/SOURCES.md`. **Do not invent quiz content or weights** —
 change the docs and update the JSON, then run `npm test`.
 
 ## Invariants
-1. **Deterministic** — same answers → same result + support level. The LLM warms
+1. **Deterministic** — same answers → same pattern + severity. The LLM warms
    prose only (`src/ai/`).
 2. **No infra in the package** — Supabase/Anthropic are injected adapters
    (from `@blh/quiz-core`). Keep it that way for portability.
-3. **Voice guardrails** (Strategy & Voice doc): no diagnosis, no child-blame, no
-   addiction language, no moral panic. Therapy as relief, not threat. Careful
-   uncertainty (may/can/often). A low-support branch must exist.
+3. **Voice guardrails** (Taxonomy doc — Design Principles): no diagnosis, no
+   child-blame, no addiction language, no moral panic. Observable over inferred —
+   never ask the parent to guess what the child gets from the screen. Therapy as
+   relief, not threat. Careful uncertainty (may/can/often). A LOW branch must exist.
 4. **Safety first** — a safety answer (`PR_SAFETY`) bypasses the marketing result
    and shows crisis guidance. Never gate safety behind the email step.
 5. **Config is the tuning surface** — weights/results/copy live in `config/*.json`.
 
 ## Architecture
-`engine/` (pure scorer + hard rules) · `config/` (the 2 docs as JSON) · `ai/`
+`engine/` (pure scorer + `selectPatterns` hard rules) · `config/` (the 3 docs as JSON) · `ai/`
 (narrative composer + prompt) · `persistence/` (record builder on core) ·
 `ui/` (`<ParentQuiz/>` + warm `theme.css` over core primitives). Headless root
 export (`@blh/parent-quiz`) + UI subpath (`/ui`).
@@ -45,5 +47,7 @@ export (`@blh/parent-quiz`) + UI subpath (`/ui`).
   `transpilePackages`, provide the two routes. See `../tech-loop-quiz/AGENTS.md`.
 
 ## Tests
-`src/engine/score.test.ts` — 10-loop reachability, every hard rule, support
-banding, the 70% secondary rule, determinism. `npm test`.
+`src/engine/score.test.ts` — `selectPatterns` unit tests (primary threshold,
+secondary windowing, hard rules 1–6) + end-to-end `score` (all 8 patterns'
+reachability, safety/money routing, the BMS conditional, severity banding,
+determinism). `src/ui/ParentQuiz.test.tsx` walks the funnel. `npm test`.
