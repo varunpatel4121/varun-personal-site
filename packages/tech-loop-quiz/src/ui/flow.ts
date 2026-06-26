@@ -180,6 +180,11 @@ export function useTechLoopQuiz(opts: UseTechLoopQuizOptions = {}) {
     });
   }, [clampedPos, response]);
 
+  // Scroll to the top of the page on every step change (mobile-friendly).
+  useEffect(() => {
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, [clampedPos]);
+
   const log = useCallback((entry: AnswerLogEntry) => {
     answersRef.current = [
       ...answersRef.current.filter((a) => a.question_id !== entry.question_id),

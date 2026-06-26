@@ -173,6 +173,26 @@
 .tlq-fit-thanks { color: var(--tlq-muted); font-size: 14px; margin: 4px 0; }
 .tlq-disclaimer { text-align: center; color: var(--tlq-muted); font-size: 12.5px; margin: 22px auto 0; max-width: 36ch; opacity: 0.85; }
 
+/* ── Mobile fixes ─────────────────────────────────────────────────────────── */
+/* Touch devices apply :hover on tap and it sticks, looking like a half-selection.
+   Only the real data-selected state should color an option there. */
+@media (hover: none) {
+  .tlq-opt:hover:not([data-selected="true"]) {
+    border-color: var(--tlq-border);
+    background: var(--tlq-surface);
+    transform: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  }
+  .tlq-fit-opt:hover { border-color: var(--tlq-border); }
+  .tlq-spectrum-btn:hover { background: transparent; }
+  .tlq-opt:hover .tlq-check { background: transparent; border-color: var(--tlq-border); }
+  .tlq-opt[data-selected="true"] .tlq-check { background: var(--tlq-accent); border-color: var(--tlq-accent); }
+}
+/* Only vertical scrolling — never horizontal. */
+.tlq { overflow-x: hidden; width: 100%; }
+.tlq-opt { overflow-wrap: anywhere; min-width: 0; }
+.tlq-opt > span { min-width: 0; }
+
 /* Brand / logo */
 .tlq-brand { display: flex; align-items: center; padding: 2px 0 18px; }
 .tlq-logo { display: inline-flex; align-items: center; gap: 9px; }
