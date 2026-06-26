@@ -124,6 +124,7 @@
   cursor: pointer; background: linear-gradient(180deg, var(--tlq-accent), var(--tlq-accent-strong));
   color: #fff; transition: opacity 120ms, transform 90ms, box-shadow 120ms;
   box-shadow: 0 4px 14px rgba(61, 139, 253, 0.32);
+  max-width: 100%; /* long labels wrap inside the pill instead of overflowing */
 }
 .tlq-btn:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 .tlq-btn:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(61, 139, 253, 0.42); }

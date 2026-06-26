@@ -28,7 +28,7 @@ function step() {
   if (nameInput && emailInput) {
     fireEvent.change(nameInput, { target: { value: "Test" } });
     fireEvent.change(emailInput, { target: { value: "t@e.co" } });
-    fireEvent.click(screen.getByText("See your result"));
+    fireEvent.click(screen.getByText("See full results on the next page"));
     return;
   }
   const opts = optButtons();

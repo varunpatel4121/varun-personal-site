@@ -82,7 +82,7 @@
 .q-input + .q-input { margin-top: 10px; }
 
 .q-actions { display: flex; gap: 12px; align-items: center; margin-top: auto; padding-top: 24px; }
-.q-btn { appearance: none; border: none; border-radius: 999px; padding: 13px 28px; font-size: 15px; font-weight: 650; cursor: pointer; background: linear-gradient(180deg, var(--q-accent), var(--q-accent-strong)); color: #fff; transition: opacity 120ms, transform 90ms, box-shadow 120ms; font-family: inherit; box-shadow: 0 4px 14px rgba(61, 139, 253, 0.32); }
+.q-btn { appearance: none; border: none; border-radius: 999px; padding: 13px 28px; font-size: 15px; font-weight: 650; cursor: pointer; background: linear-gradient(180deg, var(--q-accent), var(--q-accent-strong)); color: #fff; transition: opacity 120ms, transform 90ms, box-shadow 120ms; font-family: inherit; box-shadow: 0 4px 14px rgba(61, 139, 253, 0.32); max-width: 100%; }
 .q-btn:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
 .q-btn:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(61, 139, 253, 0.42); }
 .q-btn:not(:disabled):active { transform: translateY(0) scale(0.985); }

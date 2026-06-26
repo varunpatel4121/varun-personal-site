@@ -281,7 +281,7 @@ function IdentityScreen({ previewName, onSubmit }: { previewName: string | null;
       <input className="tlq-input" style={{ maxWidth: 360, margin: "18px auto 0", textAlign: "center" }} placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       <input className="tlq-input" style={{ maxWidth: 360, margin: "10px auto 0", textAlign: "center" }} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       {tried && !valid && <p className="tlq-hint tlq-hint--error" style={{ marginTop: 12 }}>Enter your name and a valid email to continue.</p>}
-      <div style={{ marginTop: 18 }}><button className="tlq-btn" onClick={submit}>See your result</button></div>
+      <div style={{ marginTop: 18 }}><button className="tlq-btn" onClick={submit}>See full results on the next page</button></div>
     </div>
   );
 }
