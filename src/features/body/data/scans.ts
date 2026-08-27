@@ -1,3 +1,10 @@
+export type SegmentalLeanReading = {
+  id: "right-arm" | "left-arm" | "trunk" | "right-leg" | "left-leg";
+  label: string;
+  mass: number;
+  percent: number;
+};
+
 export type BodyScan = {
   id: string;
   date: string;
@@ -18,14 +25,38 @@ export type BodyScan = {
   visceralFatLevel: number;
   basalMetabolicRate: number;
   skeletalMuscleIndex: number;
+  segmentalLean?: readonly SegmentalLeanReading[];
 };
 
+type BodyScanInput = Omit<BodyScan, "id" | "dateLabel" | "shortDate">;
+
+const longDateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "numeric",
+  month: "long",
+  timeZone: "UTC",
+  year: "numeric",
+});
+
+const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
+  day: "2-digit",
+  month: "short",
+  timeZone: "UTC",
+});
+
+function createBodyScan(input: BodyScanInput): BodyScan {
+  const date = new Date(`${input.date}T00:00:00Z`);
+
+  return {
+    ...input,
+    id: input.date,
+    dateLabel: longDateFormatter.format(date),
+    shortDate: shortDateFormatter.format(date),
+  };
+}
+
 export const bodyScans: readonly BodyScan[] = [
-  {
-    id: "2025-11-18",
+  createBodyScan({
     date: "2025-11-18",
-    dateLabel: "November 18, 2025",
-    shortDate: "Nov 18",
     time: "11:25",
     weight: 173.4,
     skeletalMuscleMass: 76.1,
@@ -41,12 +72,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 7,
     basalMetabolicRate: 1674,
     skeletalMuscleIndex: 7.8,
-  },
-  {
-    id: "2026-02-20",
+  }),
+  createBodyScan({
     date: "2026-02-20",
-    dateLabel: "February 20, 2026",
-    shortDate: "Feb 20",
     time: "09:25",
     weight: 176.8,
     skeletalMuscleMass: 80.2,
@@ -62,12 +90,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 7,
     basalMetabolicRate: 1743,
     skeletalMuscleIndex: 8.1,
-  },
-  {
-    id: "2026-04-07",
+  }),
+  createBodyScan({
     date: "2026-04-07",
-    dateLabel: "April 7, 2026",
-    shortDate: "Apr 07",
     time: "07:20",
     weight: 178.3,
     skeletalMuscleMass: 83.1,
@@ -83,12 +108,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 6,
     basalMetabolicRate: 1776,
     skeletalMuscleIndex: 8.3,
-  },
-  {
-    id: "2026-05-29",
+  }),
+  createBodyScan({
     date: "2026-05-29",
-    dateLabel: "May 29, 2026",
-    shortDate: "May 29",
     time: "07:29",
     weight: 178,
     skeletalMuscleMass: 82.9,
@@ -104,12 +126,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 6,
     basalMetabolicRate: 1776,
     skeletalMuscleIndex: 8.2,
-  },
-  {
-    id: "2026-06-19",
+  }),
+  createBodyScan({
     date: "2026-06-19",
-    dateLabel: "June 19, 2026",
-    shortDate: "Jun 19",
     time: "07:28",
     weight: 178,
     skeletalMuscleMass: 82.7,
@@ -125,12 +144,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 6,
     basalMetabolicRate: 1771,
     skeletalMuscleIndex: 8.2,
-  },
-  {
-    id: "2026-07-29",
+  }),
+  createBodyScan({
     date: "2026-07-29",
-    dateLabel: "July 29, 2026",
-    shortDate: "Jul 29",
     time: "07:26",
     weight: 183.5,
     skeletalMuscleMass: 84.2,
@@ -146,12 +162,9 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 7,
     basalMetabolicRate: 1801,
     skeletalMuscleIndex: 8.3,
-  },
-  {
-    id: "2026-08-26",
+  }),
+  createBodyScan({
     date: "2026-08-26",
-    dateLabel: "August 26, 2026",
-    shortDate: "Aug 26",
     time: "08:50",
     weight: 182.1,
     skeletalMuscleMass: 82.5,
@@ -167,7 +180,14 @@ export const bodyScans: readonly BodyScan[] = [
     visceralFatLevel: 7,
     basalMetabolicRate: 1767,
     skeletalMuscleIndex: 8.2,
-  },
+    segmentalLean: [
+      { id: "right-arm", label: "Right arm", mass: 8.2, percent: 105 },
+      { id: "left-arm", label: "Left arm", mass: 8.18, percent: 104.6 },
+      { id: "trunk", label: "Trunk", mass: 64.3, percent: 103.2 },
+      { id: "right-leg", label: "Right leg", mass: 20.99, percent: 96.7 },
+      { id: "left-leg", label: "Left leg", mass: 21.21, percent: 97.6 },
+    ],
+  }),
 ];
 
 export type TrendMetricKey =
@@ -238,13 +258,7 @@ export const trendMetrics: readonly TrendMetric[] = [
   },
 ];
 
-export const latestSegmentalLean = [
-  { id: "right-arm", label: "Right arm", mass: 8.2, percent: 105 },
-  { id: "left-arm", label: "Left arm", mass: 8.18, percent: 104.6 },
-  { id: "trunk", label: "Trunk", mass: 64.3, percent: 103.2 },
-  { id: "right-leg", label: "Right leg", mass: 20.99, percent: 96.7 },
-  { id: "left-leg", label: "Left leg", mass: 21.21, percent: 97.6 },
-] as const;
+export const latestSegmentalLean = bodyScans.at(-1)?.segmentalLean ?? [];
 
 export const bodyScanDriveUrl =
   "https://drive.google.com/file/d/118BtZJ0qvDDLcTVN_l9Y-IDQ0sdYOKKJ/view";
