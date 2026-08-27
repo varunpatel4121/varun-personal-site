@@ -6,6 +6,19 @@ test.describe("Public pages", () => {
     await expect(page).toHaveTitle(/varun/i);
   });
 
+  test("body timeline loads with the latest scan", async ({ page }) => {
+    await page.goto("/body");
+    await expect(page).toHaveTitle(/body/i);
+    await expect(
+      page.getByRole("heading", { name: /the build, in motion/i })
+    ).toBeVisible();
+    await expect(page.getByRole("tab", { name: /aug 26/i })).toHaveAttribute(
+      "aria-selected",
+      "true"
+    );
+    await expect(page.getByText("August 26, 2026", { exact: true })).toBeVisible();
+  });
+
   test("sign-in page loads and has auth options", async ({ page }) => {
     await page.goto("/sign-in");
     await expect(page.locator("text=Sign")).toBeVisible();
