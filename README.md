@@ -12,10 +12,13 @@ npm run lint    # Run ESLint
 
 ## Structure
 
+The public `/body` route presents the historical InBody timeline and links to
+the private source archive for authorized Google Drive accounts.
+
 ```
 src/
   app/            Routes and layouts (App Router)
-    (marketing)/  Public site: /, /about, /projects, /lab
+    (marketing)/  Public site: /, /about, /projects, /lab, /goals, /body
     (platform)/   Product apps: /apps/persona (auth-protected)
     (auth)/       Auth pages: /sign-in
     quiz/         Adult Tech Loop Quiz — thin wrapper over @blh/tech-loop-quiz
@@ -23,6 +26,7 @@ src/
     api/          API routes (incl. /api/quiz/{sessions,parent-sessions,narrative})
   components/     Shared UI components
   features/       Feature modules (one per app)
+    body/         InBody timeline, composition trends, and regional lean-mass view
     persona/      Persona chat app: components, lib, hooks, types
   config/         Platform-wide config (app registry)
   data/           Static data and types
@@ -112,13 +116,14 @@ tests/
   setup/            Vitest setup files (jest-dom matchers, etc.)
   helpers/          Shared test utilities (mock Supabase client, etc.)
   unit/             Pure unit tests — no network, no side effects
+    body/           Body timeline UI and scan-data integrity tests
     lib/            Logger tests
     openai/         Prompt builder, SSE encoder tests
     personas/       Persona registry and resolution tests
   integration/      Tests with mocked boundaries (route handler tests)
   e2e/              Playwright browser tests
     .auth/          Stored auth session state (gitignored)
-    smoke.spec.ts   Public page and redirect checks
+    smoke.spec.ts   Public pages, body timeline, responsive states, and redirects
     persona-chat.spec.ts  Authenticated chat flow tests
 ```
 
@@ -172,3 +177,5 @@ GitHub Actions (`.github/workflows/ci.yml`) runs on every push and PR to `main`:
 ## Deployment
 
 Deployed on Vercel with custom domain via Cloudflare DNS.
+
+See [CHANGELOG.md](CHANGELOG.md) for release history.

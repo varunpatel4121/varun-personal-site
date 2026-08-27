@@ -46,7 +46,7 @@ content — change the docs/sheets and re-derive.
 ```
 src/
 ├── app/                    Routes and layouts (App Router conventions)
-│   ├── (marketing)/        Public site: /, /about, /projects, /lab
+│   ├── (marketing)/        Public site: /, /about, /projects, /lab, /goals, /body
 │   ├── (platform)/         Product apps: /apps/persona, /apps/* (auth-protected)
 │   ├── (auth)/             Auth pages: /sign-in
 │   ├── auth/callback/      OAuth/magic-link callback handler
@@ -56,6 +56,7 @@ src/
 │   ├── marketing/          Marketing-site components (navbar, footer, home/*)
 │   └── platform/           Platform shell components (app-shell)
 ├── features/               Feature modules — one per app/product
+│   ├── body/               InBody timeline, trends, and scan data
 │   └── persona/            Persona app: components, lib, types
 ├── config/                 Platform-wide config (app registry)
 ├── data/                   Static data (projects, navigation)
@@ -78,8 +79,9 @@ Route groups do not affect URLs. All share the root layout (html/body/fonts/meta
 
 ### Feature Modules
 
-Each app/product lives in `src/features/{app}/` with its own components, lib, and types.
-Route pages in `src/app/(platform)/apps/{app}/` are thin entry points that import from the feature module.
+Each app/product lives in `src/features/{app}/` with its own components, data, lib, and types as needed.
+Route pages stay thin and import from their feature module: public features use
+`src/app/(marketing)/`, while authenticated apps use `src/app/(platform)/apps/`.
 
 Dependency rule: features can import from `components/ui/`, `lib/`, and `config/`, but NEVER from `components/marketing/` or other features.
 
