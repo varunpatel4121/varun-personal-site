@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { clsx } from "clsx";
+import { VisionBoard } from "./vision-board";
+import styles from "./goals.module.css";
 
 const CODE = "8000";
 const STORAGE_KEY = "vp_goals_auth";
@@ -76,7 +78,7 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
   const PAD = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "del"];
 
   return (
-    <div className="flex min-h-[80vh] items-center justify-center px-6">
+    <div className={`${styles.pinGate} flex min-h-[80vh] items-center justify-center px-6`}>
       <div className="flex flex-col items-center">
         <p className="mb-10 font-mono text-[10px] uppercase tracking-[0.3em] text-subtle">
           goals
@@ -87,6 +89,8 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
           {Array.from({ length: 4 }, (_, i) => (
             <div
               key={i}
+              data-filled={i < digits.length}
+              data-error={i < digits.length && error}
               className={clsx(
                 "h-2.5 w-2.5 rounded-full border transition-all duration-100",
                 i < digits.length
@@ -118,6 +122,7 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
             return (
               <button
                 key={i}
+                aria-label={isDel ? "Delete digit" : key}
                 onClick={() => (isDel ? deleteDigit() : addDigit(key))}
                 className={clsx(
                   "flex h-[62px] w-[62px] items-center justify-center rounded-2xl border font-mono transition-all duration-100 active:scale-95",
@@ -153,47 +158,63 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
 
 // ─── Content ─────────────────────────────────────────────────────────────────
 
-type Tab = "summer" | "odyssey";
+type Tab = "current" | "odyssey" | "past";
 
 const TABS: { id: Tab; label: string }[] = [
-  { id: "summer", label: "Summer 2026" },
+  { id: "current", label: "Oct–Dec 2026" },
   { id: "odyssey", label: "Five Years" },
+  { id: "past", label: "Past Goals" },
 ];
 
 function GoalsContent() {
-  const [tab, setTab] = useState<Tab>("summer");
+  const [tab, setTab] = useState<Tab>("current");
 
   return (
-    <div className="mx-auto max-w-3xl px-6">
-      <div className="animate-in pb-10 pt-16 sm:pt-20">
-        <h1 className="text-3xl font-medium tracking-tight sm:text-4xl">Goals</h1>
-        <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">
-          Summer 2026 and a map of the next five years.
-        </p>
-      </div>
-
-      <div className="animate-in-delayed">
-        {/* Tab bar */}
-        <div className="mb-8 flex border-b border-border-subtle">
+    <div className={styles.content}>
+      <div className={styles.editionBar}>
+        <p className={styles.editionTitle}>Goals</p>
+        <div className={styles.tabs} role="tablist" aria-label="Goal collections">
           {TABS.map(({ id, label }) => (
             <button
               key={id}
+              id={`tab-${id}`}
+              role="tab"
+              aria-selected={tab === id}
+              aria-controls={`panel-${id}`}
+              tabIndex={tab === id ? 0 : -1}
               onClick={() => setTab(id)}
-              className={clsx(
-                "-mb-px pb-3 pr-8 text-sm font-medium transition-colors",
-                tab === id
-                  ? "border-b-2 border-accent text-foreground"
-                  : "text-muted hover:text-foreground"
-              )}
+              onKeyDown={(event) => {
+                const index = TABS.findIndex((item) => item.id === id);
+                let next = index;
+                if (event.key === "ArrowRight") next = (index + 1) % TABS.length;
+                else if (event.key === "ArrowLeft") next = (index + TABS.length - 1) % TABS.length;
+                else if (event.key === "Home") next = 0;
+                else if (event.key === "End") next = TABS.length - 1;
+                else return;
+                event.preventDefault();
+                setTab(TABS[next].id);
+                document.getElementById(`tab-${TABS[next].id}`)?.focus();
+              }}
+              className={styles.tab}
             >
               {label}
             </button>
           ))}
         </div>
-
-        <div key={tab} className="animate-in pb-20">
-          {tab === "summer" ? <SummerTab /> : <OdysseyTab />}
-        </div>
+      </div>
+      <div key={tab} id={`panel-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`} tabIndex={0}>
+        {tab === "current" && <VisionBoard />}
+        {tab === "odyssey" && <div className={styles.legacy}>
+          <div className={styles.legacyHeader}><h1>The next five years.</h1><p>Different paths, and the things that matter across all of them.</p></div>
+          <OdysseyTab />
+        </div>}
+        {tab === "past" && <div className={styles.legacy}>
+          <div className={styles.legacyHeader}><h1>Earlier chapters.</h1><p>A place for the goals from seasons past.</p></div>
+          <details className={styles.archive} open>
+            <summary>Summer 2026 <span>May–August · archived</span></summary>
+            <div><SummerTab /></div>
+          </details>
+        </div>}
       </div>
     </div>
   );
